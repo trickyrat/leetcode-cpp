@@ -61,7 +61,7 @@ class Solution {
   both empty.
   */
   double findMedianSortedArrays(std::vector<int> &nums1,
-                                std::vector<int> &nums);
+                                std::vector<int> &nums2);
 
   /*5. Longest Palindromic Substring
   Description:
