@@ -110,16 +110,10 @@ class Solution {
 
   int mySqrt(int x);
   int search(std::vector<int> &nums, int target);
-
   int rob(std::vector<int> &nums);
-
-
   int singleNumber(std::vector<int> &nums);
   bool isAnagram(std::string s, std::string t);
-
-
   int surfaceArea(std::vector<std::vector<int>> &grid);
-
   int findDuplicate(std::vector<int> &nums);
   int projectionArea(std::vector<std::vector<int>> &grid);
   std::vector<int> shortestToChar(std::string S, char C);
@@ -138,21 +132,17 @@ class Solution {
   int minDepth(TreeNode *root);
   bool hasPathSum(TreeNode *root, int sum);
   int divide(int dividend, int divisor);
-
-
   std::vector<std::vector<int>> levelOrderBottom(TreeNode *root);
   ListNode *sortList(ListNode *head);
   std::vector<std::string> letterCombinations(std::string digits);
   bool canJump(std::vector<int> &nums);
   std::vector<int> plus_one(std::vector<int> &digits);
   void move_zeroes(std::vector<int> &nums);
-
   std::vector<std::vector<std::string>> solve_NQueens(int n);
   bool isValid(std::string s);
   std::vector<std::string> readBinaryWatch(int num);
   bool isSameTree(TreeNode *p, TreeNode *q);
   int firstMissingPositive(std::vector<int> &nums);
-
   int strStr(std::string haystack, std::string needle);
 
  private:

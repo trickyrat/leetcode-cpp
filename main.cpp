@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+void twoSumTest()
 {
     Solution solution;
     cout << "hello, world" << endl;
@@ -13,5 +13,10 @@ int main(int argc, char const *argv[])
     for (auto &i : res)
         cout << i << " ";
     cout << endl;
+}
+
+int main()
+{
+    twoSumTest();
     return 0;
 }
