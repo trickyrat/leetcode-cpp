@@ -1,1 +1,1 @@
-# Leetcode SOlution C++ Version
+# Leetcode Solution C++ Version
