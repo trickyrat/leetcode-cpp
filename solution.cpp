@@ -1,7 +1,6 @@
 #include "solution.h"
 
-std::vector<int> Solution::twoSum(std::vector<int> &nums, int target)
-{
+std::vector<int> Solution::twoSum(std::vector<int> &nums, int target){
   int size = nums.size();
   std::unordered_map<int, int> hash;
   std::vector<int> result;
@@ -19,8 +18,7 @@ std::vector<int> Solution::twoSum(std::vector<int> &nums, int target)
   return result;
 }
 
-ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2)
-{
+ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2){
   if (l1 == nullptr && l2 == nullptr)
     return nullptr;
   ListNode *head = new ListNode(0);
@@ -42,8 +40,7 @@ ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2)
   return head->next;
 }
 
-int Solution::lengthOfLongestSubstring(std::string s)
-{
+int Solution::lengthOfLongestSubstring(std::string s){
   std::vector<int> dic(256, -1);
   int maxlen = 0, start = -1;
   for (int i = 0; i != s.length(); i++)
@@ -56,7 +53,6 @@ int Solution::lengthOfLongestSubstring(std::string s)
   return maxlen;
 }
 
-// TODO: find median
 double Solution::findMedianSortedArrays(std::vector<int> &nums1,
                                         std::vector<int> &nums2){
   int m = nums1.size();
@@ -98,8 +94,7 @@ double Solution::findMedianSortedArrays(std::vector<int> &nums1,
   return 0.0;
 }
 
-std::string Solution::longestPalindrome(std::string s)
-{
+std::string Solution::longestPalindrome(std::string s){
   auto T = preProcess(s);
   auto n = T.length();
   auto *P = new int[n];
@@ -137,6 +132,22 @@ std::string Solution::longestPalindrome(std::string s)
   delete[] P;
 
   return s.substr((centerIndex - 1 - maxLen) / 2, maxLen);
+}
+
+std::string Solution::convert(std::string s, int numRows){
+  if(numRows == 1) return s;
+  std::string ret;
+  int n = s.size();
+  int cycleLen = 2 * numRows - 2;
+  
+  for(int i = 0; i < numRows; i++){
+    for(int j = 0; j + i < n; j += cycleLen){
+      ret += s[j + i];
+      if(i != 0 && i != numRows - 1 && j + cycleLen -  i <n)
+        ret += s[j + cycleLen - i];
+    }
+  }
+  return ret;
 }
 
 std::vector<std::vector<int>> Solution::threeSum(std::vector<int> &nums)

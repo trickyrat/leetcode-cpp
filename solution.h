@@ -70,6 +70,13 @@ class Solution {
   */
   std::string longestPalindrome(std::string s);
 
+  /*6. ZigZag Conversion
+  Description:
+    The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
+  (you may want to display this pattern in a fixed font for better legibility)
+  */
+  std::string convert(std::string s, int numRows);
+
   /*11. Container With Most Water
   Description:
       Given n non-negative integers a1, a2, ..., an , where each represents a
