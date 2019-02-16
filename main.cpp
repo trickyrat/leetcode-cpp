@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "solution.h"
+#include "solution.hpp"
 
 using namespace std;
 
@@ -17,6 +17,8 @@ void twoSumTest()
 
 int main()
 {
+    Solution s;
+    cout << s.myPower(2.2, 2) << endl;
     twoSumTest();
     return 0;
 }

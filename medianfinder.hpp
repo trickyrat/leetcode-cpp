@@ -1,5 +1,5 @@
-#ifndef LEETCODE_MEDIAN_FINDER_H_
-#define LEETCODE_MEDIAN_FINDER_H_
+#ifndef LEETCODE_MEDIAN_FINDER_HPP_
+#define LEETCODE_MEDIAN_FINDER_HPP_
 
 #include <functional>
 #include <queue>

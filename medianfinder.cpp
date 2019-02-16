@@ -1,4 +1,4 @@
-#include "medianfinder.h"
+#include "medianfinder.hpp"
 
 
 MedianFinder::MedianFinder()

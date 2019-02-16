@@ -1,4 +1,4 @@
-#include "solution.h"
+#include "solution.hpp"
 
 std::vector<int> Solution::twoSum(std::vector<int> &nums, int target){
   int size = nums.size();
@@ -313,6 +313,19 @@ int Solution::findDuplicate(std::vector<int> &nums)
     ptr2 = nums[ptr2];
   }
   return ptr1;
+}
+
+
+double Solution::myPower(double x, int n)
+{
+  double res = 1.0;
+  for(int i = n; i != 0; i /= 2)
+  {
+    if(i % 2 != 0)
+      res *= x;
+    x *= x;
+  }
+  return n < 0 ? 1 / res : res;
 }
 
 int Solution::projectionArea(std::vector<std::vector<int>> &grid)

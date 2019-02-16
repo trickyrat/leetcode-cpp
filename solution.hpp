@@ -1,5 +1,5 @@
-#ifndef LEETCODE_SOLUTION_H_
-#define LEETCODE_SOLUTION_H_
+#ifndef LEETCODE_SOLUTION_HPP_
+#define LEETCODE_SOLUTION_HPP_
 
 #include <cmath>
 #include <algorithm>
@@ -121,6 +121,8 @@ class Solution {
   Your algorithm's runtime complexity must be in the order of O(log n).
   */
   int search(std::vector<int> &nums, int target);
+
+  double myPower(double x, int n);
 
   /*69. Sqrt(x)
   Description:
