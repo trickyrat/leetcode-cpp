@@ -6,10 +6,8 @@ using namespace std;
 
 void twoSumTest()
 {
-    Solution solution;
-    cout << "hello, world" << endl;
     vector<int> nums{2, 7, 11, 15};
-    vector<int> res = solution.twoSum(nums, 9);
+    vector<int> res = Solution::twoSum(nums, 9);
     for (auto &i : res)
         cout << i << " ";
     cout << endl;
