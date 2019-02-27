@@ -121,7 +121,11 @@ class Solution {
   Your algorithm's runtime complexity must be in the order of O(log n).
   */
   int search(std::vector<int> &nums, int target);
-
+ 
+  /*50. Power(x, n)
+  Description:
+    
+  */
   double myPower(double x, int n);
 
   /*69. Sqrt(x)

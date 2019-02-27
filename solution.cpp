@@ -226,8 +226,6 @@ std::vector<std::vector<int>> Solution::fourSum(std::vector<int> &nums,
   return std::vector<std::vector<int>>();
 }
 
-// Hash Table
-
 int Solution::singleNumber(std::vector<int> &nums)
 {
   int res = 0;

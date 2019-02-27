@@ -17,10 +17,10 @@ public:
   double find_median_by_pointers();
 
 private:
-  std::priority_queue<int> lo_;                                   // max heap
-  std::priority_queue<int, std::vector<int>, std::greater<>> hi_; // min heap
+  std::priority_queue<int> lo;                                   // max heap
+  std::priority_queue<int, std::vector<int>, std::greater<>> hi; // min heap
 
-  std::multiset<int> data_;
-  std::multiset<int>::iterator lo_median_, hi_median_;
+  std::multiset<int> data;
+  std::multiset<int>::iterator lo_median, hi_median;
 };
-#endif /* LEETCODE_MEDIAN_FINDER_H_ */
+#endif /* LEETCODE_MEDIAN_FINDER_HPP_ */
