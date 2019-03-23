@@ -1,4 +1,4 @@
-#include "solution.hpp"
+#include "solution.h"
 
 std::vector<int> Solution::twoSum(std::vector<int> &nums, int target){
   int size = nums.size();
@@ -43,7 +43,8 @@ ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2){
 int Solution::lengthOfLongestSubstring(std::string s){
   std::vector<int> dic(256, -1);
   int maxlen = 0, start = -1;
-  for (int i = 0; i != s.length(); i++)
+  int len = s.length();
+  for (int i = 0; i != len; i++)
   {
     if (dic[s[i]] > start)
       start = dic[s[i]];
@@ -891,9 +892,9 @@ ListNode *Solution::split(ListNode *head, int n)
   return second;
 }
 
-ListNode *Solution::merge(ListNode *l1, ListNode *l2, ListNode *head)
+ListNode* Solution::merge(ListNode* l1, ListNode* l2, ListNode* head)
 {
-  ListNode *current = head;
+  ListNode* current = head;
   while (l1 && l2)
   {
     if (l1->val > l2->val)
