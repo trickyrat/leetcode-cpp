@@ -1,9 +1,9 @@
 #ifndef LEETCODE_SOLUTION_H_
 #define LEETCODE_SOLUTION_H_
 
-#include <cmath>
 #include <algorithm>
 #include <bitset>
+#include <cmath>
 #include <queue>
 #include <sstream>
 #include <stack>
@@ -27,7 +27,7 @@ struct ListNode {
 };
 
 class Solution {
- public:
+public:
   /*1. Two Sum
   Description:
       Given an array of integers, return indices of the two numbers such that
@@ -61,7 +61,7 @@ class Solution {
   both empty.
   */
   static double findMedianSortedArrays(std::vector<int> &nums1,
-                                std::vector<int> &nums2);
+                                       std::vector<int> &nums2);
 
   /*5. Longest Palindromic Substring
   Description:
@@ -72,8 +72,9 @@ class Solution {
 
   /*6. ZigZag Conversion
   Description:
-    The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
-  (you may want to display this pattern in a fixed font for better legibility)
+    The string "PAYPALISHIRING" is written in a zigzag pattern on a given number
+  of rows like this: (you may want to display this pattern in a fixed font for
+  better legibility)
   */
   static std::string convert(std::string s, int numRows);
 
@@ -110,32 +111,36 @@ class Solution {
   elements a, b, c, and d in nums such that a + b + c + d = target? Find all
   unique quadruplets in the array which gives the sum of target.
   */
-  static std::vector<std::vector<int>> fourSum(std::vector<int> &nums, int target);
+  static std::vector<std::vector<int>> fourSum(std::vector<int> &nums,
+                                               int target);
 
   /*33. Search in Rotated Sorted Array
   Description:
-      Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
-  (i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
-  You are given a target value to search. If found in the array return its index, otherwise return -1.
-  You may assume no duplicate exists in the array.
-  Your algorithm's runtime complexity must be in the order of O(log n).
+      Suppose an array sorted in ascending order is rotated at some pivot
+  unknown to you beforehand. (i.e., [0,1,2,4,5,6,7] might become
+  [4,5,6,7,0,1,2]). You are given a target value to search. If found in the
+  array return its index, otherwise return -1. You may assume no duplicate
+  exists in the array. Your algorithm's runtime complexity must be in the order
+  of O(log n).
   */
   static int search(std::vector<int> &nums, int target);
- 
+
   /*50. Power(x, n)
   Description:
     
+
   */
   static double myPower(double x, int n);
 
   /*69. Sqrt(x)
   Description:
-      Implement int sqrt(int x). Compute and return the square root of x, 
-  where x is guaranteed to be a non-negative integer. Since the return type is an integer,
-  the decimal digits are truncated and only the integer part of the result is returned.    
+      Implement int sqrt(int x). Compute and return the square root of x,
+  where x is guaranteed to be a non-negative integer. Since the return type is
+  an integer, the decimal digits are truncated and only the integer part of the
+  result is returned.
   */
   static int mySqrt(int x);
-  
+
   /*136. Single Number
   Description:
   */
@@ -149,11 +154,13 @@ class Solution {
 
   /*198. House Robber
   Description:
-      You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, 
-  the only constraint stopping you from robbing each of them is that adjacent houses have security system connected 
-  and it will automatically contact the police if two adjacent houses were broken into on the same night.
-  Given a list of non-negative integers representing the amount of money of each house, 
-  determine the maximum amount of money you can rob tonight without alerting the police.
+      You are a professional robber planning to rob houses along a street. Each
+  house has a certain amount of money stashed, the only constraint stopping you
+  from robbing each of them is that adjacent houses have security system
+  connected and it will automatically contact the police if two adjacent houses
+  were broken into on the same night. Given a list of non-negative integers
+  representing the amount of money of each house, determine the maximum amount
+  of money you can rob tonight without alerting the police.
   */
   static int rob(std::vector<int> &nums);
 
@@ -167,9 +174,11 @@ class Solution {
   */
   static int findDuplicate(std::vector<int> &nums);
 
+  static void reverseString(std::vector<char> &s);
+
   /*821. Shortest Distance to a Character
   Description:
-  */ 
+  */
   static std::vector<int> shortestToChar(std::string S, char C);
 
   /*852. Peak Index in a Mountain Array
@@ -182,13 +191,14 @@ class Solution {
   */
   static int projectionArea(std::vector<std::vector<int>> &grid);
 
-    /*892. Surface Area of 3D Shapes
-  Description:
-  */
+  /*892. Surface Area of 3D Shapes
+Description:
+*/
   static int surfaceArea(std::vector<std::vector<int>> &grid);
 
   static ListNode *middleNode(ListNode *head);
-  static std::vector<std::string> uncommonFromSentences(std::string A, std::string B);
+  static std::vector<std::string> uncommonFromSentences(std::string A,
+                                                        std::string B);
   static std::vector<std::vector<int>> combine(int n, int k);
   static uint32_t reverseBits(uint32_t n);
   static std::vector<std::vector<int>> generate(int numRows);
@@ -214,14 +224,15 @@ class Solution {
   static int firstMissingPositive(std::vector<int> &nums);
   static int strStr(std::string haystack, std::string needle);
 
- private:
+private:
   static ListNode *split(ListNode *head, int n);
   static ListNode *merge(ListNode *l1, ListNode *l2, ListNode *head);
   static std::string preProcess(std::string s);
-  static bool isValid(std::vector<std::string> &nQueens, int row, int col, int &n);
+  static bool isValid(std::vector<std::string> &nQueens, int row, int col,
+                      int &n);
   static void solve_NQueens(std::vector<std::vector<std::string>> &res,
-                     std::vector<std::string> nQueens, std::vector<int> &flag,
-                     int row, int &n);
+                            std::vector<std::string> nQueens,
+                            std::vector<int> &flag, int row, int &n);
   static std::vector<int> kmpProcess(std::string &needle);
 };
 
