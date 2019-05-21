@@ -870,3 +870,11 @@ void Solution::solve_NQueens(std::vector<std::vector<std::string>> &res,
     }
   }
 }
+
+std::string Solution::toLowerCase(std::string str){
+  for(auto& c : str){
+    if('A' <= c && c <= 'Z')
+      c = c - 'A' + 'a';
+  }
+  return str;
+}
