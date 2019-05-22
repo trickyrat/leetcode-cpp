@@ -189,13 +189,26 @@ public:
   static bool hasPathSum(TreeNode *root, int sum);
   static int divide(int dividend, int divisor);
   static std::vector<std::vector<int>> levelOrderBottom(TreeNode *root);
+  
+  /**
+   * 
+  */
   static ListNode *sortList(ListNode *head);
+
+  /**
+   * 
+  */
   static std::vector<std::string> letterCombinations(std::string digits);
   /** Jump Game
    * 
   */
   static bool canJump(std::vector<int> &nums);
-  
+
+  /**
+   * 617. Merge Two Binary Trees
+  */
+  static TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2);
+
   static std::vector<int> plus_one(std::vector<int> &digits);
   static void move_zeroes(std::vector<int> &nums);
   static std::vector<std::vector<std::string>> solve_NQueens(int n);

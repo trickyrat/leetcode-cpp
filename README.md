@@ -1,1 +1,3 @@
-# Leetcode Solution C++ Version
+# Leetcode答案，使用C++语言
+
+根据题目编号排序，尽量使用C++ 1x标准
