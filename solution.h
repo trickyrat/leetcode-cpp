@@ -15,6 +15,14 @@
 #include <unordered_map>
 #include <vector>
 
+class Node {
+public:
+  int val;
+  std::vector<Node *> children;
+  Node() {}
+  Node(int _val, std::vector<Node *> _children): val(_val), children(_children) {}
+};
+
 // Definition for a binary tree node.
 struct TreeNode {
   int val;
@@ -56,90 +64,117 @@ public:
   static int lengthOfLongestSubstring(std::string s);
 
   /** 4. Median of Two Sorted Arrays
-   * There are two sorted arrays nums1 and nums2 of size m and nrespectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
-   * You may assume nums1 and nums2 cannot be both empty.
-  */
+   * There are two sorted arrays nums1 and nums2 of size m and nrespectively.
+   * Find the median of the two sorted arrays. The overall run time complexity
+   * should be O(log (m+n)). You may assume nums1 and nums2 cannot be both
+   * empty.
+   */
   static double findMedianSortedArrays(std::vector<int> &nums1,
                                        std::vector<int> &nums2);
 
-  /** 5. Longest Palindromic Substring 
-   * Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
-  */
+  /** 5. Longest Palindromic Substring
+   * Given a string s, find the longest palindromic substring in s. You may
+   * assume that the maximum length of s is 1000.
+   */
   static std::string longestPalindrome(std::string s);
 
-  /** 6. ZigZag Conversion 
-   * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
-  */
+  /** 6. ZigZag Conversion
+   * The string "PAYPALISHIRING" is written in a zigzag pattern on a given
+   * number of rows like this: (you may want to display this pattern in a fixed
+   * font for better legibility)
+   */
   static std::string convert(std::string s, int numRows);
 
-  /** 11. Container With Most Water 
-   * Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). 
-   * Find two lines, which together with x-axis forms a container, such that the container contains the most water.
-  */
+  /** 11. Container With Most Water
+   * Given n non-negative integers a1, a2, ..., an , where each represents a
+   * point at coordinate (i, ai). n vertical lines are drawn such that the two
+   * endpoints of line i is at (i, ai) and (i, 0). Find two lines, which
+   * together with x-axis forms a container, such that the container contains
+   * the most water.
+   */
   static int maxArea(std::vector<int> &height);
 
   /** 15. 3Sum
-   * Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
-  */
+   * Given an array nums of n integers, are there elements a, b, c in nums such
+   * that a + b + c = 0? Find all unique triplets in the array which gives the
+   * sum of zero.
+   */
   static std::vector<std::vector<int>> threeSum(std::vector<int> &nums);
 
   /**16. 3Sum Closest
-   * Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. 
-   * You may assume that each input would have exactly one solution.
-  */
+   * Given an array nums of n integers and an integer target, find three
+   * integers in nums such that the sum is closest to target. Return the sum of
+   * the three integers. You may assume that each input would have exactly one
+   * solution.
+   */
   static int threeSumClosest(std::vector<int> &nums, int target);
 
   /**18. 4Sum
-   * Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? 
-   * Find all unique quadruplets in the array which gives the sum of target.
-  */
+   * Given an array nums of n integers and an integer target, are there elements
+   * a, b, c, and d in nums such that a + b + c + d = target? Find all unique
+   * quadruplets in the array which gives the sum of target.
+   */
   static std::vector<std::vector<int>> fourSum(std::vector<int> &nums,
                                                int target);
 
   /**33. Search in Rotated Sorted Array
-   * Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand. (i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]). 
-   * You are given a target value to search. If found in the array return its index, otherwise return -1. You may assume no duplicate exists in the array. 
-   * Your algorithm's runtime complexity must be in the order of O(log n).
-  */
+   * Suppose an array sorted in ascending order is rotated at some pivot unknown
+   * to you beforehand. (i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
+   * You are given a target value to search. If found in the array return its
+   * index, otherwise return -1. You may assume no duplicate exists in the
+   * array. Your algorithm's runtime complexity must be in the order of O(log
+   * n).
+   */
   static int search(std::vector<int> &nums, int target);
 
   /**50. Power(x, n)
-   * 
-  */
+   *
+   */
   static double myPower(double x, int n);
 
   /**69. Sqrt(x)
-   * Implement int sqrt(int x). Compute and return the square root of x, where x is guaranteed to be a non-negative integer. 
-   * Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
-  */
+   * Implement int sqrt(int x). Compute and return the square root of x, where x
+   * is guaranteed to be a non-negative integer. Since the return type is an
+   * integer, the decimal digits are truncated and only the integer part of the
+   * result is returned.
+   */
   static int mySqrt(int x);
 
   /**136. Single Number
   
+
   */
   static int singleNumber(std::vector<int> &nums);
 
-  /** 268. Missing Number 
-   * Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
-  */
+  /** 268. Missing Number
+   * Given an array containing n distinct numbers taken from 0, 1, 2, ..., n,
+   * find the one that is missing from the array.
+   */
   static int missingNumber(std::vector<int> &nums);
 
   /** 198. House Robber
-   * You are a professional robber planning to rob houses along a street. 
-   * Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night. 
-   * Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.
-  */
+   * You are a professional robber planning to rob houses along a street.
+   * Each house has a certain amount of money stashed, the only constraint
+   * stopping you from robbing each of them is that adjacent houses have
+   * security system connected and it will automatically contact the police if
+   * two adjacent houses were broken into on the same night. Given a list of
+   * non-negative integers representing the amount of money of each house,
+   * determine the maximum amount of money you can rob tonight without alerting
+   * the police.
+   */
   static int rob(std::vector<int> &nums);
 
   /** 242. Valid Anagram
-   * 
-  */
+   *
+   */
   static bool isAnagram(std::string s, std::string t);
 
   /** 287. Find the Duplicate Number
    *
    */
   static int findDuplicate(std::vector<int> &nums);
+
+  static std::vector<std::vector<int>> levelOrder(Node *root);
 
   static void reverseString(std::vector<char> &s);
 
@@ -188,26 +223,30 @@ public:
   static int minDepth(TreeNode *root);
   static bool hasPathSum(TreeNode *root, int sum);
   static int divide(int dividend, int divisor);
-  static std::vector<std::vector<int>> levelOrderBottom(TreeNode *root);
-  
+
   /**
-   * 
+   * 429. N-ary Tree Level Order Traversal
   */
+  static std::vector<std::vector<int>> levelOrderBottom(TreeNode *root);
+
+  /**
+   *
+   */
   static ListNode *sortList(ListNode *head);
 
   /**
-   * 
-  */
+   *
+   */
   static std::vector<std::string> letterCombinations(std::string digits);
   /** Jump Game
-   * 
-  */
+   *
+   */
   static bool canJump(std::vector<int> &nums);
 
   /**
    * 617. Merge Two Binary Trees
-  */
-  static TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2);
+   */
+  static TreeNode *mergeTrees(TreeNode *t1, TreeNode *t2);
 
   static std::vector<int> plus_one(std::vector<int> &digits);
   static void move_zeroes(std::vector<int> &nums);

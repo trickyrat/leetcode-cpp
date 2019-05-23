@@ -889,3 +889,24 @@ TreeNode* Solution::mergeTrees(TreeNode* t1, TreeNode* t2) {
   t1->right = mergeTrees(t1->right, t2->right);
   return t1; 
 }
+
+std::vector<std::vector<int>> Solution::levelOrder(Node *root) {
+  if(root == nullptr)
+    return {};
+  std::vector<std::vector<int>> res;
+  std::queue<Node *> q;
+  q.push(root);
+  while (!q.empty()) {
+    size_t size = q.size();
+    std::vector<int> tmp;
+    for (size_t i = 0; i < size; ++i) {
+      Node *cur = q.front();
+      tmp.push_back(cur->val);
+      for (auto child : cur->children)
+        q.push(child);
+      q.pop();
+    }
+    res.push_back(tmp);
+  }
+  return res;
+}
