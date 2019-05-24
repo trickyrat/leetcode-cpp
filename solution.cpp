@@ -910,3 +910,17 @@ std::vector<std::vector<int>> Solution::levelOrder(Node *root) {
   }
   return res;
 }
+
+int Solution::fib(int N) {
+  if(N < 2)
+    return N;
+  int f0 = 0;
+  int f1 = 1;
+  int res = 0;
+  for(int i = 1; i < N; i++) {
+    res = f0 + f1;
+    f0 = f1;
+    f1 = res;
+  }
+  return res;
+}
