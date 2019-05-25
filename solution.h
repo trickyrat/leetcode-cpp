@@ -253,6 +253,11 @@ public:
    */
   static TreeNode *mergeTrees(TreeNode *t1, TreeNode *t2);
 
+  /**
+   * 905. Sort Array By Parity
+  */
+  static std::vector<int> sortArrayByParity(std::vector<int>& A);
+
   static std::vector<int> plus_one(std::vector<int> &digits);
   static void move_zeroes(std::vector<int> &nums);
   static std::vector<std::vector<std::string>> solve_NQueens(int n);
