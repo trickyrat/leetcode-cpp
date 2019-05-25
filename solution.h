@@ -85,6 +85,26 @@ public:
    */
   static std::string convert(std::string s, int numRows);
 
+  /**
+   * 7. Reverse Integer
+  */
+  static int Reverse(int x);
+
+  /**
+   * 8. String to Integer(atoi)
+  */
+  static int Atoi(std::string str); 
+
+  /**
+   * 9. Palindrome Number
+  */
+  static bool IsPalindrome(int x);
+
+  /**
+   * 10. Regular Expression Matching
+  */
+  static bool IsMatch(std::string s, std::string p);
+
   /** 11. Container With Most Water
    * Given n non-negative integers a1, a2, ..., an , where each represents a
    * point at coordinate (i, ai). n vertical lines are drawn such that the two
@@ -93,6 +113,21 @@ public:
    * the most water.
    */
   static int maxArea(std::vector<int> &height);
+
+  /**
+   * 12. Integer to Roman
+  */
+  static std::string intToRoman(int num);
+
+  /**
+   * 13. Roman to Integer
+  */
+  static int romanToInteger(std::string s);
+
+  /**
+   * 14. Longest Common Prefix
+  */
+  static std::string longestCommonPrefix(std::vector<std::string>& strs);
 
   /** 15. 3Sum
    * Given an array nums of n integers, are there elements a, b, c in nums such

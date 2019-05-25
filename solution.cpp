@@ -871,27 +871,27 @@ void Solution::solve_NQueens(std::vector<std::vector<std::string>> &res,
   }
 }
 
-std::string Solution::toLowerCase(std::string str){
-  for(auto& c : str){
-    if('A' <= c && c <= 'Z')
+std::string Solution::toLowerCase(std::string str) {
+  for (auto &c : str) {
+    if ('A' <= c && c <= 'Z')
       c = c - 'A' + 'a';
   }
   return str;
 }
 
-TreeNode* Solution::mergeTrees(TreeNode* t1, TreeNode* t2) {
-  if(t1 == nullptr)
+TreeNode *Solution::mergeTrees(TreeNode *t1, TreeNode *t2) {
+  if (t1 == nullptr)
     return t2;
-  if(t2 == nullptr)
+  if (t2 == nullptr)
     return t1;
   t1->val += t2->val;
   t1->left = mergeTrees(t1->left, t2->left);
   t1->right = mergeTrees(t1->right, t2->right);
-  return t1; 
+  return t1;
 }
 
 std::vector<std::vector<int>> Solution::levelOrder(Node *root) {
-  if(root == nullptr)
+  if (root == nullptr)
     return {};
   std::vector<std::vector<int>> res;
   std::queue<Node *> q;
@@ -912,12 +912,12 @@ std::vector<std::vector<int>> Solution::levelOrder(Node *root) {
 }
 
 int Solution::fib(int N) {
-  if(N < 2)
+  if (N < 2)
     return N;
   int f0 = 0;
   int f1 = 1;
   int res = 0;
-  for(int i = 1; i < N; i++) {
+  for (int i = 1; i < N; i++) {
     res = f0 + f1;
     f0 = f1;
     f1 = res;
@@ -925,16 +925,112 @@ int Solution::fib(int N) {
   return res;
 }
 
-std::vector<int> Solution::sortArrayByParity(std::vector<int>& A) {
+std::vector<int> Solution::sortArrayByParity(std::vector<int> &A) {
   size_t i = 0, j = A.size() - 1;
   while (i < j) {
-    if(A[i] % 2 > A[j] % 2) {
+    if (A[i] % 2 > A[j] % 2) {
       int tmp = A[i];
       A[i] = A[j];
       A[j] = tmp;
     }
-    if(A[i] % 2 == 0) i++;
-    if(A[j] % 2 == 1) j--;
+    if (A[i] % 2 == 0)
+      i++;
+    if (A[j] % 2 == 1)
+      j--;
   }
-   return A;
+  return A;
+}
+
+int Solution::Reverse(int x) {
+  int res = 0;
+  while (x) {
+    int pop = x % 10;
+    x /= 10;
+    if (res > INT32_MAX / 10 || (res == INT32_MAX / 10 && pop > 7))
+      return 0;
+    if (res < INT32_MIN / 10 || (res == INT32_MIN / 10 && pop < -8))
+      return 0;
+  }
+  return res;
+}
+
+int Solution::Atoi(std::string str) {
+  if (str.empty())
+    return 0;
+  int sign = 1;
+  int bas = 0;
+  size_t i = 0;
+  size_t len = str.size();
+  while (str[i] == ' ')
+    i++;
+  if (str[i] == '-' || str[i] == '+')
+    sign = str[i++] == '-' ? -1 : 1;
+  while (i < len && str[i] >= '0' && str[i] <= '9') {
+    if (bas > INT32_MAX / 10 || (bas == INT32_MAX / 10 && str[i] - '0' > 7)) {
+      return sign == 1 ? INT32_MAX : INT32_MIN;
+    }
+    bas = 10 * bas + (str[i++] - '0');
+  }
+  return bas * sign;
+}
+
+bool Solution::IsPalindrome(int x) {
+  if (x < 0 || (x != 0 && x % 10 == 0))
+    return false;
+  int res = 0;
+  while (res < x) {
+    res = res * 10 + x % 10;
+    x /= 10;
+  }
+  return (x == res || x == res / 10);
+}
+
+bool Solution::IsMatch(std::string s, std::string p) {
+  size_t m = s.size(), n = p.size();
+  std::vector<std::vector<bool>> f(m + 1, std::vector<bool>(n + 1, false));
+  f[0][0] = true;
+  for (size_t i = 1; i <= m; i++)
+    f[i][0] = false;
+  for (size_t j = 1; j <= n; j++)
+    f[0][j] = j > 1 && '*' == p[j - 1] && f[0][j - 2];
+
+  for (size_t i = 1; i <= m; i++)
+    for (size_t j = 1; j <= n; j++)
+      if (p[j - 1] != '*')
+        f[i][j] = f[i - 1][j - 1] && (s[i - 1] == p[j - 1] || '.' == p[j - 1]);
+      else
+        f[i][j] = f[i][j - 2] ||
+                  (s[i - 1] == p[j - 2] || '.' == p[j - 2]) && f[i - 1][j];
+  return f[m][n];
+}
+
+std::string Solution::intToRoman(int num) {
+  std::vector<std::string> M = {"", "M", "MM", "MMM"};
+  std::vector<std::string> C = {"",  "C",  "CC",  "CCC",  "CD",
+                                "D", "DC", "DCC", "DCCC", "CM"};
+  std::vector<std::string> X = {"",  "X",  "XX",  "XXX",  "XL",
+                                "L", "LX", "LXX", "LXXX", "XC"};
+  std::vector<std::string> I = {"",  "I",  "II",  "III",  "IV",
+                                "V", "VI", "VII", "VIII", "IX"};
+  return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] +
+         I[num % 10];
+}
+
+int Solution::romanToInteger(std::string s) {
+  std::unordered_map<char, int> dic = {{'I', 1},   {'V', 5},   {'X', 10},
+                                       {'L', 50},  {'C', 100}, {'D', 500},
+                                       {'M', 1000}};
+  int value = 0;
+  char prev = s[0];
+  for (auto &curr : s) {
+    value += dic[curr];
+    if (dic[prev] < dic[curr])
+      value -= dic[prev] * 2;
+    prev = curr;
+  }
+  return value;
+}
+
+std::string Solution::longestCommonPrefix(std::vector<std::string>& strs){
+  //TODO
 }
