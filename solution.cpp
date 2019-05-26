@@ -210,10 +210,47 @@ void Solution::reverseString(std::vector<char> &s) {
   }
 }
 
-// TODO: fourSum
 std::vector<std::vector<int>> Solution::fourSum(std::vector<int> &nums,
                                                 int target) {
-  return std::vector<std::vector<int>>();
+  std::vector<std::vector<int>> res;
+  size_t n = nums.size();
+  if (n < 4)
+    return res;
+  std::sort(nums.begin(), nums.end());
+  for (size_t i = 0; i < n - 3; i++) {
+    if (i > 0 && nums[i] == nums[i - 1])
+      continue;
+    if (nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target)
+      break;
+    if (nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] < target)
+      continue;
+    for (size_t j = i + 1; j < n - 2; j++) {
+      if(j > i + 1 && nums[j] == nums[j - 1])continue;
+      if (nums[i] + nums[j] + nums[j + 1] + nums[j + 2] > target)
+        break;
+      if (nums[i] + nums[j] + nums[n - 2] + nums[n - 1] < target)
+        continue;
+      size_t left = j + 1, right = n - 1;
+      while (left < right) {
+        int sum = nums[left] + nums[right] + nums[i] + nums[j];
+        if (sum < target)
+          left++;
+        else if (sum > target)
+          right--;
+        else {
+          res.push_back(
+              std::vector<int>{nums[i], nums[j], nums[left], nums[right]});
+          do {
+            left++;
+          } while (nums[left] == nums[left - 1] && left < right);
+          do {
+            right--;
+          } while (nums[right] == nums[right + 1] && left < right);
+        }
+      }
+    }
+  }
+  return res;
 }
 
 int Solution::singleNumber(std::vector<int> &nums) {
