@@ -137,6 +137,26 @@ public:
   static ListNode* removeNthFromEnd(ListNode* head, int n);
 
   /**
+   * 20. Valid Parentheses
+  */
+  static bool isValid(std::string s);
+
+  /**
+   * 21. Merge Two Sorted Lists
+  */
+  static ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
+
+  /**
+  * 28. Implement strStr()
+  */
+  static int strStr(std::string haystack, std::string needle);
+
+  /**
+   * 29. Divide Two Integers
+  */
+  static int divide(int dividend, int divisor);
+
+  /**
    * 33. Search in Rotated Sorted Array
    */
   static int search(std::vector<int> &nums, int target);
@@ -248,7 +268,7 @@ public:
   static int maxDepth(TreeNode *root);
   static int minDepth(TreeNode *root);
   static bool hasPathSum(TreeNode *root, int sum);
-  static int divide(int dividend, int divisor);
+
 
   /**
    *
@@ -258,11 +278,11 @@ public:
   static std::vector<int> plus_one(std::vector<int> &digits);
   static void move_zeroes(std::vector<int> &nums);
   static std::vector<std::vector<std::string>> solve_NQueens(int n);
-  static bool isValid(std::string s);
+
   static std::vector<std::string> readBinaryWatch(int num);
   static bool isSameTree(TreeNode *p, TreeNode *q);
   static int firstMissingPositive(std::vector<int> &nums);
-  static int strStr(std::string haystack, std::string needle);
+
 
 private:
   static ListNode *split(ListNode *head, int n);

@@ -225,7 +225,8 @@ std::vector<std::vector<int>> Solution::fourSum(std::vector<int> &nums,
     if (nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] < target)
       continue;
     for (size_t j = i + 1; j < n - 2; j++) {
-      if(j > i + 1 && nums[j] == nums[j - 1])continue;
+      if (j > i + 1 && nums[j] == nums[j - 1])
+        continue;
       if (nums[i] + nums[j] + nums[j + 1] + nums[j + 2] > target)
         break;
       if (nums[i] + nums[j] + nums[n - 2] + nums[n - 1] < target)
@@ -1068,6 +1069,54 @@ int Solution::romanToInteger(std::string s) {
   return value;
 }
 
-std::string Solution::longestCommonPrefix(std::vector<std::string>& strs){
-  //TODO
+std::string Solution::longestCommonPrefix(std::vector<std::string> &strs) {
+  // TODO
+}
+
+ListNode *Solution::removeNthFromEnd(ListNode *head, int n) {
+  ListNode *dummy(0);
+  dummy->next = head;
+  ListNode *first = dummy;
+  ListNode *second = dummy;
+  for (int i = 1; i <= n + 1; i++)
+    first = first->next;
+  while (first != nullptr) {
+    first = first->next;
+    second = second->next;
+  }
+  second->next = second->next->next;
+  return dummy->next;
+}
+
+ListNode *Solution::mergeTwoLists(ListNode *l1, ListNode *l2) {
+  // Recursive
+  if(l1 == nullptr) return l2;
+  if(l2 == nullptr) return l1;
+  ListNode* ans = nullptr;
+  if(l1->val < l2->val){
+    ans = l1;
+    ans->next = mergeTwoLists(l1->next, l2);
+  }else{
+    ans = l2;
+    ans->next = mergeTwoLists(l1, l2->next);
+  }
+  return ans;
+  // Iteratively
+  //ListNode* point(0);
+  //ListNode* head = point;
+  //while (l1 != nullptr && l2 != nullptr) {
+  //    if (l1->val <= l2->val) {
+  //        point->next = l1;
+  //        l1 = l1->next;
+  //    } else {
+  //        point->next = l2;
+  //        l2 = l2->next;
+  //    }
+  //    point = point->next;
+  //}
+  //if (l1 == nullptr)
+  //    point->next = l2;
+  //if(l2 == nullptr)
+  //    point->next = l1;
+  //return head->next;
 }
