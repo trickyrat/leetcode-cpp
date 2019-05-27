@@ -162,9 +162,34 @@ public:
   static int search(std::vector<int> &nums, int target);
 
   /**
+   * 34. Find First and Last Position of Element in Sorted Array
+  */
+  static std::vector<int> searchRange(std::vector<int>& nums, int target);
+
+  /**
+   * 35. Search Insert Position
+  */
+  static int searchInsert(std::vector<int>& nums, int target);
+
+  /**
+   * 37. Sudoku Solver
+  */
+  static void solveSudoku(std::vector<std::vector<char>>& board);
+
+  /**
+   * 41. First Missing Positive
+  */
+  static int firstMissingPositive(std::vector<int> &nums);
+
+  /**
    * 50. Power(x, n)
    */
   static double myPower(double x, int n);
+
+  /**
+   * 51. N-Queens
+  */
+  static std::vector<std::vector<std::string>> solveNQueens(int n);
 
   /** 
    * 55. Jump Game
@@ -172,19 +197,84 @@ public:
   static bool canJump(std::vector<int> &nums);
 
   /**
+   * 66. Plus One
+  */
+  static std::vector<int> plusOne(std::vector<int> &digits);
+
+  /**
+   * 67. Add Binary
+  */
+  static std::string addBinary(std::string a, std::string b);
+
+  /**
    * 69. Sqrt(x)
    */
   static int mySqrt(int x);
+
+  /**
+   * 70. Climb Stairs
+  */
+  static int climbStairs(int n);
+
+  /**
+   * 77. Combinations
+  */
+  static std::vector<std::vector<int>> combine(int n, int k);
+
+  /**
+   * 100. Same Tree
+  */
+  static bool isSameTree(TreeNode *p, TreeNode *q);
+
+  /**
+   * 101. Symmetric Tree
+  */
+  static bool isSymmetric(TreeNode *root);
+
+  /**
+   * 104. Maximum Depth of Binary Tree
+  */
+  static int maxDepth(TreeNode *root);
+
+  /**
+   * 107. Binary Tree Level Order Traversal II
+  */
+  static std::vector<std::vector<int>> levelOrderBottom(TreeNode *root); 
+
+  /**
+   * 111. Minimum Depth of Binary Tree
+  */
+  static int minDepth(TreeNode *root);
+
+  /**
+   *  112. Path Sum
+   */
+  static bool hasPathSum(TreeNode *root, int sum);
+
+  /**
+   * 118. Pascal's Triangle
+  */
+  static std::vector<std::vector<int>> generate(int numRows);
 
   /**
    * 136. Single Number
   */
   static int singleNumber(std::vector<int> &nums);
 
-  /** 
-   * 268. Missing Number
+  /**
+   * 141. Linked List Cycle
+  */
+  static bool hasCycle(ListNode *head);
+
+  /**
+   * 148. Sort List
    */
-  static int missingNumber(std::vector<int> &nums);
+  static ListNode *sortList(ListNode *head);
+
+  /**
+   * 190. Reverse Bits
+  */
+  static uint32_t reverseBits(uint32_t n);
 
   /**
    * 198. House Robber
@@ -196,24 +286,40 @@ public:
    */
   static bool isAnagram(std::string s, std::string t);
 
+  /** 
+   * 268. Missing Number
+   */
+  static int missingNumber(std::vector<int> &nums);
+
+  /**
+   * 283. Move Zeroes
+  */
+  static void move_zeroes(std::vector<int> &nums);
+
   /**
    * 287. Find the Duplicate Number
    */
   static int findDuplicate(std::vector<int> &nums);
 
   /**
+   * 344. Reverse String
+  */
+  static void reverseString(std::vector<char> &s);
+
+  /**
+   * 401. Binary Watch
+  */
+  static std::vector<std::string> readBinaryWatch(int num);
+
+  /**
    * 429. N-ary Tree Level Order Traversal
   */
-  static std::vector<std::vector<int>> levelOrderBottom(TreeNode *root);
+  static std::vector<std::vector<int>> levelOrder(Node *root);
 
   /**
    * 509. Fibonacci Number
   */
   static int fib(int N);
-
-  static std::vector<std::vector<int>> levelOrder(Node *root);
-
-  static void reverseString(std::vector<char> &s);
 
   /**
    * 617. Merge Two Binary Trees
@@ -235,10 +341,21 @@ public:
    */
   static int peakIndexInMountainArray(std::vector<int> &A);
 
+  /**
+   * 876. Middle of the Linked List
+  */
+  static ListNode *middleNode(ListNode *head);
+
   /** 
    * 883. Projection Area of 3D Shapes
    */
   static int projectionArea(std::vector<std::vector<int>> &grid);
+
+  /**
+   * 884. Uncommon Words from Two Sentences
+  */
+  static std::vector<std::string> uncommonFromSentences(std::string A,
+                                                        std::string B);
 
   /** 
    * 892. Surface Area of 3D Shapes
@@ -253,46 +370,24 @@ public:
   /** 
    * 938. Range Sum of BST
    */
-
-  static ListNode *middleNode(ListNode *head);
-  static std::vector<std::string> uncommonFromSentences(std::string A,
-                                                        std::string B);
-  static std::vector<std::vector<int>> combine(int n, int k);
-  static uint32_t reverseBits(uint32_t n);
-  static std::vector<std::vector<int>> generate(int numRows);
-  static bool isSymmetric(TreeNode *root);
-  static bool isMirror(TreeNode *l1, TreeNode *l2);
-  static bool hasCycle(ListNode *head);
-  static std::string addBinary(std::string a, std::string b);
-  static int climbStairs(int n);
-  static int maxDepth(TreeNode *root);
-  static int minDepth(TreeNode *root);
-  static bool hasPathSum(TreeNode *root, int sum);
-
-
-  /**
-   *
-   */
-  static ListNode *sortList(ListNode *head);
-
-  static std::vector<int> plus_one(std::vector<int> &digits);
-  static void move_zeroes(std::vector<int> &nums);
-  static std::vector<std::vector<std::string>> solve_NQueens(int n);
-
-  static std::vector<std::string> readBinaryWatch(int num);
-  static bool isSameTree(TreeNode *p, TreeNode *q);
-  static int firstMissingPositive(std::vector<int> &nums);
-
+  static int rangeSumBST(TreeNode* root, int L, int R);
 
 private:
+  static bool isMirror(TreeNode *l1, TreeNode *l2);
+
+  static bool doSolve(std::vector<std::vector<char>>& board, int row, int col); 
+  static bool isValid(std::vector<std::vector<char>>& board, int row, int col, char num);
+
   static ListNode *split(ListNode *head, int n);
   static ListNode *merge(ListNode *l1, ListNode *l2, ListNode *head);
   static std::string preProcess(std::string s);
+  
   static bool isValid(std::vector<std::string> &nQueens, int row, int col,
                       int &n);
   static void solve_NQueens(std::vector<std::vector<std::string>> &res,
                             std::vector<std::string> nQueens,
                             std::vector<int> &flag, int row, int &n);
+  
   static std::vector<int> kmpProcess(std::string &needle);
 };
 

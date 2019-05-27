@@ -749,7 +749,7 @@ bool Solution::canJump(std::vector<int> &nums) {
   return i == n;
 }
 
-std::vector<int> Solution::plus_one(std::vector<int> &digits) {
+std::vector<int> Solution::plusOne(std::vector<int> &digits) {
   for (size_t i = digits.size(); i--; digits[i] = 0)
     if (digits[i]++ < 9)
       return digits;
@@ -776,7 +776,7 @@ std::string Solution::preProcess(std::string s) {
   return ret;
 }
 
-std::vector<std::vector<std::string>> Solution::solve_NQueens(int n) {
+std::vector<std::vector<std::string>> Solution::solveNQueens(int n) {
   std::vector<std::vector<std::string>> res;
   std::vector<std::string> nQueens(n, std::string(n, '.'));
   std::vector<int> flag(5 * n - 2, 1);
@@ -1090,21 +1090,23 @@ ListNode *Solution::removeNthFromEnd(ListNode *head, int n) {
 
 ListNode *Solution::mergeTwoLists(ListNode *l1, ListNode *l2) {
   // Recursive
-  if(l1 == nullptr) return l2;
-  if(l2 == nullptr) return l1;
-  ListNode* ans = nullptr;
-  if(l1->val < l2->val){
+  if (l1 == nullptr)
+    return l2;
+  if (l2 == nullptr)
+    return l1;
+  ListNode *ans = nullptr;
+  if (l1->val < l2->val) {
     ans = l1;
     ans->next = mergeTwoLists(l1->next, l2);
-  }else{
+  } else {
     ans = l2;
     ans->next = mergeTwoLists(l1, l2->next);
   }
   return ans;
   // Iteratively
-  //ListNode* point(0);
-  //ListNode* head = point;
-  //while (l1 != nullptr && l2 != nullptr) {
+  // ListNode* point(0);
+  // ListNode* head = point;
+  // while (l1 != nullptr && l2 != nullptr) {
   //    if (l1->val <= l2->val) {
   //        point->next = l1;
   //        l1 = l1->next;
@@ -1114,9 +1116,93 @@ ListNode *Solution::mergeTwoLists(ListNode *l1, ListNode *l2) {
   //    }
   //    point = point->next;
   //}
-  //if (l1 == nullptr)
+  // if (l1 == nullptr)
   //    point->next = l2;
-  //if(l2 == nullptr)
+  // if(l2 == nullptr)
   //    point->next = l1;
-  //return head->next;
+  // return head->next;
 }
+
+void Solution::solveSudoku(std::vector<std::vector<char>> &board) {
+  doSolve(board, 0, 0);
+}
+bool Solution::isValid(std::vector<std::vector<char>> &board, int row, int col,
+                       char num) {
+  int blkrow = (row / 3) * 3, blkcol = (col / 3) * 3;
+  for (int i = 0; i < 9; i++)
+    if (board[i][col] == num || board[row][i] == num ||
+        board[blkrow + i / 3][blkcol + i % 3] == num)
+      return false;
+  return true;
+}
+
+bool Solution::doSolve(std::vector<std::vector<char>> &board, int row,
+                       int col) {
+  for (int i = row; i < 9; i++, col = 0) {
+    for (int j = col; j < 9; j++) {
+      if (board[i][j] != '.')
+        continue;
+      for (char num = '1'; num <= '9'; num++) {
+        if (isValid(board, i, j, num)) {
+          board[i][j] = num;
+          if (doSolve(board, i, j + 1))
+            return true;
+          board[i][j] = '.';
+        }
+      }
+      return false;
+    }
+  }
+  return true;
+}
+
+std::vector<int> Solution::searchRange(std::vector<int> &nums, int target) {
+  // binary-search
+  if(nums.empty())
+    return {-1,-1};
+  int lo = 0, hi = nums.size() - 1;
+  while(lo < hi){
+    int mid = lo + (hi - lo) / 2;
+    if(nums[mid] >= target)
+      hi = mid;
+    else
+      lo = mid + 1;
+  }
+  int first = (nums[lo] == target ? lo : -1);
+  if(first == -1)
+    return {-1, -1};
+  lo = first, hi = nums.size() - 1;
+  while(lo < hi) {
+    int mid = lo + (hi - lo + 1) / 2;
+    if(nums[mid] <= target)
+      lo = mid;
+    else
+      hi = mid - 1;
+  }
+  return {first, lo};
+}
+int Solution::searchInsert(std::vector<int>& nums, int target){
+  int lo = 0, hi = nums.size() - 1;
+  while(lo < hi){
+    int mid = lo + (hi - lo) / 2;
+    if(nums[mid] < target)
+      lo = mid + 1;
+    else
+      hi = mid;
+  }
+  return nums[lo] < target ? lo + 1 : lo;
+}
+
+int Solution::rangeSumBST(TreeNode* root, int L, int R){
+  int sum = 0;
+  if(root == nullptr)
+    return sum;
+  if(root->val > L)
+    sum += rangeSumBST(root->left, L, R);
+  if(root->val < R)
+    sum += rangeSumBST(root->right, L, R);
+  if(root->val >= L && root->val <= R)
+    sum += root->val;
+  return sum;
+}
+
