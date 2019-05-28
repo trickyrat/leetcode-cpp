@@ -571,15 +571,15 @@ bool Solution::hasPathSum(TreeNode *root, int sum) {
 
 int Solution::divide(int dividend, int divisor) {
   // divisor = 0 dividend = INT_MIN  divisor = -1
-  if (!divisor || (dividend == INT32_MIN && divisor == -1))
+  if (divisor == 0 || (dividend == INT32_MIN && divisor == -1))
     return INT32_MAX;
-  int sign = ((dividend < 0) ^ (divisor < 0)) ? -1 : 1;
-  auto dvd = labs(dividend);
-  auto dvs = labs(divisor);
-  int res = 0;
+  int sign = dividend < 0 ^ divisor < 0 ? -1 : 1;
+  long dvd = labs(dividend);
+  long dvs = labs(divisor);
+  long res = 0;
   while (dvd >= dvs) {
-    auto tmp = dvs;
-    auto multiple = 1;
+    long tmp = dvs;
+    int multiple = 1;
     while (dvd >= (tmp << 1)) {
       tmp <<= 1;
       multiple <<= 1;
@@ -587,7 +587,7 @@ int Solution::divide(int dividend, int divisor) {
     dvd -= tmp;
     res += multiple;
   }
-  return sign == 1 ? res : -res;
+  return sign * res;
 }
 
 std::vector<std::vector<int>> Solution::levelOrderBottom(TreeNode *root) {
