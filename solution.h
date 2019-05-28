@@ -147,6 +147,11 @@ public:
   static ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
 
   /**
+   * 22. Generate Parentheses
+  */
+  static std::vector<std::string> generateParenthesis(int n);
+
+  /**
   * 28. Implement strStr()
   */
   static int strStr(std::string haystack, std::string needle);
@@ -155,6 +160,11 @@ public:
    * 29. Divide Two Integers
   */
   static int divide(int dividend, int divisor);
+
+  /**
+   * 30. 
+  */
+
 
   /**
    * 33. Search in Rotated Sorted Array

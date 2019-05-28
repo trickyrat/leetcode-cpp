@@ -1206,3 +1206,15 @@ int Solution::rangeSumBST(TreeNode* root, int L, int R){
   return sum;
 }
 
+std::vector<std::string> Solution::generateParenthesis(int n){
+  std::vector<std::string> ans;
+  if (n == 0)
+    ans.push_back("");
+  else {
+    for (int c = 0; c < n; c++)
+      for (std::string left : generateParenthesis(c))
+        for (std::string right : generateParenthesis(n - 1 - c))
+          ans.push_back("(" + left + ")" + right);
+  }
+  return ans;
+}
