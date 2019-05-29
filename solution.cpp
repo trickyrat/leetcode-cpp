@@ -1104,8 +1104,8 @@ ListNode *Solution::mergeTwoLists(ListNode *l1, ListNode *l2) {
   }
   return ans;
   // Iteratively
-  // ListNode* point(0);
-  // ListNode* head = point;
+  // ListNode head(0);
+  // ListNode* point = &head;
   // while (l1 != nullptr && l2 != nullptr) {
   //    if (l1->val <= l2->val) {
   //        point->next = l1;
@@ -1120,7 +1120,7 @@ ListNode *Solution::mergeTwoLists(ListNode *l1, ListNode *l2) {
   //    point->next = l2;
   // if(l2 == nullptr)
   //    point->next = l1;
-  // return head->next;
+  // return head.next;
 }
 
 void Solution::solveSudoku(std::vector<std::vector<char>> &board) {
@@ -1217,4 +1217,26 @@ std::vector<std::string> Solution::generateParenthesis(int n){
           ans.push_back("(" + left + ")" + right);
   }
   return ans;
+}
+
+ListNode* Solution::mergeKLists(std::vector<ListNode*>& lists){
+  int len = lists.size();
+  int interval = 1;
+  while(interval < len){
+    for(int i = 0; i < len -interval; i += interval * 2)
+      lists[i] = mergeTwoLists(lists[i], lists[i + interval]);
+    interval *= 2;
+  }
+  return len > 0 ? lists[0] : nullptr;
+}
+
+ListNode* Solution::swapPairs(ListNode* head){
+  ListNode** pp = &head, *a, *b;
+  while((a = *pp) && (b = a->next)){
+    a->next = b->next;
+    b->next = a;
+    *pp = b;
+    pp = &(a->next);
+  }
+  return head;
 }

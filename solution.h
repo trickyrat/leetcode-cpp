@@ -152,6 +152,16 @@ public:
   static std::vector<std::string> generateParenthesis(int n);
 
   /**
+   * 23. Merge K Sorted Lists
+  */
+  static ListNode* mergeKLists(std::vector<ListNode*>& lists);
+
+  /**
+   * 24. Swap Node in Pairs
+  */
+  static ListNode* swapPairs(ListNode* head);
+
+  /**
   * 28. Implement strStr()
   */
   static int strStr(std::string haystack, std::string needle);
@@ -160,11 +170,6 @@ public:
    * 29. Divide Two Integers
   */
   static int divide(int dividend, int divisor);
-
-  /**
-   * 30. 
-  */
-
 
   /**
    * 33. Search in Rotated Sorted Array
