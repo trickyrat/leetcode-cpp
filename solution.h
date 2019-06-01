@@ -162,6 +162,21 @@ public:
   static ListNode* swapPairs(ListNode* head);
 
   /**
+   * 25. Reverse Nodes in k-Group
+  */
+  static ListNode* reverseKGroup(ListNode* head, int k);
+
+  /**
+   * 26. Remove Duplicates from Sorted Array
+  */
+  static int removeDuplicates(std::vector<int>& nums);
+
+  /**
+   * 27. Remove Element
+  */
+  static int removeElement(std::vector<int>& nums, int val);
+
+  /**
   * 28. Implement strStr()
   */
   static int strStr(std::string haystack, std::string needle);

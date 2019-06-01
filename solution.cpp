@@ -1158,34 +1158,34 @@ bool Solution::doSolve(std::vector<std::vector<char>> &board, int row,
 
 std::vector<int> Solution::searchRange(std::vector<int> &nums, int target) {
   // binary-search
-  if(nums.empty())
-    return {-1,-1};
+  if (nums.empty())
+    return {-1, -1};
   int lo = 0, hi = nums.size() - 1;
-  while(lo < hi){
+  while (lo < hi) {
     int mid = lo + (hi - lo) / 2;
-    if(nums[mid] >= target)
+    if (nums[mid] >= target)
       hi = mid;
     else
       lo = mid + 1;
   }
   int first = (nums[lo] == target ? lo : -1);
-  if(first == -1)
+  if (first == -1)
     return {-1, -1};
   lo = first, hi = nums.size() - 1;
-  while(lo < hi) {
+  while (lo < hi) {
     int mid = lo + (hi - lo + 1) / 2;
-    if(nums[mid] <= target)
+    if (nums[mid] <= target)
       lo = mid;
     else
       hi = mid - 1;
   }
   return {first, lo};
 }
-int Solution::searchInsert(std::vector<int>& nums, int target){
+int Solution::searchInsert(std::vector<int> &nums, int target) {
   int lo = 0, hi = nums.size() - 1;
-  while(lo < hi){
+  while (lo < hi) {
     int mid = lo + (hi - lo) / 2;
-    if(nums[mid] < target)
+    if (nums[mid] < target)
       lo = mid + 1;
     else
       hi = mid;
@@ -1193,20 +1193,20 @@ int Solution::searchInsert(std::vector<int>& nums, int target){
   return nums[lo] < target ? lo + 1 : lo;
 }
 
-int Solution::rangeSumBST(TreeNode* root, int L, int R){
+int Solution::rangeSumBST(TreeNode *root, int L, int R) {
   int sum = 0;
-  if(root == nullptr)
+  if (root == nullptr)
     return sum;
-  if(root->val > L)
+  if (root->val > L)
     sum += rangeSumBST(root->left, L, R);
-  if(root->val < R)
+  if (root->val < R)
     sum += rangeSumBST(root->right, L, R);
-  if(root->val >= L && root->val <= R)
+  if (root->val >= L && root->val <= R)
     sum += root->val;
   return sum;
 }
 
-std::vector<std::string> Solution::generateParenthesis(int n){
+std::vector<std::string> Solution::generateParenthesis(int n) {
   std::vector<std::string> ans;
   if (n == 0)
     ans.push_back("");
@@ -1219,24 +1219,63 @@ std::vector<std::string> Solution::generateParenthesis(int n){
   return ans;
 }
 
-ListNode* Solution::mergeKLists(std::vector<ListNode*>& lists){
+ListNode *Solution::mergeKLists(std::vector<ListNode *> &lists) {
   int len = lists.size();
   int interval = 1;
-  while(interval < len){
-    for(int i = 0; i < len -interval; i += interval * 2)
+  while (interval < len) {
+    for (int i = 0; i < len - interval; i += interval * 2)
       lists[i] = mergeTwoLists(lists[i], lists[i + interval]);
     interval *= 2;
   }
   return len > 0 ? lists[0] : nullptr;
 }
 
-ListNode* Solution::swapPairs(ListNode* head){
-  ListNode** pp = &head, *a, *b;
-  while((a = *pp) && (b = a->next)){
+ListNode *Solution::swapPairs(ListNode *head) {
+  ListNode **pp = &head, *a, *b;
+  while ((a = *pp) && (b = a->next)) {
     a->next = b->next;
     b->next = a;
     *pp = b;
     pp = &(a->next);
   }
   return head;
+}
+
+ListNode *Solution::reverseKGroup(ListNode *head, int k) {
+  int n = 0;
+  for (ListNode *i = head; i; n++, i = i->next)
+    ;
+  ListNode dummy(-1);
+  dummy.next = head;
+  for (ListNode *prev = &dummy, *tail = head; n >= k; n -= k) {
+    for (int i = 1; i < k; i++) {
+      ListNode *next = tail->next->next;
+      tail->next->next = prev->next;
+      prev->next = tail->next;
+      tail->next = next;
+    }
+    prev = tail;
+    tail = tail->next;
+  }
+  return dummy.next;
+}
+
+int Solution::removeDuplicates(std::vector<int> &nums) {
+  int i = nums.size() > 0 ? 1 : 0;
+  for (int n : nums)
+    if (n > nums[i - 1])
+      nums[i++] = n;
+  return i;
+}
+
+int Solution::removeElement(std::vector<int>& nums, int val) {
+  int len = nums.size();
+  int found = 0;
+  for (int i = 0; i < len; i++) {
+    if (found > 0)
+      nums[i - found] = nums[i];
+    if (nums[i] == val)
+      found++;
+  }
+  return len - found;
 }
