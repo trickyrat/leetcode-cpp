@@ -187,6 +187,11 @@ public:
   static int divide(int dividend, int divisor);
 
   /**
+   * 30. Substring with Concatenation of All Words
+  */
+  static std::vector<int> findSubstring(std::string s, std::vector<std::string>& words);
+
+  /**
    * 33. Search in Rotated Sorted Array
    */
   static int search(std::vector<int> &nums, int target);
@@ -324,7 +329,7 @@ public:
   /**
    * 283. Move Zeroes
   */
-  static void move_zeroes(std::vector<int> &nums);
+  static void moveZeroes(std::vector<int> &nums);
 
   /**
    * 287. Find the Duplicate Number
@@ -414,7 +419,7 @@ private:
   
   static bool isValid(std::vector<std::string> &nQueens, int row, int col,
                       int &n);
-  static void solve_NQueens(std::vector<std::vector<std::string>> &res,
+  static void solveNQueens(std::vector<std::vector<std::string>> &res,
                             std::vector<std::string> nQueens,
                             std::vector<int> &flag, int row, int &n);
   
