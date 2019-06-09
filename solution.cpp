@@ -207,8 +207,16 @@ bool Solution::IsMatch(std::string s, std::string p) {
   return f[m][n];
 }
 
-// TODO: maxArea
-int Solution::maxArea(std::vector<int> &height) { return 0; }
+int Solution::maxArea(std::vector<int> &height) { 
+  int maxArea = 0;
+  int left = 0, right = height.size() - 1;
+  while(left < right){
+    maxArea = std::max(maxArea, std::min(height[left], height[right])*(right - left));
+    if(height[left] < height[right])
+      left++;
+  }
+  return maxArea;
+}
 
 std::string Solution::intToRoman(int num) {
   std::vector<std::string> M = {"", "M", "MM", "MMM"};
