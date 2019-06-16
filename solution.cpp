@@ -564,7 +564,8 @@ int Solution::divide(int dividend, int divisor) {
 }
 
 std::vector<int> Solution::findSubstring(std::string s, std::vector<std::string>& words) {
-  
+  std::vector<int> res;
+  return res;
 }
 
 int Solution::search(std::vector<int> &nums, int target) {
@@ -713,6 +714,26 @@ int Solution::climbStairs(int n) {
   return a;
 }
 
+bool Solution::searchMatrix(std::vector<std::vector<int>>& matrix, int target){
+  int row = matrix.size();
+  if(row == 0)
+    return false;
+  int col = matrix[0].size();
+  int low = 0, high = row * col - 1;
+  while (low <= high) {
+    int mid = low + (high - low) / 2;
+    int r = mid / col;
+    int c = mid % col;
+    if (matrix[r][c] > target)
+      high = mid - 1;
+    else if (matrix[r][c] < target)
+      low = mid + 1;
+    else
+      return true;
+  }
+  return false;
+}
+
 std::vector<std::vector<int>> Solution::combine(int n, int k) {
   std::vector<std::vector<int>> res;
   int i = 0;
@@ -780,7 +801,7 @@ int Solution::maxDepth(TreeNode *root) {
   int res = 0;
   std::queue<TreeNode *> q;
   q.push(root);
-  while (!q.empty() > 0) {
+  while (!q.empty()) {
     res++;
     for (int i = 0, n = q.size(); i < n; i++) {
       TreeNode *p = q.front();
@@ -895,6 +916,16 @@ ListNode *Solution::sortList(ListNode *head) {
     }
   }
   return dummy.next;
+}
+
+int Solution::majorityElement(std::vector<int>& nums){
+  int count = 0, candidate = 0;
+  for(auto& num : nums){
+    if(count == 0)
+      candidate = num;
+    count += num == candidate ? 1 : -1;
+  }
+  return candidate;
 }
 
 uint32_t Solution::reverseBits(uint32_t n) {

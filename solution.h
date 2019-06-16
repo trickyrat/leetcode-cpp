@@ -252,6 +252,11 @@ public:
   static int climbStairs(int n);
 
   /**
+   * 74. Search a 2D Matrix
+  */
+  static bool searchMatrix(std::vector<std::vector<int>>& nums, int target);
+
+  /**
    * 77. Combinations
   */
   static std::vector<std::vector<int>> combine(int n, int k);
@@ -305,6 +310,11 @@ public:
    * 148. Sort List
    */
   static ListNode *sortList(ListNode *head);
+
+  /**
+   * 169. Majority Element
+  */
+  static int majorityElement(std::vector<int>& nums);
 
   /**
    * 190. Reverse Bits
