@@ -372,6 +372,10 @@ public:
   static TreeNode *mergeTrees(TreeNode *t1, TreeNode *t2);
 
   /**
+   * 669. Trim a Binary Search Tree
+  */
+  static TreeNode* trimBST(TreeNode* root, int L, int R);
+  /**
    * 709. To Lower Case
    */
   static std::string toLowerCase(std::string str);

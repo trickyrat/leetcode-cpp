@@ -1068,6 +1068,19 @@ TreeNode *Solution::mergeTrees(TreeNode *t1, TreeNode *t2) {
   return t1;
 }
 
+TreeNode* Solution::trimBST(TreeNode* root, int L, int R){
+  // Recursively
+  if(root == nullptr) 
+    return root;
+  if(root->val > R)
+    return trimBST(root->left, L, R);
+  if(root->val < L)
+    return trimBST(root->right, L, R);
+  root->left = trimBST(root->left, L, R);
+  root->right = trimBST(root->right, L, R);
+  return root;
+}
+
 std::string Solution::toLowerCase(std::string str) {
   for (auto &c : str) {
     if ('A' <= c && c <= 'Z')
