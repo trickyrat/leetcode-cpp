@@ -1,10 +1,10 @@
 #include "solution.h"
 
 std::vector<int> Solution::twoSum(std::vector<int> &nums, int target) {
-  auto size = nums.size();
-  std::unordered_map<int, int> hash;
+  size_t size = nums.size();
+  std::unordered_map<int, size_t> hash;
   std::vector<int> result;
-  for (auto i = 0; i < size; i++) {
+  for (size_t i = 0; i < size; i++) {
     int numberToFind = target - nums[i];
     if (hash.find(numberToFind) != hash.end()) {
       result.push_back(hash[numberToFind]);
@@ -621,6 +621,11 @@ int Solution::searchInsert(std::vector<int> &nums, int target) {
       hi = mid;
   }
   return nums[lo] < target ? lo + 1 : lo;
+}
+
+bool Solution::isValidSudoku(std::vector<std::vector<char>> board){
+  // TODO
+  return false;
 }
 
 void Solution::solveSudoku(std::vector<std::vector<char>> &board) {

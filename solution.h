@@ -13,6 +13,7 @@
 #include <stack>
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 class Node {
@@ -205,6 +206,11 @@ public:
    * 35. Search Insert Position
   */
   static int searchInsert(std::vector<int>& nums, int target);
+
+  /**
+   * 36. Valid Sudoku
+  */
+  static bool isValidSudoku(std::vector<std::vector<char>> board);
 
   /**
    * 37. Sudoku Solver
