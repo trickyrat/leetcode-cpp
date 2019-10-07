@@ -645,6 +645,23 @@ int Solution::firstMissingPositive(std::vector<int> &nums) {
   return n + 1;
 }
 
+std::string Solution::multiply(std::string num1, std::string num2) {
+  int m = num1.size(), n = num2.size();
+  std::string sum(m + n, '0');
+  for(int i = m - 1; i >= 0; i--) {
+    for(int j = n - 1; j >= 0; j--) {
+      int mul = (sum[i + j + 1] - '0') + (num1[i] - '0') * (num2[j] - '0');
+      sum[i + j + 1] = mul % 10 + '0';
+      sum[i + j] += mul / 10;
+    }
+  }
+  for(int i = 0; i < m + n; i++) {
+    if(sum[i] != '0')
+      return sum.substr(i);
+  }
+  return "0";
+}
+
 double Solution::myPower(double x, int n) {
   double res = 1.0;
   for (int i = n; i != 0; i /= 2) {

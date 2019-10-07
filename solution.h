@@ -222,6 +222,11 @@ public:
   */
   static int firstMissingPositive(std::vector<int> &nums);
 
+  /*
+   * 43. Multiply String
+  */
+  static std::string multiply(std::string num1, std::string num2);
+
   /**
    * 50. Power(x, n)
    */
