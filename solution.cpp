@@ -633,12 +633,12 @@ void Solution::solveSudoku(std::vector<std::vector<char>> &board) {
 }
 
 int Solution::firstMissingPositive(std::vector<int> &nums) {
-  auto n = nums.size();
-  for (auto i = 0; i < n; i++) {
+  size_t n = nums.size();
+  for (size_t i = 0; i < n; i++) {
     while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i])
       std::swap(nums[i], nums[nums[i] - 1]);
   }
-  for (auto i = 0; i < n; i++) {
+  for (size_t i = 0; i < n; i++) {
     if (nums[i] != i + 1)
       return i + 1;
   }
@@ -770,6 +770,23 @@ std::vector<std::vector<int>> Solution::combine(int n, int k) {
       ++i;
       p[i] = p[i - 1];
     }
+  }
+  return res;
+}
+
+std::vector<int> Solution::inorderTraversal(TreeNode* root) {
+  std::vector<int> res;
+  std::stack<TreeNode*> stack;
+  TreeNode* curr = root;
+  while(curr != nullptr || !stack.empty()) {
+    while(curr != nullptr) {
+      stack.push(curr);
+      curr = curr->left;
+    }
+    curr = stack.top();
+    stack.pop();
+    res.push_back(curr->val);
+    curr = curr->right;
   }
   return res;
 }
@@ -912,6 +929,44 @@ bool Solution::hasCycle(ListNode *head) {
     fast = fast->next->next;
   }
   return true;
+}
+
+std::vector<int> Solution::preorderTraversal(TreeNode* root) {
+  std::vector<int> res;
+  std::stack<TreeNode*> stack;
+  while(root != nullptr) {
+    res.push_back(root->val);
+    if(root -> right != nullptr)
+      stack.push(root->right);
+    root = root->left;
+    if(root == nullptr && !stack.empty()) {
+      root = stack.top();
+      stack.pop();
+    }
+  }
+  return res;
+}
+
+std::vector<int> Solution::postorderTraversal(TreeNode* root) {
+  std::vector<int> res;
+  std::stack<TreeNode*> stack;
+  TreeNode* last = nullptr;
+  while(root || !stack.empty()) {
+    if(root) {
+      stack.push(root);
+      root = root->left;
+    } else {
+      TreeNode* curr = stack.top();
+      if(curr->right && last != curr->right) {
+        root = curr->right;
+      }else{
+        res.push_back(curr->val);
+        last = curr;
+        stack.pop();
+      }
+    }
+  }
+  return res;
 }
 
 ListNode *Solution::sortList(ListNode *head) {
