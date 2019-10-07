@@ -15,6 +15,8 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+#include <mutex>
+#include <functional>
 
 class Node {
 public:
@@ -37,6 +39,29 @@ struct ListNode {
   int val;
   ListNode *next;
   ListNode(int x) : val(x), next(nullptr) {}
+};
+
+class Foo {
+private:
+  std::mutex m1, m2;
+public:
+  Foo() { m1.lock(), m2.lock();}
+
+  void first(std::function<void()> printFirst) {
+    printFirst();
+    m1.unlock();
+  }
+  void second(std::function<void()> printSecond) {
+    m1.lock();
+    printSecond();
+    m1.unlock();
+    m2.unlock();
+  }
+  void third(std::function<void()> printThird) {
+    m2.lock();
+    printThird();
+    m2.unlock();
+  }
 };
 
 class Solution {
@@ -268,6 +293,11 @@ public:
   static std::vector<std::vector<int>> combine(int n, int k);
 
   /**
+   * 94. Binary Tree Inorder Traversal
+  */
+  static std::vector<int> inorderTraversal(TreeNode* root);
+
+  /**
    * 100. Same Tree
   */
   static bool isSameTree(TreeNode *p, TreeNode *q);
@@ -311,6 +341,16 @@ public:
    * 141. Linked List Cycle
   */
   static bool hasCycle(ListNode *head);
+
+  /**
+   * 144. Binary Tree Preorder Traversal
+  */
+  static std::vector<int> preorderTraversal(TreeNode* root);
+
+  /**
+   * 145. Binary Tree Postorder Traversal
+  */
+  static std::vector<int> postorderTraversal(TreeNode* root);
 
   /**
    * 148. Sort List
@@ -426,6 +466,10 @@ public:
    * 938. Range Sum of BST
    */
   static int rangeSumBST(TreeNode* root, int L, int R);
+
+  /**
+   * 1114. Print Order 
+  */
 
 private:
   static bool isMirror(TreeNode *l1, TreeNode *l2);
