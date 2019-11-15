@@ -564,8 +564,30 @@ int Solution::divide(int dividend, int divisor) {
 }
 
 std::vector<int> Solution::findSubstring(std::string s, std::vector<std::string>& words) {
-  std::vector<int> res;
-  return res;
+  std::unordered_map<std::string, int> counts;
+  std::vector<int> indexes;
+  for(std::string word : words)
+    counts[word]++;
+  size_t n = s.length(), num = words.size();
+  if(n == 0 || num == 0)
+    return indexes;
+  size_t len = words[0].length();
+  for(int i = 0; i < n - num * len + 1; i++) {
+    std::unordered_map<std::string, int> seen;
+    int j = 0;
+    for(; j < num; j++) {
+      std::string word = s.substr(i + j * len, len);
+      if(counts.find(word) != counts.end()) {
+        seen[word]++;
+        if(seen[word] > counts[word])
+          break;
+      }
+      else break;
+    }
+    if(j == num)
+     indexes.push_back(i);
+  }
+  return indexes;
 }
 
 int Solution::search(std::vector<int> &nums, int target) {
