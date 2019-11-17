@@ -34,6 +34,34 @@ struct TreeNode {
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
+class BSTIterator {
+private:
+  std::stack<TreeNode*> nodes;
+
+public:
+  BSTIterator(TreeNode* root) {
+    while(root) {
+      nodes.push(root);
+      root = root->left;
+    }
+  }
+  /** @return the next smallest number */
+  int next() {
+    TreeNode* tmp = nodes.top();
+    nodes.pop();
+    TreeNode* right = tmp->right;
+    while(right) {
+      nodes.push(right);
+      right = right->left;
+    }
+    return tmp->val;
+  }
+  /** @return whether we have a next smallest number */
+  bool hasNext() {
+    return !nodes.empty();
+  }
+};
+
 // Definition for singly-linked list.
 struct ListNode {
   int val;
