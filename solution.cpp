@@ -207,12 +207,13 @@ bool Solution::IsMatch(std::string s, std::string p) {
   return f[m][n];
 }
 
-int Solution::maxArea(std::vector<int> &height) { 
+int Solution::maxArea(std::vector<int> &height) {
   int maxArea = 0;
   int left = 0, right = height.size() - 1;
-  while(left < right){
-    maxArea = std::max(maxArea, std::min(height[left], height[right])*(right - left));
-    if(height[left] < height[right])
+  while (left < right) {
+    maxArea = std::max(maxArea,
+                       std::min(height[left], height[right]) * (right - left));
+    if (height[left] < height[right])
       left++;
   }
   return maxArea;
@@ -507,7 +508,7 @@ int Solution::removeDuplicates(std::vector<int> &nums) {
   return i;
 }
 
-int Solution::removeElement(std::vector<int>& nums, int val) {
+int Solution::removeElement(std::vector<int> &nums, int val) {
   int len = nums.size();
   int found = 0;
   for (int i = 0; i < len; i++) {
@@ -563,29 +564,30 @@ int Solution::divide(int dividend, int divisor) {
   return sign * res;
 }
 
-std::vector<int> Solution::findSubstring(std::string s, std::vector<std::string>& words) {
+std::vector<int> Solution::findSubstring(std::string s,
+                                         std::vector<std::string> &words) {
   std::unordered_map<std::string, int> counts;
   std::vector<int> indexes;
-  for(std::string word : words)
+  for (std::string word : words)
     counts[word]++;
   size_t n = s.length(), num = words.size();
-  if(n == 0 || num == 0)
+  if (n == 0 || num == 0)
     return indexes;
   size_t len = words[0].length();
-  for(int i = 0; i < n - num * len + 1; i++) {
+  for (int i = 0; i < n - num * len + 1; i++) {
     std::unordered_map<std::string, int> seen;
     int j = 0;
-    for(; j < num; j++) {
+    for (; j < num; j++) {
       std::string word = s.substr(i + j * len, len);
-      if(counts.find(word) != counts.end()) {
+      if (counts.find(word) != counts.end()) {
         seen[word]++;
-        if(seen[word] > counts[word])
+        if (seen[word] > counts[word])
           break;
-      }
-      else break;
+      } else
+        break;
     }
-    if(j == num)
-     indexes.push_back(i);
+    if (j == num)
+      indexes.push_back(i);
   }
   return indexes;
 }
@@ -645,7 +647,7 @@ int Solution::searchInsert(std::vector<int> &nums, int target) {
   return nums[lo] < target ? lo + 1 : lo;
 }
 
-bool Solution::isValidSudoku(std::vector<std::vector<char>> board){
+bool Solution::isValidSudoku(std::vector<std::vector<char>> board) {
   // TODO
   return false;
 }
@@ -670,15 +672,15 @@ int Solution::firstMissingPositive(std::vector<int> &nums) {
 std::string Solution::multiply(std::string num1, std::string num2) {
   int m = num1.size(), n = num2.size();
   std::string sum(m + n, '0');
-  for(int i = m - 1; i >= 0; i--) {
-    for(int j = n - 1; j >= 0; j--) {
+  for (int i = m - 1; i >= 0; i--) {
+    for (int j = n - 1; j >= 0; j--) {
       int mul = (sum[i + j + 1] - '0') + (num1[i] - '0') * (num2[j] - '0');
       sum[i + j + 1] = mul % 10 + '0';
       sum[i + j] += mul / 10;
     }
   }
-  for(int i = 0; i < m + n; i++) {
-    if(sum[i] != '0')
+  for (int i = 0; i < m + n; i++) {
+    if (sum[i] != '0')
       return sum.substr(i);
   }
   return "0";
@@ -702,40 +704,38 @@ std::vector<std::vector<std::string>> Solution::solveNQueens(int n) {
   return res;
 }
 
-std::vector<int> Solution::spiralOrder(std::vector<std::vector<int>>& matrix) {
+std::vector<int> Solution::spiralOrder(std::vector<std::vector<int>> &matrix) {
   if (matrix.size() == 0)
-      return std::vector<int>(0);
+    return std::vector<int>(0);
   int startRow = 0, startColumn = 0;
   size_t height = matrix.size(), width = matrix[0].size();
   std::vector<int> result;
-  while (true)
-  {
-      if (height == 0 || width == 0)
-          break;
-      for (int col = startColumn; col < startColumn + width; col++)
-          result.push_back(matrix[startRow][col]);
-      startRow++;
-      height--;
-      if (height == 0 || width == 0)
-          break;
-      for (int row = startRow; row < startRow + height; row++)
-          result.push_back(matrix[row][startColumn + width - 1]);
-      width--;
-      if (height == 0 || width == 0)
-          break;
-      for (int col = startColumn + width - 1; col >= startColumn; col--)
-          result.push_back(matrix[startRow + height - 1][col]);
-      height--;
-      if (height == 0 || width == 0)
-          break;
-      for (int row = startRow + height - 1; row >= startRow; row--)
-          result.push_back(matrix[row][startColumn]);
-      startColumn++;
-      width--;
+  while (true) {
+    if (height == 0 || width == 0)
+      break;
+    for (int col = startColumn; col < startColumn + width; col++)
+      result.push_back(matrix[startRow][col]);
+    startRow++;
+    height--;
+    if (height == 0 || width == 0)
+      break;
+    for (int row = startRow; row < startRow + height; row++)
+      result.push_back(matrix[row][startColumn + width - 1]);
+    width--;
+    if (height == 0 || width == 0)
+      break;
+    for (int col = startColumn + width - 1; col >= startColumn; col--)
+      result.push_back(matrix[startRow + height - 1][col]);
+    height--;
+    if (height == 0 || width == 0)
+      break;
+    for (int row = startRow + height - 1; row >= startRow; row--)
+      result.push_back(matrix[row][startColumn]);
+    startColumn++;
+    width--;
   }
   return result;
 }
-
 
 bool Solution::canJump(std::vector<int> &nums) {
   int n = nums.size();
@@ -748,38 +748,101 @@ bool Solution::canJump(std::vector<int> &nums) {
   return i == n;
 }
 
+int Solution::lengthOfLastWord(std::string s) {
+  int len = 0, tail = s.length() - 1;
+  while (tail >= 0 && s[tail] == ' ')
+    tail--;
+  while (tail >= 0 && s[tail] != ' ') {
+    len++;
+    tail--;
+  }
+  return len;
+}
+
 std::vector<std::vector<int>> Solution::generateMatrix(int n) {
   std::vector<std::vector<int>> matrix(n, std::vector<int>(n));
-  if(n == 0)
-      return matrix;
+  if (n == 0)
+    return matrix;
   int startRow = 0, startColumn = 0;
   int index = 1, height = n, width = n;
-  while(true)
-  {
-      if (height == 0 || width == 0)
-          break;
-      for (int col = startColumn; col < startColumn + width; col++)
-          matrix[startRow][col] = index++;
-      startRow++;
-      height--;
-      if (height == 0 || width == 0)
-          break;
-      for (int row = startRow; row < startRow + height; row++)
-          matrix[row][startColumn + width - 1] = index++;
-      width--;
-      if (height == 0 || width == 0)
-          break;
-      for (int col = startColumn + width - 1; col >= startColumn; col--)
-          matrix[startRow + height - 1][col] = index++;
-      height--;
-      if (height == 0 || width == 0)
-          break;
-      for (int row = startRow + height - 1; row >= startRow; row--)
-          matrix[row][startColumn] = index++;
-      startColumn++;
-      width--;
+  while (true) {
+    if (height == 0 || width == 0)
+      break;
+    for (int col = startColumn; col < startColumn + width; col++)
+      matrix[startRow][col] = index++;
+    startRow++;
+    height--;
+    if (height == 0 || width == 0)
+      break;
+    for (int row = startRow; row < startRow + height; row++)
+      matrix[row][startColumn + width - 1] = index++;
+    width--;
+    if (height == 0 || width == 0)
+      break;
+    for (int col = startColumn + width - 1; col >= startColumn; col--)
+      matrix[startRow + height - 1][col] = index++;
+    height--;
+    if (height == 0 || width == 0)
+      break;
+    for (int row = startRow + height - 1; row >= startRow; row--)
+      matrix[row][startColumn] = index++;
+    startColumn++;
+    width--;
   }
   return matrix;
+}
+
+ListNode *Solution::rotateRight(ListNode *head, int k) {
+  if (head == nullptr)
+    return nullptr;
+  if (head->next == nullptr)
+    return head;
+  ListNode *old_tail = head;
+  int n;
+  for (n = 1; old_tail->next; n++)
+    old_tail = old_tail->next;
+  old_tail->next = head;
+  ListNode *new_tail = head;
+  for (int i = 0; i < n - k % n - 1; i++)
+    new_tail = new_tail->next;
+  ListNode *new_head = new_tail->next;
+  new_tail->next = nullptr;
+  return new_head;
+}
+
+int Solution::uniquePaths(int m, int n) {
+  std::vector<int> dp(n, 1);
+  for (int i = 1; i < m; i++)
+    for (int j = 1; j < n; j++)
+      dp[j] += dp[j - 1];
+  return dp[n - 1];
+}
+
+int Solution::uniquePathsWithObstacles(
+    std::vector<std::vector<int>> &obstacleGrid) {
+  // int height = obstacleGrid.size();
+  // int width = obstacleGrid[0].size();
+  // std::vector<long> dp(height, 0);
+  // for(int i = 0; i < height; i++) {
+  //   if(!obstacleGrid[i][0])
+  //     dp[i] = 1;
+  //   else break;
+  // }
+  // for(int j = 1; j < width; j++) {
+  //   bool flag = false;
+  //   if(obstacleGrid[0][j])
+  //     dp[0] = 0;
+  //   else flag = true;
+  //   for(int i = 1;i < height; i++) {
+  //     if(!obstacleGrid[i][j]) {
+  //       dp[i] += dp[i - 1];
+  //       if(dp[i])
+  //         flag = true;
+  //     } else dp[i] = 0;
+  //   }
+  //   if(!flag) return 0;
+  // }
+  // return dp[height - 1];
 }
 
 std::vector<int> Solution::plusOne(std::vector<int> &digits) {
@@ -827,9 +890,9 @@ int Solution::climbStairs(int n) {
   return a;
 }
 
-bool Solution::searchMatrix(std::vector<std::vector<int>>& matrix, int target){
+bool Solution::searchMatrix(std::vector<std::vector<int>> &matrix, int target) {
   int row = matrix.size();
-  if(row == 0)
+  if (row == 0)
     return false;
   int col = matrix[0].size();
   int low = 0, high = row * col - 1;
@@ -865,12 +928,12 @@ std::vector<std::vector<int>> Solution::combine(int n, int k) {
   return res;
 }
 
-std::vector<int> Solution::inorderTraversal(TreeNode* root) {
+std::vector<int> Solution::inorderTraversal(TreeNode *root) {
   std::vector<int> res;
-  std::stack<TreeNode*> stack;
-  TreeNode* curr = root;
-  while(curr != nullptr || !stack.empty()) {
-    while(curr != nullptr) {
+  std::stack<TreeNode *> stack;
+  TreeNode *curr = root;
+  while (curr != nullptr || !stack.empty()) {
+    while (curr != nullptr) {
       stack.push(curr);
       curr = curr->left;
     }
@@ -1001,6 +1064,18 @@ std::vector<std::vector<int>> Solution::generate(int numRows) {
   return res;
 }
 
+bool Solution::isPalindrome(std::string s) {
+  for (int i = 0, j = s.size() - 1; i < j;) {
+    if (!std::isalnum(s[i]))
+      i++;
+    else if (!std::isalnum(s[j]))
+      j--;
+    else if (std::tolower(s[i++]) != std::tolower(s[j--]))
+      return false;
+  }
+  return true;
+}
+
 int Solution::singleNumber(std::vector<int> &nums) {
   int res = 0;
   for (auto &i : nums)
@@ -1022,15 +1097,15 @@ bool Solution::hasCycle(ListNode *head) {
   return true;
 }
 
-std::vector<int> Solution::preorderTraversal(TreeNode* root) {
+std::vector<int> Solution::preorderTraversal(TreeNode *root) {
   std::vector<int> res;
-  std::stack<TreeNode*> stack;
-  while(root != nullptr) {
+  std::stack<TreeNode *> stack;
+  while (root != nullptr) {
     res.push_back(root->val);
-    if(root -> right != nullptr)
+    if (root->right != nullptr)
       stack.push(root->right);
     root = root->left;
-    if(root == nullptr && !stack.empty()) {
+    if (root == nullptr && !stack.empty()) {
       root = stack.top();
       stack.pop();
     }
@@ -1038,19 +1113,19 @@ std::vector<int> Solution::preorderTraversal(TreeNode* root) {
   return res;
 }
 
-std::vector<int> Solution::postorderTraversal(TreeNode* root) {
+std::vector<int> Solution::postorderTraversal(TreeNode *root) {
   std::vector<int> res;
-  std::stack<TreeNode*> stack;
-  TreeNode* last = nullptr;
-  while(root || !stack.empty()) {
-    if(root) {
+  std::stack<TreeNode *> stack;
+  TreeNode *last = nullptr;
+  while (root || !stack.empty()) {
+    if (root) {
       stack.push(root);
       root = root->left;
     } else {
-      TreeNode* curr = stack.top();
-      if(curr->right && last != curr->right) {
+      TreeNode *curr = stack.top();
+      if (curr->right && last != curr->right) {
         root = curr->right;
-      }else{
+      } else {
         res.push_back(curr->val);
         last = curr;
         stack.pop();
@@ -1086,10 +1161,10 @@ ListNode *Solution::sortList(ListNode *head) {
   return dummy.next;
 }
 
-int Solution::majorityElement(std::vector<int>& nums){
+int Solution::majorityElement(std::vector<int> &nums) {
   int count = 0, candidate = 0;
-  for(auto& num : nums){
-    if(count == 0)
+  for (auto &num : nums) {
+    if (count == 0)
       candidate = num;
     count += num == candidate ? 1 : -1;
   }
@@ -1236,26 +1311,26 @@ TreeNode *Solution::mergeTrees(TreeNode *t1, TreeNode *t2) {
   return t1;
 }
 
-TreeNode* Solution::trimBST(TreeNode* root, int L, int R){
+TreeNode *Solution::trimBST(TreeNode *root, int L, int R) {
   // Recursively
-  if(root == nullptr) 
+  if (root == nullptr)
     return root;
-  if(root->val > R)
+  if (root->val > R)
     return trimBST(root->left, L, R);
-  if(root->val < L)
+  if (root->val < L)
     return trimBST(root->right, L, R);
   root->left = trimBST(root->left, L, R);
   root->right = trimBST(root->right, L, R);
   return root;
 }
 
-TreeNode* Solution::searchBST(TreeNode* root, int val) {
-  while(root && root->val != val) 
+TreeNode *Solution::searchBST(TreeNode *root, int val) {
+  while (root && root->val != val)
     root = val < root->val ? root->left : root->right;
   return root;
 }
 
-TreeNode* Solution::insertIntoBST(TreeNode* root, int val) {
+TreeNode *Solution::insertIntoBST(TreeNode *root, int val) {
   // recursive
   // if(root == nullptr
   //     return new TreeNode(val);
@@ -1265,32 +1340,26 @@ TreeNode* Solution::insertIntoBST(TreeNode* root, int val) {
   //     root->left = InsertIntoBST(root->left, val);
   // return root;
   // iterative
-  if(root == nullptr)
-      return new TreeNode(val);
-  TreeNode* currentNode = root;
-  TreeNode* newNode = new TreeNode(val); 
-  while(currentNode)
-  {
-      if(currentNode->val > val)
-      {
-          if(currentNode->left)
-              currentNode = currentNode->left;
-          else 
-          {
-              currentNode->left = newNode;
-              break;
-          }
+  if (root == nullptr)
+    return new TreeNode(val);
+  TreeNode *currentNode = root;
+  TreeNode *newNode = new TreeNode(val);
+  while (currentNode) {
+    if (currentNode->val > val) {
+      if (currentNode->left)
+        currentNode = currentNode->left;
+      else {
+        currentNode->left = newNode;
+        break;
       }
-      else
-      {
-          if(currentNode->right)
-              currentNode = currentNode->right;
-          else
-          {
-              currentNode->right = newNode;
-              break;
-          }
+    } else {
+      if (currentNode->right)
+        currentNode = currentNode->right;
+      else {
+        currentNode->right = newNode;
+        break;
       }
+    }
   }
   return root;
 }
@@ -1521,8 +1590,8 @@ bool Solution::isValid(std::vector<std::string> &nQueens, int row, int col,
 }
 
 void Solution::solveNQueens(std::vector<std::vector<std::string>> &res,
-                             std::vector<std::string> nQueens,
-                             std::vector<int> &flag, int row, int &n) {
+                            std::vector<std::string> nQueens,
+                            std::vector<int> &flag, int row, int &n) {
   if (row == n) {
     res.push_back(nQueens);
     return;
