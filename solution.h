@@ -291,11 +291,20 @@ public:
   */
   static std::vector<std::vector<std::string>> solveNQueens(int n);
 
+  /**
+   * 54. Spiral Matrix
+  */
+  static std::vector<int> spiralOrder(std::vector<std::vector<int>>& matrix);
+
   /** 
    * 55. Jump Game
    */
   static bool canJump(std::vector<int> &nums);
 
+  /**
+   * 59. Spiral Matrix II
+  */
+  static std::vector<std::vector<int>> generateMatrix(int n);
   /**
    * 66. Plus One
   */
@@ -455,6 +464,17 @@ public:
    * 669. Trim a Binary Search Tree
   */
   static TreeNode* trimBST(TreeNode* root, int L, int R);
+
+  /**
+   * 700. Search in a Binary Search Tree
+  */
+  static TreeNode* searchBST(TreeNode* root, int val);
+
+  /**
+   * 701. Insert into a Binary Search Tree
+  */
+  static TreeNode* insertIntoBST(TreeNode* root, int val);
+
   /**
    * 709. To Lower Case
    */

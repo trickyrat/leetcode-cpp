@@ -702,6 +702,41 @@ std::vector<std::vector<std::string>> Solution::solveNQueens(int n) {
   return res;
 }
 
+std::vector<int> Solution::spiralOrder(std::vector<std::vector<int>>& matrix) {
+  if (matrix.size() == 0)
+      return std::vector<int>(0);
+  int startRow = 0, startColumn = 0;
+  size_t height = matrix.size(), width = matrix[0].size();
+  std::vector<int> result;
+  while (true)
+  {
+      if (height == 0 || width == 0)
+          break;
+      for (int col = startColumn; col < startColumn + width; col++)
+          result.push_back(matrix[startRow][col]);
+      startRow++;
+      height--;
+      if (height == 0 || width == 0)
+          break;
+      for (int row = startRow; row < startRow + height; row++)
+          result.push_back(matrix[row][startColumn + width - 1]);
+      width--;
+      if (height == 0 || width == 0)
+          break;
+      for (int col = startColumn + width - 1; col >= startColumn; col--)
+          result.push_back(matrix[startRow + height - 1][col]);
+      height--;
+      if (height == 0 || width == 0)
+          break;
+      for (int row = startRow + height - 1; row >= startRow; row--)
+          result.push_back(matrix[row][startColumn]);
+      startColumn++;
+      width--;
+  }
+  return result;
+}
+
+
 bool Solution::canJump(std::vector<int> &nums) {
   int n = nums.size();
   if (n <= 1)
@@ -711,6 +746,40 @@ bool Solution::canJump(std::vector<int> &nums) {
     reach = std::max(i + nums[i], reach);
   }
   return i == n;
+}
+
+std::vector<std::vector<int>> Solution::generateMatrix(int n) {
+  std::vector<std::vector<int>> matrix(n, std::vector<int>(n));
+  if(n == 0)
+      return matrix;
+  int startRow = 0, startColumn = 0;
+  int index = 1, height = n, width = n;
+  while(true)
+  {
+      if (height == 0 || width == 0)
+          break;
+      for (int col = startColumn; col < startColumn + width; col++)
+          matrix[startRow][col] = index++;
+      startRow++;
+      height--;
+      if (height == 0 || width == 0)
+          break;
+      for (int row = startRow; row < startRow + height; row++)
+          matrix[row][startColumn + width - 1] = index++;
+      width--;
+      if (height == 0 || width == 0)
+          break;
+      for (int col = startColumn + width - 1; col >= startColumn; col--)
+          matrix[startRow + height - 1][col] = index++;
+      height--;
+      if (height == 0 || width == 0)
+          break;
+      for (int row = startRow + height - 1; row >= startRow; row--)
+          matrix[row][startColumn] = index++;
+      startColumn++;
+      width--;
+  }
+  return matrix;
 }
 
 std::vector<int> Solution::plusOne(std::vector<int> &digits) {
@@ -1177,6 +1246,52 @@ TreeNode* Solution::trimBST(TreeNode* root, int L, int R){
     return trimBST(root->right, L, R);
   root->left = trimBST(root->left, L, R);
   root->right = trimBST(root->right, L, R);
+  return root;
+}
+
+TreeNode* Solution::searchBST(TreeNode* root, int val) {
+  while(root && root->val != val) 
+    root = val < root->val ? root->left : root->right;
+  return root;
+}
+
+TreeNode* Solution::insertIntoBST(TreeNode* root, int val) {
+  // recursive
+  // if(root == nullptr
+  //     return new TreeNode(val);
+  // if(val > root->val)
+  //     root->right = InsertIntoBST(root->right, val);
+  // else
+  //     root->left = InsertIntoBST(root->left, val);
+  // return root;
+  // iterative
+  if(root == nullptr)
+      return new TreeNode(val);
+  TreeNode* currentNode = root;
+  TreeNode* newNode = new TreeNode(val); 
+  while(currentNode)
+  {
+      if(currentNode->val > val)
+      {
+          if(currentNode->left)
+              currentNode = currentNode->left;
+          else 
+          {
+              currentNode->left = newNode;
+              break;
+          }
+      }
+      else
+      {
+          if(currentNode->right)
+              currentNode = currentNode->right;
+          else
+          {
+              currentNode->right = newNode;
+              break;
+          }
+      }
+  }
   return root;
 }
 
