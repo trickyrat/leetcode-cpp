@@ -264,7 +264,7 @@ public:
   /**
    * 36. Valid Sudoku
    */
-  static bool isValidSudoku(std::vector<std::vector<char>> board);
+  static bool isValidSudoku(std::vector<std::vector<char>> &board);
 
   /**
    * 37. Sudoku Solver

@@ -647,9 +647,18 @@ int Solution::searchInsert(std::vector<int> &nums, int target) {
   return nums[lo] < target ? lo + 1 : lo;
 }
 
-bool Solution::isValidSudoku(std::vector<std::vector<char>> board) {
-  // TODO
-  return false;
+bool Solution::isValidSudoku(std::vector<std::vector<char>> &board) {
+  int rows[9][9] = {0};
+	int cols[9][9] = {0};
+	int blocks[3][3][9] = {0};
+	for (int r = 0; r < 9; r++)    
+	  for (int c = 0; c< 9; c++)
+			if (board[r][c] != '.') {
+				int number = board[r][c]-'1';
+				if (rows[r][number]++ || cols[c][number]++ || blocks[r / 3][c / 3][number]++)
+         return false;
+			}
+	return true;
 }
 
 void Solution::solveSudoku(std::vector<std::vector<char>> &board) {
