@@ -566,30 +566,42 @@ int Solution::divide(int dividend, int divisor) {
 
 std::vector<int> Solution::findSubstring(std::string s,
                                          std::vector<std::string> &words) {
-  std::unordered_map<std::string, int> counts;
-  std::vector<int> indexes;
-  for (std::string word : words)
-    counts[word]++;
-  size_t n = s.length(), num = words.size();
-  if (n == 0 || num == 0)
-    return indexes;
-  size_t len = words[0].length();
-  for (int i = 0; i < n - num * len + 1; i++) {
-    std::unordered_map<std::string, int> seen;
-    int j = 0;
-    for (; j < num; j++) {
-      std::string word = s.substr(i + j * len, len);
-      if (counts.find(word) != counts.end()) {
-        seen[word]++;
-        if (seen[word] > counts[word])
-          break;
-      } else
-        break;
+  if (s.empty() || words.empty())
+    return {};
+  int n = s.size();
+  int size = words.size();
+  int len = words[0].size();
+  std::unordered_map<std::string, int> map;
+  for (auto& word : words)
+    map[word]++;
+  std::vector<int> ret;
+  for (int i = 0; i < len; i++) {
+    int left = i, count = 0;
+    std::unordered_map<std::string, int> window;
+    for (int j = i; j + len - 1 < n; j += len) {
+      std::string str = s.substr(j, len);
+      if(map.count(str) == 0) {
+        window.clear();
+        count = 0;
+        left = j + len;
+      } else {
+        window[str]++;
+        count++;
+        while (left + len - 1 < n && window[str] > map[str]) {
+          window[s.substr(left, len)]--;
+          count--;
+          left += len;
+        }
+        if (count == size) {
+          ret.push_back(left);
+          window[s.substr(left, len)]--;
+          count--;
+          left += len;
+        }
+      }
     }
-    if (j == num)
-      indexes.push_back(i);
   }
-  return indexes;
+  return ret;
 }
 
 int Solution::search(std::vector<int> &nums, int target) {
