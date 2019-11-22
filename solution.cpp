@@ -1508,6 +1508,22 @@ int Solution::rangeSumBST(TreeNode *root, int L, int R) {
   return sum;
 }
 
+std::vector<std::vector<int>> Solution::shiftGrid(std::vector<std::vector<int>> &grid, int k) {
+  int n = grid.size(), m = grid[0].size();
+  std::vector<std::vector<int>> res = grid;
+  k %= m * n;
+  for (int i = 0; i < n; i++)
+  {
+      for (int j = 0; j < m; j++)
+      {
+          int index = (i * m + j + k) % (m * n);
+          int x = index / m, y = index % m;
+          res[x][y] = grid[i][j];
+      }
+  }
+  return res;
+}
+
 /*Private methods*/
 
 bool Solution::isMirror(TreeNode *l1, TreeNode *l2) {

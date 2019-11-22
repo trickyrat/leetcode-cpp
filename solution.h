@@ -548,8 +548,9 @@ public:
   static int rangeSumBST(TreeNode *root, int L, int R);
 
   /**
-   * 1114. Print Order
+   * 1260. Shift 2D Grid
    */
+  static std::vector<std::vector<int>> shiftGrid(std::vector<std::vector<int>> &grid, int k);
 
 private:
   static bool isMirror(TreeNode *l1, TreeNode *l2);
