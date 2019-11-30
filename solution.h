@@ -291,6 +291,21 @@ public:
 	static void solveSudoku(std::vector<std::vector<char>> &board);
 
 	/**
+	 * 38. Count and Say
+	 */
+	std::string countAndSay(int n);
+
+	/**
+	 * 39. Combination Sum
+	 */
+	std::vector<std::vector<int>> combinationSum(std::vector<int> &candidates, int target);
+
+	/**
+	 * 40. Combination Sum II
+	 */
+	std::vector<std::vector<int>> combinationSum2(std::vector<int> &candidates, int target);
+
+	/**
 	 * 41. First Missing Positive
 	 */
 	static int firstMissingPositive(std::vector<int> &nums);

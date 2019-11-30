@@ -782,6 +782,39 @@ void Solution::solveSudoku(std::vector<std::vector<char>> &board)
 	doSolve(board, 0, 0);
 }
 
+std::string Solution::countAndSay(int n) 
+{
+	if (n == 0)
+		return "";
+	std::string res = "1";
+	while (--n)
+	{
+		std::string tmp = "";
+		for (int i = 0; i < res.size(); i++)
+		{
+			int count = 1;
+			while (i + 1 < res.size() && res[i] == res[i + 1])
+			{
+				count++;
+				i++;
+			}
+			tmp += std::to_string(count) + res[i];
+		}
+		res = tmp;
+	}
+	return res;
+}
+
+std::vector<std::vector<int>> Solution::combinationSum(std::vector<int> &candidates, int target)
+{
+
+}
+
+std::vector<std::vector<int>> Solution::combinationSum2(std::vector<int> &candidates, int target)
+{
+
+}
+
 int Solution::firstMissingPositive(std::vector<int> &nums)
 {
 	size_t n = nums.size();
