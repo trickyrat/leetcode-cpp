@@ -540,6 +540,11 @@ public:
 	 */
 	static std::string toLowerCase(std::string str);
 
+	/*
+	 * 739. Daily Temperatures
+	 */
+	static std::vector<int> dailyTemperatures(std::vector<int> &T);
+
 	/**
 	 * 821. Shortest Distance to a Character
 	 */
