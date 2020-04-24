@@ -1,9 +1,4 @@
-#ifdef _WINDOWS
-#pargma once
-#endif
-
-#ifndef LEETCODE_SOLUTION_H_
-#define LEETCODE_SOLUTION_H_
+#pragma once
 
 #include <algorithm>
 #include <bitset>
@@ -23,9 +18,9 @@ class Node
 {
 public:
 	int val;
-	std::vector<Node *> children;
+	std::vector<Node*> children;
 	Node() {}
-	Node(int _val, std::vector<Node *> _children)
+	Node(int _val, std::vector<Node*> _children)
 		: val(_val), children(_children) {}
 };
 
@@ -33,18 +28,18 @@ public:
 struct TreeNode
 {
 	int val;
-	TreeNode *left;
-	TreeNode *right;
+	TreeNode* left;
+	TreeNode* right;
 	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
 class BSTIterator
 {
 private:
-	std::stack<TreeNode *> nodes;
+	std::stack<TreeNode*> nodes;
 
 public:
-	BSTIterator(TreeNode *root)
+	BSTIterator(TreeNode* root)
 	{
 		while (root)
 		{
@@ -55,9 +50,9 @@ public:
 	/** @return the next smallest number */
 	int next()
 	{
-		TreeNode *tmp = nodes.top();
+		TreeNode* tmp = nodes.top();
 		nodes.pop();
-		TreeNode *right = tmp->right;
+		TreeNode* right = tmp->right;
 		while (right)
 		{
 			nodes.push(right);
@@ -73,7 +68,7 @@ public:
 struct ListNode
 {
 	int val;
-	ListNode *next;
+	ListNode* next;
 	ListNode(int x) : val(x), next(nullptr) {}
 };
 
@@ -111,12 +106,12 @@ public:
 	/**
 	 * 1. Two Sum
 	 */
-	static std::vector<int> twoSum(std::vector<int> &nums, int target);
+	static std::vector<int> twoSum(std::vector<int>& nums, int target);
 
 	/**
 	 * 2. Add Two Numbers
 	 */
-	static ListNode *addTwoNumbers(ListNode *l1, ListNode *l2);
+	static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 
 	/**
 	 * 3. Longest Substring Without Repeating Characters
@@ -126,8 +121,8 @@ public:
 	/**
 	 * 4. Median of Two Sorted Arrays
 	 */
-	static double findMedianSortedArrays(std::vector<int> &nums1,
-										 std::vector<int> &nums2);
+	static double findMedianSortedArrays(std::vector<int>& nums1,
+		std::vector<int>& nums2);
 
 	/**
 	 * 5. Longest Palindromic Substring
@@ -162,7 +157,7 @@ public:
 	/**
 	 * 11. Container With Most Water
 	 */
-	static int maxArea(std::vector<int> &height);
+	static int maxArea(std::vector<int>& height);
 
 	/**
 	 * 12. Integer to Roman
@@ -177,17 +172,17 @@ public:
 	/**
 	 * 14. Longest Common Prefix
 	 */
-	static std::string longestCommonPrefix(std::vector<std::string> &strs);
+	static std::string longestCommonPrefix(std::vector<std::string>& strs);
 
 	/**
 	 * 15. 3Sum
 	 */
-	static std::vector<std::vector<int>> threeSum(std::vector<int> &nums);
+	static std::vector<std::vector<int>> threeSum(std::vector<int>& nums);
 
 	/**
 	 * 16. 3Sum Closest
 	 */
-	static int threeSumClosest(std::vector<int> &nums, int target);
+	static int threeSumClosest(std::vector<int>& nums, int target);
 
 	/**
 	 * 17. Letter Combinations of a Phone Number
@@ -197,12 +192,12 @@ public:
 	/**
 	 * 18. 4Sum
 	 */
-	static std::vector<std::vector<int>> fourSum(std::vector<int> &nums,
-												 int target);
+	static std::vector<std::vector<int>> fourSum(std::vector<int>& nums,
+		int target);
 	/**
 	 * 19. Remove Nth Node From End of List
 	 */
-	static ListNode *removeNthFromEnd(ListNode *head, int n);
+	static ListNode* removeNthFromEnd(ListNode* head, int n);
 
 	/**
 	 * 20. Valid Parentheses
@@ -212,7 +207,7 @@ public:
 	/**
 	 * 21. Merge Two Sorted Lists
 	 */
-	static ListNode *mergeTwoLists(ListNode *l1, ListNode *l2);
+	static ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
 
 	/**
 	 * 22. Generate Parentheses
@@ -222,27 +217,27 @@ public:
 	/**
 	 * 23. Merge K Sorted Lists
 	 */
-	static ListNode *mergeKLists(std::vector<ListNode *> &lists);
+	static ListNode* mergeKLists(std::vector<ListNode*>& lists);
 
 	/**
 	 * 24. Swap Node in Pairs
 	 */
-	static ListNode *swapPairs(ListNode *head);
+	static ListNode* swapPairs(ListNode* head);
 
 	/**
 	 * 25. Reverse Nodes in k-Group
 	 */
-	static ListNode *reverseKGroup(ListNode *head, int k);
+	static ListNode* reverseKGroup(ListNode* head, int k);
 
 	/**
 	 * 26. Remove Duplicates from Sorted Array
 	 */
-	static int removeDuplicates(std::vector<int> &nums);
+	static int removeDuplicates(std::vector<int>& nums);
 
 	/**
 	 * 27. Remove Element
 	 */
-	static int removeElement(std::vector<int> &nums, int val);
+	static int removeElement(std::vector<int>& nums, int val);
 
 	/**
 	 * 28. Implement strStr()
@@ -258,7 +253,7 @@ public:
 	 * 30. Substring with Concatenation of All Words
 	 */
 	static std::vector<int> findSubstring(std::string s,
-										  std::vector<std::string> &words);
+		std::vector<std::string>& words);
 
 	/**
 	 * 31. Next Permutation
@@ -268,27 +263,27 @@ public:
 	/**
 	 * 33. Search in Rotated Sorted Array
 	 */
-	static int search(std::vector<int> &nums, int target);
+	static int search(std::vector<int>& nums, int target);
 
 	/**
 	 * 34. Find First and Last Position of Element in Sorted Array
 	 */
-	static std::vector<int> searchRange(std::vector<int> &nums, int target);
+	static std::vector<int> searchRange(std::vector<int>& nums, int target);
 
 	/**
 	 * 35. Search Insert Position
 	 */
-	static int searchInsert(std::vector<int> &nums, int target);
+	static int searchInsert(std::vector<int>& nums, int target);
 
 	/**
 	 * 36. Valid Sudoku
 	 */
-	static bool isValidSudoku(std::vector<std::vector<char>> &board);
+	static bool isValidSudoku(std::vector<std::vector<char>>& board);
 
 	/**
 	 * 37. Sudoku Solver
 	 */
-	static void solveSudoku(std::vector<std::vector<char>> &board);
+	static void solveSudoku(std::vector<std::vector<char>>& board);
 
 	/**
 	 * 38. Count and Say
@@ -298,17 +293,17 @@ public:
 	/**
 	 * 39. Combination Sum
 	 */
-	std::vector<std::vector<int>> combinationSum(std::vector<int> &candidates, int target);
+	std::vector<std::vector<int>> combinationSum(std::vector<int>& candidates, int target);
 
 	/**
 	 * 40. Combination Sum II
 	 */
-	std::vector<std::vector<int>> combinationSum2(std::vector<int> &candidates, int target);
+	std::vector<std::vector<int>> combinationSum2(std::vector<int>& candidates, int target);
 
 	/**
 	 * 41. First Missing Positive
 	 */
-	static int firstMissingPositive(std::vector<int> &nums);
+	static int firstMissingPositive(std::vector<int>& nums);
 
 	/*
 	 * 43. Multiply String
@@ -328,12 +323,12 @@ public:
 	/**
 	 * 54. Spiral Matrix
 	 */
-	static std::vector<int> spiralOrder(std::vector<std::vector<int>> &matrix);
+	static std::vector<int> spiralOrder(std::vector<std::vector<int>>& matrix);
 
 	/**
 	 * 55. Jump Game
 	 */
-	static bool canJump(std::vector<int> &nums);
+	static bool canJump(std::vector<int>& nums);
 
 	/**
 	 * 58. Length of Last Word
@@ -348,7 +343,7 @@ public:
 	/**
 	 * 61. Rotate List
 	 */
-	static ListNode *rotateRight(ListNode *head, int k);
+	static ListNode* rotateRight(ListNode* head, int k);
 
 	/**
 	 * 62. Unique Paths
@@ -359,11 +354,11 @@ public:
 	 * 63. Unique Paths II
 	 */
 	static int
-	uniquePathsWithObstacles(std::vector<std::vector<int>> &obstacleGrid);
+		uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid);
 	/**
 	 * 66. Plus One
 	 */
-	static std::vector<int> plusOne(std::vector<int> &digits);
+	static std::vector<int> plusOne(std::vector<int>& digits);
 
 	/**
 	 * 67. Add Binary
@@ -383,7 +378,7 @@ public:
 	/**
 	 * 74. Search a 2D Matrix
 	 */
-	static bool searchMatrix(std::vector<std::vector<int>> &nums, int target);
+	static bool searchMatrix(std::vector<std::vector<int>>& nums, int target);
 
 	/**
 	 * 77. Combinations
@@ -393,37 +388,37 @@ public:
 	/**
 	 * 94. Binary Tree Inorder Traversal
 	 */
-	static std::vector<int> inorderTraversal(TreeNode *root);
+	static std::vector<int> inorderTraversal(TreeNode* root);
 
 	/**
 	 * 100. Same Tree
 	 */
-	static bool isSameTree(TreeNode *p, TreeNode *q);
+	static bool isSameTree(TreeNode* p, TreeNode* q);
 
 	/**
 	 * 101. Symmetric Tree
 	 */
-	static bool isSymmetric(TreeNode *root);
+	static bool isSymmetric(TreeNode* root);
 
 	/**
 	 * 104. Maximum Depth of Binary Tree
 	 */
-	static int maxDepth(TreeNode *root);
+	static int maxDepth(TreeNode* root);
 
 	/**
 	 * 107. Binary Tree Level Order Traversal II
 	 */
-	static std::vector<std::vector<int>> levelOrderBottom(TreeNode *root);
+	static std::vector<std::vector<int>> levelOrderBottom(TreeNode* root);
 
 	/**
 	 * 111. Minimum Depth of Binary Tree
 	 */
-	static int minDepth(TreeNode *root);
+	static int minDepth(TreeNode* root);
 
 	/**
 	 *  112. Path Sum
 	 */
-	static bool hasPathSum(TreeNode *root, int sum);
+	static bool hasPathSum(TreeNode* root, int sum);
 
 	/**
 	 * 118. Pascal's Triangle
@@ -438,32 +433,32 @@ public:
 	/**
 	 * 136. Single Number
 	 */
-	static int singleNumber(std::vector<int> &nums);
+	static int singleNumber(std::vector<int>& nums);
 
 	/**
 	 * 141. Linked List Cycle
 	 */
-	static bool hasCycle(ListNode *head);
+	static bool hasCycle(ListNode* head);
 
 	/**
 	 * 144. Binary Tree Preorder Traversal
 	 */
-	static std::vector<int> preorderTraversal(TreeNode *root);
+	static std::vector<int> preorderTraversal(TreeNode* root);
 
 	/**
 	 * 145. Binary Tree Postorder Traversal
 	 */
-	static std::vector<int> postorderTraversal(TreeNode *root);
+	static std::vector<int> postorderTraversal(TreeNode* root);
 
 	/**
 	 * 148. Sort List
 	 */
-	static ListNode *sortList(ListNode *head);
+	static ListNode* sortList(ListNode* head);
 
 	/**
 	 * 169. Majority Element
 	 */
-	static int majorityElement(std::vector<int> &nums);
+	static int majorityElement(std::vector<int>& nums);
 
 	/**
 	 * 190. Reverse Bits
@@ -473,7 +468,7 @@ public:
 	/**
 	 * 198. House Robber
 	 */
-	static int rob(std::vector<int> &nums);
+	static int rob(std::vector<int>& nums);
 
 	/**
 	 * 242. Valid Anagram
@@ -483,22 +478,22 @@ public:
 	/**
 	 * 268. Missing Number
 	 */
-	static int missingNumber(std::vector<int> &nums);
+	static int missingNumber(std::vector<int>& nums);
 
 	/**
 	 * 283. Move Zeroes
 	 */
-	static void moveZeroes(std::vector<int> &nums);
+	static void moveZeroes(std::vector<int>& nums);
 
 	/**
 	 * 287. Find the Duplicate Number
 	 */
-	static int findDuplicate(std::vector<int> &nums);
+	static int findDuplicate(std::vector<int>& nums);
 
 	/**
 	 * 344. Reverse String
 	 */
-	static void reverseString(std::vector<char> &s);
+	static void reverseString(std::vector<char>& s);
 
 	/**
 	 * 401. Binary Watch
@@ -508,7 +503,7 @@ public:
 	/**
 	 * 429. N-ary Tree Level Order Traversal
 	 */
-	static std::vector<std::vector<int>> levelOrder(Node *root);
+	static std::vector<std::vector<int>> levelOrder(Node* root);
 
 	/**
 	 * 509. Fibonacci Number
@@ -518,22 +513,22 @@ public:
 	/**
 	 * 617. Merge Two Binary Trees
 	 */
-	static TreeNode *mergeTrees(TreeNode *t1, TreeNode *t2);
+	static TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2);
 
 	/**
 	 * 669. Trim a Binary Search Tree
 	 */
-	static TreeNode *trimBST(TreeNode *root, int L, int R);
+	static TreeNode* trimBST(TreeNode* root, int L, int R);
 
 	/**
 	 * 700. Search in a Binary Search Tree
 	 */
-	static TreeNode *searchBST(TreeNode *root, int val);
+	static TreeNode* searchBST(TreeNode* root, int val);
 
 	/**
 	 * 701. Insert into a Binary Search Tree
 	 */
-	static TreeNode *insertIntoBST(TreeNode *root, int val);
+	static TreeNode* insertIntoBST(TreeNode* root, int val);
 
 	/**
 	 * 709. To Lower Case
@@ -543,7 +538,7 @@ public:
 	/*
 	 * 739. Daily Temperatures
 	 */
-	static std::vector<int> dailyTemperatures(std::vector<int> &T);
+	static std::vector<int> dailyTemperatures(std::vector<int>& T);
 
 	/**
 	 * 821. Shortest Distance to a Character
@@ -553,67 +548,65 @@ public:
 	/**
 	 * 852. Peak Index in a Mountain Array
 	 */
-	static int peakIndexInMountainArray(std::vector<int> &A);
+	static int peakIndexInMountainArray(std::vector<int>& A);
 
 	/**
 	 * 876. Middle of the Linked List
 	 */
-	static ListNode *middleNode(ListNode *head);
+	static ListNode* middleNode(ListNode* head);
 
 	/**
 	 * 883. Projection Area of 3D Shapes
 	 */
-	static int projectionArea(std::vector<std::vector<int>> &grid);
+	static int projectionArea(std::vector<std::vector<int>>& grid);
 
 	/**
 	 * 884. Uncommon Words from Two Sentences
 	 */
 	static std::vector<std::string> uncommonFromSentences(std::string A,
-														  std::string B);
+		std::string B);
 
 	/**
 	 * 892. Surface Area of 3D Shapes
 	 */
-	static int surfaceArea(std::vector<std::vector<int>> &grid);
+	static int surfaceArea(std::vector<std::vector<int>>& grid);
 
 	/**
 	 * 905. Sort Array By Parity
 	 */
-	static std::vector<int> sortArrayByParity(std::vector<int> &A);
+	static std::vector<int> sortArrayByParity(std::vector<int>& A);
 
 	/**
 	 * 938. Range Sum of BST
 	 */
-	static int rangeSumBST(TreeNode *root, int L, int R);
+	static int rangeSumBST(TreeNode* root, int L, int R);
 
 	/**
 	 * 1260. Shift 2D Grid
 	 */
-	static std::vector<std::vector<int>> shiftGrid(std::vector<std::vector<int>> &grid, int k);
+	static std::vector<std::vector<int>> shiftGrid(std::vector<std::vector<int>>& grid, int k);
 
 	/**
 	 * 1263. Minimum Moves to Move a Box to Their Target Location
 	 */
-	static int minPushBox(std::vector<std::vector<char>> &grid);
+	static int minPushBox(std::vector<std::vector<char>>& grid);
 
 private:
-	static bool isMirror(TreeNode *l1, TreeNode *l2);
+	static bool isMirror(TreeNode* l1, TreeNode* l2);
 
-	static bool doSolve(std::vector<std::vector<char>> &board, int row, int col);
-	static bool isValid(std::vector<std::vector<char>> &board, int row, int col,
-						char num);
+	static bool doSolve(std::vector<std::vector<char>>& board, int row, int col);
+	static bool isValid(std::vector<std::vector<char>>& board, int row, int col,
+		char num);
 
-	static ListNode *split(ListNode *head, int n);
-	static ListNode *merge(ListNode *l1, ListNode *l2, ListNode *head);
+	static ListNode* split(ListNode* head, int n);
+	static ListNode* merge(ListNode* l1, ListNode* l2, ListNode* head);
 	static std::string preProcess(std::string s);
 
-	static bool isValid(std::vector<std::string> &nQueens, int row, int col,
-						int &n);
-	static void solveNQueens(std::vector<std::vector<std::string>> &res,
-							 std::vector<std::string> nQueens,
-							 std::vector<int> &flag, int row, int &n);
+	static bool isValid(std::vector<std::string>& nQueens, int row, int col,
+		int& n);
+	static void solveNQueens(std::vector<std::vector<std::string>>& res,
+		std::vector<std::string> nQueens,
+		std::vector<int>& flag, int row, int& n);
 
-	static std::vector<int> kmpProcess(std::string &needle);
+	static std::vector<int> kmpProcess(std::string& needle);
 };
-
-#endif /* LEETCODE_SOLUTION_H_ */
