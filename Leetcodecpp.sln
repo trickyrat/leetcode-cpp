@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Leetcodecpp", "Leetcodecpp\Leetcodecpp.vcxproj", "{1C6202CC-5D38-432C-9215-F525369DA4D1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest1", "UnitTest1\UnitTest1.vcxproj", "{2E33F6C6-3460-4DFA-844C-BC4FAEC1DCC2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Leetcodecpp.Test", "Leetcodecpp.Test\Leetcodecpp.Test.vcxproj", "{2E33F6C6-3460-4DFA-844C-BC4FAEC1DCC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
