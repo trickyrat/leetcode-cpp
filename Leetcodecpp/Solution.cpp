@@ -1,4 +1,4 @@
-#include "solution.h"
+#include "Solution.h"
 
 std::vector<int> Solution::twoSum(std::vector<int>& nums, int target) {
     size_t size = nums.size();
@@ -708,10 +708,14 @@ std::string Solution::countAndSay(int n) {
 }
 
 std::vector<std::vector<int>>
-Solution::combinationSum(std::vector<int>& candidates, int target) {}
+Solution::combinationSum(std::vector<int>& candidates, int target) {
+  return std::vector<std::vector<int>>();
+}
 
 std::vector<std::vector<int>>
-Solution::combinationSum2(std::vector<int>& candidates, int target) {}
+Solution::combinationSum2(std::vector<int>& candidates, int target) {
+  return std::vector<std::vector<int>>();
+}
 
 int Solution::firstMissingPositive(std::vector<int>& nums) {
     size_t n = nums.size();
@@ -900,6 +904,7 @@ int Solution::uniquePathsWithObstacles(
     //   if(!flag) return 0;
     // }
     // return dp[height - 1];
+  return 0;
 }
 
 std::vector<int> Solution::plusOne(std::vector<int>& digits) {
@@ -1324,7 +1329,23 @@ std::vector<std::string> Solution::readBinaryWatch(int num) {
     return rs;
 }
 
-std::vector<std::vector<int>> Solution::levelOrder(Node* root) {
+std::string Solution::addStrings(std::string &num1, std::string &num2) {
+  int i = num1.size() - 1, j = num2.size() - 1, carry = 0;
+  std::string ans = "";
+  while (i >= 0 || j >= 0 || carry != 0) {
+    int x = i >= 0 ? num1[i] - '0' : 0;
+    int y = j >= 0 ? num2[j] - '0' : 0;
+    int result = x + y + carry;
+    ans.push_back('0' + result % 10);
+    carry = result / 10;
+    i--;
+    j--;
+  }
+  std::reverse(ans.begin(), ans.end());
+  return ans;
+}
+
+std::vector<std::vector<int>> Solution::levelOrder(Node *root) {
     if (root == nullptr)
         return {};
     std::vector<std::vector<int>> res;

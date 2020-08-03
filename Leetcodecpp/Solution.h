@@ -24,7 +24,9 @@ public:
 		: val(_val), children(_children) {}
 };
 
-// Definition for a binary tree node.
+/// <summary>
+/// Definition for a binary tree node.
+/// </summary>
 struct TreeNode
 {
 	int val;
@@ -47,7 +49,11 @@ public:
 			root = root->left;
 		}
 	}
-	/** @return the next smallest number */
+	
+	/// <summary>
+	/// return the next smallest number.
+	/// </summary>
+	/// <returns></returns>
 	int next()
 	{
 		TreeNode* tmp = nodes.top();
@@ -60,11 +66,17 @@ public:
 		}
 		return tmp->val;
 	}
-	/** @return whether we have a next smallest number */
+	
+	/// <summary>
+	///  whether there is a next smallest number.
+	/// </summary>
+	/// <returns></returns>
 	bool hasNext() { return !nodes.empty(); }
 };
 
-// Definition for singly-linked list.
+/// <summary>
+/// Definition for singly-linked list.
+/// </summary>
 struct ListNode
 {
 	int val;
@@ -103,492 +115,731 @@ public:
 class Solution
 {
 public:
-	/**
-	 * 1. Two Sum
-	 */
+	/// <summary>
+	/// 1. Two Sum
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	static std::vector<int> twoSum(std::vector<int>& nums, int target);
 
-	/**
-	 * 2. Add Two Numbers
-	 */
+	/// <summary>
+	/// 2. Add Two Numbers
+	/// </summary>
+	/// <param name="l1"></param>
+	/// <param name="l2"></param>
+	/// <returns></returns>
 	static ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 
-	/**
-	 * 3. Longest Substring Without Repeating Characters
-	 */
+	/// <summary>
+	/// 3. Longest Substring Without Repeating Characters
+	/// </summary>
+	/// <param name="s"></param>
+	/// <returns></returns>
 	static int lengthOfLongestSubstring(std::string s);
 
-	/**
-	 * 4. Median of Two Sorted Arrays
-	 */
+	/// <summary>
+	///  4. Median of Two Sorted Arrays
+	/// </summary>
+	/// <param name="nums1"></param>
+	/// <param name="nums2"></param>
+	/// <returns></returns>
 	static double findMedianSortedArrays(std::vector<int>& nums1,
 		std::vector<int>& nums2);
 
-	/**
-	 * 5. Longest Palindromic Substring
-	 */
+	/// <summary>
+	/// 5. Longest Palindromic Substring
+	/// </summary>
+	/// <param name="s"></param>
+	/// <returns></returns>
 	static std::string longestPalindrome(std::string s);
 
-	/**
-	 * 6. ZigZag Conversion
-	 */
+	/// <summary>
+	/// 6. ZigZag Conversion
+	/// </summary>
+	/// <param name="s"></param>
+	/// <param name="numRows"></param>
+	/// <returns></returns>
 	static std::string convert(std::string s, int numRows);
 
-	/**
-	 * 7. Reverse Integer
-	 */
+	/// <summary>
+	/// 7. Reverse Integer
+	/// </summary>
+	/// <param name="x"></param>
+	/// <returns></returns>
 	static int Reverse(int x);
 
-	/**
-	 * 8. String to Integer(atoi)
-	 */
+	/// <summary>
+	/// 8. String to Integer(atoi)
+	/// </summary>
+	/// <param name="str"></param>
+	/// <returns></returns>
 	static int Atoi(std::string str);
 
-	/**
-	 * 9. Palindrome Number
-	 */
+	/// <summary>
+	/// 9. Palindrome Number
+	/// </summary>
+	/// <param name="x"></param>
+	/// <returns></returns>
 	static bool IsPalindrome(int x);
 
-	/**
-	 * 10. Regular Expression Matching
-	 */
+	/// <summary>
+	/// 10. Regular Expression Matching
+	/// </summary>
+	/// <param name="s"></param>
+	/// <param name="p"></param>
+	/// <returns></returns>
 	static bool IsMatch(std::string s, std::string p);
 
-	/**
-	 * 11. Container With Most Water
-	 */
+	/// <summary>
+	/// 11. Container With Most Water
+	/// </summary>
+	/// <param name="height"></param>
+	/// <returns></returns>
 	static int maxArea(std::vector<int>& height);
 
-	/**
-	 * 12. Integer to Roman
-	 */
+	/// <summary>
+	/// 12. Integer to Roman
+	/// </summary>
+	/// <param name="num"></param>
+	/// <returns></returns>
 	static std::string intToRoman(int num);
 
-	/**
-	 * 13. Roman to Integer
-	 */
+	/// <summary>
+	/// 13. Roman to Integer
+	/// </summary>
+	/// <param name="s"></param>
+	/// <returns></returns>
 	static int romanToInteger(std::string s);
 
-	/**
-	 * 14. Longest Common Prefix
-	 */
+	/// <summary>
+	/// 14. Longest Common Prefix
+	/// </summary>
+	/// <param name="strs"></param>
+	/// <returns></returns>
 	static std::string longestCommonPrefix(std::vector<std::string>& strs);
 
-	/**
-	 * 15. 3Sum
-	 */
+	/// <summary>
+	/// 15. 3Sum
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
 	static std::vector<std::vector<int>> threeSum(std::vector<int>& nums);
 
-	/**
-	 * 16. 3Sum Closest
-	 */
+	/// <summary>
+	/// 16. 3Sum Closest
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	static int threeSumClosest(std::vector<int>& nums, int target);
 
-	/**
-	 * 17. Letter Combinations of a Phone Number
-	 */
+	/// <summary>
+	/// 17. Letter Combinations of a Phone Number
+	/// </summary>
+	/// <param name="digits"></param>
+	/// <returns></returns>
 	static std::vector<std::string> letterCombinations(std::string digits);
 
-	/**
-	 * 18. 4Sum
-	 */
+	/// <summary>
+	/// 18. 4Sum
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	static std::vector<std::vector<int>> fourSum(std::vector<int>& nums,
 		int target);
-	/**
-	 * 19. Remove Nth Node From End of List
-	 */
+
+	/// <summary>
+	/// 19. Remove Nth Node From End of List
+	/// </summary>
+	/// <param name="head"></param>
+	/// <param name="n"></param>
+	/// <returns></returns>
 	static ListNode* removeNthFromEnd(ListNode* head, int n);
 
-	/**
-	 * 20. Valid Parentheses
-	 */
+	/// <summary>
+	/// 20. Valid Parentheses
+	/// </summary>
+	/// <param name="s"></param>
+	/// <returns></returns>
 	static bool isValid(std::string s);
 
-	/**
-	 * 21. Merge Two Sorted Lists
-	 */
+	/// <summary>
+	/// 21. Merge Two Sorted Lists
+	/// </summary>
+	/// <param name="l1"></param>
+	/// <param name="l2"></param>
+	/// <returns></returns>
 	static ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
 
-	/**
-	 * 22. Generate Parentheses
-	 */
+	/// <summary>
+	/// 22. Generate Parentheses
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
 	static std::vector<std::string> generateParenthesis(int n);
 
-	/**
-	 * 23. Merge K Sorted Lists
-	 */
+	/// <summary>
+	/// 23. Merge K Sorted Lists
+	/// </summary>
+	/// <param name="lists"></param>
+	/// <returns></returns>
 	static ListNode* mergeKLists(std::vector<ListNode*>& lists);
 
-	/**
-	 * 24. Swap Node in Pairs
-	 */
+	/// <summary>
+	/// 24. Swap Node in Pairs
+	/// </summary>
+	/// <param name="head"></param>
+	/// <returns></returns>
 	static ListNode* swapPairs(ListNode* head);
 
-	/**
-	 * 25. Reverse Nodes in k-Group
-	 */
+	/// <summary>
+	/// 25. Reverse Nodes in k-Group
+	/// </summary>
+	/// <param name="head"></param>
+	/// <param name="k"></param>
+	/// <returns></returns>
 	static ListNode* reverseKGroup(ListNode* head, int k);
 
-	/**
-	 * 26. Remove Duplicates from Sorted Array
-	 */
+	/// <summary>
+	/// 26. Remove Duplicates from Sorted Array
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
 	static int removeDuplicates(std::vector<int>& nums);
 
-	/**
-	 * 27. Remove Element
-	 */
+	/// <summary>
+	/// 27. Remove Element
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <param name="val"></param>
+	/// <returns></returns>
 	static int removeElement(std::vector<int>& nums, int val);
 
-	/**
-	 * 28. Implement strStr()
-	 */
+	/// <summary>
+	/// 28. Implement strStr()
+	/// </summary>
+	/// <param name="haystack"></param>
+	/// <param name="needle"></param>
+	/// <returns></returns>
 	static int strStr(std::string haystack, std::string needle);
 
-	/**
-	 * 29. Divide Two Integers
-	 */
+	/// <summary>
+	/// 29. Divide Two Integers
+	/// </summary>
+	/// <param name="dividend"></param>
+	/// <param name="divisor"></param>
+	/// <returns></returns>
 	static int divide(int dividend, int divisor);
 
-	/**
-	 * 30. Substring with Concatenation of All Words
-	 */
+	/// <summary>
+	/// 30. Substring with Concatenation of All Words
+	/// </summary>
+	/// <param name="s"></param>
+	/// <param name="words"></param>
+	/// <returns></returns>
 	static std::vector<int> findSubstring(std::string s,
 		std::vector<std::string>& words);
 
-	/**
-	 * 31. Next Permutation
-	 */
+	/// <summary>
+	/// 31. Next Permutation
+	/// </summary>
+	/// <param name="nums"></param>
 	static void nextPermutation(std::vector<int>& nums);
 
-	/**
-	 * 33. Search in Rotated Sorted Array
-	 */
+	/// <summary>
+	/// 33. Search in Rotated Sorted Array
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	static int search(std::vector<int>& nums, int target);
 
-	/**
-	 * 34. Find First and Last Position of Element in Sorted Array
-	 */
+	/// <summary>
+	/// 34. Find First and Last Position of Element in Sorted Array
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	static std::vector<int> searchRange(std::vector<int>& nums, int target);
 
-	/**
-	 * 35. Search Insert Position
-	 */
+	/// <summary>
+	/// 35. Search Insert Position
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	static int searchInsert(std::vector<int>& nums, int target);
 
-	/**
-	 * 36. Valid Sudoku
-	 */
+	/// <summary>
+	/// 36. Valid Sudoku
+	/// </summary>
+	/// <param name="board"></param>
+	/// <returns></returns>
 	static bool isValidSudoku(std::vector<std::vector<char>>& board);
 
-	/**
-	 * 37. Sudoku Solver
-	 */
+	/// <summary>
+	/// 37. Sudoku Solver
+	/// </summary>
+	/// <param name="board"></param>
 	static void solveSudoku(std::vector<std::vector<char>>& board);
 
-	/**
-	 * 38. Count and Say
-	 */
+	/// <summary>
+	/// 38. Count and Say
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
 	std::string countAndSay(int n);
 
-	/**
-	 * 39. Combination Sum
-	 */
+	/// <summary>
+	/// 39. Combination Sum
+	/// </summary>
+	/// <param name="candidates"></param>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	std::vector<std::vector<int>> combinationSum(std::vector<int>& candidates, int target);
 
-	/**
-	 * 40. Combination Sum II
-	 */
+	/// <summary>
+	/// 40. Combination Sum II
+	/// </summary>
+	/// <param name="candidates"></param>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	std::vector<std::vector<int>> combinationSum2(std::vector<int>& candidates, int target);
 
-	/**
-	 * 41. First Missing Positive
-	 */
+	/// <summary>
+	/// 41. First Missing Positive
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
 	static int firstMissingPositive(std::vector<int>& nums);
 
-	/*
-	 * 43. Multiply String
-	 */
+	/// <summary>
+	/// 43. Multiply String
+	/// </summary>
+	/// <param name="num1"></param>
+	/// <param name="num2"></param>
+	/// <returns></returns>
 	static std::string multiply(std::string num1, std::string num2);
 
-	/**
-	 * 50. Power(x, n)
-	 */
+	/// <summary>
+	/// 50. Power(x, n)
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="n"></param>
+	/// <returns></returns>
 	static double myPower(double x, int n);
 
-	/**
-	 * 51. N-Queens
-	 */
+	/// <summary>
+	/// 51. N-Queens
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
 	static std::vector<std::vector<std::string>> solveNQueens(int n);
 
-	/**
-	 * 54. Spiral Matrix
-	 */
+	/// <summary>
+	/// 54. Spiral Matrix
+	/// </summary>
+	/// <param name="matrix"></param>
+	/// <returns></returns>
 	static std::vector<int> spiralOrder(std::vector<std::vector<int>>& matrix);
 
-	/**
-	 * 55. Jump Game
-	 */
+	/// <summary>
+	/// 55. Jump Game
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
 	static bool canJump(std::vector<int>& nums);
 
-	/**
-	 * 58. Length of Last Word
-	 */
+	/// <summary>
+	/// 58. Length of Last Word
+	/// </summary>
+	/// <param name="s"></param>
+	/// <returns></returns>
 	static int lengthOfLastWord(std::string s);
 
-	/**
-	 * 59. Spiral Matrix II
-	 */
+	/// <summary>
+	/// 59. Spiral Matrix II
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
 	static std::vector<std::vector<int>> generateMatrix(int n);
 
-	/**
-	 * 61. Rotate List
-	 */
+	/// <summary>
+	/// 61. Rotate List
+	/// </summary>
+	/// <param name="head"></param>
+	/// <param name="k"></param>
+	/// <returns></returns>
 	static ListNode* rotateRight(ListNode* head, int k);
 
-	/**
-	 * 62. Unique Paths
-	 */
+	/// <summary>
+	/// 62. Unique Paths
+	/// </summary>
+	/// <param name="m"></param>
+	/// <param name="n"></param>
+	/// <returns></returns>
 	static int uniquePaths(int m, int n);
 
-	/**
-	 * 63. Unique Paths II
-	 */
-	static int
-		uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid);
-	/**
-	 * 66. Plus One
-	 */
+	/// <summary>
+	/// 63. Unique Paths II
+	/// </summary>
+	/// <param name="obstacleGrid"></param>
+	/// <returns></returns>
+	static int uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid);
+
+
+	/// <summary>
+	/// 66. Plus One
+	/// </summary>
+	/// <param name="digits"></param>
+	/// <returns></returns>
 	static std::vector<int> plusOne(std::vector<int>& digits);
 
-	/**
-	 * 67. Add Binary
-	 */
+	/// <summary>
+	/// 67. Add Binary
+	/// </summary>
+	/// <param name="a"></param>
+	/// <param name="b"></param>
+	/// <returns></returns>
 	static std::string addBinary(std::string a, std::string b);
 
-	/**
-	 * 69. Sqrt(x)
-	 */
+	/// <summary>
+	/// 69. Sqrt(x)
+	/// </summary>
+	/// <param name="x"></param>
+	/// <returns></returns>
 	static int mySqrt(int x);
 
-	/**
-	 * 70. Climb Stairs
-	 */
+	/// <summary>
+	/// 70. Climb Stairs
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
 	static int climbStairs(int n);
 
-	/**
-	 * 74. Search a 2D Matrix
-	 */
+	/// <summary>
+	/// 74. Search a 2D Matrix
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <param name="target"></param>
+	/// <returns></returns>
 	static bool searchMatrix(std::vector<std::vector<int>>& nums, int target);
 
-	/**
-	 * 77. Combinations
-	 */
+	/// <summary>
+	/// 77. Combinations
+	/// </summary>
+	/// <param name="n"></param>
+	/// <param name="k"></param>
+	/// <returns></returns>
 	static std::vector<std::vector<int>> combine(int n, int k);
 
-	/**
-	 * 94. Binary Tree Inorder Traversal
-	 */
+	/// <summary>
+	/// 94. Binary Tree Inorder Traversal
+	/// </summary>
+	/// <param name="root"></param>
+	/// <returns></returns>
 	static std::vector<int> inorderTraversal(TreeNode* root);
 
-	/**
-	 * 100. Same Tree
-	 */
+	/// <summary>
+	/// 100. Same Tree
+	/// </summary>
+	/// <param name="p"></param>
+	/// <param name="q"></param>
+	/// <returns></returns>
 	static bool isSameTree(TreeNode* p, TreeNode* q);
 
-	/**
-	 * 101. Symmetric Tree
-	 */
+	/// <summary>
+	/// 101. Symmetric Tree
+	/// </summary>
+	/// <param name="root"></param>
+	/// <returns></returns>
 	static bool isSymmetric(TreeNode* root);
 
-	/**
-	 * 104. Maximum Depth of Binary Tree
-	 */
+	/// <summary>
+	/// 104. Maximum Depth of Binary Tree
+	/// </summary>
+	/// <param name="root"></param>
+	/// <returns></returns>
 	static int maxDepth(TreeNode* root);
 
-	/**
-	 * 107. Binary Tree Level Order Traversal II
-	 */
+	/// <summary>
+	/// 107. Binary Tree Level Order Traversal II
+	/// </summary>
+	/// <param name="root"></param>
+	/// <returns></returns>
 	static std::vector<std::vector<int>> levelOrderBottom(TreeNode* root);
 
-	/**
-	 * 111. Minimum Depth of Binary Tree
-	 */
+	/// <summary>
+	/// 111. Minimum Depth of Binary Tree
+	/// </summary>
+	/// <param name="root"></param>
+	/// <returns></returns>
 	static int minDepth(TreeNode* root);
 
-	/**
-	 *  112. Path Sum
-	 */
+	/// <summary>
+	/// 112. Path Sum
+	/// </summary>
+	/// <param name="root"></param>
+	/// <param name="sum"></param>
+	/// <returns></returns>
 	static bool hasPathSum(TreeNode* root, int sum);
 
-	/**
-	 * 118. Pascal's Triangle
-	 */
+	/// <summary>
+	/// 118. Pascal's Triangle
+	/// </summary>
+	/// <param name="numRows"></param>
+	/// <returns></returns>
 	static std::vector<std::vector<int>> generate(int numRows);
 
-	/**
-	 * 125. Valid Palindrome
-	 */
+	/// <summary>
+	/// 125. Valid Palindrome
+	/// </summary>
+	/// <param name="s"></param>
+	/// <returns></returns>
 	static bool isPalindrome(std::string s);
 
-	/**
-	 * 136. Single Number
-	 */
+	/// <summary>
+	/// 136. Single Number
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
 	static int singleNumber(std::vector<int>& nums);
 
-	/**
-	 * 141. Linked List Cycle
-	 */
+	/// <summary>
+	/// 141. Linked List Cycle
+	/// </summary>
+	/// <param name="head"></param>
+	/// <returns></returns>
 	static bool hasCycle(ListNode* head);
 
-	/**
-	 * 144. Binary Tree Preorder Traversal
-	 */
+	/// <summary>
+	/// 144. Binary Tree Preorder Traversal
+	/// </summary>
+	/// <param name="root"></param>
+	/// <returns></returns>
 	static std::vector<int> preorderTraversal(TreeNode* root);
 
-	/**
-	 * 145. Binary Tree Postorder Traversal
-	 */
+	/// <summary>
+	/// 145. Binary Tree Postorder Traversal
+	/// </summary>
+	/// <param name="root"></param>
+	/// <returns></returns>
 	static std::vector<int> postorderTraversal(TreeNode* root);
 
-	/**
-	 * 148. Sort List
-	 */
+	/// <summary>
+	/// 148. Sort List
+	/// </summary>
+	/// <param name="head"></param>
+	/// <returns></returns>
 	static ListNode* sortList(ListNode* head);
 
-	/**
-	 * 169. Majority Element
-	 */
+	/// <summary>
+	/// 169. Majority Element
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
 	static int majorityElement(std::vector<int>& nums);
 
-	/**
-	 * 190. Reverse Bits
-	 */
+	/// <summary>
+	/// 190. Reverse Bits
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
 	static uint32_t reverseBits(uint32_t n);
 
-	/**
-	 * 198. House Robber
-	 */
+	/// <summary>
+	/// 198. House Robber
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
 	static int rob(std::vector<int>& nums);
 
-	/**
-	 * 242. Valid Anagram
-	 */
+	/// <summary>
+	/// 242. Valid Anagram
+	/// </summary>
+	/// <param name="s"></param>
+	/// <param name="t"></param>
+	/// <returns></returns>
 	static bool isAnagram(std::string s, std::string t);
 
-	/**
-	 * 268. Missing Number
-	 */
+	/// <summary>
+	/// 268. Missing Number
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
 	static int missingNumber(std::vector<int>& nums);
 
-	/**
-	 * 283. Move Zeroes
-	 */
+	/// <summary>
+	/// 283. Move Zeroes
+	/// </summary>
+	/// <param name="nums"></param>
 	static void moveZeroes(std::vector<int>& nums);
 
-	/**
-	 * 287. Find the Duplicate Number
-	 */
+	/// <summary>
+	/// 287. Find the Duplicate Number
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
 	static int findDuplicate(std::vector<int>& nums);
 
-	/**
-	 * 344. Reverse String
-	 */
+	/// <summary>
+	/// 344. Reverse String
+	/// </summary>
+	/// <param name="s"></param>
 	static void reverseString(std::vector<char>& s);
 
-	/**
-	 * 401. Binary Watch
-	 */
+	/// <summary>
+	/// 401. Binary Watch
+	/// </summary>
+	/// <param name="num"></param>
+	/// <returns></returns>
 	static std::vector<std::string> readBinaryWatch(int num);
 
-	/**
-	 * 429. N-ary Tree Level Order Traversal
-	 */
+	/// <summary>
+	/// 415. Add Strings
+	/// </summary>
+	/// <param name="num1"></param>
+	/// <param name="num2"></param>
+	/// <returns></returns>
+	static std::string addStrings(std::string &num1, std::string &num2);
+
+	/// <summary>
+	/// 429. N-ary Tree Level Order Traversal
+	/// </summary>
+	/// <param name="root"></param>
+	/// <returns></returns>
 	static std::vector<std::vector<int>> levelOrder(Node* root);
 
-	/**
-	 * 509. Fibonacci Number
-	 */
+	/// <summary>
+	/// 509. Fibonacci Number
+	/// </summary>
+	/// <param name="N"></param>
+	/// <returns></returns>
 	static int fib(int N);
 
-	/**
-	 * 617. Merge Two Binary Trees
-	 */
+	/// <summary>
+	/// 617. Merge Two Binary Trees
+	/// </summary>
+	/// <param name="t1"></param>
+	/// <param name="t2"></param>
+	/// <returns></returns>
 	static TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2);
 
-	/**
-	 * 669. Trim a Binary Search Tree
-	 */
+	/// <summary>
+	/// 669. Trim a Binary Search Tree
+	/// </summary>
+	/// <param name="root"></param>
+	/// <param name="L"></param>
+	/// <param name="R"></param>
+	/// <returns></returns>
 	static TreeNode* trimBST(TreeNode* root, int L, int R);
 
-	/**
-	 * 700. Search in a Binary Search Tree
-	 */
+	/// <summary>
+	/// 700. Search in a Binary Search Tree
+	/// </summary>
+	/// <param name="root"></param>
+	/// <param name="val"></param>
+	/// <returns></returns>
 	static TreeNode* searchBST(TreeNode* root, int val);
 
-	/**
-	 * 701. Insert into a Binary Search Tree
-	 */
+	/// <summary>
+	/// 701. Insert into a Binary Search Tree
+	/// </summary>
+	/// <param name="root"></param>
+	/// <param name="val"></param>
+	/// <returns></returns>
 	static TreeNode* insertIntoBST(TreeNode* root, int val);
 
-	/**
-	 * 709. To Lower Case
-	 */
+	/// <summary>
+	/// 709. To Lower Case
+	/// </summary>
+	/// <param name="str"></param>
+	/// <returns></returns>
 	static std::string toLowerCase(std::string str);
 
-	/*
-	 * 739. Daily Temperatures
-	 */
+	/// <summary>
+	/// 739. Daily Temperatures
+	/// </summary>
+	/// <param name="T"></param>
+	/// <returns></returns>
 	static std::vector<int> dailyTemperatures(std::vector<int>& T);
 
-	/**
-	 * 821. Shortest Distance to a Character
-	 */
+	/// <summary>
+	/// 821. Shortest Distance to a Character
+	/// </summary>
+	/// <param name="S"></param>
+	/// <param name="C"></param>
+	/// <returns></returns>
 	static std::vector<int> shortestToChar(std::string S, char C);
 
-	/**
-	 * 852. Peak Index in a Mountain Array
-	 */
+	/// <summary>
+	/// 852. Peak Index in a Mountain Array
+	/// </summary>
+	/// <param name="A"></param>
+	/// <returns></returns>
 	static int peakIndexInMountainArray(std::vector<int>& A);
 
-	/**
-	 * 876. Middle of the Linked List
-	 */
+	/// <summary>
+	/// 876. Middle of the Linked List
+	/// </summary>
+	/// <param name="head"></param>
+	/// <returns></returns>
 	static ListNode* middleNode(ListNode* head);
 
-	/**
-	 * 883. Projection Area of 3D Shapes
-	 */
+	/// <summary>
+	/// 883. Projection Area of 3D Shapes
+	/// </summary>
+	/// <param name="grid"></param>
+	/// <returns></returns>
 	static int projectionArea(std::vector<std::vector<int>>& grid);
-
-	/**
-	 * 884. Uncommon Words from Two Sentences
-	 */
+	
+	/// <summary>
+	/// 884. Uncommon Words from Two Sentences
+	/// </summary>
+	/// <param name="A"></param>
+	/// <param name="B"></param>
+	/// <returns></returns>
 	static std::vector<std::string> uncommonFromSentences(std::string A,
 		std::string B);
 
-	/**
-	 * 892. Surface Area of 3D Shapes
-	 */
+	/// <summary>
+	/// 892. Surface Area of 3D Shapes
+	/// </summary>
+	/// <param name="grid"></param>
+	/// <returns></returns>
 	static int surfaceArea(std::vector<std::vector<int>>& grid);
 
-	/**
-	 * 905. Sort Array By Parity
-	 */
+	/// <summary>
+	/// 905. Sort Array By Parity
+	/// </summary>
+	/// <param name="A"></param>
+	/// <returns></returns>
 	static std::vector<int> sortArrayByParity(std::vector<int>& A);
 
-	/**
-	 * 938. Range Sum of BST
-	 */
+	/// <summary>
+	/// 938. Range Sum of BST
+	/// </summary>
+	/// <param name="root"></param>
+	/// <param name="L"></param>
+	/// <param name="R"></param>
+	/// <returns></returns>
 	static int rangeSumBST(TreeNode* root, int L, int R);
 
-	/**
-	 * 1260. Shift 2D Grid
-	 */
+	/// <summary>
+	/// 1260. Shift 2D Grid
+	/// </summary>
+	/// <param name="grid"></param>
+	/// <param name="k"></param>
+	/// <returns></returns>
 	static std::vector<std::vector<int>> shiftGrid(std::vector<std::vector<int>>& grid, int k);
-
-	/**
-	 * 1263. Minimum Moves to Move a Box to Their Target Location
-	 */
+	
+	/// <summary>
+	/// 1263. Minimum Moves to Move a Box to Their Target Location
+	/// </summary>
+	/// <param name="grid"></param>
+	/// <returns></returns>
 	static int minPushBox(std::vector<std::vector<char>>& grid);
 
 private:
