@@ -1,0 +1,13 @@
+﻿  Solution.cpp
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(99,21): warning C4018: '<': signed/unsigned mismatch
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(112,22): warning C4018: '<': signed/unsigned mismatch
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(283,29): warning C4018: '<': signed/unsigned mismatch
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(543,41): warning C4554: '^': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(694,23): warning C4018: '<': signed/unsigned mismatch
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(696,20): warning C4018: '<': signed/unsigned mismatch
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(720,35): warning C4018: '<=': signed/unsigned mismatch
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(774,37): warning C4018: '<': signed/unsigned mismatch
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(780,34): warning C4018: '<': signed/unsigned mismatch
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(1288,21): warning C4018: '<': signed/unsigned mismatch
+C:\Code\VisualStudioProjects\Leetcodecpp\Leetcodecpp\Solution.cpp(1697,22): warning C4018: '<': signed/unsigned mismatch
+  Leetcodecpp.vcxproj -> C:\Code\VisualStudioProjects\Leetcodecpp\Debug\Leetcodecpp.exe
