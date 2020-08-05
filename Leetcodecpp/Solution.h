@@ -348,6 +348,9 @@ public:
 	/// <param name="nums"></param>
 	static void nextPermutation(std::vector<int>& nums);
 
+
+	static int longestValidParentheses(std::string &s);
+
 	/// <summary>
 	/// 33. Search in Rotated Sorted Array
 	/// </summary>

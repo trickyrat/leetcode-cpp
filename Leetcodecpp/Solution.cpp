@@ -614,6 +614,37 @@ void Solution::nextPermutation(std::vector<int>& nums) {
     std::reverse(nums.begin() + i + 1, nums.end());
 }
 
+int Solution::longestValidParentheses(std::string &s) {
+  int left = 0, right = 0, maxLen = 0;
+  int len = s.size() - 1;
+  for (int i =0;i<len;i++) {
+    if (s[i] == '(') {
+      left++;
+    } else {
+      right++;
+    }
+    if (left == right) {
+      maxLen = std::max(maxLen, 2 * right);
+    } else if (right > left) {
+      left = right = 0;
+    }
+  }
+  left = right = 0;
+  for (int i = len; i >= 0; i--) {
+    if (s[i] == '(') {
+      left++;
+    } else {
+      right++;
+    }
+    if (left == right) {
+      maxLen = std::max(maxLen, 2 * left);
+    } else if (left > right) {
+      left = right = 0;
+    }
+  }
+  return maxLen;
+}
+
 int Solution::search(std::vector<int>& nums, int target) {
     int left = 0, right = nums.size();
     while (left < right) {
