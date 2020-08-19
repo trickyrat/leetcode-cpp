@@ -6,7 +6,7 @@ std::vector<int> Solution::twoSum(std::vector<int>& nums, int target) {
     std::vector<int> result;
     for (size_t i = 0; i < size; i++) {
         int numberToFind = target - nums[i];
-        if (hash.find(numberToFind) != hash.end()) {
+        if (hash.contains(numberToFind)) {
             result.push_back(hash[numberToFind]);
             result.push_back(i);
             return result;
