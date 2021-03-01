@@ -112,6 +112,25 @@ public:
 	}
 };
 
+
+class NumArray {
+public:
+  NumArray(std::vector<int> &nums) {
+    size_t len = nums.size();
+    sum = std::vector<int>(static_cast<size_t>(len + 1));
+    for (size_t i = 0; i < len; i++) {
+      sum[static_cast<size_t>(i + 1)] = sum[i] + nums[i];
+    }
+  };
+  ~NumArray() = default;
+
+	int sumRange(int i, int j) { return sum[static_cast<size_t>(j + 1)] - sum[i];
+  }
+
+private:
+  std::vector<int> sum;
+};
+
 class Solution
 {
 public:
