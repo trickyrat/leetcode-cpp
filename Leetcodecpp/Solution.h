@@ -864,6 +864,14 @@ public:
 	/// <returns></returns>
 	static int minPushBox(std::vector<std::vector<char>>& grid);
 
+	/// <summary>
+	/// 1486. XOR Operation in an Array
+	/// </summary>
+	/// <param name="n"></param>
+	/// <param name="start"></param>
+	/// <returns></returns>
+	static int xorOperation(int n, int start);
+
 private:
 	static bool isMirror(TreeNode* l1, TreeNode* l2);
 
@@ -882,4 +890,6 @@ private:
 		std::vector<int>& flag, int row, int& n);
 
 	static std::vector<int> kmpProcess(std::string& needle);
+
+	static int sumXor(int x);
 };
