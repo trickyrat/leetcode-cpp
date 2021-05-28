@@ -137,7 +137,7 @@ std::string Solution::convert(std::string s, int numRows) {
     return ret;
 }
 
-int Solution::Reverse(int x) {
+int Solution::reverse(int x) {
     int res = 0;
     while (x) {
         int pop = x % 10;
@@ -150,7 +150,7 @@ int Solution::Reverse(int x) {
     return res;
 }
 
-int Solution::Atoi(std::string str) {
+int Solution::atoi(std::string str) {
     if (str.empty())
         return 0;
     int sign = 1;
@@ -170,7 +170,7 @@ int Solution::Atoi(std::string str) {
     return bas * sign;
 }
 
-bool Solution::IsPalindrome(int x) {
+bool Solution::isPalindrome(int x) {
     if (x < 0 || (x != 0 && x % 10 == 0))
         return false;
     int res = 0;
@@ -181,7 +181,7 @@ bool Solution::IsPalindrome(int x) {
     return (x == res || x == res / 10);
 }
 
-bool Solution::IsMatch(std::string s, std::string p) {
+bool Solution::isMatch(std::string s, std::string p) {
     size_t m = s.size(), n = p.size();
     std::vector<std::vector<bool>> f(m + 1, std::vector<bool>(n + 1, false));
     f[0][0] = true;
@@ -1395,6 +1395,19 @@ std::vector<std::vector<int>> Solution::levelOrder(Node *root) {
         res.push_back(tmp);
     }
     return res;
+}
+
+int Solution::totalHammingDistance(std::vector<int> &nums) {
+  int size = nums.size();
+  int res = 0;
+  for (int i = 0; i < size; i++) {
+    int tmp = 0;
+    for (auto &num : nums) {
+      tmp += (num >> i) & 1;
+    }
+    res += tmp * (size - tmp);
+  }
+  return res;
 }
 
 int Solution::fib(int N) {

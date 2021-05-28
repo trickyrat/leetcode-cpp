@@ -186,21 +186,21 @@ public:
 	/// </summary>
 	/// <param name="x"></param>
 	/// <returns></returns>
-	static int Reverse(int x);
+	static int reverse(int x);
 
 	/// <summary>
 	/// 8. String to Integer(atoi)
 	/// </summary>
 	/// <param name="str"></param>
 	/// <returns></returns>
-	static int Atoi(std::string str);
+	static int atoi(std::string str);
 
 	/// <summary>
 	/// 9. Palindrome Number
 	/// </summary>
 	/// <param name="x"></param>
 	/// <returns></returns>
-	static bool IsPalindrome(int x);
+	static bool isPalindrome(int x);
 
 	/// <summary>
 	/// 10. Regular Expression Matching
@@ -208,7 +208,7 @@ public:
 	/// <param name="s"></param>
 	/// <param name="p"></param>
 	/// <returns></returns>
-	static bool IsMatch(std::string s, std::string p);
+	static bool isMatch(std::string s, std::string p);
 
 	/// <summary>
 	/// 11. Container With Most Water
@@ -733,6 +733,13 @@ public:
 	/// <param name="root"></param>
 	/// <returns></returns>
 	static std::vector<std::vector<int>> levelOrder(Node* root);
+
+	/// <summary>
+	/// 477. Total Hamming Distance
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
+	static int totalHammingDistance(std::vector<int> &nums);
 
 	/// <summary>
 	/// 509. Fibonacci Number
