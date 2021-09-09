@@ -959,6 +959,39 @@ std::string Solution::addBinary(std::string a, std::string b) {
     return s;
 }
 
+std::vector<std::string> Solution::fullJustify(std::vector<std::string> &words,
+                                               int maxWidth) {
+  std::vector<std::string> ans;
+  int right = 0, n = words.size();
+  while (true) {
+    int left = right;
+    int sumLen = 0;
+    while (right < n &&
+           sumLen + words[right].length() + right - left <= maxWidth) {
+      sumLen += words[right++].length();
+    }
+
+    if (right == n) {
+      std::string s = join(words, left, n, " ");
+      ans.emplace_back(s + blank(maxWidth - s.length()));
+      return ans;
+    }
+    int numWords = right - left;
+    int numSpaces = maxWidth - sumLen;
+    if (numWords == 1) {
+      ans.emplace_back(words[left] + blank(numSpaces));
+      continue;
+    }
+    int avgSpaces = numSpaces / (numWords - 1);
+    int extraSpaces = numSpaces % (numWords - 1);
+    std::string s1 =
+        join(words, left, left + extraSpaces + 1, blank(avgSpaces + 1));
+    std::string s2 =
+        join(words, left + extraSpaces + 1, right, blank(avgSpaces));
+    ans.emplace_back(s1 + blank(avgSpaces) + s2);
+  }
+}
+
 int Solution::mySqrt(int x) {
     if (x <= 1)
         return x;
@@ -1794,4 +1827,15 @@ int Solution::sumXor(int x) {
     return x + 1;
   }
   return 0;
+}
+
+std::string Solution::blank(int n) { return std::string(n, ' '); }
+
+std::string Solution::join(std::vector<std::string> &words, int left, int right,
+                           std::string sep) {
+  std::string s = words[left];
+  for (int i = left + 1; i < right; ++i) {
+    s += sep + words[i];
+  }
+  return s;
 }
