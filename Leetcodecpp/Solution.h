@@ -135,6 +135,13 @@ class Solution
 {
 public:
 	/// <summary>
+	/// 二进制中1的个数
+	/// </summary>
+	/// <param name="n"></param>
+	/// <returns></returns>
+	static int hammingWeight(uint32_t n);
+
+	/// <summary>
 	/// 1. Two Sum
 	/// </summary>
 	/// <param name="nums"></param>
@@ -848,6 +855,13 @@ public:
 	/// <param name="R"></param>
 	/// <returns></returns>
 	static int rangeSumBST(TreeNode* root, int L, int R);
+
+	/// <summary>
+	/// 977. Squares of a Sorted Array
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <returns></returns>
+	static std::vector<int> sortedSquares(std::vector<int>& nums);
 
 	/// <summary>
 	/// 1260. Shift 2D Grid

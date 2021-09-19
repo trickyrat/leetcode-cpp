@@ -1,5 +1,14 @@
 #include "Solution.h"
 
+int Solution::hammingWeight(uint32_t n) {
+  int res = 0;
+  while (n) {
+    n &= n - 1;
+    res++;
+  }
+  return res;
+}
+
 std::vector<int> Solution::twoSum(std::vector<int>& nums, int target) {
     size_t size = nums.size();
     std::unordered_map<int, size_t> hash;
@@ -1612,6 +1621,22 @@ int Solution::rangeSumBST(TreeNode* root, int L, int R) {
     if (root->val >= L && root->val <= R)
         sum += root->val;
     return sum;
+}
+
+std::vector<int> Solution::sortedSquares(std::vector<int> &nums) {
+  int n = nums.size();
+  std::vector<int> ans(n);
+  for (int i = 0, j = n - 1, pos = n - 1; i <= j;) {
+    if (nums[i] * nums[i] > nums[j] * nums[j]) {
+      ans[pos] = nums[i] * nums[i];
+      ++i;
+    } else {
+      ans[pos] = nums[j] * nums[j];
+      --j;
+    }
+    --pos;
+  }
+  return ans;
 }
 
 std::vector<std::vector<int>>
