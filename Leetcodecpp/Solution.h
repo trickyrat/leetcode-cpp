@@ -665,11 +665,26 @@ public:
 	static ListNode* sortList(ListNode* head);
 
 	/// <summary>
+	/// 167. Two Sum II - Input array is sorted
+	/// </summary>
+	/// <param name="numbers"></param>
+	/// <param name="target"></param>
+	/// <returns></returns>
+	static std::vector<int> twoSumII(std::vector<int> &numbers, int target);
+
+	/// <summary>
 	/// 169. Majority Element
 	/// </summary>
 	/// <param name="nums"></param>
 	/// <returns></returns>
 	static int majorityElement(std::vector<int>& nums);
+
+	/// <summary>
+	/// 189. Rotate Array
+	/// </summary>
+	/// <param name="nums"></param>
+	/// <param name="k"></param>
+	static void rotate(std::vector<int> &nums, int k); 
 
 	/// <summary>
 	/// 190. Reverse Bits
@@ -906,4 +921,6 @@ private:
 	static std::vector<int> kmpProcess(std::string& needle);
 
 	static int sumXor(int x);
+
+	static void reverse(std::vector<int> &nums, int start, int end);
 };
