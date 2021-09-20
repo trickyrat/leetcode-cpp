@@ -146,7 +146,7 @@ std::string Solution::convert(std::string s, int numRows) {
   return ret;
 }
 
-int Solution::Reverse(int x) {
+int Solution::reverse(int x) {
   int res = 0;
   while (x) {
     int pop = x % 10;
@@ -159,7 +159,7 @@ int Solution::Reverse(int x) {
   return res;
 }
 
-int Solution::Atoi(std::string str) {
+int Solution::atoi(std::string str) {
   if (str.empty())
     return 0;
   int sign = 1;
@@ -179,7 +179,7 @@ int Solution::Atoi(std::string str) {
   return bas * sign;
 }
 
-bool Solution::IsPalindrome(int x) {
+bool Solution::isPalindrome(int x) {
   if (x < 0 || (x != 0 && x % 10 == 0))
     return false;
   int res = 0;
@@ -190,7 +190,7 @@ bool Solution::IsPalindrome(int x) {
   return (x == res || x == res / 10);
 }
 
-bool Solution::IsMatch(std::string s, std::string p) {
+bool Solution::isMatch(std::string s, std::string p) {
   size_t m = s.size(), n = p.size();
   std::vector<std::vector<bool>> f(m + 1, std::vector<bool>(n + 1, false));
   f[0][0] = true;
@@ -963,6 +963,39 @@ std::string Solution::addBinary(std::string a, std::string b) {
     c /= 2;
   }
   return s;
+}
+
+std::vector<std::string> Solution::fullJustify(std::vector<std::string> &words,
+                                               int maxWidth) {
+  std::vector<std::string> ans;
+  int right = 0, n = words.size();
+  while (true) {
+    int left = right;
+    int sumLen = 0;
+    while (right < n &&
+           sumLen + words[right].length() + right - left <= maxWidth) {
+      sumLen += words[right++].length();
+    }
+
+    if (right == n) {
+      std::string s = join(words, left, n, " ");
+      ans.emplace_back(s + blank(maxWidth - s.length()));
+      return ans;
+    }
+    int numWords = right - left;
+    int numSpaces = maxWidth - sumLen;
+    if (numWords == 1) {
+      ans.emplace_back(words[left] + blank(numSpaces));
+      continue;
+    }
+    int avgSpaces = numSpaces / (numWords - 1);
+    int extraSpaces = numSpaces % (numWords - 1);
+    std::string s1 =
+        join(words, left, left + extraSpaces + 1, blank(avgSpaces + 1));
+    std::string s2 =
+        join(words, left + extraSpaces + 1, right, blank(avgSpaces));
+    ans.emplace_back(s1 + blank(avgSpaces) + s2);
+  }
 }
 
 int Solution::mySqrt(int x) {
@@ -1823,6 +1856,13 @@ int Solution::sumXor(int x) {
     return x + 1;
   }
   return 0;
+}
+
+std::string Solution::blank(int n) { return std::string(); }
+
+std::string Solution::join(std::vector<std::string> &words, int left, int right,
+                           std::string sep) {
+  return std::string();
 }
 
 void Solution::reverse(std::vector<int> &nums, int start, int end) {
