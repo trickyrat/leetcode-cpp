@@ -1473,6 +1473,26 @@ int Solution::fib(int N) {
   return res;
 }
 
+std::string Solution::reverseWords(std::string s) { int len = s.length(); 
+  int i = 0;
+  while (i < len) {
+    int start = i;
+    while (i < len && s[i] != ' ') {
+      i++;
+    }
+    int left = start, right = i - 1;
+    while (left < right) {
+      std::swap(s[left], s[right]);
+      left++;
+      right--;
+    }
+    while (i < len && s[i] == ' ') {
+      i++;
+    }
+  }
+  return s;
+}
+
 TreeNode *Solution::mergeTrees(TreeNode *t1, TreeNode *t2) {
   if (t1 == nullptr)
     return t2;

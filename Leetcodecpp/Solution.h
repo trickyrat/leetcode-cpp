@@ -766,6 +766,13 @@ public:
   static int fib(int N);
 
   /// <summary>
+  /// 557. Reverse Words in a String III
+  /// </summary>
+  /// <param name="s"></param>
+  /// <returns></returns>
+  static std::string reverseWords(std::string s);
+
+  /// <summary>
   /// 617. Merge Two Binary Trees
   /// </summary>
   /// <param name="t1"></param>
