@@ -689,11 +689,25 @@ public:
 	static uint32_t reverseBits(uint32_t n);
 
   /// <summary>
+  /// 191. Number of 1 Bits
+  /// </summary>
+  /// <param name="n"></param>
+  /// <returns></returns>
+  static int hammingWeight(uint32_t n);
+
+  /// <summary>
   /// 198. House Robber
   /// </summary>
   /// <param name="nums"></param>
   /// <returns></returns>
   static int rob(std::vector<int> &nums);
+
+  /// <summary>
+  /// 231. Power of Two
+  /// </summary>
+  /// <param name="n"></param>
+  /// <returns></returns>
+  static bool isPowerOfTwo(int n);
 
   /// <summary>
   /// 242. Valid Anagram

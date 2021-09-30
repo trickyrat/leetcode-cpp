@@ -1,14 +1,5 @@
 #include "Solution.h"
 
-int Solution::hammingWeight(uint32_t n) {
-  int res = 0;
-  while (n) {
-    n &= n - 1;
-    res++;
-  }
-  return res;
-}
-
 std::vector<int> Solution::twoSum(std::vector<int> &nums, int target) {
   size_t size = nums.size();
   std::unordered_map<int, size_t> hash;
@@ -1344,6 +1335,15 @@ uint32_t Solution::reverseBits(uint32_t n) {
   // return res;
 }
 
+int Solution::hammingWeight(uint32_t n) {
+  int res = 0;
+  while (n) {
+    n &= n - 1;
+    res++;
+  }
+  return res;
+}
+
 int Solution::rob(std::vector<int> &nums) {
   auto notrob = 0;
   auto rob = 0;
@@ -1354,6 +1354,8 @@ int Solution::rob(std::vector<int> &nums) {
   }
   return std::max(rob, notrob);
 }
+
+bool Solution::isPowerOfTwo(int n) { return n > 0 && (n & (n - 1)) == 0; }
 
 bool Solution::isAnagram(std::string s, std::string t) {
   if (s.length() != t.length())
