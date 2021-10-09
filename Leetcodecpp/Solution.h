@@ -931,6 +931,8 @@ private:
   static bool isValid(std::vector<std::vector<char>> &board, int row, int col,
                       char num);
 
+  static void Dfs(std::vector<int>& candidates, int target, std::vector<std::vector<int>>& ans, std::vector<int>& combine, int idx);
+  
   static ListNode *split(ListNode *head, int n);
   static ListNode *merge(ListNode *l1, ListNode *l2, ListNode *head);
   static std::string preProcess(std::string s);

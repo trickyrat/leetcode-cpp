@@ -737,7 +737,10 @@ std::string Solution::countAndSay(int n) {
 
 std::vector<std::vector<int>>
 Solution::combinationSum(std::vector<int> &candidates, int target) {
-  return std::vector<std::vector<int>>();
+  std::vector<std::vector<int>> ans;
+  std::vector<int> combine;
+  Dfs(candidates, target, ans, combine, 0);
+  return ans;
 }
 
 std::vector<std::vector<int>>
@@ -1779,6 +1782,22 @@ bool Solution::isValid(std::vector<std::vector<char>> &board, int row, int col,
         board[blkrow + i / 3][blkcol + i % 3] == num)
       return false;
   return true;
+}
+
+void Solution::Dfs(std::vector<int>& candidates, int target, std::vector<std::vector<int>>& ans, std::vector<int>& combine, int idx){
+  if (idx == candidates.size()) {
+    return;
+  }
+  if (target == 0) {
+    ans.emplace_back(std::vector<int>(combine));
+    return;
+  }
+  Dfs(candidates, target, ans, combine, idx + 1);
+  if (target - candidates[idx] >= 0) {
+    combine.emplace_back(candidates[idx]);
+    Dfs(candidates, target - candidates[idx], ans, combine, idx);
+    combine.pop_back();
+  }
 }
 
 ListNode *Solution::split(ListNode *head, int n) {
