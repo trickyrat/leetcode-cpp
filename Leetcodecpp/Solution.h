@@ -14,67 +14,9 @@
 #include <unordered_set>
 #include <vector>
 
-class Node {
-public:
-  int val;
-  std::vector<Node *> children;
-  Node() {}
-  Node(int _val, std::vector<Node *> _children)
-      : val(_val), children(_children) {}
-};
-
-/// <summary>
-/// Definition for a binary tree node.
-/// </summary>
-struct TreeNode {
-  int val;
-  TreeNode *left;
-  TreeNode *right;
-  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-};
-
-class BSTIterator {
-private:
-  std::stack<TreeNode *> nodes;
-
-public:
-  BSTIterator(TreeNode *root) {
-    while (root) {
-      nodes.push(root);
-      root = root->left;
-    }
-  }
-
-  /// <summary>
-  /// return the next smallest number.
-  /// </summary>
-  /// <returns></returns>
-  int next() {
-    TreeNode *tmp = nodes.top();
-    nodes.pop();
-    TreeNode *right = tmp->right;
-    while (right) {
-      nodes.push(right);
-      right = right->left;
-    }
-    return tmp->val;
-  }
-
-  /// <summary>
-  ///  whether there is a next smallest number.
-  /// </summary>
-  /// <returns></returns>
-  bool hasNext() { return !nodes.empty(); }
-};
-
-/// <summary>
-/// Definition for singly-linked list.
-/// </summary>
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode(int x) : val(x), next(nullptr) {}
-};
+#include "ListNode.h"
+#include "TreeNode.h"
+#include "Node.h"
 
 class Foo {
 private:
@@ -100,31 +42,8 @@ public:
   }
 };
 
-class NumArray {
-public:
-  NumArray(std::vector<int> &nums) {
-    int len = nums.size();
-    sum = std::vector<int>(len + 1);
-    for (int i = 0; i < len; i++) {
-      sum[i + 1] = sum[i] + nums[i];
-    }
-  };
-  ~NumArray() = default;
-
-  int sumRange(int i, int j) { return sum[j + 1] - sum[i]; }
-
-private:
-  std::vector<int> sum;
-};
-
 class Solution {
 public:
-	/// <summary>
-	/// 二进制中1的个数
-	/// </summary>
-	/// <param name="n"></param>
-	/// <returns></returns>
-	static int hammingWeight(uint32_t n);
 
 	/// <summary>
 	/// 1. Two Sum
