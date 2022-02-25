@@ -13,6 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+#include <regex>
 
 #include "ListNode.h"
 #include "TreeNode.h"
@@ -697,6 +698,14 @@ public:
   /// <param name="N"></param>
   /// <returns></returns>
   static int fib(int N);
+
+  /// <summary>
+  /// 537. Complex Number Multiply
+  /// </summary>
+  /// <param name="num1"></param>
+  /// <param name="num2"></param>
+  /// <returns></returns>
+  static std::string complexNumberMultiply(std::string num1, std::string num2);
 
   /// <summary>
   /// 557. Reverse Words in a String III

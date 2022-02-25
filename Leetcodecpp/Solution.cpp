@@ -1492,7 +1492,25 @@ int Solution::fib(int N) {
   return res;
 }
 
-std::string Solution::reverseWords(std::string s) { int len = s.length(); 
+std::string Solution::complexNumberMultiply(std::string num1,
+                                            std::string num2) {
+  std::regex re("\\+|i");
+  std::vector <std::string>
+      complex1(std::sregex_token_iterator(num1.begin(), num1.end(), re, -1),
+               std::sregex_token_iterator());
+  std::vector<std::string> complex2(
+      std::sregex_token_iterator(num2.begin(), num2.end(), re, -1),
+      std::sregex_token_iterator());
+  int real1 = std::stoi(complex1[0]);
+  int imag1 = std::stoi(complex1[1]);
+  int real2 = std::stoi(complex2[0]);
+  int imag2 = std::stoi(complex2[1]);
+  return std::to_string(real1 * real2 - imag1 * imag2) + "+" +
+                        std::to_string(real1 * imag2 + imag1 * real2) + "i";
+}
+
+std::string Solution::reverseWords(std::string s) {
+  int len = s.length(); 
   int i = 0;
   while (i < len) {
     int start = i;
