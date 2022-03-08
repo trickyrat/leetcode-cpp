@@ -1,19 +1,16 @@
 #include "Solution.h"
 
 std::vector<int> Solution::twoSum(std::vector<int> &nums, int target) {
-  size_t size = nums.size();
-  std::unordered_map<int, size_t> hash;
-  std::vector<int> result;
-  for (size_t i = 0; i < size; i++) {
-    int numberToFind = target - nums[i];
-    if (hash.contains(numberToFind)) {
-      result.push_back(hash[numberToFind]);
-      result.push_back(i);
-      return result;
+  int size = nums.size();
+  std::unordered_map<int, int> hash;
+  for (int i = 0; i < size; i++) {
+    auto iter = hash.find(target - nums[i]);
+    if (iter != hash.end()) {
+      return {iter->second, i};
     }
     hash[nums[i]] = i;
   }
-  return result;
+  return {};
 }
 
 ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2) {
@@ -1464,6 +1461,37 @@ std::vector<std::vector<int>> Solution::levelOrder(Node *root) {
   return res;
 }
 
+int Solution::totalHammingDistance(std::vector<int> &nums) { 
+  int size = nums.size();
+  int res = 0;
+  for (int i = 0; i < 30; i++) {
+    int tmp = 0;
+    for (int num : nums) {
+      tmp += (num >> i) & 1; 
+    }
+    res += tmp * (size - tmp);
+  }
+  return res;
+}
+
+std::string Solution::convertToBase7(int num) {
+  if (num == 0) {
+    return "0";
+  }
+  bool negative = num < 0;
+  num = std::abs(num);
+  std::string digits;
+  while (num > 0) {
+    digits.push_back(num % 7 + '0');
+    num /= 7;
+  }
+  if (negative) {
+    digits.push_back('-');
+  }
+  std::reverse(digits.begin(), digits.end());
+  return digits;
+}
+
 int Solution::fib(int N) {
   if (N < 2)
     return N;
@@ -1736,11 +1764,66 @@ int Solution::minPushBox(std::vector<std::vector<char>> &grid) {
   return -1;
 }
 
+std::vector<int> Solution::luckyNumbers(std::vector<std::vector<int>> &matrix) {
+  int m = matrix.size(), n = matrix.size();
+  std::vector<int> minRow(m, INT_MAX), maxCol(n);
+  for (int i = 0; i < m; i++) {
+    for (int j = 0; j < n; j++) {
+      minRow[i] = std::min(minRow[i], matrix[i][j]);
+      maxCol[j] = std::max(maxCol[i], matrix[i][j]);
+    }
+  }
+  std::vector<int> res;
+  for (int i = 0; i < m; i++) {
+    for (int j = 0; j < n; j++) {
+      if (matrix[i][j] == minRow[i] && matrix[i][j] == maxCol[j]) {
+        res.push_back(matrix[i][j]);
+      }
+    }
+  }
+  return res;
+}
+
 int Solution::xorOperation(int n, int start) {
   int s = start >> 1;
   int e = n & start & 1;
   int res = sumXor(s - 1) ^ sumXor(s + n - 1);
   return res << 1 | e;
+}
+
+std::vector<int>
+Solution::platesBetweenCandles(std::string s,
+                               std::vector<std::vector<int>> &queries) {
+  int n = s.length();
+  std::vector<int> preSum(n);
+  int sum = 0;
+  for (int i = 0; i < n; i++) {
+    if (s[i] == '*') {
+      sum++;
+    }
+    preSum[i] = sum;
+  }
+  std::vector<int> left(n);
+  for (int i = 0, l = -1; i < n; i++) {
+    if (s[i] == '|') {
+      l = i;
+    }
+    left[i] = l;
+  }
+  std::vector<int> right(n);
+  for (int i = n - 1, r = -1; i >= 0; i--) {
+    if (s[i] == '|') {
+      r = i;
+    }
+    right[i] = r;
+  }
+  std::vector<int> ans;
+  for (auto& query : queries) {
+    int x = right[query[0]], y = left[query[1]];
+    ans.push_back(x == -1 || y == -1 || x >= y ? 0 : preSum[y] - preSum[x]);
+  }
+
+  return ans;
 }
 
 /*Private methods*/

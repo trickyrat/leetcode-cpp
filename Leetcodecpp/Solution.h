@@ -119,20 +119,13 @@ private:
 
 class Solution {
 public:
-	/// <summary>
-	/// 二进制中1的个数
-	/// </summary>
-	/// <param name="n"></param>
-	/// <returns></returns>
-	static int hammingWeight(uint32_t n);
-
-	/// <summary>
-	/// 1. Two Sum
-	/// </summary>
-	/// <param name="nums"></param>
-	/// <param name="target"></param>
-	/// <returns></returns>
-	static std::vector<int> twoSum(std::vector<int>& nums, int target);
+  /// <summary>
+  /// 1. Two Sum
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <param name="target"></param>
+  /// <returns></returns>
+  static std::vector<int> twoSum(std::vector<int> &nums, int target);
 
   /// <summary>
   /// 2. Add Two Numbers
@@ -659,34 +652,34 @@ public:
   /// <returns></returns>
   static ListNode *sortList(ListNode *head);
 
-	/// <summary>
-	/// 167. Two Sum II - Input array is sorted
-	/// </summary>
-	/// <param name="numbers"></param>
-	/// <param name="target"></param>
-	/// <returns></returns>
-	static std::vector<int> twoSumII(std::vector<int> &numbers, int target);
+  /// <summary>
+  /// 167. Two Sum II - Input array is sorted
+  /// </summary>
+  /// <param name="numbers"></param>
+  /// <param name="target"></param>
+  /// <returns></returns>
+  static std::vector<int> twoSumII(std::vector<int> &numbers, int target);
 
-	/// <summary>
-	/// 169. Majority Element
-	/// </summary>
-	/// <param name="nums"></param>
-	/// <returns></returns>
-	static int majorityElement(std::vector<int>& nums);
+  /// <summary>
+  /// 169. Majority Element
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  static int majorityElement(std::vector<int> &nums);
 
-	/// <summary>
-	/// 189. Rotate Array
-	/// </summary>
-	/// <param name="nums"></param>
-	/// <param name="k"></param>
-	static void rotate(std::vector<int> &nums, int k); 
+  /// <summary>
+  /// 189. Rotate Array
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <param name="k"></param>
+  static void rotate(std::vector<int> &nums, int k);
 
-	/// <summary>
-	/// 190. Reverse Bits
-	/// </summary>
-	/// <param name="n"></param>
-	/// <returns></returns>
-	static uint32_t reverseBits(uint32_t n);
+  /// <summary>
+  /// 190. Reverse Bits
+  /// </summary>
+  /// <param name="n"></param>
+  /// <returns></returns>
+  static uint32_t reverseBits(uint32_t n);
 
   /// <summary>
   /// 191. Number of 1 Bits
@@ -771,6 +764,13 @@ public:
   /// <param name="nums"></param>
   /// <returns></returns>
   static int totalHammingDistance(std::vector<int> &nums);
+
+  /// <summary>
+  /// 504.七进制数
+  /// </summary>
+  /// <param name="num"></param>
+  /// <returns></returns>
+  static std::string convertToBase7(int num);
 
   /// <summary>
   /// 509. Fibonacci Number
@@ -894,27 +894,35 @@ public:
   /// <returns></returns>
   static int rangeSumBST(TreeNode *root, int L, int R);
 
-	/// <summary>
-	/// 977. Squares of a Sorted Array
-	/// </summary>
-	/// <param name="nums"></param>
-	/// <returns></returns>
-	static std::vector<int> sortedSquares(std::vector<int>& nums);
+  /// <summary>
+  /// 977. Squares of a Sorted Array
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  static std::vector<int> sortedSquares(std::vector<int> &nums);
 
-	/// <summary>
-	/// 1260. Shift 2D Grid
-	/// </summary>
-	/// <param name="grid"></param>
-	/// <param name="k"></param>
-	/// <returns></returns>
-	static std::vector<std::vector<int>> shiftGrid(std::vector<std::vector<int>>& grid, int k);
-	
-	/// <summary>
-	/// 1263. Minimum Moves to Move a Box to Their Target Location
-	/// </summary>
-	/// <param name="grid"></param>
-	/// <returns></returns>
-	static int minPushBox(std::vector<std::vector<char>>& grid);
+  /// <summary>
+  /// 1260. Shift 2D Grid
+  /// </summary>
+  /// <param name="grid"></param>
+  /// <param name="k"></param>
+  /// <returns></returns>
+  static std::vector<std::vector<int>>
+  shiftGrid(std::vector<std::vector<int>> &grid, int k);
+
+  /// <summary>
+  /// 1263. Minimum Moves to Move a Box to Their Target Location
+  /// </summary>
+  /// <param name="grid"></param>
+  /// <returns></returns>
+  static int minPushBox(std::vector<std::vector<char>> &grid);
+
+  /// <summary>
+  /// 1380. 矩阵中的幸运数字
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  static std::vector<int> luckyNumbers(std::vector<std::vector<int>> &matrix);
 
   /// <summary>
   /// 1486. XOR Operation in an Array
@@ -924,6 +932,9 @@ public:
   /// <returns></returns>
   static int xorOperation(int n, int start);
 
+  static std::vector<int>
+  platesBetweenCandles(std::string s, std::vector<std::vector<int>> &queries);
+
 private:
   static bool isMirror(TreeNode *l1, TreeNode *l2);
 
@@ -931,8 +942,10 @@ private:
   static bool isValid(std::vector<std::vector<char>> &board, int row, int col,
                       char num);
 
-  static void Dfs(std::vector<int>& candidates, int target, std::vector<std::vector<int>>& ans, std::vector<int>& combine, int idx);
-  
+  static void Dfs(std::vector<int> &candidates, int target,
+                  std::vector<std::vector<int>> &ans, std::vector<int> &combine,
+                  int idx);
+
   static ListNode *split(ListNode *head, int n);
   static ListNode *merge(ListNode *l1, ListNode *l2, ListNode *head);
   static std::string preProcess(std::string s);
@@ -949,5 +962,5 @@ private:
   std::string blank(int n);
   std::string join(std::vector<std::string> &words, int left, int right,
                    std::string sep);
-	static void reverse(std::vector<int> &nums, int start, int end);
+  static void reverse(std::vector<int> &nums, int start, int end);
 };
