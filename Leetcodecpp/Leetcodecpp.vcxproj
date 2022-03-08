@@ -151,15 +151,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BSTIterator.cpp" />
+    <ClCompile Include="ListNode.cpp" />
     <ClCompile Include="MinStack.cpp" />
     <ClCompile Include="MyStack.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="NumArray.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Solution.cpp" />
+    <ClCompile Include="TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BSTIterator.h" />
+    <ClInclude Include="ListNode.h" />
     <ClInclude Include="MinStack.h" />
     <ClInclude Include="MyStack.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="NumArray.h" />
     <ClInclude Include="Solution.h" />
+    <ClInclude Include="TreeNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -640,18 +640,32 @@ int Solution::longestValidParentheses(std::string &s) {
 }
 
 int Solution::search(std::vector<int> &nums, int target) {
-  int left = 0, right = nums.size();
-  while (left < right) {
-    int mid = (left + right) / 2;
-    double num = (nums[mid] < nums[0]) == (target < nums[0]) ? nums[mid]
-                 : target < nums[0]                          ? -INFINITY
-                                                             : INFINITY;
-    if (num < target)
-      left = mid + 1;
-    else if (num > target)
-      right = mid;
-    else
+  int n = (int)nums.size();
+  if (n == 0) {
+    return -1;
+  }
+  if (n == 1) {
+    return nums[0] == target ? 0 : -1;
+  }
+  int l = 0, r = n - 1;
+  while (l <= r) {
+    int mid = (l + r) / 2;
+    if (nums[mid] == target) {
       return mid;
+    }
+    if (nums[0] <= nums[mid]) {
+      if (nums[0] <= target && target < nums[mid]) {
+        r = mid - 1;
+      } else {
+        l = mid + 1;
+      }
+    } else {
+      if (nums[mid] < target && target <= nums[n - 1]) {
+        l = mid + 1;
+      } else {
+        r = mid - 1;
+      }
+    }
   }
   return -1;
 }
@@ -1506,7 +1520,25 @@ int Solution::fib(int N) {
   return res;
 }
 
-std::string Solution::reverseWords(std::string s) { int len = s.length(); 
+std::string Solution::complexNumberMultiply(std::string num1,
+                                            std::string num2) {
+  std::regex re("\\+|i");
+  std::vector <std::string>
+      complex1(std::sregex_token_iterator(num1.begin(), num1.end(), re, -1),
+               std::sregex_token_iterator());
+  std::vector<std::string> complex2(
+      std::sregex_token_iterator(num2.begin(), num2.end(), re, -1),
+      std::sregex_token_iterator());
+  int real1 = std::stoi(complex1[0]);
+  int imag1 = std::stoi(complex1[1]);
+  int real2 = std::stoi(complex2[0]);
+  int imag2 = std::stoi(complex2[1]);
+  return std::to_string(real1 * real2 - imag1 * imag2) + "+" +
+                        std::to_string(real1 * imag2 + imag1 * real2) + "i";
+}
+
+std::string Solution::reverseWords(std::string s) {
+  int len = s.length(); 
   int i = 0;
   while (i < len) {
     int start = i;

@@ -13,68 +13,11 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+#include <regex>
 
-class Node {
-public:
-  int val;
-  std::vector<Node *> children;
-  Node() {}
-  Node(int _val, std::vector<Node *> _children)
-      : val(_val), children(_children) {}
-};
-
-/// <summary>
-/// Definition for a binary tree node.
-/// </summary>
-struct TreeNode {
-  int val;
-  TreeNode *left;
-  TreeNode *right;
-  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-};
-
-class BSTIterator {
-private:
-  std::stack<TreeNode *> nodes;
-
-public:
-  BSTIterator(TreeNode *root) {
-    while (root) {
-      nodes.push(root);
-      root = root->left;
-    }
-  }
-
-  /// <summary>
-  /// return the next smallest number.
-  /// </summary>
-  /// <returns></returns>
-  int next() {
-    TreeNode *tmp = nodes.top();
-    nodes.pop();
-    TreeNode *right = tmp->right;
-    while (right) {
-      nodes.push(right);
-      right = right->left;
-    }
-    return tmp->val;
-  }
-
-  /// <summary>
-  ///  whether there is a next smallest number.
-  /// </summary>
-  /// <returns></returns>
-  bool hasNext() { return !nodes.empty(); }
-};
-
-/// <summary>
-/// Definition for singly-linked list.
-/// </summary>
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode(int x) : val(x), next(nullptr) {}
-};
+#include "ListNode.h"
+#include "TreeNode.h"
+#include "Node.h"
 
 class Foo {
 private:
@@ -98,23 +41,6 @@ public:
     printThird();
     m2.unlock();
   }
-};
-
-class NumArray {
-public:
-  NumArray(std::vector<int> &nums) {
-    int len = nums.size();
-    sum = std::vector<int>(len + 1);
-    for (int i = 0; i < len; i++) {
-      sum[i + 1] = sum[i] + nums[i];
-    }
-  };
-  ~NumArray() = default;
-
-  int sumRange(int i, int j) { return sum[j + 1] - sum[i]; }
-
-private:
-  std::vector<int> sum;
 };
 
 class Solution {
@@ -778,6 +704,14 @@ public:
   /// <param name="N"></param>
   /// <returns></returns>
   static int fib(int N);
+
+  /// <summary>
+  /// 537. Complex Number Multiply
+  /// </summary>
+  /// <param name="num1"></param>
+  /// <param name="num2"></param>
+  /// <returns></returns>
+  static std::string complexNumberMultiply(std::string num1, std::string num2);
 
   /// <summary>
   /// 557. Reverse Words in a String III
