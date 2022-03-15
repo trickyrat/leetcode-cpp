@@ -1,4 +1,5 @@
 #include "pch.h"
+
 #include "../Leetcodecpp/Solution.cpp"
 #include "../Leetcodecpp/Solution.h"
 
@@ -42,7 +43,30 @@ TEST(SolutionTest, IntToRomanTest) {
   EXPECT_EQ("VI", Solution::intToRoman(6));
 }
 
+TEST(SolutionTest, SearchInsertTest) {
+  vector<int> nums1 = {1, 3, 5, 6};
+  vector<int> nums2 = {1, 3, 5, 6};
+  vector<int> nums3 = {1, 3, 5, 6};
+  vector<int> nums4 = {1, 3, 5, 6};
+  vector<int> nums5 = {1};
+  EXPECT_EQ(2, Solution::searchInsert(nums1, 5));
+  EXPECT_EQ(1, Solution::searchInsert(nums2, 2));
+  EXPECT_EQ(4, Solution::searchInsert(nums3, 7));
+  EXPECT_EQ(0, Solution::searchInsert(nums4, 0));
+  EXPECT_EQ(0, Solution::searchInsert(nums5, 0));
+}
+
 TEST(SolutionTest, ConvertToBase7Test) {
   EXPECT_EQ("202", Solution::convertToBase7(100));
   EXPECT_EQ("-10", Solution::convertToBase7(-7));
+}
+
+TEST(SolutionTest, PivotIndexTest) {
+
+  vector<int> nums1 = {2, 3, -1, 8, 4};
+  vector<int> nums2 = {1, -1, 4};
+  vector<int> nums3 = {2, 5};
+  EXPECT_EQ(3, Solution::pivotIndex(nums1));
+  EXPECT_EQ(2, Solution::pivotIndex(nums2));
+  EXPECT_EQ(-1, Solution::pivotIndex(nums3));
 }

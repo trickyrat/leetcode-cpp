@@ -14,6 +14,7 @@
 #include <unordered_set>
 #include <vector>
 #include <regex>
+#include <numeric>
 
 #include "ListNode.h"
 #include "TreeNode.h"
@@ -866,6 +867,19 @@ public:
   /// <returns></returns>
   static int xorOperation(int n, int start);
 
+  /// <summary>
+  /// 1991.寻找数组的中间位置
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  static int pivotIndex(std::vector<int> &nums);
+
+  /// <summary>
+  /// 2055.蜡烛之间的盘子
+  /// </summary>
+  /// <param name="s"></param>
+  /// <param name="queries"></param>
+  /// <returns></returns>
   static std::vector<int>
   platesBetweenCandles(std::string s, std::vector<std::vector<int>> &queries);
 
