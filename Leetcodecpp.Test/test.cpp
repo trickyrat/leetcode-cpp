@@ -54,12 +54,20 @@ TEST(SolutionTest, SearchInsertTest) {
   EXPECT_EQ(0, Solution::searchInsert(nums5, 0));
 }
 
+TEST(SolutionTest, TrailingZeroesTest) {
+  EXPECT_EQ(0, Solution::trailingZeroes(3));
+  EXPECT_EQ(1, Solution::trailingZeroes(5));
+  EXPECT_EQ(0, Solution::trailingZeroes(0));
+}
+
 TEST(FindDiagonalOrderTest, Test1) {
   vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
   vector<int> expected = {1, 2, 4, 7, 5, 3, 6, 8, 9};
   vector<int> actual = Solution::findDiagonalOrder(matrix);
   EXPECT_EQ(expected, actual);
 }
+
+
 
 TEST(SolutionTest, ConvertToBase7Test) {
   EXPECT_EQ("202", Solution::convertToBase7(100));

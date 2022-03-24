@@ -595,6 +595,13 @@ public:
   static int majorityElement(std::vector<int> &nums);
 
   /// <summary>
+  /// 172. ½×³ËºóµÄÁã
+  /// </summary>
+  /// <param name="n"></param>
+  /// <returns></returns>
+  static int trailingZeroes(int n);
+
+  /// <summary>
   /// 189. Rotate Array
   /// </summary>
   /// <param name="nums"></param>

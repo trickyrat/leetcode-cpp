@@ -1323,6 +1323,15 @@ int Solution::majorityElement(std::vector<int> &nums) {
   return candidate;
 }
 
+int Solution::trailingZeroes(int n) { 
+  int ans = 0;
+  while (n) {
+    n /= 5;
+    ans += n;
+  }
+  return ans; 
+}
+
 void Solution::rotate(std::vector<int> &nums, int k) {
   int len = nums.size();
   k %= len;
