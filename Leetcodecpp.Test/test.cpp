@@ -3,8 +3,6 @@
 #include "../Leetcodecpp/Solution.cpp"
 #include "../Leetcodecpp/Solution.h"
 
-#include <string>
-#include <vector>
 
 using namespace std;
 
@@ -56,6 +54,13 @@ TEST(SolutionTest, SearchInsertTest) {
   EXPECT_EQ(0, Solution::searchInsert(nums5, 0));
 }
 
+TEST(FindDiagonalOrderTest, Test1) {
+  vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+  vector<int> expected = {1, 2, 4, 7, 5, 3, 6, 8, 9};
+  vector<int> actual = Solution::findDiagonalOrder(matrix);
+  EXPECT_EQ(expected, actual);
+}
+
 TEST(SolutionTest, ConvertToBase7Test) {
   EXPECT_EQ("202", Solution::convertToBase7(100));
   EXPECT_EQ("-10", Solution::convertToBase7(-7));
@@ -69,4 +74,20 @@ TEST(SolutionTest, PivotIndexTest) {
   EXPECT_EQ(3, Solution::pivotIndex(nums1));
   EXPECT_EQ(2, Solution::pivotIndex(nums2));
   EXPECT_EQ(-1, Solution::pivotIndex(nums3));
+}
+TEST(PlatesBetweenCandles, Test1) {
+  vector<vector<int>> queries1 = {{2, 5}, {5, 9}};
+  vector<int> expected = {2, 3};
+  auto actual = Solution::platesBetweenCandles("**|**|***|", queries1);
+
+  EXPECT_EQ(expected, actual);
+}
+
+TEST(PlatesBetweenCandles, Test2) {
+  vector<vector<int>> queries1 = {{1, 17}, {4, 5}, {14, 17}, {5, 11}, {15, 16}};
+  vector<int> expected = {9, 0, 0, 0, 0};
+  auto actual =
+      Solution::platesBetweenCandles("***|**|*****|**||**|*", queries1);
+
+  EXPECT_EQ(expected, actual);
 }

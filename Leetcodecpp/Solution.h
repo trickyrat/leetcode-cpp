@@ -693,6 +693,13 @@ public:
   static int totalHammingDistance(std::vector<int> &nums);
 
   /// <summary>
+  /// 498.对角线遍历
+  /// </summary>
+  /// <param name="mat"></param>
+  /// <returns></returns>
+  static std::vector<int> findDiagonalOrder(std::vector<std::vector<int>> &mat);
+
+  /// <summary>
   /// 504.七进制数
   /// </summary>
   /// <param name="num"></param>

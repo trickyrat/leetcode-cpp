@@ -1488,6 +1488,37 @@ int Solution::totalHammingDistance(std::vector<int> &nums) {
   return res;
 }
 
+std::vector<int>
+Solution::findDiagonalOrder(std::vector<std::vector<int>> &mat) {
+  if (mat.size() == 0) {
+    return {};
+  }
+  int N = mat.size(), M = mat[0].size();
+  int row = 0, col = 0;
+  int direction = 1;
+  std::vector<int> res(N * M);
+  int r = 0;
+  while (row < N && col < M) {
+    res[r++] = mat[row][col];
+    int new_row = row + (direction == 1 ? -1 : 1);
+    int new_col = col + (direction == 1 ? 1 : -1);
+    if (new_row < 0 || new_row == N || new_col < 0 || new_col == M) {
+      if (direction) {
+        row += (col == M - 1 ? 1 : 0);
+        col += (col < M - 1 ? 1 : 0);
+      } else {
+        col += (row == N - 1 ? 1 : 0);
+        row += (row < N - 1 ? 1 : 0);
+      }
+      direction = 1 - direction;
+    } else {
+      row = new_row;
+      col = new_col;
+    }
+  }
+  return res;
+}
+
 std::string Solution::convertToBase7(int num) {
   if (num == 0) {
     return "0";
