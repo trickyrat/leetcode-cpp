@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AllOne.cpp" />
     <ClCompile Include="BSTIterator.cpp" />
     <ClCompile Include="ListNode.cpp" />
     <ClCompile Include="MinStack.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllOne.h" />
     <ClInclude Include="BSTIterator.h" />
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="MinStack.h" />

@@ -2,6 +2,8 @@
 
 #include "../Leetcodecpp/Solution.cpp"
 #include "../Leetcodecpp/Solution.h"
+#include "../Leetcodecpp/AllOne.h"
+#include "../Leetcodecpp/AllOne.cpp"
 
 
 using namespace std;
@@ -98,4 +100,24 @@ TEST(PlatesBetweenCandles, Test2) {
       Solution::platesBetweenCandles("***|**|*****|**||**|*", queries1);
 
   EXPECT_EQ(expected, actual);
+}
+
+
+TEST(AllOneTest, Test1) { 
+  AllOne allOne; 
+  allOne.inc("hello");
+  allOne.inc("hello");
+  string actualMaxKey1 = allOne.getMaxKey();
+  string expected1 = "hello";
+  EXPECT_EQ(expected1, actualMaxKey1);
+  string actualMinKey1 = allOne.getMinKey();
+  string expected2 = "hello";
+  EXPECT_EQ(expected2, actualMinKey1);
+  allOne.inc("leet");
+  string actualMaxKey2 = allOne.getMaxKey();
+  string expected3 = "hello";
+  EXPECT_EQ(expected3, actualMaxKey2);
+  string actualMinKey2 = allOne.getMinKey();
+  string expected4 = "leet";
+  EXPECT_EQ(expected4, actualMinKey2);
 }
