@@ -1670,6 +1670,16 @@ std::string Solution::toLowerCase(std::string str) {
   return str;
 }
 
+std::vector<int> Solution::selfDividingNumbers(int left, int right) {
+  std::vector<int> ans;
+  for (int i = left; i <= right; i++) {
+    if (isSelfDividing(i)) {
+      ans.push_back(i);
+    }
+  }
+  return ans;
+}
+
 std::vector<int> Solution::dailyTemperatures(std::vector<int> &T) {
   std::stack<int> s;
   int len = T.size();
@@ -2051,6 +2061,18 @@ std::vector<int> Solution::kmpProcess(std::string &needle) {
       lps[i++] = 0;
   }
   return lps;
+}
+
+bool Solution::isSelfDividing(int num) { 
+  int tmp = num;
+  while (tmp > 0) {
+    int digit = tmp % 10;
+    if (digit == 0 || num % digit != 0) {
+      return false;
+    }
+    tmp /= 10;
+  }
+  return true; 
 }
 
 int Solution::sumXor(int x) {

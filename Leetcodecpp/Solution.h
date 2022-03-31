@@ -776,6 +776,14 @@ public:
   static std::string toLowerCase(std::string str);
 
   /// <summary>
+  /// 728.×Ô³ýÊý
+  /// </summary>
+  /// <param name="left"></param>
+  /// <param name="right"></param>
+  /// <returns></returns>
+  static std::vector<int> selfDividingNumbers(int left, int right);
+
+  /// <summary>
   /// 739. Daily Temperatures
   /// </summary>
   /// <param name="T"></param>
@@ -919,6 +927,8 @@ private:
                            std::vector<int> &flag, int row, int &n);
 
   static std::vector<int> kmpProcess(std::string &needle);
+
+  static bool isSelfDividing(int num);
 
   static int sumXor(int x);
   std::string blank(int n);

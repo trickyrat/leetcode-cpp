@@ -85,6 +85,15 @@ TEST(SolutionTest, PivotIndexTest) {
   EXPECT_EQ(2, Solution::pivotIndex(nums2));
   EXPECT_EQ(-1, Solution::pivotIndex(nums3));
 }
+
+TEST(SolutionTest, SelfDividingNumbersTest) {
+
+  vector<int> expected1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22};
+  vector<int> expected2 = {48, 55, 66, 77};
+  EXPECT_EQ(expected1, Solution::selfDividingNumbers(1, 22));
+  EXPECT_EQ(expected2, Solution::selfDividingNumbers(47, 85));
+}
+
 TEST(PlatesBetweenCandles, Test1) {
   vector<vector<int>> queries1 = {{2, 5}, {5, 9}};
   vector<int> expected = {2, 3};
