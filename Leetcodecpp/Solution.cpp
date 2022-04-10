@@ -1695,6 +1695,22 @@ std::vector<int> Solution::dailyTemperatures(std::vector<int> &T) {
   return ans;
 }
 
+int Solution::uniqueMorseRepresentations(std::vector<std::string> &words) {
+  const std::string MORSE[] = {".-",   "-...", "-.-.", "-..",  ".",    "..-.", "--.",
+                    "....", "..",   ".---", "-.-",  ".-..", "--",   "-.",
+                    "---",  ".--.", "--.-", ".-.",  "...",  "-",    "..-",
+                    "...-", ".--",  "-..-", "-.--", "--.."};
+  std::unordered_set<std::string> seen;
+  for (auto &word : words) {
+    std::string code;
+    for (auto &c : word) {
+      code.append(MORSE[c - 'a']);
+    }
+    seen.emplace(code);
+  }
+  return seen.size();
+}
+
 std::vector<int> Solution::shortestToChar(std::string S, char C) {
   int n = S.size();
   std::vector<int> ans(n, 0);

@@ -62,18 +62,23 @@ TEST(SolutionTest, TrailingZeroesTest) {
   EXPECT_EQ(0, Solution::trailingZeroes(0));
 }
 
-TEST(FindDiagonalOrderTest, Test1) {
+TEST(SolutionTest, FindDiagonalOrderTest) {
   vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
   vector<int> expected = {1, 2, 4, 7, 5, 3, 6, 8, 9};
   vector<int> actual = Solution::findDiagonalOrder(matrix);
   EXPECT_EQ(expected, actual);
 }
 
-
-
 TEST(SolutionTest, ConvertToBase7Test) {
   EXPECT_EQ("202", Solution::convertToBase7(100));
   EXPECT_EQ("-10", Solution::convertToBase7(-7));
+}
+
+TEST(SolutionTest, UniqueMorseRepresentationsTest) {
+  vector<string> words1 = {"gin", "zen", "gig", "msg"};
+  vector<string> words2 = {"a"};
+  EXPECT_EQ(2, Solution::uniqueMorseRepresentations(words1));
+  EXPECT_EQ(1, Solution::uniqueMorseRepresentations(words2));
 }
 
 TEST(SolutionTest, PivotIndexTest) {
@@ -94,23 +99,18 @@ TEST(SolutionTest, SelfDividingNumbersTest) {
   EXPECT_EQ(expected2, Solution::selfDividingNumbers(47, 85));
 }
 
-TEST(PlatesBetweenCandles, Test1) {
+TEST(SolutionTest, PlatesBetweenCandlesTest) {
   vector<vector<int>> queries1 = {{2, 5}, {5, 9}};
-  vector<int> expected = {2, 3};
-  auto actual = Solution::platesBetweenCandles("**|**|***|", queries1);
+  vector<int> expected1 = {2, 3};
+  auto actual1 = Solution::platesBetweenCandles("**|**|***|", queries1);
 
-  EXPECT_EQ(expected, actual);
+  vector<vector<int>> queries2 = {{1, 17}, {4, 5}, {14, 17}, {5, 11}, {15, 16}};
+  vector<int> expected2 = {9, 0, 0, 0, 0};
+  auto actual2 = Solution::platesBetweenCandles("***|**|*****|**||**|*", queries2);
+
+  EXPECT_EQ(expected1, actual1);
+  EXPECT_EQ(expected2, actual2);
 }
-
-TEST(PlatesBetweenCandles, Test2) {
-  vector<vector<int>> queries1 = {{1, 17}, {4, 5}, {14, 17}, {5, 11}, {15, 16}};
-  vector<int> expected = {9, 0, 0, 0, 0};
-  auto actual =
-      Solution::platesBetweenCandles("***|**|*****|**||**|*", queries1);
-
-  EXPECT_EQ(expected, actual);
-}
-
 
 TEST(AllOneTest, Test1) { 
   AllOne allOne; 

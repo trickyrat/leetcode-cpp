@@ -791,6 +791,13 @@ public:
   static std::vector<int> dailyTemperatures(std::vector<int> &T);
 
   /// <summary>
+  /// 804.Î¨Ò»Ä¦¶ûË¹ÃÜÂë´Ê
+  /// </summary>
+  /// <param name="words"></param>
+  /// <returns></returns>
+  static int uniqueMorseRepresentations(std::vector<std::string> &words);
+
+  /// <summary>
   /// 821. Shortest Distance to a Character
   /// </summary>
   /// <param name="S"></param>
