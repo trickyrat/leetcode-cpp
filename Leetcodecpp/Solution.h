@@ -671,6 +671,13 @@ public:
   static void reverseString(std::vector<char> &s);
 
   /// <summary>
+  /// 357. 统计各位数字都不同的数字个数
+  /// </summary>
+  /// <param name="n"></param>
+  /// <returns></returns>
+  static int countNumbersWithUniqueDigits(int n);
+
+  /// <summary>
   /// 401. Binary Watch
   /// </summary>
   /// <param name="num"></param>

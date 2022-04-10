@@ -62,6 +62,11 @@ TEST(SolutionTest, TrailingZeroesTest) {
   EXPECT_EQ(0, Solution::trailingZeroes(0));
 }
 
+TEST(SolutionTest, CountNumbersWithUniqueDigitsTest) {
+  EXPECT_EQ(91, Solution::countNumbersWithUniqueDigits(2));
+  EXPECT_EQ(1, Solution::countNumbersWithUniqueDigits(0));
+}
+
 TEST(SolutionTest, FindDiagonalOrderTest) {
   vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
   vector<int> expected = {1, 2, 4, 7, 5, 3, 6, 8, 9};
