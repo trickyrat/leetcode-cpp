@@ -805,6 +805,15 @@ public:
   static int uniqueMorseRepresentations(std::vector<std::string> &words);
 
   /// <summary>
+  /// 806. 写字符串需要的行数
+  /// </summary>
+  /// <param name="widths"></param>
+  /// <param name="s"></param>
+  /// <returns></returns>
+  static std::vector<int> numberOfLines(std::vector<int> &widths,
+                                        std::string &s);
+
+  /// <summary>
   /// 821. Shortest Distance to a Character
   /// </summary>
   /// <param name="S"></param>

@@ -86,6 +86,20 @@ TEST(SolutionTest, UniqueMorseRepresentationsTest) {
   EXPECT_EQ(1, Solution::uniqueMorseRepresentations(words2));
 }
 
+TEST(SolutionTest, NumberOfLinesTest) {
+  vector<int> widths1 = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+                         10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
+  vector<int> widths2 = {4,  10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+                         10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
+  string s1 = "abcdefghijklmnopqrstuvwxyz";
+  string s2 = "bbbcccdddaaa";
+  vector<int> expected1 = {3, 60};
+  vector<int> expected2 = {2, 4};
+  EXPECT_EQ(expected1, Solution::numberOfLines(widths1, s1));
+  EXPECT_EQ(expected2, Solution::numberOfLines(widths2, s2));
+}
+
+
 TEST(SolutionTest, PivotIndexTest) {
 
   vector<int> nums1 = {2, 3, -1, 8, 4};

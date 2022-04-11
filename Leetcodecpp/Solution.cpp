@@ -1726,6 +1726,22 @@ int Solution::uniqueMorseRepresentations(std::vector<std::string> &words) {
   return seen.size();
 }
 
+std::vector<int> Solution::numberOfLines(std::vector<int> &widths,
+                                         std::string &s) {
+    int lines = 1;
+    int width = 0;
+    const int MAX_WIDTH = 100;
+    for (auto &c : s) {
+      int need = widths[c - 'a'];
+      width += need;
+      if (width > MAX_WIDTH) {
+        lines++;
+        width = need;
+      }
+    }
+    return {lines, width};
+}
+
 std::vector<int> Solution::shortestToChar(std::string S, char C) {
   int n = S.size();
   std::vector<int> ans(n, 0);
