@@ -99,10 +99,17 @@ TEST(SolutionTest, NumberOfLinesTest) {
   EXPECT_EQ(expected2, Solution::numberOfLines(widths2, s2));
 }
 
+TEST(SolutionTest, MaximumWealthTest) {
+  vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
+  vector<vector<int>> accounts2 = {{1, 5},{7, 3}, { 3, 5 }};
+  vector<vector<int>> accounts3 = {{2, 8, 7}, {7, 1, 3}, {1, 9, 5}};
+  EXPECT_EQ(6, Solution::maximumWealth(accounts1));
+  EXPECT_EQ(10, Solution::maximumWealth(accounts2));
+  EXPECT_EQ(17, Solution::maximumWealth(accounts3));
+}
 
 TEST(SolutionTest, PivotIndexTest) {
-
-  vector<int> nums1 = {2, 3, -1, 8, 4};
+    vector<int> nums1 = {2, 3, -1, 8, 4};
   vector<int> nums2 = {1, -1, 4};
   vector<int> nums3 = {2, 5};
   EXPECT_EQ(3, Solution::pivotIndex(nums1));
@@ -111,7 +118,6 @@ TEST(SolutionTest, PivotIndexTest) {
 }
 
 TEST(SolutionTest, SelfDividingNumbersTest) {
-
   vector<int> expected1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22};
   vector<int> expected2 = {48, 55, 66, 77};
   EXPECT_EQ(expected1, Solution::selfDividingNumbers(1, 22));
@@ -131,7 +137,7 @@ TEST(SolutionTest, PlatesBetweenCandlesTest) {
   EXPECT_EQ(expected2, actual2);
 }
 
-TEST(AllOneTest, Test1) { 
+TEST(AllOneTest, OperationTest) { 
   AllOne allOne; 
   allOne.inc("hello");
   allOne.inc("hello");

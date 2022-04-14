@@ -913,6 +913,13 @@ public:
   static int xorOperation(int n, int start);
 
   /// <summary>
+  /// 1672. 最富有客户的资产总量
+  /// </summary>
+  /// <param name="accounts"></param>
+  /// <returns></returns>
+  static int maximumWealth(std::vector<std::vector<int>> &accounts);
+
+  /// <summary>
   /// 1991.寻找数组的中间位置
   /// </summary>
   /// <param name="nums"></param>

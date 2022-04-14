@@ -1920,6 +1920,18 @@ int Solution::xorOperation(int n, int start) {
   return res << 1 | e;
 }
 
+int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
+  int maxWealth = 0;
+  /*for (auto &account : accounts) {
+    maxWealth =
+        std::max(maxWealth, std::accumulate(account.begin(), account.end(), 0));
+  }*/
+  std::for_each(accounts.begin(), accounts.end(), [&maxWealth](auto &&x) {
+    maxWealth = std::max(maxWealth, std::accumulate(x.begin(), x.end(), 0));
+  });
+  return maxWealth;
+}
+
 int Solution::pivotIndex(std::vector<int> &nums) { 
   int total = std::accumulate(nums.begin(), nums.end(), 0);
   int sum = 0;
