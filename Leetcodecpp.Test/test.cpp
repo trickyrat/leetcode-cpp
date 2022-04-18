@@ -1,12 +1,11 @@
 #include "pch.h"
 
+#include "../Leetcodecpp/AllOne.cpp"
+#include "../Leetcodecpp/AllOne.h"
+#include "../Leetcodecpp/RandomizedSet.cpp"
+#include "../Leetcodecpp/RandomizedSet.h"
 #include "../Leetcodecpp/Solution.cpp"
 #include "../Leetcodecpp/Solution.h"
-#include "../Leetcodecpp/AllOne.h"
-#include "../Leetcodecpp/AllOne.cpp"
-#include "../Leetcodecpp/RandomizedSet.h"
-#include "../Leetcodecpp/RandomizedSet.cpp"
-
 
 using namespace std;
 
@@ -69,6 +68,13 @@ TEST(SolutionTest, CountNumbersWithUniqueDigitsTest) {
   EXPECT_EQ(1, Solution::countNumbersWithUniqueDigits(0));
 }
 
+TEST(SolutionTest, LexicalOrderTest) {
+  vector<int> expected1 = {1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9};
+  vector<int> expected2 = {1, 2};
+  EXPECT_EQ(expected1, Solution::lexicalOrder(13));
+  EXPECT_EQ(expected2, Solution::lexicalOrder(2));
+}
+
 TEST(SolutionTest, FindDiagonalOrderTest) {
   vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
   vector<int> expected = {1, 2, 4, 7, 5, 3, 6, 8, 9};
@@ -103,7 +109,7 @@ TEST(SolutionTest, NumberOfLinesTest) {
 
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
-  vector<vector<int>> accounts2 = {{1, 5},{7, 3}, { 3, 5 }};
+  vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};
   vector<vector<int>> accounts3 = {{2, 8, 7}, {7, 1, 3}, {1, 9, 5}};
   EXPECT_EQ(6, Solution::maximumWealth(accounts1));
   EXPECT_EQ(10, Solution::maximumWealth(accounts2));
@@ -111,7 +117,7 @@ TEST(SolutionTest, MaximumWealthTest) {
 }
 
 TEST(SolutionTest, PivotIndexTest) {
-    vector<int> nums1 = {2, 3, -1, 8, 4};
+  vector<int> nums1 = {2, 3, -1, 8, 4};
   vector<int> nums2 = {1, -1, 4};
   vector<int> nums3 = {2, 5};
   EXPECT_EQ(3, Solution::pivotIndex(nums1));
@@ -133,14 +139,15 @@ TEST(SolutionTest, PlatesBetweenCandlesTest) {
 
   vector<vector<int>> queries2 = {{1, 17}, {4, 5}, {14, 17}, {5, 11}, {15, 16}};
   vector<int> expected2 = {9, 0, 0, 0, 0};
-  auto actual2 = Solution::platesBetweenCandles("***|**|*****|**||**|*", queries2);
+  auto actual2 =
+      Solution::platesBetweenCandles("***|**|*****|**||**|*", queries2);
 
   EXPECT_EQ(expected1, actual1);
   EXPECT_EQ(expected2, actual2);
 }
 
-TEST(AllOneTest, OperationTest) { 
-  AllOne allOne; 
+TEST(AllOneTest, OperationTest) {
+  AllOne allOne;
   allOne.inc("hello");
   allOne.inc("hello");
   string actualMaxKey1 = allOne.getMaxKey();
@@ -158,7 +165,7 @@ TEST(AllOneTest, OperationTest) {
   EXPECT_EQ(expected4, actualMinKey2);
 }
 
-TEST(RandomizedSetTest, OperationTest) { 
+TEST(RandomizedSetTest, OperationTest) {
   RandomizedSet randomizedSet;
   EXPECT_TRUE(randomizedSet.insert(1));
   EXPECT_FALSE(randomizedSet.remove(2));

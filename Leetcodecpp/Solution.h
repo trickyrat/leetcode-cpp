@@ -678,6 +678,13 @@ public:
   static int countNumbersWithUniqueDigits(int n);
 
   /// <summary>
+  /// 386. ×ÖµäĞòÅÅÊı
+  /// </summary>
+  /// <param name="n"></param>
+  /// <returns></returns>
+  static std::vector<int> lexicalOrder(int n);
+
+  /// <summary>
   /// 401. Binary Watch
   /// </summary>
   /// <param name="num"></param>
