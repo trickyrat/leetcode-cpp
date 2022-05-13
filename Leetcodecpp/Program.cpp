@@ -1,11 +1,7 @@
-#include <iostream>
-#include <format>
-#include <chrono>
-#include "Solution.h"
+#include "Codec.h"
 
-using namespace std::chrono;
-
-int main() {
-  std::cout << "Hello, world\n";
+int main() { 
+  Codec codec;
+  codec.serialize();
   return 0;
 }

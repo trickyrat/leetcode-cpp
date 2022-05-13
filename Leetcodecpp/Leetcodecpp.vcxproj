@@ -105,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="AllOne.cpp" />
     <ClCompile Include="BSTIterator.cpp" />
+    <ClCompile Include="Codec.cpp" />
     <ClCompile Include="ListNode.cpp" />
     <ClCompile Include="MinStack.cpp" />
     <ClCompile Include="MyStack.cpp" />
@@ -162,10 +163,12 @@
     <ClCompile Include="RandomizedSet.cpp" />
     <ClCompile Include="Solution.cpp" />
     <ClCompile Include="TreeNode.cpp" />
+    <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllOne.h" />
     <ClInclude Include="BSTIterator.h" />
+    <ClInclude Include="Codec.h" />
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="MinStack.h" />
     <ClInclude Include="MyStack.h" />
@@ -174,6 +177,7 @@
     <ClInclude Include="RandomizedSet.h" />
     <ClInclude Include="Solution.h" />
     <ClInclude Include="TreeNode.h" />
+    <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
