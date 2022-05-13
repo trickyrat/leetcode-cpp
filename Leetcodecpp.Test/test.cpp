@@ -81,10 +81,18 @@ TEST(SolutionTest, FindDiagonalOrderTest) {
   vector<int> actual = Solution::findDiagonalOrder(matrix);
   EXPECT_EQ(expected, actual);
 }
-
 TEST(SolutionTest, ConvertToBase7Test) {
   EXPECT_EQ("202", Solution::convertToBase7(100));
   EXPECT_EQ("-10", Solution::convertToBase7(-7));
+}
+
+TEST(SolutionTest, PivotIndexTest) {
+  vector<int> nums1 = {1, 7, 3, 6, 5, 6};
+  vector<int> nums2 = {1, 2, 3};
+  vector<int> nums3 = {2, 1, -1};
+  EXPECT_EQ(3, Solution::pivotIndex(nums1));
+  EXPECT_EQ(-1, Solution::pivotIndex(nums2));
+  EXPECT_EQ(0, Solution::pivotIndex(nums3));
 }
 
 TEST(SolutionTest, UniqueMorseRepresentationsTest) {
@@ -93,7 +101,6 @@ TEST(SolutionTest, UniqueMorseRepresentationsTest) {
   EXPECT_EQ(2, Solution::uniqueMorseRepresentations(words1));
   EXPECT_EQ(1, Solution::uniqueMorseRepresentations(words2));
 }
-
 TEST(SolutionTest, NumberOfLinesTest) {
   vector<int> widths1 = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
                          10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
@@ -107,6 +114,15 @@ TEST(SolutionTest, NumberOfLinesTest) {
   EXPECT_EQ(expected2, Solution::numberOfLines(widths2, s2));
 }
 
+TEST(SolutionTest, MinDeletionSizeTest) {
+  vector<string> strs1 = {"cba", "daf", "ghi"};
+  vector<string> strs2 = {"a", "b"};
+  vector<string> strs3 = {"zyx", "wvu", "tsr"};
+  EXPECT_EQ(1, Solution::minDeletionSize(strs1));
+  EXPECT_EQ(0, Solution::minDeletionSize(strs2));
+  EXPECT_EQ(3, Solution::minDeletionSize(strs3));
+}
+
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
   vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};
@@ -116,13 +132,13 @@ TEST(SolutionTest, MaximumWealthTest) {
   EXPECT_EQ(17, Solution::maximumWealth(accounts3));
 }
 
-TEST(SolutionTest, PivotIndexTest) {
+TEST(SolutionTest, FindMiddleIndexTest) {
   vector<int> nums1 = {2, 3, -1, 8, 4};
   vector<int> nums2 = {1, -1, 4};
   vector<int> nums3 = {2, 5};
-  EXPECT_EQ(3, Solution::pivotIndex(nums1));
-  EXPECT_EQ(2, Solution::pivotIndex(nums2));
-  EXPECT_EQ(-1, Solution::pivotIndex(nums3));
+  EXPECT_EQ(3, Solution::findMiddleIndex(nums1));
+  EXPECT_EQ(2, Solution::findMiddleIndex(nums2));
+  EXPECT_EQ(-1, Solution::findMiddleIndex(nums3));
 }
 
 TEST(SolutionTest, SelfDividingNumbersTest) {

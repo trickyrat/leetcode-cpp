@@ -595,7 +595,7 @@ public:
   static int majorityElement(std::vector<int> &nums);
 
   /// <summary>
-  /// 172. 阶乘后的零
+  /// 172. Factorial Trailing Zeroes
   /// </summary>
   /// <param name="n"></param>
   /// <returns></returns>
@@ -671,14 +671,14 @@ public:
   static void reverseString(std::vector<char> &s);
 
   /// <summary>
-  /// 357. 统计各位数字都不同的数字个数
+  /// 357. Count Numbers with Unique Digits
   /// </summary>
   /// <param name="n"></param>
   /// <returns></returns>
   static int countNumbersWithUniqueDigits(int n);
 
   /// <summary>
-  /// 386. 字典序排数
+  /// 386. Lexicographical Numbers
   /// </summary>
   /// <param name="n"></param>
   /// <returns></returns>
@@ -714,14 +714,14 @@ public:
   static int totalHammingDistance(std::vector<int> &nums);
 
   /// <summary>
-  /// 498.对角线遍历
+  /// 498. Diagonal Traverse
   /// </summary>
   /// <param name="mat"></param>
   /// <returns></returns>
   static std::vector<int> findDiagonalOrder(std::vector<std::vector<int>> &mat);
 
   /// <summary>
-  /// 504.七进制数
+  /// 504. Base 7
   /// </summary>
   /// <param name="num"></param>
   /// <returns></returns>
@@ -790,7 +790,14 @@ public:
   static std::string toLowerCase(std::string str);
 
   /// <summary>
-  /// 728.自除数
+  /// 724. Find Pivot Index
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  static int pivotIndex(std::vector<int> &nums);
+
+  /// <summary>
+  /// 728. Self Dividing Numbers
   /// </summary>
   /// <param name="left"></param>
   /// <param name="right"></param>
@@ -805,14 +812,14 @@ public:
   static std::vector<int> dailyTemperatures(std::vector<int> &T);
 
   /// <summary>
-  /// 804.唯一摩尔斯密码词
+  /// 804. Unique Morse Code Words
   /// </summary>
   /// <param name="words"></param>
   /// <returns></returns>
   static int uniqueMorseRepresentations(std::vector<std::string> &words);
 
   /// <summary>
-  /// 806. 写字符串需要的行数
+  /// 806. Number of Lines To Write String
   /// </summary>
   /// <param name="widths"></param>
   /// <param name="s"></param>
@@ -882,6 +889,13 @@ public:
   static int rangeSumBST(TreeNode *root, int L, int R);
 
   /// <summary>
+  /// 944. Delete Columns to Make Sorted
+  /// </summary>
+  /// <param name="strs"></param>
+  /// <returns></returns>
+  static int minDeletionSize(std::vector<std::string>& strs);
+
+  /// <summary>
   /// 977. Squares of a Sorted Array
   /// </summary>
   /// <param name="nums"></param>
@@ -905,7 +919,7 @@ public:
   static int minPushBox(std::vector<std::vector<char>> &grid);
 
   /// <summary>
-  /// 1380. 矩阵中的幸运数字
+  /// 1380. Lucky Numbers in a Matrix
   /// </summary>
   /// <param name="nums"></param>
   /// <returns></returns>
@@ -920,21 +934,21 @@ public:
   static int xorOperation(int n, int start);
 
   /// <summary>
-  /// 1672. 最富有客户的资产总量
+  /// 1672. Richest Customer Wealth
   /// </summary>
   /// <param name="accounts"></param>
   /// <returns></returns>
   static int maximumWealth(std::vector<std::vector<int>> &accounts);
 
   /// <summary>
-  /// 1991.寻找数组的中间位置
+  /// 1991. Find the Middle Index in Array
   /// </summary>
   /// <param name="nums"></param>
   /// <returns></returns>
-  static int pivotIndex(std::vector<int> &nums);
+  static int findMiddleIndex(std::vector<int> &nums);
 
   /// <summary>
-  /// 2055.蜡烛之间的盘子
+  /// 2055. Plates Between Candles
   /// </summary>
   /// <param name="s"></param>
   /// <param name="queries"></param>
