@@ -1702,6 +1702,18 @@ std::string Solution::toLowerCase(std::string str) {
   return str;
 }
 
+int Solution::pivotIndex(std::vector<int> &nums) {
+  int total = std::accumulate(nums.begin(), nums.end(), 0);
+  int sum = 0;
+  for (int i = 0; i < nums.size(); i++) {
+    if (2 * sum + nums[i] == total) {
+      return i;
+    }
+    sum += nums[i];
+  }
+  return -1;
+}
+
 std::vector<int> Solution::selfDividingNumbers(int left, int right) {
   std::vector<int> ans;
   for (int i = left; i <= right; i++) {
@@ -1874,6 +1886,21 @@ int Solution::rangeSumBST(TreeNode *root, int L, int R) {
   return sum;
 }
 
+int Solution::minDeletionSize(std::vector<std::string> &strs) {
+  int row = strs.size();
+  int col = strs[0].size();
+  int ans = 0;
+  for (int j = 0; j < col; j++) {
+    for (int i = 1; i < row; i++) {
+      if (strs[i - 1][j] > strs[i][j]) {
+        ans++;
+        break;
+      }
+    }
+  }
+  return ans;
+}
+
 std::vector<int> Solution::sortedSquares(std::vector<int> &nums) {
   int n = nums.size();
   std::vector<int> ans(n);
@@ -1949,7 +1976,7 @@ int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
   return maxWealth;
 }
 
-int Solution::pivotIndex(std::vector<int> &nums) { 
+int Solution::findMiddleIndex(std::vector<int> &nums) {
   int total = std::accumulate(nums.begin(), nums.end(), 0);
   int sum = 0;
   for (int i = 0; i < nums.size(); i++) {
