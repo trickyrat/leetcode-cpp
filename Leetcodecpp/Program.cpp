@@ -1,7 +1,6 @@
-#include "Codec.h"
+#include <iostream>
 
 int main() { 
-  Codec codec;
-  codec.serialize();
+  std::cout << "Hello, world\n";
   return 0;
 }
