@@ -896,6 +896,13 @@ public:
   static int minDeletionSize(std::vector<std::string>& strs);
 
   /// <summary>
+  /// 961. N-Repeated Element in Size 2N Array
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  static int repeatedNTimes(std::vector<int> &nums);
+
+  /// <summary>
   /// 977. Squares of a Sorted Array
   /// </summary>
   /// <param name="nums"></param>

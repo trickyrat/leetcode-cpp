@@ -77,6 +77,7 @@ TEST(SolutionTest, FindDiagonalOrderTest) {
   vector<int> actual = Solution::findDiagonalOrder(matrix);
   EXPECT_EQ(expected, actual);
 }
+
 TEST(SolutionTest, ConvertToBase7Test) {
   EXPECT_EQ("202", Solution::convertToBase7(100));
   EXPECT_EQ("-10", Solution::convertToBase7(-7));
@@ -97,6 +98,7 @@ TEST(SolutionTest, UniqueMorseRepresentationsTest) {
   EXPECT_EQ(2, Solution::uniqueMorseRepresentations(words1));
   EXPECT_EQ(1, Solution::uniqueMorseRepresentations(words2));
 }
+
 TEST(SolutionTest, NumberOfLinesTest) {
   vector<int> widths1 = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
                          10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
@@ -111,12 +113,21 @@ TEST(SolutionTest, NumberOfLinesTest) {
 }
 
 TEST(SolutionTest, MinDeletionSizeTest) {
-  vector<string> strs1 = {"cba", "daf", "ghi"};
-  vector<string> strs2 = {"a", "b"};
-  vector<string> strs3 = {"zyx", "wvu", "tsr"};
+  vector<string> strs1{"cba", "daf", "ghi"};
+  vector<string> strs2{"a", "b"};
+  vector<string> strs3{"zyx", "wvu", "tsr"};
   EXPECT_EQ(1, Solution::minDeletionSize(strs1));
   EXPECT_EQ(0, Solution::minDeletionSize(strs2));
   EXPECT_EQ(3, Solution::minDeletionSize(strs3));
+}
+
+TEST(SolutionTest, RepeatedNTimesTest) {
+  vector<int> nums1{1, 2, 3, 3};
+  vector<int> nums2{2, 1, 2, 5, 3, 2};
+  vector<int> nums3{5, 1, 5, 2, 5, 3, 5, 4};
+  EXPECT_EQ(3, Solution::repeatedNTimes(nums1));
+  EXPECT_EQ(2, Solution::repeatedNTimes(nums2));
+  EXPECT_EQ(5, Solution::repeatedNTimes(nums3));
 }
 
 TEST(SolutionTest, MaximumWealthTest) {

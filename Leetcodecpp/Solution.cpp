@@ -1901,6 +1901,17 @@ int Solution::minDeletionSize(std::vector<std::string> &strs) {
   return ans;
 }
 
+int Solution::repeatedNTimes(std::vector<int> &nums) { 
+  std::unordered_set<int> found;
+  for (auto &num : nums) {
+    if (found.count(num)) {
+      return num;
+    }
+    found.insert(num);
+  }
+  return -1;
+}
+
 std::vector<int> Solution::sortedSquares(std::vector<int> &nums) {
   int n = nums.size();
   std::vector<int> ans(n);
