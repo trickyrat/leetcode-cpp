@@ -909,6 +909,13 @@ public:
   static int minDeletionSize(std::vector<std::string>& strs);
 
   /// <summary>
+  /// 961. N-Repeated Element in Size 2N Array
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  static int repeatedNTimes(std::vector<int> &nums);
+
+  /// <summary>
   /// 965. Univalued Binary Tree
   /// </summary>
   /// <param name="root"></param>

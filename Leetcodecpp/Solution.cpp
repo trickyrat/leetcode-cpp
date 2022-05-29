@@ -1916,6 +1916,17 @@ int Solution::minDeletionSize(std::vector<std::string> &strs) {
   return ans;
 }
 
+int Solution::repeatedNTimes(std::vector<int> &nums) { 
+  std::unordered_set<int> found;
+  for (auto &num : nums) {
+    if (found.count(num)) {
+      return num;
+    }
+    found.insert(num);
+  }
+  return -1;
+}
+
 bool Solution::isUnivalTree(TreeNode *root) { 
   if (!root) {
     return false;
