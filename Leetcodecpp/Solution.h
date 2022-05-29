@@ -279,6 +279,11 @@ public:
   /// <param name="nums"></param>
   static void nextPermutation(std::vector<int> &nums);
 
+  /// <summary>
+  /// 32. Longest Valid Parentheses
+  /// </summary>
+  /// <param name="s"></param>
+  /// <returns></returns>
   static int longestValidParentheses(std::string &s);
 
   /// <summary>
@@ -287,7 +292,7 @@ public:
   /// <param name="nums"></param>
   /// <param name="target"></param>
   /// <returns></returns>
-  static int search(std::vector<int> &nums, int target);
+  static int searchInSortedArray(std::vector<int> &nums, int target);
 
   /// <summary>
   /// 34. Find First and Last Position of Element in Sorted Array
@@ -783,6 +788,14 @@ public:
   static TreeNode *insertIntoBST(TreeNode *root, int val);
 
   /// <summary>
+  /// 704. Binary Search
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <param name="target"></param>
+  /// <returns></returns>
+  static int binarySearch(std::vector<int> &nums, int target);
+
+  /// <summary>
   /// 709. To Lower Case
   /// </summary>
   /// <param name="str"></param>
@@ -894,6 +907,13 @@ public:
   /// <param name="strs"></param>
   /// <returns></returns>
   static int minDeletionSize(std::vector<std::string>& strs);
+
+  /// <summary>
+  /// 965. Univalued Binary Tree
+  /// </summary>
+  /// <param name="root"></param>
+  /// <returns></returns>
+  static bool isUnivalTree(TreeNode* root);
 
   /// <summary>
   /// 977. Squares of a Sorted Array

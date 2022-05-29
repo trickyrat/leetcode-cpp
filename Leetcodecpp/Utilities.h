@@ -1,19 +1,20 @@
 #pragma once
 
-#include "TreeNode.h"
 #include "ListNode.h"
-
+#include "TreeNode.h"
 
 #include <string>
 #include <vector>
 
 class Utilities {
+private:
+  TreeNode *dfs(std::vector<std::string> &data);
+
 public:
-  TreeNode *create_treenode_with_bfs(std::vector<int> &nums);
-  TreeNode *create_treenode_with_dfs(std::vector<int> &nums);
+  TreeNode *create_treenode_with_bfs(std::string &data);
+  TreeNode *create_treenode_with_dfs(std::string &data);
 
   static ListNode *create_listnode(std::vector<int> &nums);
 
-  std::vector<std::string> split(std::string input, std::string delimeter);
-
+  std::vector<std::string> split(const std::string &input, const std::string &delimeter);
 };

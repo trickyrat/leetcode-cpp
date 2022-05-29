@@ -1,7 +1,7 @@
 #include "Solution.h"
 
 std::vector<int> Solution::twoSum(std::vector<int> &nums, int target) {
-  int size = nums.size();
+  size_t size = nums.size();
   std::unordered_map<int, int> hash;
   for (int i = 0; i < size; i++) {
     auto iter = hash.find(target - nums[i]);
@@ -37,7 +37,7 @@ ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2) {
 int Solution::lengthOfLongestSubstring(std::string s) {
   std::vector<int> dic(256, -1);
   int maxlen = 0, start = -1;
-  int len = s.length();
+  size_t len = s.length();
   for (int i = 0; i != len; i++) {
     if (dic[s[i]] > start)
       start = dic[s[i]];
@@ -49,8 +49,8 @@ int Solution::lengthOfLongestSubstring(std::string s) {
 
 double Solution::findMedianSortedArrays(std::vector<int> &nums1,
                                         std::vector<int> &nums2) {
-  int m = nums1.size();
-  int n = nums2.size();
+  int m = (int)nums1.size();
+  int n = (int)nums2.size();
   if (m > n) {
     std::swap(nums1, nums2);
     std::swap(m, n);
@@ -121,7 +121,7 @@ std::string Solution::convert(std::string s, int numRows) {
   if (numRows == 1)
     return s;
   std::string ret;
-  int n = s.size();
+  size_t n = s.size();
   int cycleLen = 2 * numRows - 2;
 
   for (int i = 0; i < numRows; i++) {
@@ -199,10 +199,10 @@ bool Solution::isMatch(std::string s, std::string p) {
 
 int Solution::maxArea(std::vector<int> &height) {
   int maxArea = 0;
-  int left = 0, right = height.size() - 1;
+  size_t left = 0, right = height.size() - 1;
   while (left < right) {
     maxArea = std::max(maxArea,
-                       std::min(height[left], height[right]) * (right - left));
+                       std::min(height[left], height[right]) * (int)(right - left));
     if (height[left] < height[right])
       left++;
   }
@@ -243,7 +243,7 @@ std::string Solution::longestCommonPrefix(std::vector<std::string> &strs) {
 
 std::vector<std::vector<int>> Solution::threeSum(std::vector<int> &nums) {
   std::vector<std::vector<int>> res;
-  int count = nums.size();
+  int count = (int)nums.size();
   std::sort(nums.begin(), nums.end());
   for (int i = 0; i < count; i++) {
     int target = -nums[i];
@@ -281,7 +281,7 @@ int Solution::threeSumClosest(std::vector<int> &nums, int target) {
     if (first > 0 && nums[first] == nums[first - 1])
       continue;
     int second = first + 1;
-    int third = nums.size() - 1;
+    int third = (int)nums.size() - 1;
     while (second < third) {
       int currentSum = nums[first] + nums[second] + nums[third];
       if (currentSum == target)
@@ -639,7 +639,7 @@ int Solution::longestValidParentheses(std::string &s) {
   return maxLen;
 }
 
-int Solution::search(std::vector<int> &nums, int target) {
+int Solution::searchInSortedArray(std::vector<int> &nums, int target) {
   int n = (int)nums.size();
   if (n == 0) {
     return -1;
@@ -1694,6 +1694,21 @@ TreeNode *Solution::insertIntoBST(TreeNode *root, int val) {
   return root;
 }
 
+int Solution::binarySearch(std::vector<int> &nums, int target) { 
+  int left = 0, right = nums.size() - 1;
+  while (left <= right) {
+    int mid = left + (right - left) / 2;
+    if (nums[mid] == target) {
+      return mid;
+    } else if (nums[mid] > target) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return -1;
+}
+
 std::string Solution::toLowerCase(std::string str) {
   for (auto &c : str) {
     if ('A' <= c && c <= 'Z')
@@ -1899,6 +1914,24 @@ int Solution::minDeletionSize(std::vector<std::string> &strs) {
     }
   }
   return ans;
+}
+
+bool Solution::isUnivalTree(TreeNode *root) { 
+  if (!root) {
+    return false;
+  }
+  if (root->left) {
+    if (root->val != root->left->val || !isUnivalTree(root->left)) {
+      return false;
+    }
+  }
+  if (root->right) {
+    if (root->val != root->right->val || !isUnivalTree(root->right)) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 std::vector<int> Solution::sortedSquares(std::vector<int> &nums) {

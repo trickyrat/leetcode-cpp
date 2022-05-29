@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stack>;
+#include <stack>
 
 class MinStack
 {

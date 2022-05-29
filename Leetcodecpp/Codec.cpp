@@ -41,7 +41,8 @@ TreeNode *Codec::deserialize(std::string data) {
     return nullptr;
   }
   Utilities utilities;
-  std::vector<std::string> arr = utilities.split(data, ",");
+  std::string delimeter = ",";
+  std::vector<std::string> arr = utilities.split(data, delimeter);
   std::stack<int> st;
   for (auto &str : arr) {
     st.emplace(std::stoi(str));

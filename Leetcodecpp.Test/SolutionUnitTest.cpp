@@ -1,7 +1,7 @@
 #include "pch.h"
 
 #include "../Leetcodecpp/Solution.cpp"
-#include "../Leetcodecpp/Solution.h"
+#include "../Leetcodecpp/Utilities.cpp"
 
 using namespace std;
 
@@ -118,6 +118,17 @@ TEST(SolutionTest, MinDeletionSizeTest) {
   EXPECT_EQ(0, Solution::minDeletionSize(strs2));
   EXPECT_EQ(3, Solution::minDeletionSize(strs3));
 }
+
+TEST(SolutionTest, IsUnivalTreeTest) {
+  Utilities utilities;
+  string nums1 = "1,1,1,1,1,null,1";
+  TreeNode *root1 = utilities.create_treenode_with_bfs(nums1);
+  EXPECT_TRUE(Solution::isUnivalTree(root1));
+  string nums2 = "2,2,2,5,2";
+  TreeNode *root2 = utilities.create_treenode_with_bfs(nums2);
+  EXPECT_FALSE(Solution::isUnivalTree(root2));
+}
+
 
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
