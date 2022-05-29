@@ -983,6 +983,14 @@ public:
   static std::vector<int>
   platesBetweenCandles(std::string s, std::vector<std::vector<int>> &queries);
 
+  /// <summary>
+  /// 6078. Rearrange Characters to Make Target String
+  /// </summary>
+  /// <param name="s"></param>
+  /// <param name="target"></param>
+  /// <returns></returns>
+  static int rearrangeCharacters(std::string s, std::string target);
+
 private:
   static bool isMirror(TreeNode *l1, TreeNode *l2);
 

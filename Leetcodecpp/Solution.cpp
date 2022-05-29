@@ -2069,6 +2069,22 @@ Solution::platesBetweenCandles(std::string s,
 
 /*Private methods*/
 
+int Solution::rearrangeCharacters(std::string s, std::string target) {
+  std::unordered_map<char, int> sMap;
+  std::unordered_map<char, int> targetMap;
+  for (auto ch : s) {
+    sMap[ch]++;
+  }
+  for (auto ch : target) {
+    targetMap[ch]++;
+  }
+  int ans = INT_MAX;
+  for (auto ch : target) {
+    ans = std::min(ans, sMap[ch] / targetMap[ch]);
+  }
+  return ans;
+}
+
 bool Solution::isMirror(TreeNode *l1, TreeNode *l2) {
   if (l1 == nullptr && l2 == nullptr)
     return true;

@@ -180,3 +180,8 @@ TEST(SolutionTest, PlatesBetweenCandlesTest) {
   EXPECT_EQ(expected2, actual2);
 }
 
+TEST(SolutionTest, RearrangeCharactersTest) {
+  EXPECT_EQ(2, Solution::rearrangeCharacters("ilovecodingonleetcode", "code"));
+  EXPECT_EQ(1, Solution::rearrangeCharacters("abcba", "abc"));
+  EXPECT_EQ(1, Solution::rearrangeCharacters("abbaccaddaeea", "aaaaa"));
+}
