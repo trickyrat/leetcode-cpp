@@ -140,6 +140,19 @@ TEST(SolutionTest, IsUnivalTreeTest) {
   EXPECT_FALSE(Solution::isUnivalTree(root2));
 }
 
+TEST(SolutionTest, MinSubsequenceTest) {
+  vector<int> nums1 = {4, 3, 10, 9, 8};
+  vector<int> nums2 = {4, 4, 7, 6, 7};
+  vector<int> nums3 = {6};
+  vector<int> expected1 = {10, 9};
+  vector<int> expected2 = {7, 7, 6};
+  vector<int> expected3 = {6};
+  EXPECT_EQ(expected1, Solution::minSubsequence(nums1));
+  EXPECT_EQ(expected2, Solution::minSubsequence(nums2));
+  EXPECT_EQ(expected3, Solution::minSubsequence(nums3));
+}
+
+
 
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};

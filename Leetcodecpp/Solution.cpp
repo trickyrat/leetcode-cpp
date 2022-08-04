@@ -2001,6 +2001,21 @@ std::vector<int> Solution::luckyNumbers(std::vector<std::vector<int>> &matrix) {
   return res;
 }
 
+std::vector<int> Solution::minSubsequence(std::vector<int> &nums) {
+  int total = std::accumulate(nums.begin(), nums.end(), 0);
+  std::sort(nums.begin(), nums.end());
+  std::vector<int> ans;
+  int curr = 0;
+  for (int i = nums.size() - 1; i >= 0; --i) {
+    curr += nums[i];
+    ans.emplace_back(nums[i]);
+    if (total - curr < curr) {
+      break;
+    }
+  }
+  return ans;
+}
+
 int Solution::xorOperation(int n, int start) {
   int s = start >> 1;
   int e = n & start & 1;

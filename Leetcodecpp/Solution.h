@@ -953,6 +953,13 @@ public:
   static std::vector<int> luckyNumbers(std::vector<std::vector<int>> &matrix);
 
   /// <summary>
+  /// 1403. Minimum Subsequence in Non-Increasing Order
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  static std::vector<int> minSubsequence(std::vector<int> &nums);
+
+  /// <summary>
   /// 1486. XOR Operation in an Array
   /// </summary>
   /// <param name="n"></param>
