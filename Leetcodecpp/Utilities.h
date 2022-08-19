@@ -16,5 +16,5 @@ public:
 
   static ListNode *create_listnode(std::vector<int> &nums);
 
-  std::vector<std::string> split(const std::string &input, const std::string &delimeter);
+  static std::vector<std::string> split(const std::string &input, const std::string &delimeter);
 };

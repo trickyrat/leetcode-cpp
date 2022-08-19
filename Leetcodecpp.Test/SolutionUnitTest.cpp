@@ -83,6 +83,20 @@ TEST(SolutionTest, ConvertToBase7Test) {
   EXPECT_EQ("-10", Solution::convertToBase7(-7));
 }
 
+TEST(SolutionTest, ExculsiveTimeTest) {
+  vector<string> logs1 = {"0:start:0", "1:start:2", "1:end:5", "0:end:6"};
+  vector<string> logs2 = {"0:start:0", "0:start:2", "0:end:5",
+                          "0:start:6", "0:end:6",   "0:end:7"};
+  vector<string> logs3 = {"0:start:0", "0:start:2", "0:end:5",
+                          "1:start:6", "1:end:6",   "0:end:7"};
+  vector<int> expected1 = {3, 4};
+  vector<int> expected2 = {8};
+  vector<int> expected3 = {7, 1};
+  EXPECT_EQ(expected1, Solution::exclusiveTime(2, logs1));
+  EXPECT_EQ(expected2, Solution::exclusiveTime(1, logs2));
+  EXPECT_EQ(expected3, Solution::exclusiveTime(2, logs3));
+}
+
 TEST(SolutionTest, PivotIndexTest) {
   vector<int> nums1 = {1, 7, 3, 6, 5, 6};
   vector<int> nums2 = {1, 2, 3};

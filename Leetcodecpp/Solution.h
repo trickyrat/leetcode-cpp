@@ -763,6 +763,14 @@ public:
   static TreeNode *mergeTrees(TreeNode *t1, TreeNode *t2);
 
   /// <summary>
+  /// 636. Exclusive Time of Functions
+  /// </summary>
+  /// <param name="n"></param>
+  /// <param name="logs"></param>
+  /// <returns></returns>
+  static std::vector<int> exclusiveTime(int n, std::vector<std::string> &logs);
+
+  /// <summary>
   /// 669. Trim a Binary Search Tree
   /// </summary>
   /// <param name="root"></param>

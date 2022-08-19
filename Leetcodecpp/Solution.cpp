@@ -1,4 +1,6 @@
 #include "Solution.h"
+#include "Utilities.h"
+
 
 std::vector<int> Solution::twoSum(std::vector<int> &nums, int target) {
   size_t size = nums.size();
@@ -1639,6 +1641,32 @@ TreeNode *Solution::mergeTrees(TreeNode *t1, TreeNode *t2) {
   t1->left = mergeTrees(t1->left, t2->left);
   t1->right = mergeTrees(t1->right, t2->right);
   return t1;
+}
+
+std::vector<int> Solution::exclusiveTime(int n,
+                                         std::vector<std::string> &logs) {
+  std::stack<std::pair<int, int>> st;
+  std::vector<int> res(n, 0);
+  for (auto& log : logs) {
+    auto values = Utilities::split(log, ":");
+    int index = std::stoi(values[0]);
+    int timestamp = std::stoi(values[2]);
+    if (values[1] == "start") {
+      if (!st.empty()) {
+        res[st.top().first] += timestamp - st.top().second;
+        st.top().second = timestamp;
+      }
+      st.emplace(index, timestamp);
+    } else {
+      auto t = st.top();
+      st.pop();
+      res[t.first] += timestamp - t.second + 1;
+      if (!st.empty()) {
+        st.top().second = timestamp + 1;
+      }
+    }
+  }
+  return res;
 }
 
 TreeNode *Solution::trimBST(TreeNode *root, int L, int R) {
