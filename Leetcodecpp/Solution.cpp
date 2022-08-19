@@ -2044,6 +2044,17 @@ std::vector<int> Solution::minSubsequence(std::vector<int> &nums) {
   return ans;
 }
 
+int Solution::busyStudent(std::vector<int> &startTime,
+                          std::vector<int> &endTime, int queryTime) {
+  int res = 0;
+  for (int i = 0; i < startTime.size(); ++i) {
+    if (startTime[i] <= queryTime && queryTime <= endTime[i]) {
+      res++;
+    }
+  }
+  return res;
+}
+
 int Solution::xorOperation(int n, int start) {
   int s = start >> 1;
   int e = n & start & 1;

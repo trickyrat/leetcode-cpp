@@ -968,6 +968,16 @@ public:
   static std::vector<int> minSubsequence(std::vector<int> &nums);
 
   /// <summary>
+  /// 1450. Number of Students Doing Homework at a Given Time
+  /// </summary>
+  /// <param name="startTime"></param>
+  /// <param name="endTime"></param>
+  /// <param name="queryTime"></param>
+  /// <returns></returns>
+  static int busyStudent(std::vector<int> &startTime, std::vector<int> &endTime,
+                         int queryTime);
+
+  /// <summary>
   /// 1486. XOR Operation in an Array
   /// </summary>
   /// <param name="n"></param>

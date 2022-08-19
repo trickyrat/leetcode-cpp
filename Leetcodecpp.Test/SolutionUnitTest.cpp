@@ -166,6 +166,14 @@ TEST(SolutionTest, MinSubsequenceTest) {
   EXPECT_EQ(expected3, Solution::minSubsequence(nums3));
 }
 
+TEST(SolutionTest, BusyStudentTest) {
+  vector<int> startTime1 = {1, 2, 3};
+  vector<int> endTime1 = {3,2,7};
+  vector<int> startTime2 = {4};
+  vector<int> endTime2 = {4};
+  EXPECT_EQ(1, Solution::busyStudent(startTime1, endTime1, 4));
+  EXPECT_EQ(1, Solution::busyStudent(startTime2, endTime2, 4));
+}
 
 
 TEST(SolutionTest, MaximumWealthTest) {
