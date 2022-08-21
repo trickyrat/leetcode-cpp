@@ -1,6 +1,4 @@
 #include "Solution.h"
-#include "Utilities.h"
-
 
 std::vector<int> Solution::twoSum(std::vector<int> &nums, int target) {
   size_t size = nums.size();
@@ -2055,6 +2053,22 @@ int Solution::busyStudent(std::vector<int> &startTime,
   return res;
 }
 
+int Solution::isPrefixOfWord(std::string sentence, std::string searchWord) {
+  int n = sentence.size(), index = 1, start = 0, end = 0;
+  while (start < n) {
+    while (end < n && sentence[end] != ' ') {
+      end++;
+    }
+    if (isPrefix(sentence, start, end, searchWord)) {
+      return index;
+    }
+    index++;
+    end++;
+    start = end;
+  }
+  return -1;
+}
+
 int Solution::xorOperation(int n, int start) {
   int s = start >> 1;
   int e = n & start & 1;
@@ -2318,4 +2332,14 @@ void Solution::reverse(std::vector<int> &nums, int start, int end) {
     ++start;
     --end;
   }
+}
+
+bool Solution::isPrefix(const std::string &sentence, int start, int end,
+                        const std::string &searchWord) {
+  for (int i = 0; i < searchWord.size(); i++) {
+    if (start + i >= end || sentence[start + i] != searchWord[i]) {
+      return false;
+    }
+  }
+  return true;
 }

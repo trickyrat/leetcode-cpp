@@ -19,6 +19,7 @@
 #include "ListNode.h"
 #include "TreeNode.h"
 #include "Node.h"
+#include "Utilities.h"
 
 class Foo {
 private:
@@ -976,6 +977,14 @@ public:
   /// <returns></returns>
   static int busyStudent(std::vector<int> &startTime, std::vector<int> &endTime,
                          int queryTime);
+  
+  /// <summary>
+  /// 1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence
+  /// </summary>
+  /// <param name="sentence"></param>
+  /// <param name="searchWord"></param>
+  /// <returns></returns>
+  static int isPrefixOfWord(std::string sentence, std::string searchWord);
 
   /// <summary>
   /// 1486. XOR Operation in an Array
@@ -1046,4 +1055,7 @@ private:
   std::string join(std::vector<std::string> &words, int left, int right,
                    std::string sep);
   static void reverse(std::vector<int> &nums, int start, int end);
+
+  static bool isPrefix(const std::string &sentence, int start, int end,
+                       const std::string &searchWord);
 };

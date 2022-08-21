@@ -175,6 +175,17 @@ TEST(SolutionTest, BusyStudentTest) {
   EXPECT_EQ(1, Solution::busyStudent(startTime2, endTime2, 4));
 }
 
+TEST(SolutionTest, IsPrefixOfWordTest) {
+  string sentence1 = "i love eating burger";
+  string sentence2 = "this problem is an easy problem";
+  string sentence3 = "i am tired";
+  string searchWord1 = "burg";
+  string searchWord2 = "pro";
+  string searchWord3 = "you";
+  EXPECT_EQ(4, Solution::isPrefixOfWord(sentence1, searchWord1));
+  EXPECT_EQ(2, Solution::isPrefixOfWord(sentence2, searchWord2));
+  EXPECT_EQ(-1, Solution::isPrefixOfWord(sentence3, searchWord3));
+}
 
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
