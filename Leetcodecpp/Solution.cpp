@@ -1667,6 +1667,23 @@ std::vector<int> Solution::exclusiveTime(int n,
   return res;
 }
 
+std::vector<int> Solution::findClosestElements(std::vector<int> &arr, int k,
+                                               int x) {
+  int right = std::lower_bound(arr.begin(), arr.end(), x) - arr.begin();
+  int left = right - 1;
+  int n = arr.size();
+  while (k--) {
+    if (left < 0) {
+      right++;
+    } else if (right >= n || x - arr[left] <= arr[right] - x) {
+      left--;
+    } else {
+      right++;
+    }
+  }
+  return std::vector<int>(arr.begin() + (left + 1), arr.begin() + right);
+}
+
 TreeNode *Solution::trimBST(TreeNode *root, int L, int R) {
   // Recursively
   if (root == nullptr)

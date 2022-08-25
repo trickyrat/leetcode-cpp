@@ -772,6 +772,16 @@ public:
   static std::vector<int> exclusiveTime(int n, std::vector<std::string> &logs);
 
   /// <summary>
+  /// 658. Find K Closest Elements
+  /// </summary>
+  /// <param name="arr"></param>
+  /// <param name="k"></param>
+  /// <param name="x"></param>
+  /// <returns></returns>
+  static std::vector<int> findClosestElements(std::vector<int> &arr, int k,
+                                              int x);
+
+  /// <summary>
   /// 669. Trim a Binary Search Tree
   /// </summary>
   /// <param name="root"></param>

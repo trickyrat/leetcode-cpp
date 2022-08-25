@@ -97,6 +97,15 @@ TEST(SolutionTest, ExculsiveTimeTest) {
   EXPECT_EQ(expected3, Solution::exclusiveTime(2, logs3));
 }
 
+TEST(SolutionTest, FindClosestElementsTest) { 
+  vector<int> arr1{1, 2, 3, 4, 5};
+  vector<int> arr2{1, 2, 3, 4, 5};
+  vector<int> expected1{1, 2, 3, 4};
+  vector<int> expected2{1, 2, 3, 4};
+  EXPECT_EQ(expected1, Solution::findClosestElements(arr1, 4, 3));
+  EXPECT_EQ(expected2, Solution::findClosestElements(arr2, 4, -1));
+}
+
 TEST(SolutionTest, PivotIndexTest) {
   vector<int> nums1 = {1, 7, 3, 6, 5, 6};
   vector<int> nums2 = {1, 2, 3};
