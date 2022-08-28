@@ -782,6 +782,13 @@ public:
                                               int x);
 
   /// <summary>
+  /// 662. Maximum Width of Binary Tree
+  /// </summary>
+  /// <param name="root"></param>
+  /// <returns></returns>
+  static int widthOfBinaryTree(TreeNode *root);
+
+  /// <summary>
   /// 669. Trim a Binary Search Tree
   /// </summary>
   /// <param name="root"></param>

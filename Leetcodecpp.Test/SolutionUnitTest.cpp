@@ -106,6 +106,18 @@ TEST(SolutionTest, FindClosestElementsTest) {
   EXPECT_EQ(expected2, Solution::findClosestElements(arr2, 4, -1));
 }
 
+TEST(SolutionTest, WidthOfBinaryTreeTest) {
+  string nums1 = "1,3,2,5,3,null,9";
+  string nums2 = "1,3,2,5,null,null,9,6,null,7";
+  string nums3 = "1,3,2,5";
+  TreeNode *root1 = Utilities::create_treenode_with_bfs(nums1);
+  TreeNode *root2 = Utilities::create_treenode_with_bfs(nums2);
+  TreeNode *root3 = Utilities::create_treenode_with_bfs(nums3);
+  EXPECT_EQ(4, Solution::widthOfBinaryTree(root1));
+  EXPECT_EQ(7, Solution::widthOfBinaryTree(root2));
+  EXPECT_EQ(2, Solution::widthOfBinaryTree(root3));
+}
+
 TEST(SolutionTest, PivotIndexTest) {
   vector<int> nums1 = {1, 7, 3, 6, 5, 6};
   vector<int> nums2 = {1, 2, 3};
@@ -154,12 +166,11 @@ TEST(SolutionTest, RepeatedNTimesTest) {
 }
 
 TEST(SolutionTest, IsUnivalTreeTest) {
-  Utilities utilities;
   string nums1 = "1,1,1,1,1,null,1";
-  TreeNode *root1 = utilities.create_treenode_with_bfs(nums1);
+  TreeNode *root1 = Utilities::create_treenode_with_bfs(nums1);
   EXPECT_TRUE(Solution::isUnivalTree(root1));
   string nums2 = "2,2,2,5,2";
-  TreeNode *root2 = utilities.create_treenode_with_bfs(nums2);
+  TreeNode *root2 = Utilities::create_treenode_with_bfs(nums2);
   EXPECT_FALSE(Solution::isUnivalTree(root2));
 }
 

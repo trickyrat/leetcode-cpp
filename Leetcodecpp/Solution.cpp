@@ -1684,6 +1684,24 @@ std::vector<int> Solution::findClosestElements(std::vector<int> &arr, int k,
   return std::vector<int>(arr.begin() + (left + 1), arr.begin() + right);
 }
 
+int Solution::widthOfBinaryTree(TreeNode *root) { 
+  using ULL = unsigned long long;
+  std::unordered_map<int, ULL> level_min;
+  std::function<ULL(TreeNode *, int, ULL)> dfs = [&](TreeNode *node, int depth,
+                                                     ULL index) -> ULL {
+    if (node == nullptr) {
+      return 0LL;
+    }
+    if (!level_min.count(depth)) {
+      level_min[depth] = index;
+    }
+    return std::max({index - level_min[depth] + 1LL,
+                     dfs(node->left, depth + 1, index * 2),
+                     dfs(node->right, depth + 1, index * 2 + 1)});
+  }; 
+  return dfs(root, 1, 1LL);
+}
+
 TreeNode *Solution::trimBST(TreeNode *root, int L, int R) {
   // Recursively
   if (root == nullptr)
