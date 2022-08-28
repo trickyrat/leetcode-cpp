@@ -997,6 +997,13 @@ public:
   static int isPrefixOfWord(std::string sentence, std::string searchWord);
 
   /// <summary>
+  /// 1464. Maximum Product of Two Elements in an Array
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  static int maxProduct(std::vector<int> &nums);
+
+  /// <summary>
   /// 1486. XOR Operation in an Array
   /// </summary>
   /// <param name="n"></param>

@@ -196,6 +196,15 @@ TEST(SolutionTest, IsPrefixOfWordTest) {
   EXPECT_EQ(-1, Solution::isPrefixOfWord(sentence3, searchWord3));
 }
 
+TEST(SolutionTest, MaxProductTest) { 
+  vector<int> nums1 = {3, 4, 5, 2};
+  vector<int> nums2 = {1, 5, 4, 5};
+  vector<int> nums3 = {3, 7};
+  EXPECT_EQ(12, Solution::maxProduct(nums1)); 
+  EXPECT_EQ(16, Solution::maxProduct(nums2)); 
+  EXPECT_EQ(12, Solution::maxProduct(nums3)); 
+}
+
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
   vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};
