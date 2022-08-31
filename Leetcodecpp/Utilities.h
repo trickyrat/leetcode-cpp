@@ -4,6 +4,7 @@
 #include "TreeNode.h"
 
 #include <string>
+#include <stack>
 #include <vector>
 
 class Utilities {
@@ -17,4 +18,8 @@ public:
   static ListNode *create_listnode(std::vector<int> &nums);
 
   static std::vector<std::string> split(const std::string &input, const std::string &delimeter);
+
+  static std::vector<int> InorderTraversal(TreeNode *root);
+
+  static std::vector<int> PreordereTraversal(TreeNode *root);
 };

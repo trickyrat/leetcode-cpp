@@ -181,6 +181,21 @@ TEST(SolutionTest, IsUnivalTreeTest) {
   EXPECT_FALSE(Solution::isUnivalTree(root2));
 }
 
+TEST(SolutionTest, InsertIntoMaxTreeTest) {
+  string nodes1 = "4,1,3,null,null,2";
+  string nodes2 = "5,2,4,null,1";
+  string nodes3 = "5,2,3,null,1";
+  vector<int> actual1 = Utilities::PreordereTraversal(Solution::insertIntoMaxTree(Utilities::create_treenode_with_bfs(nodes1), 5));
+  vector<int> actual2 = Utilities::PreordereTraversal(Solution::insertIntoMaxTree(Utilities::create_treenode_with_bfs(nodes2), 3));
+  vector<int> actual3 = Utilities::PreordereTraversal(Solution::insertIntoMaxTree(Utilities::create_treenode_with_bfs(nodes3), 4));
+  vector<int> expected1 = {5, 4, 1, 3, 2};
+  vector<int> expected2 = {5, 2, 1, 4, 3};
+  vector<int> expected3 = {5, 2, 1, 4, 3};
+  EXPECT_EQ(expected1, actual1);
+  EXPECT_EQ(expected2, actual2);
+  EXPECT_EQ(expected3, actual3);
+}
+
 TEST(SolutionTest, MinSubsequenceTest) {
   vector<int> nums1 = {4, 3, 10, 9, 8};
   vector<int> nums2 = {4, 4, 7, 6, 7};

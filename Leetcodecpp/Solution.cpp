@@ -201,8 +201,8 @@ int Solution::maxArea(std::vector<int> &height) {
   int maxArea = 0;
   size_t left = 0, right = height.size() - 1;
   while (left < right) {
-    maxArea = std::max(maxArea,
-                       std::min(height[left], height[right]) * (int)(right - left));
+    maxArea = std::max(maxArea, std::min(height[left], height[right]) *
+                                    (int)(right - left));
     if (height[left] < height[right])
       left++;
   }
@@ -1300,7 +1300,7 @@ ListNode *Solution::sortList(ListNode *head) {
 
 std::vector<int> Solution::twoSumII(std::vector<int> &numbers, int target) {
   int left = 0, right = numbers.size();
-  while (left <right) {
+  while (left < right) {
     int sum = numbers[left] + numbers[right];
     if (sum == target) {
       return {left + 1, right + 1};
@@ -1323,13 +1323,13 @@ int Solution::majorityElement(std::vector<int> &nums) {
   return candidate;
 }
 
-int Solution::trailingZeroes(int n) { 
+int Solution::trailingZeroes(int n) {
   int ans = 0;
   while (n) {
     n /= 5;
     ans += n;
   }
-  return ans; 
+  return ans;
 }
 
 void Solution::rotate(std::vector<int> &nums, int k) {
@@ -1437,7 +1437,7 @@ void Solution::reverseString(std::vector<char> &s) {
   }
 }
 
-int Solution::countNumbersWithUniqueDigits(int n) { 
+int Solution::countNumbersWithUniqueDigits(int n) {
   if (n == 0) {
     return 1;
   }
@@ -1516,13 +1516,13 @@ std::vector<std::vector<int>> Solution::levelOrder(Node *root) {
   return res;
 }
 
-int Solution::totalHammingDistance(std::vector<int> &nums) { 
+int Solution::totalHammingDistance(std::vector<int> &nums) {
   int size = nums.size();
   int res = 0;
   for (int i = 0; i < 30; i++) {
     int tmp = 0;
     for (int num : nums) {
-      tmp += (num >> i) & 1; 
+      tmp += (num >> i) & 1;
     }
     res += tmp * (size - tmp);
   }
@@ -1595,9 +1595,9 @@ int Solution::fib(int N) {
 std::string Solution::complexNumberMultiply(std::string num1,
                                             std::string num2) {
   std::regex re("\\+|i");
-  std::vector <std::string>
-      complex1(std::sregex_token_iterator(num1.begin(), num1.end(), re, -1),
-               std::sregex_token_iterator());
+  std::vector<std::string> complex1(
+      std::sregex_token_iterator(num1.begin(), num1.end(), re, -1),
+      std::sregex_token_iterator());
   std::vector<std::string> complex2(
       std::sregex_token_iterator(num2.begin(), num2.end(), re, -1),
       std::sregex_token_iterator());
@@ -1606,11 +1606,11 @@ std::string Solution::complexNumberMultiply(std::string num1,
   int real2 = std::stoi(complex2[0]);
   int imag2 = std::stoi(complex2[1]);
   return std::to_string(real1 * real2 - imag1 * imag2) + "+" +
-                        std::to_string(real1 * imag2 + imag1 * real2) + "i";
+         std::to_string(real1 * imag2 + imag1 * real2) + "i";
 }
 
 std::string Solution::reverseWords(std::string s) {
-  int len = s.length(); 
+  int len = s.length();
   int i = 0;
   while (i < len) {
     int start = i;
@@ -1645,7 +1645,7 @@ std::vector<int> Solution::exclusiveTime(int n,
                                          std::vector<std::string> &logs) {
   std::stack<std::pair<int, int>> st;
   std::vector<int> res(n, 0);
-  for (auto& log : logs) {
+  for (auto &log : logs) {
     auto values = Utilities::split(log, ":");
     int index = std::stoi(values[0]);
     int timestamp = std::stoi(values[2]);
@@ -1684,7 +1684,7 @@ std::vector<int> Solution::findClosestElements(std::vector<int> &arr, int k,
   return std::vector<int>(arr.begin() + (left + 1), arr.begin() + right);
 }
 
-int Solution::widthOfBinaryTree(TreeNode *root) { 
+int Solution::widthOfBinaryTree(TreeNode *root) {
   using ULL = unsigned long long;
   std::unordered_map<int, ULL> level_min;
   std::function<ULL(TreeNode *, int, ULL)> dfs = [&](TreeNode *node, int depth,
@@ -1698,7 +1698,7 @@ int Solution::widthOfBinaryTree(TreeNode *root) {
     return std::max({index - level_min[depth] + 1LL,
                      dfs(node->left, depth + 1, index * 2),
                      dfs(node->right, depth + 1, index * 2 + 1)});
-  }; 
+  };
   return dfs(root, 1, 1LL);
 }
 
@@ -1755,7 +1755,7 @@ TreeNode *Solution::insertIntoBST(TreeNode *root, int val) {
   return root;
 }
 
-int Solution::binarySearch(std::vector<int> &nums, int target) { 
+int Solution::binarySearch(std::vector<int> &nums, int target) {
   int left = 0, right = nums.size() - 1;
   while (left <= right) {
     int mid = left + (right - left) / 2;
@@ -1815,13 +1815,13 @@ std::vector<int> Solution::dailyTemperatures(std::vector<int> &T) {
   return ans;
 }
 
-int Solution::preimageSizeFZF(int k) { return nx(k + 1) - nx(k);}
+int Solution::preimageSizeFZF(int k) { return nx(k + 1) - nx(k); }
 
 int Solution::uniqueMorseRepresentations(std::vector<std::string> &words) {
-  const std::string MORSE[] = {".-",   "-...", "-.-.", "-..",  ".",    "..-.", "--.",
-                    "....", "..",   ".---", "-.-",  ".-..", "--",   "-.",
-                    "---",  ".--.", "--.-", ".-.",  "...",  "-",    "..-",
-                    "...-", ".--",  "-..-", "-.--", "--.."};
+  const std::string MORSE[] = {
+      ".-",   "-...", "-.-.", "-..",  ".",   "..-.", "--.",  "....", "..",
+      ".---", "-.-",  ".-..", "--",   "-.",  "---",  ".--.", "--.-", ".-.",
+      "...",  "-",    "..-",  "...-", ".--", "-..-", "-.--", "--.."};
   std::unordered_set<std::string> seen;
   for (auto &word : words) {
     std::string code;
@@ -1835,18 +1835,18 @@ int Solution::uniqueMorseRepresentations(std::vector<std::string> &words) {
 
 std::vector<int> Solution::numberOfLines(std::vector<int> &widths,
                                          std::string &s) {
-    int lines = 1;
-    int width = 0;
-    const int MAX_WIDTH = 100;
-    for (auto &c : s) {
-      int need = widths[c - 'a'];
-      width += need;
-      if (width > MAX_WIDTH) {
-        lines++;
-        width = need;
-      }
+  int lines = 1;
+  int width = 0;
+  const int MAX_WIDTH = 100;
+  for (auto &c : s) {
+    int need = widths[c - 'a'];
+    width += need;
+    if (width > MAX_WIDTH) {
+      lines++;
+      width = need;
     }
-    return {lines, width};
+  }
+  return {lines, width};
 }
 
 std::vector<int> Solution::shortestToChar(std::string S, char C) {
@@ -1979,7 +1979,7 @@ int Solution::minDeletionSize(std::vector<std::string> &strs) {
   return ans;
 }
 
-int Solution::repeatedNTimes(std::vector<int> &nums) { 
+int Solution::repeatedNTimes(std::vector<int> &nums) {
   std::unordered_set<int> found;
   for (auto &num : nums) {
     if (found.count(num)) {
@@ -1990,7 +1990,7 @@ int Solution::repeatedNTimes(std::vector<int> &nums) {
   return -1;
 }
 
-bool Solution::isUnivalTree(TreeNode *root) { 
+bool Solution::isUnivalTree(TreeNode *root) {
   if (!root) {
     return false;
   }
@@ -2022,6 +2022,25 @@ std::vector<int> Solution::sortedSquares(std::vector<int> &nums) {
     --pos;
   }
   return ans;
+}
+
+TreeNode *Solution::insertIntoMaxTree(TreeNode *root, int val) {
+  TreeNode *parent = nullptr;
+  TreeNode *curr = root;
+  while (curr) {
+    if (val > curr->val) {
+      if (!parent) {
+        return new TreeNode(val, root, nullptr);
+      }
+      parent->right = new TreeNode(val, curr, nullptr);
+      return root;
+    } else {
+      parent = curr;
+      curr = curr->right;
+    }
+  }
+  parent->right = new TreeNode(val);
+  return root;
 }
 
 std::vector<std::vector<int>>
@@ -2106,7 +2125,7 @@ int Solution::isPrefixOfWord(std::string sentence, std::string searchWord) {
   return -1;
 }
 
-int Solution::maxProduct(std::vector<int> &nums) { 
+int Solution::maxProduct(std::vector<int> &nums) {
   int a = nums[0], b = nums[1];
   if (a < b) {
     std::swap(a, b);
@@ -2189,7 +2208,7 @@ Solution::platesBetweenCandles(std::string s,
     right[i] = r;
   }
   std::vector<int> ans;
-  for (auto& query : queries) {
+  for (auto &query : queries) {
     int x = right[query[0]], y = left[query[1]];
     ans.push_back(x == -1 || y == -1 || x >= y ? 0 : preSum[y] - preSum[x]);
   }
@@ -2254,7 +2273,9 @@ bool Solution::isValid(std::vector<std::vector<char>> &board, int row, int col,
   return true;
 }
 
-void Solution::Dfs(std::vector<int>& candidates, int target, std::vector<std::vector<int>>& ans, std::vector<int>& combine, int idx){
+void Solution::Dfs(std::vector<int> &candidates, int target,
+                   std::vector<std::vector<int>> &ans,
+                   std::vector<int> &combine, int idx) {
   if (idx == candidates.size()) {
     return;
   }
@@ -2356,7 +2377,7 @@ std::vector<int> Solution::kmpProcess(std::string &needle) {
   return lps;
 }
 
-int Solution::zeta(long x) { 
+int Solution::zeta(long x) {
   int res = 0;
   while (x) {
     res += x / 5;
@@ -2365,7 +2386,7 @@ int Solution::zeta(long x) {
   return res;
 }
 
-long long Solution::nx(int k) { 
+long long Solution::nx(int k) {
   long long left = 0, right = 5LL * k;
   while (left <= right) {
     long long mid = (left + right) / 2;
@@ -2378,7 +2399,7 @@ long long Solution::nx(int k) {
   return right + 1;
 }
 
-bool Solution::isSelfDividing(int num) { 
+bool Solution::isSelfDividing(int num) {
   int tmp = num;
   while (tmp > 0) {
     int digit = tmp % 10;
@@ -2387,7 +2408,7 @@ bool Solution::isSelfDividing(int num) {
     }
     tmp /= 10;
   }
-  return true; 
+  return true;
 }
 
 int Solution::sumXor(int x) {

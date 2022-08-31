@@ -963,6 +963,14 @@ public:
   static std::vector<int> sortedSquares(std::vector<int> &nums);
 
   /// <summary>
+  /// 998. Maximum Binary Tree II
+  /// </summary>
+  /// <param name="root"></param>
+  /// <param name="val"></param>
+  /// <returns></returns>
+  static TreeNode *insertIntoMaxTree(TreeNode *root, int val);
+
+  /// <summary>
   /// 1260. Shift 2D Grid
   /// </summary>
   /// <param name="grid"></param>

@@ -99,3 +99,38 @@ std::vector<std::string> Utilities::split(const std::string &source,
   }
   return res;
 }
+
+std::vector<int> Utilities::InorderTraversal(TreeNode *root) {
+  std::vector<int> res;
+  std::stack<TreeNode *> stk;
+  while (root != nullptr || !stk.empty()) {
+    stk.push(root);
+    root = root->left;
+  }
+  root = stk.top();
+  stk.pop();
+  res.push_back(root->val);
+  root = root->right;
+  return res;
+}
+
+std::vector<int> Utilities::PreordereTraversal(TreeNode *root) {
+  std::vector<int> res;
+  if (root == nullptr) {
+    return res;
+  }
+
+  std::stack<TreeNode *> stk;
+  TreeNode *node = root;
+  while (!stk.empty() || node != nullptr) {
+    while (node != nullptr) {
+      res.emplace_back(node->val);
+      stk.emplace(node);
+      node = node->left;
+    }
+    node = stk.top();
+    stk.pop();
+    node = node->right;
+  }
+  return res;
+}
