@@ -851,6 +851,13 @@ public:
   static std::vector<int> dailyTemperatures(std::vector<int> &T);
 
   /// <summary>
+  /// 793. Preimage Size of Factorial Zeroes Function
+  /// </summary>
+  /// <param name="k"></param>
+  /// <returns></returns>
+  static int preimageSizeFZF(int k);
+
+  /// <summary>
   /// 804. Unique Morse Code Words
   /// </summary>
   /// <param name="words"></param>
@@ -1071,6 +1078,9 @@ private:
                            std::vector<int> &flag, int row, int &n);
 
   static std::vector<int> kmpProcess(std::string &needle);
+
+  static int zeta(long x);
+  static long long nx(int k);
 
   static bool isSelfDividing(int num);
 

@@ -1815,6 +1815,8 @@ std::vector<int> Solution::dailyTemperatures(std::vector<int> &T) {
   return ans;
 }
 
+int Solution::preimageSizeFZF(int k) { return nx(k + 1) - nx(k);}
+
 int Solution::uniqueMorseRepresentations(std::vector<std::string> &words) {
   const std::string MORSE[] = {".-",   "-...", "-.-.", "-..",  ".",    "..-.", "--.",
                     "....", "..",   ".---", "-.-",  ".-..", "--",   "-.",
@@ -2343,6 +2345,28 @@ std::vector<int> Solution::kmpProcess(std::string &needle) {
       lps[i++] = 0;
   }
   return lps;
+}
+
+int Solution::zeta(long x) { 
+  int res = 0;
+  while (x) {
+    res += x / 5;
+    x /= 5;
+  }
+  return res;
+}
+
+long long Solution::nx(int k) { 
+  long long left = 0, right = 5LL * k;
+  while (left <= right) {
+    long long mid = (left + right) / 2;
+    if (zeta(mid) < k) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+  return right + 1;
 }
 
 bool Solution::isSelfDividing(int num) { 

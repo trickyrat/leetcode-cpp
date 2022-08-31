@@ -127,6 +127,13 @@ TEST(SolutionTest, PivotIndexTest) {
   EXPECT_EQ(0, Solution::pivotIndex(nums3));
 }
 
+TEST(SolutionTest, PreimageSizeFZFTest) {
+  EXPECT_EQ(5, Solution::preimageSizeFZF(0));
+  EXPECT_EQ(0, Solution::preimageSizeFZF(5));
+  EXPECT_EQ(5, Solution::preimageSizeFZF(3));
+}
+
+
 TEST(SolutionTest, UniqueMorseRepresentationsTest) {
   vector<string> words1 = {"gin", "zen", "gig", "msg"};
   vector<string> words2 = {"a"};
