@@ -942,6 +942,15 @@ public:
   static int minDeletionSize(std::vector<std::string>& strs);
 
   /// <summary>
+  /// 946. Validate Stack Sequences
+  /// </summary>
+  /// <param name="pushed"></param>
+  /// <param name="popped"></param>
+  /// <returns></returns>
+  static bool validateStackSequences(std::vector<int> &pushed,
+                                     std::vector<int> &popped);
+
+  /// <summary>
   /// 961. N-Repeated Element in Size 2N Array
   /// </summary>
   /// <param name="nums"></param>

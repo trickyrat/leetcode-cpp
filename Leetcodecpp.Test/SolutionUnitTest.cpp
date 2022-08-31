@@ -163,6 +163,17 @@ TEST(SolutionTest, MinDeletionSizeTest) {
   EXPECT_EQ(3, Solution::minDeletionSize(strs3));
 }
 
+TEST(SolutionTest, ValidateStackSequencesTest) {
+  vector<int> pushed1 = {1, 2, 3, 4, 5};
+  vector<int> popped1 = {4, 5, 3, 2, 1};
+
+  vector<int> pushed2 = {1, 2, 3, 4, 5};
+  vector<int> popped2 = {4, 3, 5, 1, 2};
+
+  EXPECT_TRUE(Solution::validateStackSequences(pushed1, popped1));
+  EXPECT_FALSE(Solution::validateStackSequences(pushed2, popped2));
+}
+
 TEST(SolutionTest, RepeatedNTimesTest) {
   vector<int> nums1{1, 2, 3, 3};
   vector<int> nums2{2, 1, 2, 5, 3, 2};

@@ -1979,6 +1979,20 @@ int Solution::minDeletionSize(std::vector<std::string> &strs) {
   return ans;
 }
 
+bool Solution::validateStackSequences(std::vector<int> &pushed,
+                                      std::vector<int> &popped) {
+  std::stack<int> stk;
+  int n = pushed.size();
+  for (size_t i = 0, j = 0; i < n; i++) {
+    stk.emplace(pushed[i]);
+    while (!stk.empty() && stk.top() == popped[j]) {
+      stk.pop();
+      j++;
+    }
+  }
+  return stk.empty();
+}
+
 int Solution::repeatedNTimes(std::vector<int> &nums) {
   std::unordered_set<int> found;
   for (auto &num : nums) {
