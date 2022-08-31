@@ -2122,6 +2122,15 @@ int Solution::maxProduct(std::vector<int> &nums) {
   return (a - 1) * (b - 1);
 }
 
+std::vector<int> Solution::shuffle(std::vector<int> &nums, int n) {
+  std::vector<int> res(n * 2);
+  for (size_t i = 0; i < n; i++) {
+    res[2 * i] = nums[i];
+    res[2 * i + 1] = nums[i + n];
+  }
+  return res;
+}
+
 int Solution::xorOperation(int n, int start) {
   int s = start >> 1;
   int e = n & start & 1;

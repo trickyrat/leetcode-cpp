@@ -1018,6 +1018,14 @@ public:
   static int maxProduct(std::vector<int> &nums);
 
   /// <summary>
+  /// 1470. Shuffle the Array
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <param name="n"></param>
+  /// <returns></returns>
+  static std::vector<int> shuffle(std::vector<int> &nums, int n);
+
+  /// <summary>
   /// 1486. XOR Operation in an Array
   /// </summary>
   /// <param name="n"></param>

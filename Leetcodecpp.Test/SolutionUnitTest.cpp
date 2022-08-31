@@ -214,6 +214,18 @@ TEST(SolutionTest, IsPrefixOfWordTest) {
   EXPECT_EQ(-1, Solution::isPrefixOfWord(sentence3, searchWord3));
 }
 
+TEST(SolutionTest, ShuffleTest) { 
+  vector<int> nums1 = {2, 5, 1, 3, 4, 7};
+  vector<int> nums2 = {1, 2, 3, 4, 4, 3, 2, 1};
+  vector<int> nums3 = {1, 1, 2, 2};
+  vector<int> expected1 = {2, 3, 5, 4, 1, 7};
+  vector<int> expected2 = {1, 4, 2, 3, 3, 2, 4, 1};
+  vector<int> expected3 = {1, 2, 1, 2};
+  EXPECT_EQ(expected1, Solution::shuffle(nums1, 3));
+  EXPECT_EQ(expected2, Solution::shuffle(nums2, 4));
+  EXPECT_EQ(expected3, Solution::shuffle(nums3, 2));
+}
+
 TEST(SolutionTest, MaxProductTest) { 
   vector<int> nums1 = {3, 4, 5, 2};
   vector<int> nums2 = {1, 5, 4, 5};
