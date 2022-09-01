@@ -252,6 +252,18 @@ TEST(SolutionTest, ShuffleTest) {
   EXPECT_EQ(expected3, Solution::shuffle(nums3, 2));
 }
 
+TEST(SolutionTest, FinalPricesTest) {
+  vector<int> prices1 = {8, 4, 6, 2, 3};
+  vector<int> prices2 = {1, 2, 3, 4, 5};
+  vector<int> prices3 = {10, 1, 1, 6};
+  vector<int> expected1 = {4, 2, 4, 2, 3};
+  vector<int> expected2 = {1, 2, 3, 4, 5};
+  vector<int> expected3 = {9, 0, 1, 6};
+  EXPECT_EQ(expected1, Solution::finalPrices(prices1));
+  EXPECT_EQ(expected2, Solution::finalPrices(prices2));
+  EXPECT_EQ(expected3, Solution::finalPrices(prices3));
+}
+
 TEST(SolutionTest, MaxProductTest) { 
   vector<int> nums1 = {3, 4, 5, 2};
   vector<int> nums2 = {1, 5, 4, 5};

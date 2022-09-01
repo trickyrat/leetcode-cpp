@@ -2164,6 +2164,20 @@ std::vector<int> Solution::shuffle(std::vector<int> &nums, int n) {
   return res;
 }
 
+std::vector<int> Solution::finalPrices(std::vector<int> &prices) {
+  int n = prices.size();
+  std::vector<int> res(n);
+  std::stack<int> stk;
+  for (int i = n - 1; i >= 0; --i) {
+    while (!stk.empty() && stk.top() > prices[i]) {
+      stk.pop();
+    }
+    res[i] = stk.empty() ? prices[i] : prices[i] - stk.top();
+    stk.emplace(prices[i]);
+  }
+  return res;
+}
+
 int Solution::xorOperation(int n, int start) {
   int s = start >> 1;
   int e = n & start & 1;

@@ -1043,6 +1043,13 @@ public:
   static std::vector<int> shuffle(std::vector<int> &nums, int n);
 
   /// <summary>
+  /// 1475. Final Prices With a Special Discount in a Shop
+  /// </summary>
+  /// <param name="prices"></param>
+  /// <returns></returns>
+  static std::vector<int> finalPrices(std::vector<int> &prices);
+
+  /// <summary>
   /// 1486. XOR Operation in an Array
   /// </summary>
   /// <param name="n"></param>
