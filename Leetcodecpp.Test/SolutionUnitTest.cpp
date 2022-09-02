@@ -99,7 +99,14 @@ TEST(SolutionTest, ExculsiveTimeTest) {
   EXPECT_EQ(expected3, solution.exclusiveTime(2, logs3));
 }
 
-TEST(SolutionTest, FindClosestElementsTest) { 
+TEST(SolutionTest, FindLongestChainTest) {
+  vector<vector<int>> pairs1 = {{1, 2}, {2, 3}, {3, 4}};
+  vector<vector<int>> pairs2 = {{1, 2}, {7, 8}, {4, 5}};
+  EXPECT_EQ(2, solution.findLongestChain(pairs1));
+  EXPECT_EQ(3, solution.findLongestChain(pairs2));
+}
+
+TEST(SolutionTest, FindClosestElementsTest) {
   vector<int> arr1{1, 2, 3, 4, 5};
   vector<int> arr2{1, 2, 3, 4, 5};
   vector<int> expected1{1, 2, 3, 4};
@@ -129,7 +136,6 @@ TEST(SolutionTest, LongestUnivaluePathTest) {
   EXPECT_EQ(2, solution.longestUnivaluePath(root2));
 }
 
-
 TEST(SolutionTest, PivotIndexTest) {
   vector<int> nums1 = {1, 7, 3, 6, 5, 6};
   vector<int> nums2 = {1, 2, 3};
@@ -144,7 +150,6 @@ TEST(SolutionTest, PreimageSizeFZFTest) {
   EXPECT_EQ(0, solution.preimageSizeFZF(5));
   EXPECT_EQ(5, solution.preimageSizeFZF(3));
 }
-
 
 TEST(SolutionTest, UniqueMorseRepresentationsTest) {
   vector<string> words1 = {"gin", "zen", "gig", "msg"};
@@ -239,7 +244,7 @@ TEST(SolutionTest, MinSubsequenceTest) {
 
 TEST(SolutionTest, BusyStudentTest) {
   vector<int> startTime1 = {1, 2, 3};
-  vector<int> endTime1 = {3,2,7};
+  vector<int> endTime1 = {3, 2, 7};
   vector<int> startTime2 = {4};
   vector<int> endTime2 = {4};
   EXPECT_EQ(1, solution.busyStudent(startTime1, endTime1, 4));
@@ -258,7 +263,7 @@ TEST(SolutionTest, IsPrefixOfWordTest) {
   EXPECT_EQ(-1, solution.isPrefixOfWord(sentence3, searchWord3));
 }
 
-TEST(SolutionTest, ShuffleTest) { 
+TEST(SolutionTest, ShuffleTest) {
   vector<int> nums1 = {2, 5, 1, 3, 4, 7};
   vector<int> nums2 = {1, 2, 3, 4, 4, 3, 2, 1};
   vector<int> nums3 = {1, 1, 2, 2};
@@ -282,13 +287,13 @@ TEST(SolutionTest, FinalPricesTest) {
   EXPECT_EQ(expected3, solution.finalPrices(prices3));
 }
 
-TEST(SolutionTest, MaxProductTest) { 
+TEST(SolutionTest, MaxProductTest) {
   vector<int> nums1 = {3, 4, 5, 2};
   vector<int> nums2 = {1, 5, 4, 5};
   vector<int> nums3 = {3, 7};
-  EXPECT_EQ(12, solution.maxProduct(nums1)); 
-  EXPECT_EQ(16, solution.maxProduct(nums2)); 
-  EXPECT_EQ(12, solution.maxProduct(nums3)); 
+  EXPECT_EQ(12, solution.maxProduct(nums1));
+  EXPECT_EQ(16, solution.maxProduct(nums2));
+  EXPECT_EQ(12, solution.maxProduct(nums3));
 }
 
 TEST(SolutionTest, MaximumWealthTest) {

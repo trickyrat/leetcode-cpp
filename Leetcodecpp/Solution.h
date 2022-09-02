@@ -771,6 +771,13 @@ public:
   /// <returns></returns>
    std::vector<int> exclusiveTime(int n, std::vector<std::string> &logs);
 
+   /// <summary>
+   /// 646. Maximum Length of Pair Chain
+   /// </summary>
+   /// <param name="pairs"></param>
+   /// <returns></returns>
+   int findLongestChain(std::vector<std::vector<int>> &pairs);
+
   /// <summary>
   /// 658. Find K Closest Elements
   /// </summary>

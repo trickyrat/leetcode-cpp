@@ -1667,6 +1667,20 @@ std::vector<int> Solution::exclusiveTime(int n,
   return res;
 }
 
+int Solution::findLongestChain(std::vector<std::vector<int>> &pairs) {
+  int curr = INT_MIN, res = 0;
+  std::sort(pairs.begin(), pairs.end(), [](const std::vector<int> &a, const std::vector<int> &b) {
+    return a[1] < b[1];  
+  });
+  for (auto &pair : pairs) {
+    if (curr < pair[0]) {
+      curr = pair[1];
+      res++;
+    }
+  }
+  return res;
+}
+
 std::vector<int> Solution::findClosestElements(std::vector<int> &arr, int k,
                                                int x) {
   int right = std::lower_bound(arr.begin(), arr.end(), x) - arr.begin();

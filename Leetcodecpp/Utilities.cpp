@@ -1,25 +1,6 @@
 #include "Utilities.h"
 
 #include <ranges>
-#include <queue>
-
-#define NULLSTRING "null"
-
-
-TreeNode *Utilities::dfs(std::vector<std::string> &data) {
-  if (data.empty()) {
-    return nullptr;
-  }
-  if (data[0] == NULLSTRING) {
-    data.erase(data.begin());
-    return nullptr;
-  }
-  TreeNode *root = new TreeNode(std::stoi(data[0]));
-  data.erase(data.begin());
-  root->left = dfs(data);
-  root->right = dfs(data);
-  return root;
-}
 
 TreeNode *Utilities::createTreeNodeIteratively(std::string &data) {
   if (data.empty()) {
@@ -27,7 +8,7 @@ TreeNode *Utilities::createTreeNodeIteratively(std::string &data) {
   }
   std::string delimeter = ",";
   std::vector<std::string> nums = split(data, delimeter);
-  if (nums[0] == NULLSTRING) {
+  if (nums[0] == "null") {
     return nullptr;
   }
   TreeNode *root = new TreeNode(std::stoi(nums[0]));
@@ -38,7 +19,7 @@ TreeNode *Utilities::createTreeNodeIteratively(std::string &data) {
   while (cursor < len) {
     TreeNode *node = q.front();
     q.pop();
-    if (cursor > len - 1 || nums[cursor] == NULLSTRING) {
+    if (cursor > len - 1 || nums[cursor] == "null") {
       node->left = nullptr;
     } else {
       TreeNode *left = new TreeNode(std::stoi(nums[cursor]));
@@ -47,7 +28,7 @@ TreeNode *Utilities::createTreeNodeIteratively(std::string &data) {
       }
       q.push(left);
     }
-    if (cursor + 1 > len - 1 || nums[cursor + 1] == NULLSTRING) {
+    if (cursor + 1 > len - 1 || nums[cursor + 1] == "null") {
       node->right = nullptr;
     } else {
       TreeNode *right = new TreeNode(std::stoi(nums[cursor + 1]));
@@ -74,22 +55,11 @@ ListNode *Utilities::createListNode(std::vector<int> &nums) {
   return head->next;
 }
 
-std::vector<std::string> Utilities::split(const std::string &source,
+std::vector<std::string> Utilities::split(const std::string &input,
                                           const std::string &delimeter) {
   std::vector<std::string> res;
-  /*for (auto item : std::views::split(input, delimeter)) {
+  for (auto item : std::views::split(input, delimeter)) {
     res.emplace_back(item);
-  }*/
-  size_t prev = 0;
-  size_t currentPos = 0;
-  while ((currentPos = source.find_first_of(delimeter, prev)) != std::string::npos) {
-    if (currentPos > prev) {
-      res.push_back(source.substr(prev, currentPos - prev));
-    }
-    prev = currentPos + 1;
-  }
-  if (prev < source.length()) {
-    res.push_back(source.substr(prev));
   }
   return res;
 }

@@ -9,9 +9,6 @@
 #include <queue>
 
 class Utilities {
-private:
-  static TreeNode *dfs(std::vector<std::string> &data);
-
 public:
   static TreeNode *createTreeNodeIteratively(std::string &data);
 
