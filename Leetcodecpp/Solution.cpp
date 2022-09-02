@@ -750,7 +750,7 @@ std::vector<std::vector<int>>
 Solution::combinationSum(std::vector<int> &candidates, int target) {
   std::vector<std::vector<int>> ans;
   std::vector<int> combine;
-  Dfs(candidates, target, ans, combine, 0);
+  dfs(candidates, target, ans, combine, 0);
   return ans;
 }
 
@@ -1715,6 +1715,12 @@ TreeNode *Solution::trimBST(TreeNode *root, int L, int R) {
   return root;
 }
 
+int Solution::longestUnivaluePath(TreeNode *root) { 
+  maxUnivaluePath = 0;
+  dfs(root);
+  return maxUnivaluePath;
+}
+
 TreeNode *Solution::searchBST(TreeNode *root, int val) {
   while (root && root->val != val)
     root = val < root->val ? root->left : root->right;
@@ -2301,7 +2307,7 @@ bool Solution::isValid(std::vector<std::vector<char>> &board, int row, int col,
   return true;
 }
 
-void Solution::Dfs(std::vector<int> &candidates, int target,
+void Solution::dfs(std::vector<int> &candidates, int target,
                    std::vector<std::vector<int>> &ans,
                    std::vector<int> &combine, int idx) {
   if (idx == candidates.size()) {
@@ -2311,12 +2317,28 @@ void Solution::Dfs(std::vector<int> &candidates, int target,
     ans.emplace_back(std::vector<int>(combine));
     return;
   }
-  Dfs(candidates, target, ans, combine, idx + 1);
+  dfs(candidates, target, ans, combine, idx + 1);
   if (target - candidates[idx] >= 0) {
     combine.emplace_back(candidates[idx]);
-    Dfs(candidates, target - candidates[idx], ans, combine, idx);
+    dfs(candidates, target - candidates[idx], ans, combine, idx);
     combine.pop_back();
   }
+}
+
+int Solution::dfs(TreeNode *root) { 
+  if (root == nullptr) {
+    return 0;
+  }
+  int left = dfs(root->left), right = dfs(root->right);
+  int left1 = 0, right1 = 0;
+  if (root->left && root->left->val == root->val) {
+    left1 = left + 1;
+  }
+  if (root->right && root->right->val == root->val) {
+    right1 = right + 1;
+  }
+  maxUnivaluePath = std::max(maxUnivaluePath, left1 + right1);
+  return std::max(left1, right1);
 }
 
 ListNode *Solution::split(ListNode *head, int n) {

@@ -21,7 +21,7 @@ TreeNode *Utilities::dfs(std::vector<std::string> &data) {
   return root;
 }
 
-TreeNode *Utilities::create_treenode_with_bfs(std::string &data) {
+TreeNode *Utilities::createTreeNodeIteratively(std::string &data) {
   if (data.empty()) {
     return nullptr;
   }
@@ -61,13 +61,7 @@ TreeNode *Utilities::create_treenode_with_bfs(std::string &data) {
   return root;
 }
 
-TreeNode *Utilities::create_treenode_with_dfs(std::string &data) {
-  std::string delimeter = ",";
-  std::vector<std::string> nums = split(data, delimeter);
-  return dfs(nums);
-}
-
-ListNode *Utilities::create_listnode(std::vector<int> &nums) {
+ListNode *Utilities::createListNode(std::vector<int> &nums) {
   if (nums.size() == 0) {
     return nullptr;
   }
@@ -100,7 +94,7 @@ std::vector<std::string> Utilities::split(const std::string &source,
   return res;
 }
 
-std::vector<int> Utilities::InorderTraversal(TreeNode *root) {
+std::vector<int> Utilities::inorderTraversal(TreeNode *root) {
   std::vector<int> res;
   std::stack<TreeNode *> stk;
   while (root != nullptr || !stk.empty()) {
@@ -114,7 +108,7 @@ std::vector<int> Utilities::InorderTraversal(TreeNode *root) {
   return res;
 }
 
-std::vector<int> Utilities::PreordereTraversal(TreeNode *root) {
+std::vector<int> Utilities::preordereTraversal(TreeNode *root) {
   std::vector<int> res;
   if (root == nullptr) {
     return res;
@@ -134,3 +128,46 @@ std::vector<int> Utilities::PreordereTraversal(TreeNode *root) {
   }
   return res;
 }
+
+bool Utilities::isSameTree(TreeNode *lhs, TreeNode *rhs) { 
+  if (lhs == nullptr && rhs == nullptr) {
+    return true;
+  } else if (lhs == nullptr || rhs == nullptr) {
+    return false;
+  }
+  std::queue<TreeNode *> q1, q2;
+  q1.push(lhs);
+  q2.push(rhs);
+  while (!q1.empty() && !q2.empty()) {
+    auto node1 = q1.front();
+    q1.pop();
+    auto node2 = q2.front();
+    q2.pop();
+    if (node1->val != node2->val) {
+      return false;
+    }
+    auto left1 = node1->left, right1 = node1->right, left2 = node2->left,
+         right2 = node2->right;
+    if ((left1 == nullptr) ^ (left2 == nullptr)) {
+      return false;
+    }
+    if ((right1 == nullptr) ^ (right2 == nullptr)) {
+      return false;
+    }
+    if (left1 != nullptr) {
+      q1.push(left1);
+    }
+    if (right1 != nullptr) {
+      q1.push(right1);
+    }
+    if (left2 != nullptr) {
+      q2.push(left2);
+    }
+    if (right2 != nullptr) {
+      q1.push(right2);
+    }
+  }
+
+  return q1.empty() && q2.empty();
+}
+

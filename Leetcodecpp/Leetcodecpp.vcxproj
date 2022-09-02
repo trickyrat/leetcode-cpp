@@ -151,18 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AllOne.cpp" />
-    <ClCompile Include="BSTIterator.cpp" />
-    <ClCompile Include="Codec.cpp" />
-    <ClCompile Include="ListNode.cpp" />
-    <ClCompile Include="MinStack.cpp" />
-    <ClCompile Include="MyStack.cpp" />
-    <ClCompile Include="Node.cpp" />
-    <ClCompile Include="NumArray.cpp" />
     <ClCompile Include="Program.cpp" />
-    <ClCompile Include="RandomizedSet.cpp" />
     <ClCompile Include="Solution.cpp" />
-    <ClCompile Include="TreeNode.cpp" />
     <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
