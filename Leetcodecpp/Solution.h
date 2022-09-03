@@ -1071,6 +1071,13 @@ public:
   /// <returns></returns>
    int xorOperation(int n, int start);
 
+   /// <summary>
+   /// 1582. Special Positions in a Binary Matrix
+   /// </summary>
+   /// <param name="mat"></param>
+   /// <returns></returns>
+   int numSpecial(std::vector<std::vector<int>> &mat);
+
   /// <summary>
   /// 1672. Richest Customer Wealth
   /// </summary>

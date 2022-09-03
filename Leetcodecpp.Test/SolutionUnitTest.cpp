@@ -296,6 +296,13 @@ TEST(SolutionTest, MaxProductTest) {
   EXPECT_EQ(12, solution.maxProduct(nums3));
 }
 
+TEST(SolutionTest, NumSpecialTest) {
+  vector<vector<int>> mat1 = {{1, 0, 0}, {0, 0, 1}, {1, 0, 0}};
+  vector<vector<int>> mat2 = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
+  EXPECT_EQ(1, solution.numSpecial(mat1));
+  EXPECT_EQ(3, solution.numSpecial(mat2));
+}
+
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
   vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};

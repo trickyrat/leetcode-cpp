@@ -2205,6 +2205,35 @@ int Solution::xorOperation(int n, int start) {
   return res << 1 | e;
 }
 
+int Solution::numSpecial(std::vector<std::vector<int>> &mat) { 
+  int m = mat.size(), n = mat[0].size();
+  for (size_t i = 0; i < m; ++i) {
+    int count = 0;
+    for (size_t j = 0; j < n; ++j) {
+      if (mat[i][j] == 1) {
+        count++;
+      }
+    }
+    if (i == 0) {
+      count--;
+    }
+    if (count > 0) {
+      for (size_t j = 0; j < n; ++j) {
+        if (mat[i][j] == 1) {
+          mat[0][j] += count;
+        }
+      }
+    }
+  }
+  int sum = 0;
+  for (auto &num : mat[0]) {
+    if (num == 1) {
+      sum++;
+    }
+  }
+  return sum;
+}
+
 int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
   int maxWealth = 0;
   /*for (auto &account : accounts) {
