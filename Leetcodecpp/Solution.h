@@ -1067,6 +1067,13 @@ public:
    /// <returns></returns>
    int numSpecial(std::vector<std::vector<int>> &mat);
 
+   /// <summary>
+   /// 1592. Rearrange Spaces Between Words
+   /// </summary>
+   /// <param name="text"></param>
+   /// <returns></returns>
+   std::string reorderSpaces(std::string text);
+
   /// <summary>
   /// 1672. Richest Customer Wealth
   /// </summary>

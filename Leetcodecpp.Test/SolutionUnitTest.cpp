@@ -313,6 +313,14 @@ TEST(SolutionTest, NumSpecialTest) {
   EXPECT_EQ(3, solution.numSpecial(mat2));
 }
 
+TEST(SolutionTest, ReorderSpacesTest) {
+  string text1 = "  this   is  a sentence ";
+  string text2 = " practice   makes   perfect";
+  EXPECT_EQ("this   is   a   sentence", solution.reorderSpaces(text1));
+  EXPECT_EQ("practice   makes   perfect ", solution.reorderSpaces(text2));
+  
+}
+
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
   vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};

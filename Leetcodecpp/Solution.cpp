@@ -1669,9 +1669,10 @@ std::vector<int> Solution::exclusiveTime(int n,
 
 int Solution::findLongestChain(std::vector<std::vector<int>> &pairs) {
   int curr = INT_MIN, res = 0;
-  std::sort(pairs.begin(), pairs.end(), [](const std::vector<int> &a, const std::vector<int> &b) {
-    return a[1] < b[1];  
-  });
+  std::sort(pairs.begin(), pairs.end(),
+            [](const std::vector<int> &a, const std::vector<int> &b) {
+              return a[1] < b[1];
+            });
   for (auto &pair : pairs) {
     if (curr < pair[0]) {
       curr = pair[1];
@@ -1685,7 +1686,6 @@ std::vector<TreeNode *> Solution::findDuplicateSubtrees(TreeNode *root) {
   findDuplicateSubtreesDfs(root);
   return {repeat.begin(), repeat.end()};
 }
-
 
 std::vector<int> Solution::findClosestElements(std::vector<int> &arr, int k,
                                                int x) {
@@ -1735,7 +1735,7 @@ TreeNode *Solution::trimBST(TreeNode *root, int L, int R) {
   return root;
 }
 
-int Solution::longestUnivaluePath(TreeNode *root) { 
+int Solution::longestUnivaluePath(TreeNode *root) {
   maxUnivaluePath = 0;
   dfs(root);
   return maxUnivaluePath;
@@ -1893,7 +1893,7 @@ std::vector<int> Solution::shortestToChar(std::string S, char C) {
   return ans;
 }
 
-int Solution::uniqueLetterString(std::string &s) { 
+int Solution::uniqueLetterString(std::string &s) {
   std::unordered_map<char, std::vector<int>> index;
   for (size_t i = 0; i < s.size(); i++) {
     index[s[i]].emplace_back(i);
@@ -1907,7 +1907,8 @@ int Solution::uniqueLetterString(std::string &s) {
     }
   }
   return res;
-  return 0; }
+  return 0;
+}
 
 int Solution::peakIndexInMountainArray(std::vector<int> &A) {
   size_t left = 0, right = A.size();
@@ -2227,7 +2228,7 @@ int Solution::xorOperation(int n, int start) {
   return res << 1 | e;
 }
 
-int Solution::numSpecial(std::vector<std::vector<int>> &mat) { 
+int Solution::numSpecial(std::vector<std::vector<int>> &mat) {
   int m = mat.size(), n = mat[0].size();
   for (size_t i = 0; i < m; ++i) {
     int count = 0;
@@ -2254,6 +2255,44 @@ int Solution::numSpecial(std::vector<std::vector<int>> &mat) {
     }
   }
   return sum;
+}
+
+std::string Solution::reorderSpaces(std::string text) {
+  size_t n = text.size();
+  std::vector<std::string> words = Utilities::split(text, " ");
+  size_t spaceCount = n;
+  size_t wordCount = 0;
+  for (auto &word : words) {
+    if (word.size() > 0) {
+      spaceCount -= word.size();
+      wordCount++;
+    }
+  }
+  std::string res;
+  if (words.size() == 1) {
+    res.append(words[0]);
+    for (size_t i = 0; i < spaceCount; i++) {
+      res.push_back(' ');
+    }
+    return res;
+  }
+  size_t perSpace = spaceCount / (wordCount - 1);
+  size_t restSpace = spaceCount % (wordCount - 1);
+  for (size_t i = 0; i < words.size(); i++) {
+    if (words[i].size() == 0) {
+      continue;
+    }
+    if (res.size() > 0) {
+      for (size_t j = 0; j < perSpace; j++) {
+        res.push_back(' ');
+      }
+    }
+    res.append(words[i]);
+  }
+  for (size_t i = 0; i < restSpace; i++) {
+    res.push_back(' ');
+  }
+  return res;
 }
 
 int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
@@ -2390,7 +2429,7 @@ void Solution::dfs(std::vector<int> &candidates, int target,
   }
 }
 
-int Solution::dfs(TreeNode *root) { 
+int Solution::dfs(TreeNode *root) {
   if (root == nullptr) {
     return 0;
   }
