@@ -778,6 +778,13 @@ public:
    /// <returns></returns>
    int findLongestChain(std::vector<std::vector<int>> &pairs);
 
+   /// <summary>
+   /// 652. Find Duplicate Subtrees
+   /// </summary>
+   /// <param name="arr"></param>
+   /// <returns></returns>
+   std::vector<TreeNode *> findDuplicateSubtrees(TreeNode *root);
+
   /// <summary>
   /// 658. Find K Closest Elements
   /// </summary>
@@ -1112,6 +1119,17 @@ public:
 private:
   int maxUnivaluePath;
 
+  static constexpr auto triple =
+      [fn = std::hash<int>()](const std::tuple<int, int, int> &o) -> size_t {
+    auto &&[x, y, z] = o;
+    return (fn(x) << 24) ^ (fn(y) << 8) ^ fn(z);
+  };
+  std::unordered_map<std::tuple<int, int, int>, std::pair<TreeNode *, int>,
+                     decltype(triple)>
+      seen{0, triple};
+  std::unordered_set<TreeNode *> repeat;
+  int index = 0;
+
   bool isMirror(TreeNode *l1, TreeNode *l2);
 
   bool doSolve(std::vector<std::vector<char>> &board, int row, int col);
@@ -1149,4 +1167,6 @@ private:
 
   bool isPrefix(const std::string &sentence, int start, int end,
                        const std::string &searchWord);
+
+  int findDuplicateSubtreesDfs(TreeNode *root);
 };

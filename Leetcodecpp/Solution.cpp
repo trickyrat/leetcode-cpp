@@ -1681,6 +1681,12 @@ int Solution::findLongestChain(std::vector<std::vector<int>> &pairs) {
   return res;
 }
 
+std::vector<TreeNode *> Solution::findDuplicateSubtrees(TreeNode *root) {
+  findDuplicateSubtreesDfs(root);
+  return {repeat.begin(), repeat.end()};
+}
+
+
 std::vector<int> Solution::findClosestElements(std::vector<int> &arr, int k,
                                                int x) {
   int right = std::lower_bound(arr.begin(), arr.end(), x) - arr.begin();
@@ -2540,4 +2546,19 @@ bool Solution::isPrefix(const std::string &sentence, int start, int end,
     }
   }
   return true;
+}
+
+int Solution::findDuplicateSubtreesDfs(TreeNode *root) {
+  if (!root) {
+    return 0;
+  }
+  auto triple = std::tuple{root->val, findDuplicateSubtreesDfs(root->left),
+                           findDuplicateSubtreesDfs(root->right)};
+  if (auto it = seen.find(triple); it != seen.end()) {
+    repeat.insert(it->second.first);
+    return it->second.second;
+  } else {
+    seen[triple] = {root, ++index};
+    return index;
+  }
 }
