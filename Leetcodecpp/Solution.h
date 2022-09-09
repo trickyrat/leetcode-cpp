@@ -4,7 +4,6 @@
 #include <bitset>
 #include <cmath>
 #include <functional>
-#include <mutex>
 #include <queue>
 #include <set>
 #include <sstream>
@@ -20,30 +19,6 @@
 #include "TreeNode.h"
 #include "Node.h"
 #include "Utilities.h"
-
-class Foo {
-private:
-  std::mutex m1, m2;
-
-public:
-  Foo() { m1.lock(), m2.lock(); }
-
-  void first(std::function<void()> printFirst) {
-    printFirst();
-    m1.unlock();
-  }
-  void second(std::function<void()> printSecond) {
-    m1.lock();
-    printSecond();
-    m1.unlock();
-    m2.unlock();
-  }
-  void third(std::function<void()> printThird) {
-    m2.lock();
-    printThird();
-    m2.unlock();
-  }
-};
 
 class Solution {
 public:
@@ -901,6 +876,13 @@ public:
   /// <param name="C"></param>
   /// <returns></returns>
    std::vector<int> shortestToChar(std::string S, char C);
+
+   /// <summary>
+   /// 828. Count Unique Characters of All Substrings of a Given String
+   /// </summary>
+   /// <param name="s"></param>
+   /// <returns></returns>
+   int uniqueLetterString(std::string &s);
 
   /// <summary>
   /// 852. Peak Index in a Mountain Array

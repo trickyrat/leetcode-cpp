@@ -1893,6 +1893,22 @@ std::vector<int> Solution::shortestToChar(std::string S, char C) {
   return ans;
 }
 
+int Solution::uniqueLetterString(std::string &s) { 
+  std::unordered_map<char, std::vector<int>> index;
+  for (size_t i = 0; i < s.size(); i++) {
+    index[s[i]].emplace_back(i);
+  }
+  int res = 0;
+  for (auto &&[_, arr] : index) {
+    arr.insert(arr.begin(), -1);
+    arr.emplace_back(s.size());
+    for (size_t i = 1; i < arr.size() - 1; i++) {
+      res += (arr[i] - arr[i - 1]) * (arr[i + 1] - arr[i]);
+    }
+  }
+  return res;
+  return 0; }
+
 int Solution::peakIndexInMountainArray(std::vector<int> &A) {
   size_t left = 0, right = A.size();
   while (left < right) {

@@ -1,7 +1,8 @@
 #include "pch.h"
 
-#include "../Leetcodecpp/Solution.cpp"
 #include "../Leetcodecpp/Utilities.cpp"
+#include "../Leetcodecpp/Solution.cpp"
+
 
 using namespace std;
 
@@ -169,6 +170,15 @@ TEST(SolutionTest, NumberOfLinesTest) {
   vector<int> expected2 = {2, 4};
   EXPECT_EQ(expected1, solution.numberOfLines(widths1, s1));
   EXPECT_EQ(expected2, solution.numberOfLines(widths2, s2));
+}
+
+TEST(SolutionTest, UniqueLetterStringTest) {
+  string s1 = "ABC";
+  string s2 = "ABA";
+  string s3 = "LEETCODE";
+  EXPECT_EQ(10, solution.uniqueLetterString(s1));
+  EXPECT_EQ(8, solution.uniqueLetterString(s2));
+  EXPECT_EQ(92, solution.uniqueLetterString(s3));
 }
 
 TEST(SolutionTest, MinDeletionSizeTest) {

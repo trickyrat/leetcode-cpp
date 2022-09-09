@@ -159,6 +159,7 @@
     <ClInclude Include="AllOne.h" />
     <ClInclude Include="BSTIterator.h" />
     <ClInclude Include="Codec.h" />
+    <ClInclude Include="Foo.h" />
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="MinStack.h" />
     <ClInclude Include="MyStack.h" />
