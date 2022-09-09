@@ -1722,6 +1722,20 @@ int Solution::widthOfBinaryTree(TreeNode *root) {
   return dfs(root, 1, 1LL);
 }
 
+std::vector<int> Solution::constructArray(int n, int k) {
+  std::vector<int> res;
+  for (size_t i = 1; i < n - k; i++) {
+    res.push_back(i);
+  }
+  for (size_t i = n - k, j = n; i <= j; i++, j--) {
+    res.push_back(i);
+    if (i != j) {
+      res.push_back(j);
+    }
+  }
+  return res;
+}
+
 TreeNode *Solution::trimBST(TreeNode *root, int L, int R) {
   // Recursively
   if (root == nullptr)

@@ -777,6 +777,14 @@ public:
   /// <returns></returns>
    int widthOfBinaryTree(TreeNode *root);
 
+   /// <summary>
+   /// 667. Beautiful Arrangement II
+   /// </summary>
+   /// <param name="n"></param>
+   /// <param name="k"></param>
+   /// <returns></returns>
+   std::vector<int> constructArray(int n, int k);
+
   /// <summary>
   /// 669. Trim a Binary Search Tree
   /// </summary>

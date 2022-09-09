@@ -1,8 +1,7 @@
 #include "pch.h"
 
-#include "../Leetcodecpp/Utilities.cpp"
 #include "../Leetcodecpp/Solution.cpp"
-
+#include "../Leetcodecpp/Utilities.cpp"
 
 using namespace std;
 
@@ -114,6 +113,13 @@ TEST(SolutionTest, FindClosestElementsTest) {
   vector<int> expected2{1, 2, 3, 4};
   EXPECT_EQ(expected1, solution.findClosestElements(arr1, 4, 3));
   EXPECT_EQ(expected2, solution.findClosestElements(arr2, 4, -1));
+}
+
+TEST(SolutionTest, ConstructArrayTest) {
+  vector<int> expected1{1, 2, 3};
+  vector<int> expected2{1, 3, 2};
+  EXPECT_EQ(expected1, solution.constructArray(3, 1));
+  EXPECT_EQ(expected2, solution.constructArray(3, 2));
 }
 
 TEST(SolutionTest, WidthOfBinaryTreeTest) {
@@ -318,7 +324,6 @@ TEST(SolutionTest, ReorderSpacesTest) {
   string text2 = " practice   makes   perfect";
   EXPECT_EQ("this   is   a   sentence", solution.reorderSpaces(text1));
   EXPECT_EQ("practice   makes   perfect ", solution.reorderSpaces(text2));
-  
 }
 
 TEST(SolutionTest, MaximumWealthTest) {
