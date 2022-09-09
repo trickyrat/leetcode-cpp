@@ -2309,6 +2309,22 @@ std::string Solution::reorderSpaces(std::string text) {
   return res;
 }
 
+int Solution::minOperations(std::vector<std::string> &logs) { 
+  int depth = 0;
+  for (auto &log : logs) {
+    if (log == "./") {
+      continue;
+    } else if (log == "../") {
+      if (depth > 0) {
+        depth--;
+      }
+    } else {
+      depth++;
+    }
+  }
+  return depth;
+}
+
 int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
   int maxWealth = 0;
   /*for (auto &account : accounts) {

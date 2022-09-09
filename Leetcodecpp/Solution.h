@@ -1082,6 +1082,13 @@ public:
    /// <returns></returns>
    std::string reorderSpaces(std::string text);
 
+   /// <summary>
+   /// 1598. Crawler Log Folder
+   /// </summary>
+   /// <param name="logs"></param>
+   /// <returns></returns>
+   int minOperations(std::vector<std::string> &logs);
+
   /// <summary>
   /// 1672. Richest Customer Wealth
   /// </summary>

@@ -326,6 +326,15 @@ TEST(SolutionTest, ReorderSpacesTest) {
   EXPECT_EQ("practice   makes   perfect ", solution.reorderSpaces(text2));
 }
 
+TEST(SolutionTest, MinOperationsTest) {
+  vector<string> logs1{"d1/", "d2/", "../", "d21/", "./"};
+  vector<string> logs2{"d1/", "d2/", "./", "d3/", "../", "d31/"};
+  vector<string> logs3{"d1/", "../", "../", "../"};
+  EXPECT_EQ(2, solution.minOperations(logs1));
+  EXPECT_EQ(3, solution.minOperations(logs2));
+  EXPECT_EQ(0, solution.minOperations(logs3));
+}
+
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
   vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};
