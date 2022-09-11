@@ -899,6 +899,16 @@ public:
   /// <returns></returns>
    int peakIndexInMountainArray(std::vector<int> &A);
 
+   /// <summary>
+   /// 857. Minimum Cost to Hire K Workers
+   /// </summary>
+   /// <param name="quality"></param>
+   /// <param name="wage"></param>
+   /// <param name="k"></param>
+   /// <returns></returns>
+   double minCostToHireWorkers(std::vector<int> &quality,
+                               std::vector<int> &wage, int k);
+
   /// <summary>
   /// 876. Middle of the Linked List
   /// </summary>

@@ -1936,6 +1936,33 @@ int Solution::peakIndexInMountainArray(std::vector<int> &A) {
   return left;
 }
 
+double Solution::minCostToHireWorkers(std::vector<int> &quality,
+                                      std::vector<int> &wage, int k) {
+  int n = quality.size();
+  std::vector<int> hire(n, 0);
+  std::iota(hire.begin(), hire.end(), 0);
+  std::sort(hire.begin(), hire.end(), [&](int &a, int &b) {
+    return quality[a] * wage[b] > quality[b] * wage[a];
+  });
+  double res = 1e9;
+  double totalQuality = 0.0;
+  std::priority_queue<int, std::vector<int>, std::less<int>> pq;
+  for (int i = 0; i < k - 1; i++) {
+    totalQuality += quality[hire[i]];
+    pq.push(quality[hire[i]]);
+  }
+  for (int i = k - 1; i < n; i++) {
+    int index = hire[i];
+    totalQuality += quality[index];
+    pq.push(quality[index]);
+    double totalCost = ((double)wage[index] / quality[index]) * totalQuality;
+    res = std::min(res, totalCost);
+    totalQuality -= pq.top();
+    pq.pop();
+  }
+  return res;
+}
+
 ListNode *Solution::middleNode(ListNode *head) {
   ListNode *slow = head;
   ListNode *fast = head;
@@ -2309,7 +2336,7 @@ std::string Solution::reorderSpaces(std::string text) {
   return res;
 }
 
-int Solution::minOperations(std::vector<std::string> &logs) { 
+int Solution::minOperations(std::vector<std::string> &logs) {
   int depth = 0;
   for (auto &log : logs) {
     if (log == "./") {

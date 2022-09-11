@@ -187,6 +187,15 @@ TEST(SolutionTest, UniqueLetterStringTest) {
   EXPECT_EQ(92, solution.uniqueLetterString(s3));
 }
 
+TEST(SolutionTest, MinCostToHireWorkersTest) {
+  vector<int> quality1{10, 20, 5};
+  vector<int> quality2{3, 1, 10, 10, 1};
+  vector<int> wage1{70, 50, 30};
+  vector<int> wage2{4, 8, 2, 2, 7};
+  EXPECT_TRUE(abs(105.00000 - solution.minCostToHireWorkers(quality1, wage1, 2)) <= 0.00001);
+  EXPECT_TRUE(abs(30.66667 - solution.minCostToHireWorkers(quality2, wage2, 3)) <= 0.00001);
+}
+
 TEST(SolutionTest, MinDeletionSizeTest) {
   vector<string> strs1{"cba", "daf", "ghi"};
   vector<string> strs2{"a", "b"};
