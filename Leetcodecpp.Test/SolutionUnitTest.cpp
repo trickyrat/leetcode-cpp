@@ -344,6 +344,15 @@ TEST(SolutionTest, MinOperationsTest) {
   EXPECT_EQ(0, solution.minOperations(logs3));
 }
 
+TEST(SolutionTest, SpecialArrayTest) {
+  vector<int> nums1{3, 5};
+  vector<int> nums2{0, 0};
+  vector<int> nums3{0, 4, 3, 0, 4};
+  EXPECT_EQ(2, solution.specialArray(nums1));
+  EXPECT_EQ(-1, solution.specialArray(nums2));
+  EXPECT_EQ(3, solution.specialArray(nums3));
+}
+
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
   vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};

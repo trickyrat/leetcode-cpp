@@ -1099,6 +1099,13 @@ public:
    /// <returns></returns>
    int minOperations(std::vector<std::string> &logs);
 
+   /// <summary>
+   /// 1608. Special Array With X Elements Greater Than or Equal X
+   /// </summary>
+   /// <param name="nums"></param>
+   /// <returns></returns>
+   int specialArray(std::vector<int> &nums);
+
   /// <summary>
   /// 1672. Richest Customer Wealth
   /// </summary>

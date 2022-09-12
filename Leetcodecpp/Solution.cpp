@@ -2352,6 +2352,17 @@ int Solution::minOperations(std::vector<std::string> &logs) {
   return depth;
 }
 
+int Solution::specialArray(std::vector<int> &nums) {
+  std::sort(nums.begin(), nums.end(), std::greater<int>());
+  int n = nums.size();
+  for (int i = 1; i <= n; i++) {
+    if (nums[i - 1] >= i && (i == n || nums[i] < i)) {
+      return i;
+    }
+  }
+  return -1;
+}
+
 int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
   int maxWealth = 0;
   /*for (auto &account : accounts) {
