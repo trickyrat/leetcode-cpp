@@ -1749,6 +1749,26 @@ TreeNode *Solution::trimBST(TreeNode *root, int L, int R) {
   return root;
 }
 
+int Solution::maximumSwap(int num) {
+  std::string chars = std::to_string(num);
+  int n = chars.size();
+  int maxIndex = n - 1;
+  int index1 = -1, index2 = -1;
+  for (int i = n - 1; i >= 0; --i) {
+    if (chars[i] > chars[maxIndex]) {
+      maxIndex = i;
+    } else if (chars[i] < chars[maxIndex]) {
+      index1 = i;
+      index2 = maxIndex;
+    }
+  }
+  if (index1 >= 0) {
+    std::swap(chars[index1], chars[index2]);
+    return std::stoi(chars);
+  }
+  return num;
+}
+
 int Solution::longestUnivaluePath(TreeNode *root) {
   maxUnivaluePath = 0;
   dfs(root);
