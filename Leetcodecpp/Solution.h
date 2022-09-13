@@ -794,6 +794,13 @@ public:
   /// <returns></returns>
    TreeNode *trimBST(TreeNode *root, int L, int R);
 
+   /// <summary>
+   /// 670. Maximum Swap
+   /// </summary>
+   /// <param name="num"></param>
+   /// <returns></returns>
+   int maximumSwap(int num);
+
   /// <summary>
   /// 687. Longest Univalue Path
   /// </summary>

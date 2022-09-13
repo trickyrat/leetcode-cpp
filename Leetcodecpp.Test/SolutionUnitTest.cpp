@@ -134,6 +134,11 @@ TEST(SolutionTest, WidthOfBinaryTreeTest) {
   EXPECT_EQ(2, solution.widthOfBinaryTree(root3));
 }
 
+TEST(SolutionTest, MaximumSwapTest) {
+  EXPECT_EQ(7236, solution.maximumSwap(2736));
+  EXPECT_EQ(9973, solution.maximumSwap(9973));
+}
+
 TEST(SolutionTest, LongestUnivaluePathTest) {
   string nums1 = "5,4,5,1,1,null,5";
   string nums2 = "1,4,5,4,4,null,5";
