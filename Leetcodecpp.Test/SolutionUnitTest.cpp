@@ -139,6 +139,13 @@ TEST(SolutionTest, MaximumSwapTest) {
   EXPECT_EQ(9973, solution.maximumSwap(9973));
 }
 
+
+TEST(SolutionTest, FlipLightsTest) {
+  EXPECT_EQ(2, solution.flipLights(1, 1));
+  EXPECT_EQ(3, solution.flipLights(2, 1));
+  EXPECT_EQ(4, solution.flipLights(3, 1));
+}
+
 TEST(SolutionTest, LongestUnivaluePathTest) {
   string nums1 = "5,4,5,1,1,null,5";
   string nums2 = "1,4,5,4,4,null,5";

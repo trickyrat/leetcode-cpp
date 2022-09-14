@@ -1769,6 +1769,31 @@ int Solution::maximumSwap(int num) {
   return num;
 }
 
+int Solution::flipLights(int n, int presses) { 
+  std::unordered_set<int> seen;
+  for (int i = 0; i < 1 << 4; i++) {
+    std::vector<int> pressArray(4);
+    for (int j = 0; j < 4; j++) {
+      pressArray[j] = (i >> j) & 1;
+    }
+    int sum = std::accumulate(pressArray.begin(), pressArray.end(), 0);
+    if (sum % 2 == presses % 2 && sum <= presses) {
+      int status = pressArray[0] ^ pressArray[1] ^ pressArray[3];
+      if (n >= 2) {
+        status |= (pressArray[0] ^ pressArray[1]) << 1;
+      }
+      if (n >= 3) {
+        status |= (pressArray[0] ^ pressArray[2]) << 2;
+      }
+      if (n >= 4) {
+        status |= status << 3;
+      }
+      seen.emplace(status);
+    }
+  }
+  return seen.size();
+}
+
 int Solution::longestUnivaluePath(TreeNode *root) {
   maxUnivaluePath = 0;
   dfs(root);

@@ -801,6 +801,14 @@ public:
    /// <returns></returns>
    int maximumSwap(int num);
 
+   /// <summary>
+   /// 672. Bulb Switcher II
+   /// </summary>
+   /// <param name="n"></param>
+   /// <param name="presses"></param>
+   /// <returns></returns>
+   int flipLights(int n, int presses);
+
   /// <summary>
   /// 687. Longest Univalue Path
   /// </summary>
