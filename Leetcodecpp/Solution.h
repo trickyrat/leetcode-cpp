@@ -1113,6 +1113,13 @@ public:
    /// <returns></returns>
    int specialArray(std::vector<int> &nums);
 
+   /// <summary>
+   /// 1619. Mean of Array After Removing Some Elements
+   /// </summary>
+   /// <param name="arr"></param>
+   /// <returns></returns>
+   double trimMean(std::vector<int> &arr);
+
   /// <summary>
   /// 1672. Richest Customer Wealth
   /// </summary>
