@@ -358,6 +358,19 @@ TEST(SolutionTest, SpecialArrayTest) {
   EXPECT_EQ(3, solution.specialArray(nums3));
 }
 
+TEST(SolutionTest, TrimMeanTest) {
+  vector<int> nums1{1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3};
+  vector<int> nums2{6, 2, 7, 5, 1, 2, 0, 3, 10, 2,
+                    5, 0, 5, 5, 0, 8, 7, 6, 8,  0};
+  vector<int> nums3{6,  0, 7, 0, 7, 5, 7, 8,  3, 4, 0, 7, 8, 1,
+                    6,  8, 1, 1, 2, 4, 8, 1,  9, 5, 4, 3, 8, 5,
+                    10, 8, 6, 6, 1, 0, 6, 10, 8, 2, 3, 4};
+  EXPECT_TRUE((solution.trimMean(nums1) - 2.00000) <= 0.00001);
+  EXPECT_TRUE((solution.trimMean(nums2) - 4.00000) <= 0.00001);
+  EXPECT_TRUE((solution.trimMean(nums3) - 4.77778) <= 0.00001);
+}
+
+
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
   vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};

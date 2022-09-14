@@ -2383,6 +2383,14 @@ int Solution::specialArray(std::vector<int> &nums) {
   return -1;
 }
 
+double Solution::trimMean(std::vector<int> &arr) { 
+  int n = arr.size();
+  std::sort(arr.begin(), arr.end());
+  int sum =
+      std::accumulate(arr.begin() + n / 20, arr.begin() + (19 * n / 20), 0);
+  return sum / (n * 0.9);
+}
+
 int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
   int maxWealth = 0;
   /*for (auto &account : accounts) {
