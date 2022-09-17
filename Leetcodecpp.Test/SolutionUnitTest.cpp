@@ -377,6 +377,14 @@ TEST(SolutionTest, TrimMeanTest) {
   EXPECT_TRUE((solution.trimMean(nums3) - 4.77778) <= 0.00001);
 }
 
+TEST(SolutionTest, MaxLengthBetweenEqualCharactersTest) {
+  string s1 = "aa";
+  string s2 = "abca";
+  string s3 = "bczyx";
+  EXPECT_EQ(0, solution.maxLengthBetweenEqualCharacters(s1));
+  EXPECT_EQ(2, solution.maxLengthBetweenEqualCharacters(s2));
+  EXPECT_EQ(-1, solution.maxLengthBetweenEqualCharacters(s3));
+}
 
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};

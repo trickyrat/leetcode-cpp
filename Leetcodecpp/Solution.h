@@ -1128,6 +1128,13 @@ public:
    /// <returns></returns>
    double trimMean(std::vector<int> &arr);
 
+   /// <summary>
+   /// 1624. Largest Substring Between Two Equal Characters
+   /// </summary>
+   /// <param name="s"></param>
+   /// <returns></returns>
+   int maxLengthBetweenEqualCharacters(std::string &s);
+
   /// <summary>
   /// 1672. Richest Customer Wealth
   /// </summary>

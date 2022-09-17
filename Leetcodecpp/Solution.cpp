@@ -2416,6 +2416,20 @@ double Solution::trimMean(std::vector<int> &arr) {
   return sum / (n * 0.9);
 }
 
+int Solution::maxLengthBetweenEqualCharacters(std::string &s) {
+  std::vector<int> dic(26, -1);
+  int res = -1;
+  for (int i = 0; i < s.size(); i++) {
+    int c = s[i] - 'a';
+    if (dic[c] < 0) {
+      dic[c] = i;
+    } else {
+      res = std::max(res, i - dic[c] - 1);
+    }
+  }
+  return res;
+}
+
 int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
   int maxWealth = 0;
   /*for (auto &account : accounts) {
