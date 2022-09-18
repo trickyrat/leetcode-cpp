@@ -1135,6 +1135,13 @@ public:
    /// <returns></returns>
    int maxLengthBetweenEqualCharacters(std::string &s);
 
+   /// <summary>
+   /// 1636. Sort Array by Increasing Frequency
+   /// </summary>
+   /// <param name="nums"></param>
+   /// <returns></returns>
+   std::vector<int> frequencySort(std::vector<int> &nums);
+
   /// <summary>
   /// 1672. Richest Customer Wealth
   /// </summary>

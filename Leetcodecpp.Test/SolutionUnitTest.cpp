@@ -386,6 +386,18 @@ TEST(SolutionTest, MaxLengthBetweenEqualCharactersTest) {
   EXPECT_EQ(-1, solution.maxLengthBetweenEqualCharacters(s3));
 }
 
+TEST(SolutionTest, FrequencySortTest) {
+  vector<int> nums1{1, 1, 2, 2, 2, 3};
+  vector<int> nums2{2, 3, 1, 3, 2};
+  vector<int> nums3{-1, 1, -6, 4, 5, -6, 1, 4, 1};
+  vector<int> expected1{3, 1, 1, 2, 2, 2};
+  vector<int> expected2{1, 3, 3, 2, 2};
+  vector<int> expected3{5, -1, 4, 4, -6, -6, 1, 1, 1};
+  EXPECT_EQ(expected1, solution.frequencySort(nums1));
+  EXPECT_EQ(expected2, solution.frequencySort(nums2));
+  EXPECT_EQ(expected3, solution.frequencySort(nums3));
+}
+
 TEST(SolutionTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
   vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};

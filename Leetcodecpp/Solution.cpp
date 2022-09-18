@@ -2430,6 +2430,20 @@ int Solution::maxLengthBetweenEqualCharacters(std::string &s) {
   return res;
 }
 
+std::vector<int> Solution::frequencySort(std::vector<int> &nums) {
+  std::unordered_map<int, int> count;
+  for (auto &num : nums) {
+    count[num]++;
+  }
+  std::sort(nums.begin(), nums.end(), [&](const int a, const int b) {
+    if (count[a] != count[b]) {
+      return count[a] < count[b];
+    }
+    return a > b;
+  });
+  return nums;
+}
+
 int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
   int maxWealth = 0;
   /*for (auto &account : accounts) {
