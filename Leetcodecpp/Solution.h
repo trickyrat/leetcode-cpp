@@ -1156,6 +1156,13 @@ public:
    /// <returns></returns>
    std::string reformatNumber(std::string number);
 
+   /// <summary>
+   /// 1784. Check if Binary String Has at Most One Segment of Ones
+   /// </summary>
+   /// <param name="s"></param>
+   /// <returns></returns>
+   bool checkOnesSegment(std::string s);
+
   /// <summary>
   /// 1991. Find the Middle Index in Array
   /// </summary>

@@ -2483,6 +2483,8 @@ std::string Solution::reformatNumber(std::string number) {
   return res;
 }
 
+bool Solution::checkOnesSegment(std::string s) { return !s.contains("01"); }
+
 int Solution::findMiddleIndex(std::vector<int> &nums) {
   int total = std::accumulate(nums.begin(), nums.end(), 0);
   int sum = 0;
