@@ -407,6 +407,12 @@ TEST(SolutionTest, MaximumWealthTest) {
   EXPECT_EQ(17, solution.maximumWealth(accounts3));
 }
 
+TEST(SolutionTest, ReformatNumberTest) {
+  EXPECT_EQ("123-456", solution.reformatNumber("1-23-45 6"));
+  EXPECT_EQ("123-45-67", solution.reformatNumber("123 4-567"));
+  EXPECT_EQ("123-456-78", solution.reformatNumber("123 4-5678"));
+}
+
 TEST(SolutionTest, FindMiddleIndexTest) {
   vector<int> nums1 = {2, 3, -1, 8, 4};
   vector<int> nums2 = {1, -1, 4};
