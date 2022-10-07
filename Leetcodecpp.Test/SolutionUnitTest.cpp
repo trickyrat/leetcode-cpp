@@ -413,6 +413,11 @@ TEST(SolutionTest, ReformatNumberTest) {
   EXPECT_EQ("123-456-78", solution.reformatNumber("123 4-5678"));
 }
 
+TEST(SolutionTest, CheckOnesSegmentTest) {
+  EXPECT_EQ(false, solution.checkOnesSegment("1001"));
+  EXPECT_EQ(true, solution.checkOnesSegment("110"));
+}
+
 TEST(SolutionTest, FindMiddleIndexTest) {
   vector<int> nums1 = {2, 3, -1, 8, 4};
   vector<int> nums2 = {1, -1, 4};
