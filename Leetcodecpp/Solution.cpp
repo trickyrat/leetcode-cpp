@@ -2456,6 +2456,33 @@ int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
   return maxWealth;
 }
 
+std::string Solution::reformatNumber(std::string number) {
+  std::string digits;
+  for (char ch : number) {
+    if (std::isdigit(ch)) {
+      digits.push_back(ch);
+    }
+  }
+  int n = digits.size();
+  int pt = 0;
+  std::string res;
+  while (n) {
+    if (n > 4) {
+      res += digits.substr(pt, 3) + "-";
+      pt += 3;
+      n -= 3;
+    } else {
+      if (n == 4) {
+        res += digits.substr(pt, 2) + "-" + digits.substr(pt + 2, 2);
+      } else {
+        res += digits.substr(pt, n);
+      }
+      break;
+    }
+  }
+  return res;
+}
+
 int Solution::findMiddleIndex(std::vector<int> &nums) {
   int total = std::accumulate(nums.begin(), nums.end(), 0);
   int sum = 0;

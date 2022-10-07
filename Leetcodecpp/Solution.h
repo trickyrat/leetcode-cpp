@@ -1149,6 +1149,13 @@ public:
   /// <returns></returns>
    int maximumWealth(std::vector<std::vector<int>> &accounts);
 
+   /// <summary>
+   /// 1694. Reformat Phone Number
+   /// </summary>
+   /// <param name="number"></param>
+   /// <returns></returns>
+   std::string reformatNumber(std::string number);
+
   /// <summary>
   /// 1991. Find the Middle Index in Array
   /// </summary>
