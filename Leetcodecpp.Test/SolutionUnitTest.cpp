@@ -139,7 +139,6 @@ TEST(SolutionTest, MaximumSwapTest) {
   EXPECT_EQ(9973, solution.maximumSwap(9973));
 }
 
-
 TEST(SolutionTest, FlipLightsTest) {
   EXPECT_EQ(2, solution.flipLights(1, 1));
   EXPECT_EQ(3, solution.flipLights(2, 1));
@@ -432,6 +431,12 @@ TEST(SolutionTest, SelfDividingNumbersTest) {
   vector<int> expected2 = {48, 55, 66, 77};
   EXPECT_EQ(expected1, solution.selfDividingNumbers(1, 22));
   EXPECT_EQ(expected2, solution.selfDividingNumbers(47, 85));
+}
+
+TEST(SolutionTest, MinimumMovesTest) {
+  EXPECT_EQ(1, solution.minimumMoves("XXX"));
+  EXPECT_EQ(2, solution.minimumMoves("XXOX"));
+  EXPECT_EQ(0, solution.minimumMoves("OOOO"));
 }
 
 TEST(SolutionTest, PlatesBetweenCandlesTest) {

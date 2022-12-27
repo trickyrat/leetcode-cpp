@@ -2497,6 +2497,17 @@ int Solution::findMiddleIndex(std::vector<int> &nums) {
   return -1;
 }
 
+int Solution::minimumMoves(std::string s) { 
+  int res = 0, count = -1;
+  for (int i = 0; i < s.size(); i++) {
+    if (s[i] == 'X' && i > count) {
+      res++;
+      count = i + 2;
+    }
+  }
+  return res; 
+}
+
 std::vector<int>
 Solution::platesBetweenCandles(std::string s,
                                std::vector<std::vector<int>> &queries) {
