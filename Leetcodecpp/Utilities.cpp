@@ -56,12 +56,21 @@ ListNode *Utilities::createListNode(std::vector<int> &nums) {
 }
 
 std::vector<std::string> Utilities::split(const std::string &input,
-                                          const std::string &delimeter) {
-  std::vector<std::string> res;
-  for (auto item : std::views::split(input, delimeter)) {
-    res.emplace_back(item);
+                                          const std::string &delimiter) {
+  std::vector<std::string> result;
+
+  std::size_t current = 0;
+  std::size_t p = input.find_first_of(delimiter, 0);
+
+  while (p != std::string::npos) {
+    result.emplace_back(input, current, p - current);
+    current = p + 1;
+    p = input.find_first_of(delimiter, current);
   }
-  return res;
+
+  result.emplace_back(input, current);
+
+  return result;
 }
 
 std::vector<int> Utilities::inorderTraversal(TreeNode *root) {
