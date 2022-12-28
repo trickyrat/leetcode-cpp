@@ -2483,6 +2483,21 @@ std::string Solution::reformatNumber(std::string number) {
   return res;
 }
 
+int Solution::minimumLength(std::string s) { 
+  int n = s.size();
+  int left = 0, right = n - 1;
+  while (left < right && s[left] == s[right]) {
+    char c = s[left];
+    while (left <= right && s[left] == c) {
+      left++;
+    }
+    while (left <= right && s[right] == c) {
+      right--;
+    }
+  }
+  return right - left + 1; 
+}
+
 bool Solution::checkOnesSegment(std::string s) { return !s.contains("01"); }
 
 int Solution::findMiddleIndex(std::vector<int> &nums) {

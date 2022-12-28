@@ -1152,6 +1152,13 @@ public:
   std::string reformatNumber(std::string number);
 
   /// <summary>
+  /// 1750. Minimum Length of String After Deleting Similar Ends
+  /// </summary>
+  /// <param name="s"></param>
+  /// <returns></returns>
+  int minimumLength(std::string s);
+
+  /// <summary>
   /// 1784. Check if Binary String Has at Most One Segment of Ones
   /// </summary>
   /// <param name="s"></param>

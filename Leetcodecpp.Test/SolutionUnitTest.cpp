@@ -7,7 +7,7 @@ using namespace std;
 
 Solution solution;
 
-TEST(SolutionTest, TwoSumTest) {
+TEST(SolutionUnitTest, TwoSumTest) {
   vector<int> expected1 = {0, 1};
   vector<int> input1 = {2, 7, 11, 15};
   vector<int> actual1 = solution.twoSum(input1, 9);
@@ -24,25 +24,25 @@ TEST(SolutionTest, TwoSumTest) {
   EXPECT_EQ(expected3, actual3);
 }
 
-TEST(SolutionTest, LengthOfLongestSubstring) {
+TEST(SolutionUnitTest, LengthOfLongestSubstring) {
   EXPECT_EQ(3, solution.lengthOfLongestSubstring("abcabcbb"));
   EXPECT_EQ(1, solution.lengthOfLongestSubstring("bbbbb"));
   EXPECT_EQ(3, solution.lengthOfLongestSubstring("pwwkew"));
 }
 
-TEST(SolutionTest, LengthOfLongestSubstringTest) {
+TEST(SolutionUnitTest, LengthOfLongestSubstringTest) {
   EXPECT_EQ(3, solution.lengthOfLongestSubstring("pwwkew"));
   EXPECT_EQ(1, solution.lengthOfLongestSubstring("bbbbb"));
   EXPECT_EQ(3, solution.lengthOfLongestSubstring("abcabcbb"));
 }
 
-TEST(SolutionTest, IntToRomanTest) {
+TEST(SolutionUnitTest, IntToRomanTest) {
   EXPECT_EQ("I", solution.intToRoman(1));
   EXPECT_EQ("X", solution.intToRoman(10));
   EXPECT_EQ("VI", solution.intToRoman(6));
 }
 
-TEST(SolutionTest, SearchInsertTest) {
+TEST(SolutionUnitTest, SearchInsertTest) {
   vector<int> nums1 = {1, 3, 5, 6};
   vector<int> nums2 = {1, 3, 5, 6};
   vector<int> nums3 = {1, 3, 5, 6};
@@ -55,37 +55,37 @@ TEST(SolutionTest, SearchInsertTest) {
   EXPECT_EQ(0, solution.searchInsert(nums5, 0));
 }
 
-TEST(SolutionTest, TrailingZeroesTest) {
+TEST(SolutionUnitTest, TrailingZeroesTest) {
   EXPECT_EQ(0, solution.trailingZeroes(3));
   EXPECT_EQ(1, solution.trailingZeroes(5));
   EXPECT_EQ(0, solution.trailingZeroes(0));
 }
 
-TEST(SolutionTest, CountNumbersWithUniqueDigitsTest) {
+TEST(SolutionUnitTest, CountNumbersWithUniqueDigitsTest) {
   EXPECT_EQ(91, solution.countNumbersWithUniqueDigits(2));
   EXPECT_EQ(1, solution.countNumbersWithUniqueDigits(0));
 }
 
-TEST(SolutionTest, LexicalOrderTest) {
+TEST(SolutionUnitTest, LexicalOrderTest) {
   vector<int> expected1 = {1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9};
   vector<int> expected2 = {1, 2};
   EXPECT_EQ(expected1, solution.lexicalOrder(13));
   EXPECT_EQ(expected2, solution.lexicalOrder(2));
 }
 
-TEST(SolutionTest, FindDiagonalOrderTest) {
+TEST(SolutionUnitTest, FindDiagonalOrderTest) {
   vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
   vector<int> expected = {1, 2, 4, 7, 5, 3, 6, 8, 9};
   vector<int> actual = solution.findDiagonalOrder(matrix);
   EXPECT_EQ(expected, actual);
 }
 
-TEST(SolutionTest, ConvertToBase7Test) {
+TEST(SolutionUnitTest, ConvertToBase7Test) {
   EXPECT_EQ("202", solution.convertToBase7(100));
   EXPECT_EQ("-10", solution.convertToBase7(-7));
 }
 
-TEST(SolutionTest, ExculsiveTimeTest) {
+TEST(SolutionUnitTest, ExculsiveTimeTest) {
   vector<string> logs1 = {"0:start:0", "1:start:2", "1:end:5", "0:end:6"};
   vector<string> logs2 = {"0:start:0", "0:start:2", "0:end:5",
                           "0:start:6", "0:end:6",   "0:end:7"};
@@ -99,14 +99,14 @@ TEST(SolutionTest, ExculsiveTimeTest) {
   EXPECT_EQ(expected3, solution.exclusiveTime(2, logs3));
 }
 
-TEST(SolutionTest, FindLongestChainTest) {
+TEST(SolutionUnitTest, FindLongestChainTest) {
   vector<vector<int>> pairs1 = {{1, 2}, {2, 3}, {3, 4}};
   vector<vector<int>> pairs2 = {{1, 2}, {7, 8}, {4, 5}};
   EXPECT_EQ(2, solution.findLongestChain(pairs1));
   EXPECT_EQ(3, solution.findLongestChain(pairs2));
 }
 
-TEST(SolutionTest, FindClosestElementsTest) {
+TEST(SolutionUnitTest, FindClosestElementsTest) {
   vector<int> arr1{1, 2, 3, 4, 5};
   vector<int> arr2{1, 2, 3, 4, 5};
   vector<int> expected1{1, 2, 3, 4};
@@ -115,14 +115,14 @@ TEST(SolutionTest, FindClosestElementsTest) {
   EXPECT_EQ(expected2, solution.findClosestElements(arr2, 4, -1));
 }
 
-TEST(SolutionTest, ConstructArrayTest) {
+TEST(SolutionUnitTest, ConstructArrayTest) {
   vector<int> expected1{1, 2, 3};
   vector<int> expected2{1, 3, 2};
   EXPECT_EQ(expected1, solution.constructArray(3, 1));
   EXPECT_EQ(expected2, solution.constructArray(3, 2));
 }
 
-TEST(SolutionTest, WidthOfBinaryTreeTest) {
+TEST(SolutionUnitTest, WidthOfBinaryTreeTest) {
   string nums1 = "1,3,2,5,3,null,9";
   string nums2 = "1,3,2,5,null,null,9,6,null,7";
   string nums3 = "1,3,2,5";
@@ -134,18 +134,18 @@ TEST(SolutionTest, WidthOfBinaryTreeTest) {
   EXPECT_EQ(2, solution.widthOfBinaryTree(root3));
 }
 
-TEST(SolutionTest, MaximumSwapTest) {
+TEST(SolutionUnitTest, MaximumSwapTest) {
   EXPECT_EQ(7236, solution.maximumSwap(2736));
   EXPECT_EQ(9973, solution.maximumSwap(9973));
 }
 
-TEST(SolutionTest, FlipLightsTest) {
+TEST(SolutionUnitTest, FlipLightsTest) {
   EXPECT_EQ(2, solution.flipLights(1, 1));
   EXPECT_EQ(3, solution.flipLights(2, 1));
   EXPECT_EQ(4, solution.flipLights(3, 1));
 }
 
-TEST(SolutionTest, LongestUnivaluePathTest) {
+TEST(SolutionUnitTest, LongestUnivaluePathTest) {
   string nums1 = "5,4,5,1,1,null,5";
   string nums2 = "1,4,5,4,4,null,5";
   TreeNode *root1 = Utilities::createTreeNodeIteratively(nums1);
@@ -154,7 +154,7 @@ TEST(SolutionTest, LongestUnivaluePathTest) {
   EXPECT_EQ(2, solution.longestUnivaluePath(root2));
 }
 
-TEST(SolutionTest, PivotIndexTest) {
+TEST(SolutionUnitTest, PivotIndexTest) {
   vector<int> nums1 = {1, 7, 3, 6, 5, 6};
   vector<int> nums2 = {1, 2, 3};
   vector<int> nums3 = {2, 1, -1};
@@ -163,20 +163,20 @@ TEST(SolutionTest, PivotIndexTest) {
   EXPECT_EQ(0, solution.pivotIndex(nums3));
 }
 
-TEST(SolutionTest, PreimageSizeFZFTest) {
+TEST(SolutionUnitTest, PreimageSizeFZFTest) {
   EXPECT_EQ(5, solution.preimageSizeFZF(0));
   EXPECT_EQ(0, solution.preimageSizeFZF(5));
   EXPECT_EQ(5, solution.preimageSizeFZF(3));
 }
 
-TEST(SolutionTest, UniqueMorseRepresentationsTest) {
+TEST(SolutionUnitTest, UniqueMorseRepresentationsTest) {
   vector<string> words1 = {"gin", "zen", "gig", "msg"};
   vector<string> words2 = {"a"};
   EXPECT_EQ(2, solution.uniqueMorseRepresentations(words1));
   EXPECT_EQ(1, solution.uniqueMorseRepresentations(words2));
 }
 
-TEST(SolutionTest, NumberOfLinesTest) {
+TEST(SolutionUnitTest, NumberOfLinesTest) {
   vector<int> widths1 = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
                          10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
   vector<int> widths2 = {4,  10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
@@ -189,7 +189,7 @@ TEST(SolutionTest, NumberOfLinesTest) {
   EXPECT_EQ(expected2, solution.numberOfLines(widths2, s2));
 }
 
-TEST(SolutionTest, UniqueLetterStringTest) {
+TEST(SolutionUnitTest, UniqueLetterStringTest) {
   string s1 = "ABC";
   string s2 = "ABA";
   string s3 = "LEETCODE";
@@ -198,7 +198,7 @@ TEST(SolutionTest, UniqueLetterStringTest) {
   EXPECT_EQ(92, solution.uniqueLetterString(s3));
 }
 
-TEST(SolutionTest, MinCostToHireWorkersTest) {
+TEST(SolutionUnitTest, MinCostToHireWorkersTest) {
   vector<int> quality1{10, 20, 5};
   vector<int> quality2{3, 1, 10, 10, 1};
   vector<int> wage1{70, 50, 30};
@@ -207,7 +207,7 @@ TEST(SolutionTest, MinCostToHireWorkersTest) {
   EXPECT_TRUE(abs(30.66667 - solution.minCostToHireWorkers(quality2, wage2, 3)) <= 0.00001);
 }
 
-TEST(SolutionTest, MinDeletionSizeTest) {
+TEST(SolutionUnitTest, MinDeletionSizeTest) {
   vector<string> strs1{"cba", "daf", "ghi"};
   vector<string> strs2{"a", "b"};
   vector<string> strs3{"zyx", "wvu", "tsr"};
@@ -216,7 +216,7 @@ TEST(SolutionTest, MinDeletionSizeTest) {
   EXPECT_EQ(3, solution.minDeletionSize(strs3));
 }
 
-TEST(SolutionTest, ValidateStackSequencesTest) {
+TEST(SolutionUnitTest, ValidateStackSequencesTest) {
   vector<int> pushed1 = {1, 2, 3, 4, 5};
   vector<int> popped1 = {4, 5, 3, 2, 1};
 
@@ -227,7 +227,7 @@ TEST(SolutionTest, ValidateStackSequencesTest) {
   EXPECT_FALSE(solution.validateStackSequences(pushed2, popped2));
 }
 
-TEST(SolutionTest, RepeatedNTimesTest) {
+TEST(SolutionUnitTest, RepeatedNTimesTest) {
   vector<int> nums1{1, 2, 3, 3};
   vector<int> nums2{2, 1, 2, 5, 3, 2};
   vector<int> nums3{5, 1, 5, 2, 5, 3, 5, 4};
@@ -236,7 +236,7 @@ TEST(SolutionTest, RepeatedNTimesTest) {
   EXPECT_EQ(5, solution.repeatedNTimes(nums3));
 }
 
-TEST(SolutionTest, IsUnivalTreeTest) {
+TEST(SolutionUnitTest, IsUnivalTreeTest) {
   string nums1 = "1,1,1,1,1,null,1";
   TreeNode *root1 = Utilities::createTreeNodeIteratively(nums1);
   EXPECT_TRUE(solution.isUnivalTree(root1));
@@ -245,7 +245,7 @@ TEST(SolutionTest, IsUnivalTreeTest) {
   EXPECT_FALSE(solution.isUnivalTree(root2));
 }
 
-TEST(SolutionTest, InsertIntoMaxTreeTest) {
+TEST(SolutionUnitTest, InsertIntoMaxTreeTest) {
   string nodes1 = "4,1,3,null,null,2";
   string nodes2 = "5,2,4,null,1";
   string nodes3 = "5,2,3,null,1";
@@ -266,7 +266,7 @@ TEST(SolutionTest, InsertIntoMaxTreeTest) {
   EXPECT_EQ(expected3, actual3);
 }
 
-TEST(SolutionTest, MinSubsequenceTest) {
+TEST(SolutionUnitTest, MinSubsequenceTest) {
   vector<int> nums1 = {4, 3, 10, 9, 8};
   vector<int> nums2 = {4, 4, 7, 6, 7};
   vector<int> nums3 = {6};
@@ -278,7 +278,7 @@ TEST(SolutionTest, MinSubsequenceTest) {
   EXPECT_EQ(expected3, solution.minSubsequence(nums3));
 }
 
-TEST(SolutionTest, BusyStudentTest) {
+TEST(SolutionUnitTest, BusyStudentTest) {
   vector<int> startTime1 = {1, 2, 3};
   vector<int> endTime1 = {3, 2, 7};
   vector<int> startTime2 = {4};
@@ -287,7 +287,7 @@ TEST(SolutionTest, BusyStudentTest) {
   EXPECT_EQ(1, solution.busyStudent(startTime2, endTime2, 4));
 }
 
-TEST(SolutionTest, IsPrefixOfWordTest) {
+TEST(SolutionUnitTest, IsPrefixOfWordTest) {
   string sentence1 = "i love eating burger";
   string sentence2 = "this problem is an easy problem";
   string sentence3 = "i am tired";
@@ -299,7 +299,7 @@ TEST(SolutionTest, IsPrefixOfWordTest) {
   EXPECT_EQ(-1, solution.isPrefixOfWord(sentence3, searchWord3));
 }
 
-TEST(SolutionTest, ShuffleTest) {
+TEST(SolutionUnitTest, ShuffleTest) {
   vector<int> nums1 = {2, 5, 1, 3, 4, 7};
   vector<int> nums2 = {1, 2, 3, 4, 4, 3, 2, 1};
   vector<int> nums3 = {1, 1, 2, 2};
@@ -311,7 +311,7 @@ TEST(SolutionTest, ShuffleTest) {
   EXPECT_EQ(expected3, solution.shuffle(nums3, 2));
 }
 
-TEST(SolutionTest, FinalPricesTest) {
+TEST(SolutionUnitTest, FinalPricesTest) {
   vector<int> prices1 = {8, 4, 6, 2, 3};
   vector<int> prices2 = {1, 2, 3, 4, 5};
   vector<int> prices3 = {10, 1, 1, 6};
@@ -323,7 +323,7 @@ TEST(SolutionTest, FinalPricesTest) {
   EXPECT_EQ(expected3, solution.finalPrices(prices3));
 }
 
-TEST(SolutionTest, MaxProductTest) {
+TEST(SolutionUnitTest, MaxProductTest) {
   vector<int> nums1 = {3, 4, 5, 2};
   vector<int> nums2 = {1, 5, 4, 5};
   vector<int> nums3 = {3, 7};
@@ -332,21 +332,21 @@ TEST(SolutionTest, MaxProductTest) {
   EXPECT_EQ(12, solution.maxProduct(nums3));
 }
 
-TEST(SolutionTest, NumSpecialTest) {
+TEST(SolutionUnitTest, NumSpecialTest) {
   vector<vector<int>> mat1 = {{1, 0, 0}, {0, 0, 1}, {1, 0, 0}};
   vector<vector<int>> mat2 = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
   EXPECT_EQ(1, solution.numSpecial(mat1));
   EXPECT_EQ(3, solution.numSpecial(mat2));
 }
 
-TEST(SolutionTest, ReorderSpacesTest) {
+TEST(SolutionUnitTest, ReorderSpacesTest) {
   string text1 = "  this   is  a sentence ";
   string text2 = " practice   makes   perfect";
   EXPECT_EQ("this   is   a   sentence", solution.reorderSpaces(text1));
   EXPECT_EQ("practice   makes   perfect ", solution.reorderSpaces(text2));
 }
 
-TEST(SolutionTest, MinOperationsTest) {
+TEST(SolutionUnitTest, MinOperationsTest) {
   vector<string> logs1{"d1/", "d2/", "../", "d21/", "./"};
   vector<string> logs2{"d1/", "d2/", "./", "d3/", "../", "d31/"};
   vector<string> logs3{"d1/", "../", "../", "../"};
@@ -355,7 +355,7 @@ TEST(SolutionTest, MinOperationsTest) {
   EXPECT_EQ(0, solution.minOperations(logs3));
 }
 
-TEST(SolutionTest, SpecialArrayTest) {
+TEST(SolutionUnitTest, SpecialArrayTest) {
   vector<int> nums1{3, 5};
   vector<int> nums2{0, 0};
   vector<int> nums3{0, 4, 3, 0, 4};
@@ -364,7 +364,7 @@ TEST(SolutionTest, SpecialArrayTest) {
   EXPECT_EQ(3, solution.specialArray(nums3));
 }
 
-TEST(SolutionTest, TrimMeanTest) {
+TEST(SolutionUnitTest, TrimMeanTest) {
   vector<int> nums1{1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3};
   vector<int> nums2{6, 2, 7, 5, 1, 2, 0, 3, 10, 2,
                     5, 0, 5, 5, 0, 8, 7, 6, 8,  0};
@@ -376,7 +376,7 @@ TEST(SolutionTest, TrimMeanTest) {
   EXPECT_TRUE((solution.trimMean(nums3) - 4.77778) <= 0.00001);
 }
 
-TEST(SolutionTest, MaxLengthBetweenEqualCharactersTest) {
+TEST(SolutionUnitTest, MaxLengthBetweenEqualCharactersTest) {
   string s1 = "aa";
   string s2 = "abca";
   string s3 = "bczyx";
@@ -385,7 +385,7 @@ TEST(SolutionTest, MaxLengthBetweenEqualCharactersTest) {
   EXPECT_EQ(-1, solution.maxLengthBetweenEqualCharacters(s3));
 }
 
-TEST(SolutionTest, FrequencySortTest) {
+TEST(SolutionUnitTest, FrequencySortTest) {
   vector<int> nums1{1, 1, 2, 2, 2, 3};
   vector<int> nums2{2, 3, 1, 3, 2};
   vector<int> nums3{-1, 1, -6, 4, 5, -6, 1, 4, 1};
@@ -397,7 +397,7 @@ TEST(SolutionTest, FrequencySortTest) {
   EXPECT_EQ(expected3, solution.frequencySort(nums3));
 }
 
-TEST(SolutionTest, MaximumWealthTest) {
+TEST(SolutionUnitTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
   vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};
   vector<vector<int>> accounts3 = {{2, 8, 7}, {7, 1, 3}, {1, 9, 5}};
@@ -406,18 +406,24 @@ TEST(SolutionTest, MaximumWealthTest) {
   EXPECT_EQ(17, solution.maximumWealth(accounts3));
 }
 
-TEST(SolutionTest, ReformatNumberTest) {
+TEST(SolutionUnitTest, ReformatNumberTest) {
   EXPECT_EQ("123-456", solution.reformatNumber("1-23-45 6"));
   EXPECT_EQ("123-45-67", solution.reformatNumber("123 4-567"));
   EXPECT_EQ("123-456-78", solution.reformatNumber("123 4-5678"));
 }
 
-TEST(SolutionTest, CheckOnesSegmentTest) {
+TEST(SolutionUnitTest, MinimumLengthTest) {
+  EXPECT_EQ(2, solution.minimumLength("ca"));
+  EXPECT_EQ(0, solution.minimumLength("cabaabac"));
+  EXPECT_EQ(3, solution.minimumLength("aabccabba"));
+}
+
+TEST(SolutionUnitTest, CheckOnesSegmentTest) {
   EXPECT_EQ(false, solution.checkOnesSegment("1001"));
   EXPECT_EQ(true, solution.checkOnesSegment("110"));
 }
 
-TEST(SolutionTest, FindMiddleIndexTest) {
+TEST(SolutionUnitTest, FindMiddleIndexTest) {
   vector<int> nums1 = {2, 3, -1, 8, 4};
   vector<int> nums2 = {1, -1, 4};
   vector<int> nums3 = {2, 5};
@@ -426,20 +432,20 @@ TEST(SolutionTest, FindMiddleIndexTest) {
   EXPECT_EQ(-1, solution.findMiddleIndex(nums3));
 }
 
-TEST(SolutionTest, SelfDividingNumbersTest) {
+TEST(SolutionUnitTest, SelfDividingNumbersTest) {
   vector<int> expected1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22};
   vector<int> expected2 = {48, 55, 66, 77};
   EXPECT_EQ(expected1, solution.selfDividingNumbers(1, 22));
   EXPECT_EQ(expected2, solution.selfDividingNumbers(47, 85));
 }
 
-TEST(SolutionTest, MinimumMovesTest) {
+TEST(SolutionUnitTest, MinimumMovesTest) {
   EXPECT_EQ(1, solution.minimumMoves("XXX"));
   EXPECT_EQ(2, solution.minimumMoves("XXOX"));
   EXPECT_EQ(0, solution.minimumMoves("OOOO"));
 }
 
-TEST(SolutionTest, PlatesBetweenCandlesTest) {
+TEST(SolutionUnitTest, PlatesBetweenCandlesTest) {
   vector<vector<int>> queries1 = {{2, 5}, {5, 9}};
   vector<int> expected1 = {2, 3};
   auto actual1 = solution.platesBetweenCandles("**|**|***|", queries1);
@@ -453,7 +459,7 @@ TEST(SolutionTest, PlatesBetweenCandlesTest) {
   EXPECT_EQ(expected2, actual2);
 }
 
-TEST(SolutionTest, RearrangeCharactersTest) {
+TEST(SolutionUnitTest, RearrangeCharactersTest) {
   EXPECT_EQ(2, solution.rearrangeCharacters("ilovecodingonleetcode", "code"));
   EXPECT_EQ(1, solution.rearrangeCharacters("abcba", "abc"));
   EXPECT_EQ(1, solution.rearrangeCharacters("abbaccaddaeea", "aaaaa"));

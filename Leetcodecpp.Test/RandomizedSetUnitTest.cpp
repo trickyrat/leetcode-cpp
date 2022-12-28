@@ -2,7 +2,7 @@
 
 #include "../Leetcodecpp/RandomizedSet.h"
 
-TEST(RandomizedSetTest, OperationTest) {
+TEST(RandomizedSetUnitTest, OperationTest) {
   RandomizedSet randomizedSet;
   EXPECT_TRUE(randomizedSet.insert(1));
   EXPECT_FALSE(randomizedSet.remove(2));

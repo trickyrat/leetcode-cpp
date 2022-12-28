@@ -4,7 +4,7 @@
 
 using namespace std;
 
-TEST(AllOneTest, OperationTest) {
+TEST(AllOneUnitTest, OperationTest) {
   AllOne allOne;
   allOne.inc("hello");
   allOne.inc("hello");
