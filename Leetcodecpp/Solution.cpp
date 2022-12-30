@@ -2523,6 +2523,28 @@ int Solution::minimumMoves(std::string s) {
   return res; 
 }
 
+std::vector<int> Solution::twoOutOfThree(std::vector<int> &nums1,
+                                         std::vector<int> &nums2,
+                                         std::vector<int> &nums3) {
+  std::unordered_map<int, int> map;
+  for (auto &num : nums1) {
+    map[num] = 1;
+  }
+  for (auto &num : nums2) {
+    map[num] |= 2;
+  }
+  for (auto &num : nums3) {
+    map[num] |= 4;
+  }
+  std::vector<int> res;
+  for (auto &[k, v] : map) {
+    if ((v & (v - 1)) != 0) {
+      res.push_back(k);
+    }
+  }
+  return res;
+}
+
 std::vector<int>
 Solution::platesBetweenCandles(std::string s,
                                std::vector<std::vector<int>> &queries) {

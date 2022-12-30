@@ -3,6 +3,8 @@
 #include "../Leetcodecpp/Solution.cpp"
 #include "../Leetcodecpp/Utilities.cpp"
 
+#include <algorithm>
+
 using namespace std;
 
 Solution solution;
@@ -203,8 +205,10 @@ TEST(SolutionUnitTest, MinCostToHireWorkersTest) {
   vector<int> quality2{3, 1, 10, 10, 1};
   vector<int> wage1{70, 50, 30};
   vector<int> wage2{4, 8, 2, 2, 7};
-  EXPECT_TRUE(abs(105.00000 - solution.minCostToHireWorkers(quality1, wage1, 2)) <= 0.00001);
-  EXPECT_TRUE(abs(30.66667 - solution.minCostToHireWorkers(quality2, wage2, 3)) <= 0.00001);
+  EXPECT_TRUE(abs(105.00000 - solution.minCostToHireWorkers(quality1, wage1,
+                                                            2)) <= 0.00001);
+  EXPECT_TRUE(abs(30.66667 - solution.minCostToHireWorkers(quality2, wage2,
+                                                           3)) <= 0.00001);
 }
 
 TEST(SolutionUnitTest, MinDeletionSizeTest) {
@@ -443,6 +447,35 @@ TEST(SolutionUnitTest, MinimumMovesTest) {
   EXPECT_EQ(1, solution.minimumMoves("XXX"));
   EXPECT_EQ(2, solution.minimumMoves("XXOX"));
   EXPECT_EQ(0, solution.minimumMoves("OOOO"));
+}
+
+TEST(SolutionUnitTest, TwoOutOfThreeTest) {
+  vector<int> nums1 = {1, 1, 3, 2};
+  vector<int> nums2 = {2, 3};
+  vector<int> nums3 = {3};
+  vector<int> actual = solution.twoOutOfThree(nums1, nums2, nums3);
+  vector<int> expected = {3, 2};
+  sort(actual.begin(), actual.end());
+  sort(expected.begin(), expected.end());
+  EXPECT_EQ(expected, actual);
+
+  nums1 = {3, 1};
+  nums2 = {2, 3};
+  nums3 = {1, 2};
+  actual = solution.twoOutOfThree(nums1, nums2, nums3);
+  expected = {2, 3, 1};
+  sort(actual.begin(), actual.end());
+  sort(expected.begin(), expected.end());
+  EXPECT_EQ(expected, actual);
+
+  nums1 = {1, 2, 2};
+  nums2 = {4, 3, 3};
+  nums3 = {5};
+  actual = solution.twoOutOfThree(nums1, nums2, nums3);
+  expected = {};
+  sort(actual.begin(), actual.end());
+  sort(expected.begin(), expected.end());
+  EXPECT_EQ(expected, actual);
 }
 
 TEST(SolutionUnitTest, PlatesBetweenCandlesTest) {

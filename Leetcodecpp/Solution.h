@@ -1180,6 +1180,17 @@ public:
   int minimumMoves(std::string s);
 
   /// <summary>
+  /// 2032. Two Out of Three
+  /// </summary>
+  /// <param name="nums1"></param>
+  /// <param name="nums2"></param>
+  /// <param name="nums3"></param>
+  /// <returns></returns>
+  std::vector<int> twoOutOfThree(std::vector<int> &nums1,
+                                 std::vector<int> &nums2,
+                                 std::vector<int> &nums3);
+
+  /// <summary>
   /// 2055. Plates Between Candles
   /// </summary>
   /// <param name="s"></param>
