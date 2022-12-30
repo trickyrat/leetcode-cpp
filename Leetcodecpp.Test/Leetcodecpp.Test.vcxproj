@@ -37,6 +37,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ExamRoomUnitTest.cpp" />
     <ClCompile Include="RandomizedSetUnitTest.cpp" />
     <ClCompile Include="SolutionUnitTest.cpp" />
     <ClCompile Include="AllOneUnitTest.cpp" />

@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ExamRoom.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Solution.cpp" />
     <ClCompile Include="Utilities.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="AllOne.h" />
     <ClInclude Include="BSTIterator.h" />
     <ClInclude Include="Codec.h" />
+    <ClInclude Include="ExamRoom.h" />
     <ClInclude Include="Foo.h" />
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="MinStack.h" />
