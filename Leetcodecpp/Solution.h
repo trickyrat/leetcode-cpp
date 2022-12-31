@@ -1191,6 +1191,14 @@ public:
                                  std::vector<int> &nums3);
 
   /// <summary>
+  /// 2037. Minimum Number of Moves to Seat Everyone
+  /// </summary>
+  /// <param name="seats"></param>
+  /// <param name="students"></param>
+  /// <returns></returns>
+  int minMovesToSeat(std::vector<int> &seats, std::vector<int> &students);
+
+  /// <summary>
   /// 2055. Plates Between Candles
   /// </summary>
   /// <param name="s"></param>

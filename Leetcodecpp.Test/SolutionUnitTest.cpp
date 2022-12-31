@@ -478,6 +478,18 @@ TEST(SolutionUnitTest, TwoOutOfThreeTest) {
   EXPECT_EQ(expected, actual);
 }
 
+TEST(SolutionUnitTest, MinMovesToSeatTest) { 
+  vector<int> seats1{3, 1, 5};
+  vector<int> seats2{4, 1, 5, 9};
+  vector<int> seats3{2, 2, 6, 6};
+  vector<int> students1{2, 7, 4};
+  vector<int> students2{1, 3, 2, 6};
+  vector<int> students3{1, 3, 2, 6};
+  EXPECT_EQ(4, solution.minMovesToSeat(seats1, students1));
+  EXPECT_EQ(7, solution.minMovesToSeat(seats2, students2));
+  EXPECT_EQ(4, solution.minMovesToSeat(seats3, students3));
+}
+
 TEST(SolutionUnitTest, PlatesBetweenCandlesTest) {
   vector<vector<int>> queries1 = {{2, 5}, {5, 9}};
   vector<int> expected1 = {2, 3};

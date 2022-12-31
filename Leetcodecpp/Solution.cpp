@@ -2545,6 +2545,17 @@ std::vector<int> Solution::twoOutOfThree(std::vector<int> &nums1,
   return res;
 }
 
+int Solution::minMovesToSeat(std::vector<int> &seats,
+                             std::vector<int> &students) {
+  std::sort(seats.begin(), seats.end());
+  std::sort(students.begin(), students.end());
+  int res = 0;
+  for (int i = 0; i < seats.size(); i++) {
+    res += std::abs(seats[i] - students[i]);
+  }
+  return res;
+}
+
 std::vector<int>
 Solution::platesBetweenCandles(std::string s,
                                std::vector<std::vector<int>> &queries) {
