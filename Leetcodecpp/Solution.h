@@ -1208,6 +1208,13 @@ public:
                                         std::vector<std::vector<int>> &queries);
 
   /// <summary>
+  /// 2351. First Letter to Appear Twice
+  /// </summary>
+  /// <param name="s"></param>
+  /// <returns></returns>
+  char repeatedCharacter(std::string s);
+
+  /// <summary>
   /// 6078. Rearrange Characters to Make Target String
   /// </summary>
   /// <param name="s"></param>

@@ -504,6 +504,13 @@ TEST(SolutionUnitTest, PlatesBetweenCandlesTest) {
   EXPECT_EQ(expected2, actual2);
 }
 
+TEST(SolutionUnitTest, RepeatedCharacterTest) {
+  EXPECT_EQ('c', solution.repeatedCharacter("abccbaacz"));
+  EXPECT_EQ('d', solution.repeatedCharacter("abcdd"));
+  EXPECT_EQ('a', solution.repeatedCharacter("aa"));
+  EXPECT_EQ('z', solution.repeatedCharacter("zz"));
+}
+
 TEST(SolutionUnitTest, RearrangeCharactersTest) {
   EXPECT_EQ(2, solution.rearrangeCharacters("ilovecodingonleetcode", "code"));
   EXPECT_EQ(1, solution.rearrangeCharacters("abcba", "abc"));

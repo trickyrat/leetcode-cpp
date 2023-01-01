@@ -2591,6 +2591,18 @@ Solution::platesBetweenCandles(std::string s,
   return ans;
 }
 
+char Solution::repeatedCharacter(std::string s) { 
+  int seen = 0;
+  for (int i = 0; i < s.size(); i++) {
+    int index = s[i] - 'a';
+    if (seen & (1 << index)) {
+      return s[i];
+    }
+    seen |= (1 << index);
+  }
+  return ' ';
+}
+
 /*Private methods*/
 
 int Solution::rearrangeCharacters(std::string s, std::string target) {
