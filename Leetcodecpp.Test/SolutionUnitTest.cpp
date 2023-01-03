@@ -490,6 +490,12 @@ TEST(SolutionUnitTest, MinMovesToSeatTest) {
   EXPECT_EQ(4, solution.minMovesToSeat(seats3, students3));
 }
 
+TEST(SolutionUnitTest, AreNumberAscendingTest) {
+  EXPECT_EQ(true, solution.areNumberAscending("1 box has 3 blue 4 red 6 green and 12 yellow marbles"));
+  EXPECT_EQ(false, solution.areNumberAscending("hello world 5 x 5"));
+  EXPECT_EQ(false, solution.areNumberAscending("sunset is at 7 51 pm overnight lows will be in the low 50 and 60 s"));
+}
+
 TEST(SolutionUnitTest, PlatesBetweenCandlesTest) {
   vector<vector<int>> queries1 = {{2, 5}, {5, 9}};
   vector<int> expected1 = {2, 3};

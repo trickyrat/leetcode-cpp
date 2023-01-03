@@ -1199,6 +1199,13 @@ public:
   int minMovesToSeat(std::vector<int> &seats, std::vector<int> &students);
 
   /// <summary>
+  /// 2042. Check if Numbers Are Ascending in a Sentence
+  /// </summary>
+  /// <param name="s"></param>
+  /// <returns></returns>
+  bool areNumberAscending(std::string s);
+
+  /// <summary>
   /// 2055. Plates Between Candles
   /// </summary>
   /// <param name="s"></param>

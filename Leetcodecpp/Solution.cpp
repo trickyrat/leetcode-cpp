@@ -2556,6 +2556,26 @@ int Solution::minMovesToSeat(std::vector<int> &seats,
   return res;
 }
 
+bool Solution::areNumberAscending(std::string s) { 
+  int pre = 0, pos = 0;
+  while (pos < s.size()) {
+    if (std::isdigit(s[pos])) {
+      int curr = 0;
+      while (pos < s.size() && std::isdigit(s[pos])) {
+        curr = curr * 10 + s[pos] - '0';
+        pos++;
+      }
+      if (curr <= pre) {
+        return false;
+      }
+      pre = curr;
+    } else {
+      pos++;
+    }
+  }
+  return true; 
+}
+
 std::vector<int>
 Solution::platesBetweenCandles(std::string s,
                                std::vector<std::vector<int>> &queries) {
