@@ -1215,6 +1215,13 @@ public:
                                         std::vector<std::vector<int>> &queries);
 
   /// <summary>
+  /// 2180. Count Integers With Even Digit Sum
+  /// </summary>
+  /// <param name="num"></param>
+  /// <returns></returns>
+  int countEven(int num);
+
+  /// <summary>
   /// 2351. First Letter to Appear Twice
   /// </summary>
   /// <param name="s"></param>

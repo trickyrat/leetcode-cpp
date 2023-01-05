@@ -510,6 +510,11 @@ TEST(SolutionUnitTest, PlatesBetweenCandlesTest) {
   EXPECT_EQ(expected2, actual2);
 }
 
+TEST(SolutionUnitTest, CountEvenTest) {
+  EXPECT_EQ(2, solution.countEven(4));
+  EXPECT_EQ(14, solution.countEven(30));
+}
+
 TEST(SolutionUnitTest, RepeatedCharacterTest) {
   EXPECT_EQ('c', solution.repeatedCharacter("abccbaacz"));
   EXPECT_EQ('d', solution.repeatedCharacter("abcdd"));
