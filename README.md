@@ -1,4 +1,4 @@
-# Welcome to Leetcodecpp
+# Welcome to LeetCodecpp
 
 ## Introduction
 
@@ -15,7 +15,7 @@ You can use any compilers that support C++ language to build.
 ## Contribute
 
 Contributions, issues and feature requests are welcome.  
-Feel free to check [issue page](https://github.com/Leetcodecpp/issues) if you want to contribute.
+Feel free to check [issue page](https://github.com/LeetCodecpp/issues) if you want to contribute.
 
 ## Author
 
