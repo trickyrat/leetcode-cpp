@@ -1138,6 +1138,14 @@ public:
   std::vector<int> frequencySort(std::vector<int> &nums);
 
   /// <summary>
+  /// 1658. Minimum Operations to Reduce X to Zero
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <param name="x"></param>
+  /// <returns></returns>
+  int minOperations(std::vector<int> &nums, int x);
+
+  /// <summary>
   /// 1672. Richest Customer Wealth
   /// </summary>
   /// <param name="accounts"></param>

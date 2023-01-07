@@ -165,6 +165,13 @@ TEST(SolutionUnitTest, PivotIndexTest) {
   EXPECT_EQ(0, solution.pivotIndex(nums3));
 }
 
+TEST(SolutionUnitTest, SelfDividingNumbersTest) {
+  vector<int> expected1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22};
+  vector<int> expected2 = {48, 55, 66, 77};
+  EXPECT_EQ(expected1, solution.selfDividingNumbers(1, 22));
+  EXPECT_EQ(expected2, solution.selfDividingNumbers(47, 85));
+}
+
 TEST(SolutionUnitTest, PreimageSizeFZFTest) {
   EXPECT_EQ(5, solution.preimageSizeFZF(0));
   EXPECT_EQ(0, solution.preimageSizeFZF(5));
@@ -401,6 +408,15 @@ TEST(SolutionUnitTest, FrequencySortTest) {
   EXPECT_EQ(expected3, solution.frequencySort(nums3));
 }
 
+TEST(SolutionUnitTest, MinOperations2Test) { 
+  vector<int> nums1{1, 1, 4, 2, 3};
+  vector<int> nums2{5, 6, 7, 8, 9};
+  vector<int> nums3{3, 2, 20, 1, 1, 3};
+  EXPECT_EQ(2, solution.minOperations(nums1, 5));
+  EXPECT_EQ(-1, solution.minOperations(nums2, 4));
+  EXPECT_EQ(5, solution.minOperations(nums3, 10));
+}
+
 TEST(SolutionUnitTest, MaximumWealthTest) {
   vector<vector<int>> accounts1 = {{1, 2, 3}, {3, 2, 1}};
   vector<vector<int>> accounts2 = {{1, 5}, {7, 3}, {3, 5}};
@@ -434,13 +450,6 @@ TEST(SolutionUnitTest, FindMiddleIndexTest) {
   EXPECT_EQ(3, solution.findMiddleIndex(nums1));
   EXPECT_EQ(2, solution.findMiddleIndex(nums2));
   EXPECT_EQ(-1, solution.findMiddleIndex(nums3));
-}
-
-TEST(SolutionUnitTest, SelfDividingNumbersTest) {
-  vector<int> expected1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22};
-  vector<int> expected2 = {48, 55, 66, 77};
-  EXPECT_EQ(expected1, solution.selfDividingNumbers(1, 22));
-  EXPECT_EQ(expected2, solution.selfDividingNumbers(47, 85));
 }
 
 TEST(SolutionUnitTest, MinimumMovesTest) {

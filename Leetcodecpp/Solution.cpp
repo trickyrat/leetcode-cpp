@@ -2444,6 +2444,34 @@ std::vector<int> Solution::frequencySort(std::vector<int> &nums) {
   return nums;
 }
 
+int Solution::minOperations(std::vector<int> &nums, int x) { 
+  int n = nums.size();
+  int sum = std::accumulate(nums.begin(), nums.end(), 0);
+
+  if (sum < x) {
+    return -1;
+  }
+
+  int right = 0;
+  int leftSum = 0, rrightSum = sum;
+  int res = n + 1;
+
+  for (int left = -1; left < n; ++left) {
+    if (left != -1) {
+      leftSum += nums[left];
+    }
+    while (right < n && leftSum + rrightSum > x) {
+      rrightSum -= nums[right];
+      ++right;
+    }
+    if (leftSum + rrightSum == x) {
+      res = std::min(res, (left + 1) + (n - right));
+    }
+  }
+
+  return res > n ? -1 : res;
+}
+
 int Solution::maximumWealth(std::vector<std::vector<int>> &accounts) {
   int maxWealth = 0;
   /*for (auto &account : accounts) {
