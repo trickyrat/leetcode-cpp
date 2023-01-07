@@ -1230,6 +1230,14 @@ public:
   int countEven(int num);
 
   /// <summary>
+  /// 2185. Counting Words With a Given Prefix
+  /// </summary>
+  /// <param name="words"></param>
+  /// <param name="pref"></param>
+  /// <returns></returns>
+  int prefixCount(std::vector<std::string> &words, std::string pref);
+
+  /// <summary>
   /// 2351. First Letter to Appear Twice
   /// </summary>
   /// <param name="s"></param>

@@ -524,6 +524,13 @@ TEST(SolutionUnitTest, CountEvenTest) {
   EXPECT_EQ(14, solution.countEven(30));
 }
 
+TEST(SolutionUnitTest, PrefixCountTest) {
+  vector<string> words1{"pay", "attention", "practice", "attend"};
+  vector<string> words2{"leetcode", "win", "loops", "success"};
+  EXPECT_EQ(2, solution.prefixCount(words1,"at"));
+  EXPECT_EQ(0, solution.prefixCount(words2, "code"));
+}
+
 TEST(SolutionUnitTest, RepeatedCharacterTest) {
   EXPECT_EQ('c', solution.repeatedCharacter("abccbaacz"));
   EXPECT_EQ('d', solution.repeatedCharacter("abcdd"));

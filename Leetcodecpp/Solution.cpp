@@ -2654,6 +2654,12 @@ int Solution::countEven(int num) {
   return res - 1; 
 }
 
+int Solution::prefixCount(std::vector<std::string> &words, std::string pref) {
+  return std::count_if(words.begin(), words.end(), [&pref](auto &word) {
+                         return word.find(pref) == 0;
+                       });
+}
+
 char Solution::repeatedCharacter(std::string s) { 
   int seen = 0;
   for (int i = 0; i < s.size(); i++) {
