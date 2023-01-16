@@ -449,15 +449,28 @@ std::vector<std::string> Solution::generateParenthesis(int n) {
   return ans;
 }
 
+struct comp {
+  bool operator()(ListNode *lhs, ListNode *rhs) { return lhs->val > rhs->val; }
+};
+
 ListNode *Solution::mergeKLists(std::vector<ListNode *> &lists) {
-  int len = lists.size();
-  int interval = 1;
-  while (interval < len) {
-    for (int i = 0; i < len - interval; i += interval * 2)
-      lists[i] = mergeTwoLists(lists[i], lists[i + interval]);
-    interval *= 2;
+  std::priority_queue<ListNode*, std::vector<ListNode*>, comp> pq;
+  for (auto head : lists) {
+    if (head) {
+      pq.push(head);
+    }
   }
-  return len > 0 ? lists[0] : nullptr;
+  ListNode *head = new ListNode(), *tail = head;
+  while (!pq.empty()) {
+    auto curr = pq.top(); 
+    pq.pop();
+    tail->next = curr;
+    tail = tail->next;
+    if (curr->next) {
+      pq.push(curr->next);
+    }
+  }
+  return head->next;
 }
 
 ListNode *Solution::swapPairs(ListNode *head) {
