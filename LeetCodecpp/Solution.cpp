@@ -1400,6 +1400,26 @@ int Solution::rob(std::vector<int> &nums) {
   return std::max(rob, notrob);
 }
 
+ListNode *Solution::reverseList(ListNode *head) { 
+  /*if (head == nullptr || head->next == nullptr) {
+    return head;
+  }
+  ListNode *last = reverseList(head->next);
+  head->next->next = head;
+  head->next = nullptr;
+  return last; */
+
+  ListNode *prev = nullptr;
+  ListNode *curr = head;
+  while (curr) {
+    ListNode *next = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
+}
+
 bool Solution::isPowerOfTwo(int n) { return n > 0 && (n & (n - 1)) == 0; }
 
 bool Solution::isAnagram(std::string s, std::string t) {

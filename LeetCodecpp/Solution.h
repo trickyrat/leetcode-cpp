@@ -609,6 +609,13 @@ public:
   int rob(std::vector<int> &nums);
 
   /// <summary>
+  /// 206. Reverse Linked List
+  /// </summary>
+  /// <param name="head"></param>
+  /// <returns></returns>
+  ListNode *reverseList(ListNode *head);
+
+  /// <summary>
   /// 231. Power of Two
   /// </summary>
   /// <param name="n"></param>
