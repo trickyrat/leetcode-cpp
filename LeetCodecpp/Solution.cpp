@@ -1087,6 +1087,24 @@ std::vector<std::vector<int>> Solution::combine(int n, int k) {
   return res;
 }
 
+ListNode *Solution::reverseBetween(ListNode *head, int left, int right) {
+  ListNode *dummyHead = new ListNode(-1);
+  dummyHead->next = head;
+  ListNode *prev = dummyHead;
+  for (int i = 0; i < left - 1; i++) {
+    prev = prev->next;
+  }
+  ListNode *curr = prev->next;
+  ListNode *next = nullptr;
+  for (int i = 0; i < right - left; i++) {
+    next = curr->next;
+    curr->next = next->next;
+    next->next = prev->next;
+    prev->next = next;
+  }
+  return dummyHead->next;
+}
+
 std::vector<int> Solution::inorderTraversal(TreeNode *root) {
   std::vector<int> res;
   std::stack<TreeNode *> stack;

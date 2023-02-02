@@ -459,6 +459,15 @@ public:
   std::vector<std::vector<int>> combine(int n, int k);
 
   /// <summary>
+  /// 92. Reverse Linked List II
+  /// </summary>
+  /// <param name="head"></param>
+  /// <param name="left"></param>
+  /// <param name="right"></param>
+  /// <returns></returns>
+  ListNode *reverseBetween(ListNode *head, int left, int right);
+
+  /// <summary>
   /// 94. Binary Tree Inorder Traversal
   /// </summary>
   /// <param name="root"></param>
