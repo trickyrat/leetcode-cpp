@@ -702,6 +702,13 @@ public:
   std::vector<std::vector<int>> levelOrder(Node *root);
 
   /// <summary>
+  /// 453. Minimum Moves to Equal Array Elements
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  int minMoves(std::vector<int>& nums);
+
+  /// <summary>
   /// 477. Total Hamming Distance
   /// </summary>
   /// <param name="nums"></param>

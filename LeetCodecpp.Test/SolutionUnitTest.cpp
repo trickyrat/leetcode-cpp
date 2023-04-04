@@ -69,10 +69,17 @@ TEST(SolutionUnitTest, CountNumbersWithUniqueDigitsTest) {
 }
 
 TEST(SolutionUnitTest, LexicalOrderTest) {
-  vector<int> expected1 = {1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9};
-  vector<int> expected2 = {1, 2};
+  vector<int> expected1{1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9};
+  vector<int> expected2{1, 2};
   EXPECT_EQ(expected1, solution.lexicalOrder(13));
   EXPECT_EQ(expected2, solution.lexicalOrder(2));
+}
+
+TEST(SolutionUnitTest, MinMovesTest) { 
+  vector<int> nums1{1, 2, 3};
+  vector<int> nums2{1, 1, 1};
+  EXPECT_EQ(3, solution.minMoves(nums1));
+  EXPECT_EQ(0, solution.minMoves(nums2));
 }
 
 TEST(SolutionUnitTest, FindDiagonalOrderTest) {
