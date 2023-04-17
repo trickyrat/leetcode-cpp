@@ -1529,6 +1529,20 @@ std::vector<int> Solution::lexicalOrder(int n) {
   return ret;
 }
 
+int Solution::maxRotateFunction(std::vector<int> &nums) { 
+  int f = 0, n = nums.size();
+  int numsSum = std::accumulate(nums.begin(), nums.end(), 0);
+  for (size_t i = 0; i < n; ++i) {
+    f += i * nums[i];
+  }
+  int res = 0;
+  for (size_t i = n - 1; i > 0; --i) {
+    f += numsSum - n * nums[i];
+    res = std::max(res, f);
+  }
+  return res;
+}
+
 std::vector<std::string> Solution::readBinaryWatch(int num) {
   std::vector<std::string> rs;
   for (int h = 0; h < 12; h++)

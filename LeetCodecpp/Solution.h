@@ -680,6 +680,13 @@ public:
   std::vector<int> lexicalOrder(int n);
 
   /// <summary>
+  /// 396. Rotate Function
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  int maxRotateFunction(std::vector<int> &nums);
+
+  /// <summary>
   /// 401. Binary Watch
   /// </summary>
   /// <param name="num"></param>
