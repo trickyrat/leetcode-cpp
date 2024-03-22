@@ -1,6 +1,6 @@
 #include "pch.h"
 
-#include "../LeetCodecpp/ExamRoom.cpp"
+#include "../LeetCode/ExamRoom.cpp"
 
 TEST(ExamRoomUnitTest, OperationTest) { 
 	ExamRoom er(10);

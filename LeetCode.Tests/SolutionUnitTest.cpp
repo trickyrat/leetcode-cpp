@@ -1,7 +1,7 @@
 #include "pch.h"
 
-#include "../LeetCodecpp/Solution.cpp"
-#include "../LeetCodecpp/Utilities.cpp"
+#include "../LeetCode/Solution.cpp"
+#include "../LeetCode/Utilities.cpp"
 
 #include <algorithm>
 

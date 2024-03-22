@@ -25,7 +25,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <ProjectName>LeetCodecpp.Test</ProjectName>
+    <ProjectName>LeetCode.Tests</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -50,7 +50,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LeetCodecpp\LeetCodecpp.vcxproj">
+    <ProjectReference Include="..\LeetCode\LeetCode.vcxproj">
       <Project>{1c6202cc-5d38-432c-9215-f525369da4d1}</Project>
     </ProjectReference>
   </ItemGroup>
