@@ -1,8 +1,8 @@
-# Welcome to LeetCodecpp
+# Welcome to leetcode-cpp
 
 ## Introduction
 
-The solutions of Leetcode problems with C++.  
+The LeetCode solutions implemented in C++.  
 
 ## Getting Started
 
@@ -15,7 +15,7 @@ You can use any compilers that support C++ language to build.
 ## Contribute
 
 Contributions, issues and feature requests are welcome.  
-Feel free to check [issue page](https://github.com/LeetCodecpp/issues) if you want to contribute.
+Feel free to check [issue page](https://github.com/leetcode-cpp/issues) if you want to contribute.
 
 ## Author
 
