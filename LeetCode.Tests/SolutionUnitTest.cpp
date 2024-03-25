@@ -75,7 +75,7 @@ TEST(SolutionUnitTest, LexicalOrderTest) {
   EXPECT_EQ(expected2, solution.lexicalOrder(2));
 }
 
-TEST(SolutionUnitTest, MinMovesTest) { 
+TEST(SolutionUnitTest, MinMovesTest) {
   vector<int> nums1{1, 2, 3};
   vector<int> nums2{1, 1, 1};
   EXPECT_EQ(3, solution.minMoves(nums1));
@@ -92,6 +92,15 @@ TEST(SolutionUnitTest, FindDiagonalOrderTest) {
 TEST(SolutionUnitTest, ConvertToBase7Test) {
   EXPECT_EQ("202", solution.convertToBase7(100));
   EXPECT_EQ("-10", solution.convertToBase7(-7));
+}
+
+TEST(SolutionUnitTest, ChangeTest) {
+  vector<int> coins1{1, 2, 5};
+  vector<int> coins2{2};
+  vector<int> coins3{10};
+  EXPECT_EQ(4, solution.change(5, coins1));
+  EXPECT_EQ(0, solution.change(3, coins2));
+  EXPECT_EQ(1, solution.change(10, coins3));
 }
 
 TEST(SolutionUnitTest, ExculsiveTimeTest) {
@@ -415,7 +424,7 @@ TEST(SolutionUnitTest, FrequencySortTest) {
   EXPECT_EQ(expected3, solution.frequencySort(nums3));
 }
 
-TEST(SolutionUnitTest, MinOperations2Test) { 
+TEST(SolutionUnitTest, MinOperations2Test) {
   vector<int> nums1{1, 1, 4, 2, 3};
   vector<int> nums2{5, 6, 7, 8, 9};
   vector<int> nums3{3, 2, 20, 1, 1, 3};
@@ -494,7 +503,7 @@ TEST(SolutionUnitTest, TwoOutOfThreeTest) {
   EXPECT_EQ(expected, actual);
 }
 
-TEST(SolutionUnitTest, MinMovesToSeatTest) { 
+TEST(SolutionUnitTest, MinMovesToSeatTest) {
   vector<int> seats1{3, 1, 5};
   vector<int> seats2{4, 1, 5, 9};
   vector<int> seats3{2, 2, 6, 6};
@@ -507,9 +516,12 @@ TEST(SolutionUnitTest, MinMovesToSeatTest) {
 }
 
 TEST(SolutionUnitTest, AreNumberAscendingTest) {
-  EXPECT_EQ(true, solution.areNumberAscending("1 box has 3 blue 4 red 6 green and 12 yellow marbles"));
+  EXPECT_EQ(true, solution.areNumberAscending(
+                      "1 box has 3 blue 4 red 6 green and 12 yellow marbles"));
   EXPECT_EQ(false, solution.areNumberAscending("hello world 5 x 5"));
-  EXPECT_EQ(false, solution.areNumberAscending("sunset is at 7 51 pm overnight lows will be in the low 50 and 60 s"));
+  EXPECT_EQ(false,
+            solution.areNumberAscending("sunset is at 7 51 pm overnight lows "
+                                        "will be in the low 50 and 60 s"));
 }
 
 TEST(SolutionUnitTest, PlatesBetweenCandlesTest) {
@@ -534,7 +546,7 @@ TEST(SolutionUnitTest, CountEvenTest) {
 TEST(SolutionUnitTest, PrefixCountTest) {
   vector<string> words1{"pay", "attention", "practice", "attend"};
   vector<string> words2{"leetcode", "win", "loops", "success"};
-  EXPECT_EQ(2, solution.prefixCount(words1,"at"));
+  EXPECT_EQ(2, solution.prefixCount(words1, "at"));
   EXPECT_EQ(0, solution.prefixCount(words2, "code"));
 }
 
