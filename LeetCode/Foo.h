@@ -1,28 +1,27 @@
 #pragma once
 
-#include <mutex>
 #include <functional>
+#include <future>
 
 class Foo {
 private:
-  std::mutex m1, m2;
+  std::function<void()> task = []() {};
+  std::packaged_task<void()> pt1{task}, pt2{task};
 
 public:
-  Foo() { m1.lock(), m2.lock(); }
+  Foo() { }
 
   void first(std::function<void()> printFirst) {
     printFirst();
-    m1.unlock();
+    pt1();
   }
   void second(std::function<void()> printSecond) {
-    m1.lock();
+    pt1.get_future().wait();
     printSecond();
-    m1.unlock();
-    m2.unlock();
+    pt2();
   }
   void third(std::function<void()> printThird) {
-    m2.lock();
+    pt2.get_future().wait();
     printThird();
-    m2.unlock();
   }
 };
