@@ -1675,6 +1675,17 @@ int Solution::fib(int N) {
   return res;
 }
 
+int Solution::change(int amount, std::vector<int> &coins) {
+  std::vector<int> dp(amount + 1);
+  dp[0] = 1;
+  for (int &coin : coins) {
+    for (int i = coin; i <= amount; i++) {
+      dp[i] += dp[i - coin];
+    }
+  }
+  return dp[amount];
+}
+
 std::string Solution::complexNumberMultiply(std::string num1,
                                             std::string num2) {
   std::regex re("\\+|i");

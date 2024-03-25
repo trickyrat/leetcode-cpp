@@ -744,6 +744,14 @@ public:
   int fib(int N);
 
   /// <summary>
+  /// 518. Coin Change II
+  /// </summary>
+  /// <param name="amount"></param>
+  /// <param name="coins"></param>
+  /// <returns></returns>
+  int change(int amount, std::vector<int> &coins);
+
+  /// <summary>
   /// 537. Complex Number Multiply
   /// </summary>
   /// <param name="num1"></param>
