@@ -1283,6 +1283,13 @@ public:
   char repeatedCharacter(std::string s);
 
   /// <summary>
+  /// 2908. Minimum Sum of Mountain Triplets I
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  int minimum_sum(std::vector<int> nums);
+
+  /// <summary>
   /// 6078. Rearrange Characters to Make Target String
   /// </summary>
   /// <param name="s"></param>
