@@ -2766,6 +2766,24 @@ char Solution::repeatedCharacter(std::string s) {
   return ' ';
 }
 
+int Solution::minimum_sum(std::vector<int> nums) {
+  int n = nums.size();
+  int mini = 1000, res = 1000;
+  std::vector<int> left;
+  int right = nums[n - 1];
+  for (int i = 1; i < n; i++) {
+    left[i] = std::min(left[i - 1], mini);
+  }
+
+  for (int i = n - 2; i > 0; i--) {
+    if (left[i] < nums[i] && nums[i] > right) {
+      res = std::min(res, left[i] + nums[i] + right);
+    }
+    right = std::min(right, nums[i]);
+  }
+  return res < 1000 ? res : -1;
+}
+
 /*Private methods*/
 
 int Solution::rearrangeCharacters(std::string s, std::string target) {
