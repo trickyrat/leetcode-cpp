@@ -1,4 +1,4 @@
-#include "ExamRoom.h"
+#include "exam_room.h"
 
 int ExamRoom::seat() {
   if (seats.empty()) {
