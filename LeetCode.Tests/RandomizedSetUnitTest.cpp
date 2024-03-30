@@ -1,6 +1,6 @@
 #include "pch.h"
 
-#include "../LeetCode/RandomizedSet.h"
+#include "../LeetCode/randomized_set.h"
 
 TEST(RandomizedSetUnitTest, OperationTest) {
   RandomizedSet randomizedSet;
