@@ -1,7 +1,8 @@
 #pragma once
 #include <stack>
 
-#include "TreeNode.h"
+#include "data_structure.h"
+
 class BSTIterator {
 private:
   std::stack<TreeNode*> nodes;

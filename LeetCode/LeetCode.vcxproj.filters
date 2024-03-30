@@ -15,60 +15,54 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Program.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
+    <ClCompile Include="utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Solution.cpp">
+    <ClCompile Include="solution.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ExamRoom.cpp">
+    <ClCompile Include="exam_room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Solution.h">
+    <ClInclude Include="solution.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MinStack.h">
+    <ClInclude Include="min_stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyStack.h">
+    <ClInclude Include="my_stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
+    <ClInclude Include="bst_iterator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TreeNode.h">
+    <ClInclude Include="num_array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BSTIterator.h">
+    <ClInclude Include="all_one.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ListNode.h">
+    <ClInclude Include="randomized_set.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NumArray.h">
+    <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AllOne.h">
+    <ClInclude Include="codec.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RandomizedSet.h">
+    <ClInclude Include="foo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
+    <ClInclude Include="exam_room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Codec.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Foo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ExamRoom.h">
+    <ClInclude Include="data_structure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
