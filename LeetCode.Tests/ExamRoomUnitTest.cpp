@@ -1,6 +1,8 @@
 #include "pch.h"
 
-#include "../LeetCode/ExamRoom.cpp"
+#include "../LeetCode/exam_room.h"
+
+using namespace std;
 
 TEST(ExamRoomUnitTest, OperationTest) { 
 	ExamRoom er(10);

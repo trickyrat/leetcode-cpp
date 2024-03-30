@@ -1,41 +1,18 @@
 #include "pch.h"
 
-#include "../LeetCode/Solution.cpp"
-#include "../LeetCode/Utils.cpp"
-
 #include <algorithm>
+
+#include "../LeetCode/Solution.h"
+#include "../LeetCode/Utils.h"
 
 using namespace std;
 
 Solution solution;
 
-TEST(SolutionUnitTest, TwoSumTest) {
-  vector<int> expected1 = {0, 1};
-  vector<int> input1 = {2, 7, 11, 15};
-  vector<int> actual1 = solution.two_sum(input1, 9);
-  EXPECT_EQ(expected1, actual1);
-
-  vector<int> expected2 = {1, 2};
-  vector<int> input2 = {3, 2, 4};
-  vector<int> actual2 = solution.two_sum(input2, 6);
-  EXPECT_EQ(expected2, actual2);
-
-  vector<int> expected3 = {0, 1};
-  vector<int> input3 = {3, 3};
-  vector<int> actual3 = solution.two_sum(input3, 6);
-  EXPECT_EQ(expected3, actual3);
-}
-
 TEST(SolutionUnitTest, LengthOfLongestSubstring) {
   EXPECT_EQ(3, solution.length_of_longest_substring("abcabcbb"));
   EXPECT_EQ(1, solution.length_of_longest_substring("bbbbb"));
   EXPECT_EQ(3, solution.length_of_longest_substring("pwwkew"));
-}
-
-TEST(SolutionUnitTest, LengthOfLongestSubstringTest) {
-  EXPECT_EQ(3, solution.length_of_longest_substring("pwwkew"));
-  EXPECT_EQ(1, solution.length_of_longest_substring("bbbbb"));
-  EXPECT_EQ(3, solution.length_of_longest_substring("abcabcbb"));
 }
 
 TEST(SolutionUnitTest, IntToRomanTest) {
@@ -45,11 +22,11 @@ TEST(SolutionUnitTest, IntToRomanTest) {
 }
 
 TEST(SolutionUnitTest, SearchInsertTest) {
-  vector<int> nums1 = {1, 3, 5, 6};
-  vector<int> nums2 = {1, 3, 5, 6};
-  vector<int> nums3 = {1, 3, 5, 6};
-  vector<int> nums4 = {1, 3, 5, 6};
-  vector<int> nums5 = {1};
+  vector<int> nums1{1, 3, 5, 6};
+  vector<int> nums2{1, 3, 5, 6};
+  vector<int> nums3{1, 3, 5, 6};
+  vector<int> nums4{1, 3, 5, 6};
+  vector<int> nums5{1};
   EXPECT_EQ(2, solution.search_insert(nums1, 5));
   EXPECT_EQ(1, solution.search_insert(nums2, 2));
   EXPECT_EQ(4, solution.search_insert(nums3, 7));
@@ -83,8 +60,8 @@ TEST(SolutionUnitTest, MinMovesTest) {
 }
 
 TEST(SolutionUnitTest, FindDiagonalOrderTest) {
-  vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-  vector<int> expected = {1, 2, 4, 7, 5, 3, 6, 8, 9};
+  vector<vector<int>> matrix{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+  vector<int> expected{1, 2, 4, 7, 5, 3, 6, 8, 9};
   vector<int> actual = solution.find_diagonal_order(matrix);
   EXPECT_EQ(expected, actual);
 }
@@ -104,22 +81,22 @@ TEST(SolutionUnitTest, ChangeTest) {
 }
 
 TEST(SolutionUnitTest, ExculsiveTimeTest) {
-  vector<string> logs1 = {"0:start:0", "1:start:2", "1:end:5", "0:end:6"};
-  vector<string> logs2 = {"0:start:0", "0:start:2", "0:end:5",
+  vector<string> logs1{"0:start:0", "1:start:2", "1:end:5", "0:end:6"};
+  vector<string> logs2{"0:start:0", "0:start:2", "0:end:5",
                           "0:start:6", "0:end:6",   "0:end:7"};
-  vector<string> logs3 = {"0:start:0", "0:start:2", "0:end:5",
+  vector<string> logs3{"0:start:0", "0:start:2", "0:end:5",
                           "1:start:6", "1:end:6",   "0:end:7"};
-  vector<int> expected1 = {3, 4};
-  vector<int> expected2 = {8};
-  vector<int> expected3 = {7, 1};
+  vector<int> expected1{3, 4};
+  vector<int> expected2{8};
+  vector<int> expected3{7, 1};
   EXPECT_EQ(expected1, solution.exclusive_time(2, logs1));
   EXPECT_EQ(expected2, solution.exclusive_time(1, logs2));
   EXPECT_EQ(expected3, solution.exclusive_time(2, logs3));
 }
 
 TEST(SolutionUnitTest, FindLongestChainTest) {
-  vector<vector<int>> pairs1 = {{1, 2}, {2, 3}, {3, 4}};
-  vector<vector<int>> pairs2 = {{1, 2}, {7, 8}, {4, 5}};
+  vector<vector<int>> pairs1{{1, 2}, {2, 3}, {3, 4}};
+  vector<vector<int>> pairs2{{1, 2}, {7, 8}, {4, 5}};
   EXPECT_EQ(2, solution.find_longest_chain(pairs1));
   EXPECT_EQ(3, solution.find_longest_chain(pairs2));
 }
@@ -141,12 +118,12 @@ TEST(SolutionUnitTest, ConstructArrayTest) {
 }
 
 TEST(SolutionUnitTest, WidthOfBinaryTreeTest) {
-  string nums1 = "1,3,2,5,3,null,9";
-  string nums2 = "1,3,2,5,null,null,9,6,null,7";
-  string nums3 = "1,3,2,5";
-  TreeNode *root1 = Utils::createTreeNodeIteratively(nums1);
-  TreeNode *root2 = Utils::createTreeNodeIteratively(nums2);
-  TreeNode *root3 = Utils::createTreeNodeIteratively(nums3);
+  string nums1{"1,3,2,5,3,null,9"};
+  string nums2{"1,3,2,5,null,null,9,6,null,7"};
+  string nums3{"1,3,2,5"};
+  TreeNode *root1 = Utils::generate_tree_node(nums1);
+  TreeNode *root2 = Utils::generate_tree_node(nums2);
+  TreeNode *root3 = Utils::generate_tree_node(nums3);
   EXPECT_EQ(4, solution.width_of_binary_tree(root1));
   EXPECT_EQ(7, solution.width_of_binary_tree(root2));
   EXPECT_EQ(2, solution.width_of_binary_tree(root3));
@@ -164,26 +141,26 @@ TEST(SolutionUnitTest, FlipLightsTest) {
 }
 
 TEST(SolutionUnitTest, LongestUnivaluePathTest) {
-  string nums1 = "5,4,5,1,1,null,5";
-  string nums2 = "1,4,5,4,4,null,5";
-  TreeNode *root1 = Utils::createTreeNodeIteratively(nums1);
-  TreeNode *root2 = Utils::createTreeNodeIteratively(nums2);
+  string nums1{"5,4,5,1,1,null,5"};
+  string nums2{"1,4,5,4,4,null,5"};
+  TreeNode *root1 = Utils::generate_tree_node(nums1);
+  TreeNode *root2 = Utils::generate_tree_node(nums2);
   EXPECT_EQ(2, solution.longest_univalue_path(root1));
   EXPECT_EQ(2, solution.longest_univalue_path(root2));
 }
 
 TEST(SolutionUnitTest, PivotIndexTest) {
-  vector<int> nums1 = {1, 7, 3, 6, 5, 6};
-  vector<int> nums2 = {1, 2, 3};
-  vector<int> nums3 = {2, 1, -1};
+  vector<int> nums1{1, 7, 3, 6, 5, 6};
+  vector<int> nums2{1, 2, 3};
+  vector<int> nums3{2, 1, -1};
   EXPECT_EQ(3, solution.pivot_index(nums1));
   EXPECT_EQ(-1, solution.pivot_index(nums2));
   EXPECT_EQ(0, solution.pivot_index(nums3));
 }
 
 TEST(SolutionUnitTest, SelfDividingNumbersTest) {
-  vector<int> expected1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22};
-  vector<int> expected2 = {48, 55, 66, 77};
+  vector<int> expected1{1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22};
+  vector<int> expected2{48, 55, 66, 77};
   EXPECT_EQ(expected1, solution.self_dividing_numbers(1, 22));
   EXPECT_EQ(expected2, solution.self_dividing_numbers(47, 85));
 }
@@ -195,19 +172,19 @@ TEST(SolutionUnitTest, PreimageSizeFZFTest) {
 }
 
 TEST(SolutionUnitTest, UniqueMorseRepresentationsTest) {
-  vector<string> words1 = {"gin", "zen", "gig", "msg"};
-  vector<string> words2 = {"a"};
+  vector<string> words1{"gin", "zen", "gig", "msg"};
+  vector<string> words2{"a"};
   EXPECT_EQ(2, solution.unique_morse_representations(words1));
   EXPECT_EQ(1, solution.unique_morse_representations(words2));
 }
 
 TEST(SolutionUnitTest, NumberOfLinesTest) {
-  vector<int> widths1 = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
-                         10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
-  vector<int> widths2 = {4,  10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
-                         10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
-  string s1 = "abcdefghijklmnopqrstuvwxyz";
-  string s2 = "bbbcccdddaaa";
+  vector<int> widths1{10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+                      10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
+  vector<int> widths2{4,  10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+                      10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
+  string s1{"abcdefghijklmnopqrstuvwxyz"};
+  string s2{"bbbcccdddaaa"};
   vector<int> expected1 = {3, 60};
   vector<int> expected2 = {2, 4};
   EXPECT_EQ(expected1, solution.number_of_lines(widths1, s1));
@@ -215,9 +192,9 @@ TEST(SolutionUnitTest, NumberOfLinesTest) {
 }
 
 TEST(SolutionUnitTest, UniqueLetterStringTest) {
-  string s1 = "ABC";
-  string s2 = "ABA";
-  string s3 = "LEETCODE";
+  string s1{"ABC"};
+  string s2{"ABA"};
+  string s3{"LEETCODE"};
   EXPECT_EQ(10, solution.unique_letter_string(s1));
   EXPECT_EQ(8, solution.unique_letter_string(s2));
   EXPECT_EQ(92, solution.unique_letter_string(s3));
@@ -244,11 +221,11 @@ TEST(SolutionUnitTest, MinDeletionSizeTest) {
 }
 
 TEST(SolutionUnitTest, ValidateStackSequencesTest) {
-  vector<int> pushed1 = {1, 2, 3, 4, 5};
-  vector<int> popped1 = {4, 5, 3, 2, 1};
+  vector<int> pushed1{1, 2, 3, 4, 5};
+  vector<int> popped1{4, 5, 3, 2, 1};
 
-  vector<int> pushed2 = {1, 2, 3, 4, 5};
-  vector<int> popped2 = {4, 3, 5, 1, 2};
+  vector<int> pushed2{1, 2, 3, 4, 5};
+  vector<int> popped2{4, 3, 5, 1, 2};
 
   EXPECT_TRUE(solution.validate_stack_sequences(pushed1, popped1));
   EXPECT_FALSE(solution.validate_stack_sequences(pushed2, popped2));
@@ -264,11 +241,13 @@ TEST(SolutionUnitTest, RepeatedNTimesTest) {
 }
 
 TEST(SolutionUnitTest, IsUnivalTreeTest) {
-  string nums1 = "1,1,1,1,1,null,1";
-  TreeNode *root1 = Utils::createTreeNodeIteratively(nums1);
+  string nums1{"1,1,1,1,1,null,1"};
+  string nums2{"2,2,2,5,2"};
+
+  TreeNode *root1 = Utils::generate_tree_node(nums1);
+  TreeNode *root2 = Utils::generate_tree_node(nums2);
+
   EXPECT_TRUE(solution.is_unival_tree(root1));
-  string nums2 = "2,2,2,5,2";
-  TreeNode *root2 = Utils::createTreeNodeIteratively(nums2);
   EXPECT_FALSE(solution.is_unival_tree(root2));
 }
 
@@ -277,14 +256,14 @@ TEST(SolutionUnitTest, InsertIntoMaxTreeTest) {
   string nodes2 = "5,2,4,null,1";
   string nodes3 = "5,2,3,null,1";
   vector<int> actual1 =
-      Utils::preordereTraversal(solution.insert_into_max_tree(
-          Utils::createTreeNodeIteratively(nodes1), 5));
+      Utils::preordere_traversal(solution.insert_into_max_tree(
+          Utils::generate_tree_node(nodes1), 5));
   vector<int> actual2 =
-      Utils::preordereTraversal(solution.insert_into_max_tree(
-          Utils::createTreeNodeIteratively(nodes2), 3));
+      Utils::preordere_traversal(solution.insert_into_max_tree(
+          Utils::generate_tree_node(nodes2), 3));
   vector<int> actual3 =
-      Utils::preordereTraversal(solution.insert_into_max_tree(
-          Utils::createTreeNodeIteratively(nodes3), 4));
+      Utils::preordere_traversal(solution.insert_into_max_tree(
+          Utils::generate_tree_node(nodes3), 4));
   vector<int> expected1 = {5, 4, 1, 3, 2};
   vector<int> expected2 = {5, 2, 1, 4, 3};
   vector<int> expected3 = {5, 2, 1, 4, 3};
