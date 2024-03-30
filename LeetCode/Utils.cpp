@@ -1,8 +1,8 @@
-#include "Utilities.h"
+#include "Utils.h"
 
 #include <ranges>
 
-TreeNode *Utilities::createTreeNodeIteratively(std::string &data) {
+TreeNode *Utils::createTreeNodeIteratively(std::string &data) {
   if (data.empty()) {
     return nullptr;
   }
@@ -42,7 +42,7 @@ TreeNode *Utilities::createTreeNodeIteratively(std::string &data) {
   return root;
 }
 
-ListNode *Utilities::createListNode(std::vector<int> &nums) {
+ListNode *Utils::createListNode(std::vector<int> &nums) {
   if (nums.size() == 0) {
     return nullptr;
   }
@@ -55,7 +55,7 @@ ListNode *Utilities::createListNode(std::vector<int> &nums) {
   return head->next;
 }
 
-std::vector<std::string> Utilities::split(const std::string &input,
+std::vector<std::string> Utils::split(const std::string &input,
                                           const std::string &delimiter) {
   std::vector<std::string> result;
 
@@ -73,7 +73,7 @@ std::vector<std::string> Utilities::split(const std::string &input,
   return result;
 }
 
-std::vector<int> Utilities::inorderTraversal(TreeNode *root) {
+std::vector<int> Utils::inorderTraversal(TreeNode *root) {
   std::vector<int> res;
   std::stack<TreeNode *> stk;
   while (root != nullptr || !stk.empty()) {
@@ -87,7 +87,7 @@ std::vector<int> Utilities::inorderTraversal(TreeNode *root) {
   return res;
 }
 
-std::vector<int> Utilities::preordereTraversal(TreeNode *root) {
+std::vector<int> Utils::preordereTraversal(TreeNode *root) {
   std::vector<int> res;
   if (root == nullptr) {
     return res;
@@ -108,7 +108,7 @@ std::vector<int> Utilities::preordereTraversal(TreeNode *root) {
   return res;
 }
 
-bool Utilities::isSameTree(TreeNode *lhs, TreeNode *rhs) { 
+bool Utils::isSameTree(TreeNode *lhs, TreeNode *rhs) { 
   if (lhs == nullptr && rhs == nullptr) {
     return true;
   } else if (lhs == nullptr || rhs == nullptr) {
