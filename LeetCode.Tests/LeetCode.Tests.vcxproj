@@ -38,7 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ExamRoomUnitTest.cpp" />
-    <ClCompile Include="FooUnitTest.cpp" />
+    <ClCompile Include="PrintOrderUnitTest.cpp" />
     <ClCompile Include="RandomizedSetUnitTest.cpp" />
     <ClCompile Include="SolutionUnitTest.cpp" />
     <ClCompile Include="AllOneUnitTest.cpp" />

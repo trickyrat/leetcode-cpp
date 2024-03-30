@@ -8,7 +8,7 @@
 #include <vector>
 #include <queue>
 
-class Utilities {
+class Utils {
 public:
   static TreeNode *createTreeNodeIteratively(std::string &data);
 
