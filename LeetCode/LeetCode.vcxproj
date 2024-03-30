@@ -151,26 +151,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ExamRoom.cpp" />
-    <ClCompile Include="Program.cpp" />
-    <ClCompile Include="Solution.cpp" />
-    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="exam_room.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="solution.cpp" />
+    <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AllOne.h" />
-    <ClInclude Include="BSTIterator.h" />
-    <ClInclude Include="Codec.h" />
-    <ClInclude Include="ExamRoom.h" />
-    <ClInclude Include="Foo.h" />
-    <ClInclude Include="ListNode.h" />
-    <ClInclude Include="MinStack.h" />
-    <ClInclude Include="MyStack.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="NumArray.h" />
-    <ClInclude Include="RandomizedSet.h" />
-    <ClInclude Include="Solution.h" />
-    <ClInclude Include="TreeNode.h" />
-    <ClInclude Include="Utils.h" />
+    <ClInclude Include="all_one.h" />
+    <ClInclude Include="bst_iterator.h" />
+    <ClInclude Include="codec.h" />
+    <ClInclude Include="data_structure.h" />
+    <ClInclude Include="exam_room.h" />
+    <ClInclude Include="foo.h" />
+    <ClInclude Include="min_stack.h" />
+    <ClInclude Include="my_stack.h" />
+    <ClInclude Include="num_array.h" />
+    <ClInclude Include="randomized_set.h" />
+    <ClInclude Include="solution.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
