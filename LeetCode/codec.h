@@ -1,59 +1,58 @@
 #pragma once
 
+#include <list>
 #include <string>
-#include <stack>
 #include <vector>
 
 #include "data_structure.h"
+#include "utils.h"
 
 class Codec {
 private:
-  TreeNode* build(int lower, int upper, std::stack<int>& st) {
-    int val = st.top();
-    if (st.empty() || val < lower || val > upper) {
+  TreeNode *deserialize_core(std::list<std::string> &data_array) {
+    if (data_array.front() == "None") {
+      data_array.erase(data_array.begin());
       return nullptr;
     }
-    st.pop();
-    TreeNode *root = new TreeNode(val);
-    root->right = build(val, upper, st);
-    root->left = build(lower, val, st);
+    TreeNode *root = new TreeNode(std::stoi(data_array.front()));
+    data_array.erase(data_array.begin());
+    root->left = deserialize_core(data_array);
+    root->right = deserialize_core(data_array);
     return root;
   }
-  void postOrder(TreeNode* root, std::vector<int>& arr) {
+  void serialize_core(TreeNode *root, std::string &ret) {
     if (root == nullptr) {
-      return;
+      ret += "None,";
+    } else {
+      ret += std::to_string(root->val) + ",";
+      serialize_core(root->left, ret);
+      serialize_core(root->right, ret);
     }
-    postOrder(root->left, arr);
-    postOrder(root->right, arr);
-    arr.emplace_back(root->val);
   }
-
 
 public:
-  std::string serialize(TreeNode* root) {
+  std::string serialize(TreeNode *root) {
     std::string res;
-    std::vector<int> arr;
-    postOrder(root, arr);
-    if (arr.empty()) {
-      return res;
-    }
-    for (int i = 0; i < arr.size() - 1; i++) {
-      res.append(std::to_string(arr[i]) + ",");
-    }
-    res.append(std::to_string(arr.back()));
+    serialize_core(root, res);
     return res;
   }
-  TreeNode* deserialize(std::string data) {
-    if (data.size() == 0) {
-      return nullptr;
+  TreeNode *deserialize(std::string data) {
+    std::list<std::string> data_array;
+    std::string str;
+    for (auto &ch : data) {
+      if (ch == ',') {
+        data_array.push_back(str);
+        str.clear();
+      } else {
+        str.push_back(ch);
+      }
     }
-    Utilities utilities;
-    std::string delimeter = ",";
-    std::vector<std::string> arr = utilities.split(data, delimeter);
-    std::stack<int> st;
-    for (auto &str : arr) {
-      st.emplace(std::stoi(str));
+
+    if (!str.empty()) {
+      data_array.push_back(str);
+      str.clear();
     }
-    return build(INT_MIN, INT_MAX, st);
+
+    return deserialize_core(data_array);
   }
 };
