@@ -37,6 +37,8 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddTwoNumbersUnitTest.cpp" />
+    <ClCompile Include="CodecUnitTest.cpp" />
     <ClCompile Include="ExamRoomUnitTest.cpp" />
     <ClCompile Include="PrintOrderUnitTest.cpp" />
     <ClCompile Include="RandomizedSetUnitTest.cpp" />
@@ -94,6 +96,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>$(SolutionDir)LeetCode\$(Platform)\$(Configuration)\*.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
