@@ -1662,6 +1662,30 @@ int Solution::find_duplicate(std::vector<int> &nums) {
   return ptr1;
 }
 
+bool Solution::is_valid_serialization(std::string preorder) {
+  int n = preorder.length();
+  int i = 0;
+  int slots = 1;
+  while (i < n) {
+    if (slots == 0) {
+      return false;
+    }
+    if (preorder[i] == ',') {
+      i++;
+    } else if (preorder[i] == '#') {
+      slots--;
+      i++;
+    } else {
+      while (i < n && preorder[i] != ',') {
+        i++;
+      }
+      slots++;
+    }
+  }
+
+  return slots == 0;
+}
+
 void Solution::reverse_string(std::vector<char> &s) {
   // two pointers
   int l = 0, r = s.size() - 1;
