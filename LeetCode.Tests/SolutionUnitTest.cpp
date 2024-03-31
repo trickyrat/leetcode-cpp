@@ -38,6 +38,12 @@ TEST(SolutionUnitTest, TrailingZeroesTest) {
   EXPECT_EQ(0, solution.trailing_zeroes(0));
 }
 
+TEST(SolutionUnitTest, IsValidSerializationTest) {
+  EXPECT_TRUE(solution.is_valid_serialization("9,3,4,#,#,1,#,#,2,#,6,#,#"));
+  EXPECT_FALSE(solution.is_valid_serialization("1,#"));
+  EXPECT_FALSE(solution.is_valid_serialization("9,#,#,1"));
+}
+
 TEST(SolutionUnitTest, CountNumbersWithUniqueDigitsTest) {
   EXPECT_EQ(91, solution.count_numbers_with_unique_digits(2));
   EXPECT_EQ(1, solution.count_numbers_with_unique_digits(0));

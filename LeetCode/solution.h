@@ -645,6 +645,13 @@ public:
   int find_duplicate(std::vector<int> &nums);
 
   /// <summary>
+  /// 331. Verify Preorder Serialization of a Binary Tree
+  /// </summary>
+  /// <param name="preorder"></param>
+  /// <returns></returns>
+  bool is_valid_serialization(std::string preorder);
+
+  /// <summary>
   /// 344. Reverse String
   /// </summary>
   /// <param name="s"></param>
