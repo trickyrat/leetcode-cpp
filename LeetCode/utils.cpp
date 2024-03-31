@@ -3,6 +3,8 @@
 #include <queue>
 #include <ranges>
 #include <stack>
+#include <iostream>
+#include <sstream>
 
 TreeNode *Utils::generate_tree_node(std::string &data,
                                     std::string delimeter) {
@@ -51,6 +53,54 @@ ListNode *Utils::generate_list_node(std::vector<int> &nums) {
   }
   return head->next;
 }
+
+ListNode *Utils::detect_cycle(ListNode *head) {
+  if (!head) {
+    return nullptr;
+  }
+
+  ListNode *slow = head;
+  ListNode *fast = head;
+
+  while (fast) {
+    slow = slow->next;
+    if (fast->next) {
+      fast = fast->next->next;
+    } else {
+      return nullptr;
+    }
+
+    if (fast == slow) {
+      ListNode *ptr = head;
+      while (ptr != slow) {
+        ptr = ptr->next;
+        slow = slow->next;
+      }
+      return ptr;
+    }
+  }
+  return nullptr;
+}
+
+std::string Utils::list_node_to_string(ListNode *head, std::string separator) {
+  ListNode *cycle_node = detect_cycle(head);
+
+  std::ostringstream oss;
+
+  while (head) {
+    oss << head->val;
+    if (head->next) {
+      oss << separator;
+    }
+    head = head->next;
+    if (head == cycle_node && head && cycle_node) {
+      oss << cycle_node->val << separator << "...";
+      break;
+    }
+  }
+  return oss.str();
+}
+
 
 std::vector<std::string> Utils::split(const std::string &input,
                                           const std::string &delimiter) {
@@ -140,7 +190,7 @@ bool Utils::is_same_tree(TreeNode *lhs, TreeNode *rhs) {
       q2.push(left2);
     }
     if (right2 != nullptr) {
-      q1.push(right2);
+      q2.push(right2);
     }
   }
 
