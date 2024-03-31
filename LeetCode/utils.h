@@ -12,6 +12,11 @@ public:
 
   static ListNode *generate_list_node(std::vector<int> &nums);
 
+  static ListNode *detect_cycle(ListNode *head);
+
+  static std::string list_node_to_string(ListNode *head,
+                                         std::string separator = "->");
+
   static std::vector<std::string> split(const std::string &input,
                                         const std::string &delimeter);
 
