@@ -981,6 +981,13 @@ public:
   int surface_area(std::vector<std::vector<int>> &grid);
 
   /// <summary>
+  /// 894. All Possible Full Binary Trees
+  /// </summary>
+  /// <param name="n"></param>
+  /// <returns></returns>
+  std::vector<TreeNode *> all_possible_fbt(int n);
+
+  /// <summary>
   /// 905. Sort Array By Parity
   /// </summary>
   /// <param name="A"></param>
