@@ -1,6 +1,6 @@
 #include "pch.h"
 
-#include "../LeetCode/all_one.h"
+#include "../src/all_one.h"
 
 using namespace std;
 
