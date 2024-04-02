@@ -25,7 +25,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <ProjectName>LeetCode.Tests</ProjectName>
+    <ProjectName>leetcode.tests</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -37,13 +37,13 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AddTwoNumbersUnitTest.cpp" />
-    <ClCompile Include="CodecUnitTest.cpp" />
-    <ClCompile Include="ExamRoomUnitTest.cpp" />
-    <ClCompile Include="PrintOrderUnitTest.cpp" />
-    <ClCompile Include="RandomizedSetUnitTest.cpp" />
-    <ClCompile Include="SolutionUnitTest.cpp" />
-    <ClCompile Include="AllOneUnitTest.cpp" />
+    <ClCompile Include="add_two_numbers_unit_test.cpp" />
+    <ClCompile Include="codec_unit_test.cpp" />
+    <ClCompile Include="exam_room_unit_test.cpp" />
+    <ClCompile Include="print_order_unit_test.cpp" />
+    <ClCompile Include="randomized_set_unit_test.cpp" />
+    <ClCompile Include="solution_unit_test.cpp" />
+    <ClCompile Include="all_one_unit_test.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -51,13 +51,13 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="TwoSumUnitTest.cpp" />
+    <ClCompile Include="two_sum_unit_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LeetCode\LeetCode.vcxproj">
+    <ProjectReference Include="..\src\leetcode.vcxproj">
       <Project>{1c6202cc-5d38-432c-9215-f525369da4d1}</Project>
     </ProjectReference>
   </ItemGroup>
@@ -96,7 +96,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>$(SolutionDir)LeetCode\$(Platform)\$(Configuration)\*.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)src\$(Platform)\$(Configuration)\*.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

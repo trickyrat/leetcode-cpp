@@ -2440,6 +2440,29 @@ int Solution::surface_area(std::vector<std::vector<int>> &grid) {
   return res;
 }
 
+std::vector<TreeNode *> Solution::all_possible_fbt(int n) {
+  std::vector<TreeNode *> full_binary_trees;
+  if (n % 2 == 0) {
+    return full_binary_trees;
+  }
+  if (n == 1) {
+    full_binary_trees = {new TreeNode(0)};
+    return full_binary_trees;
+  }
+  for (int i = 1; i < n; i++) {
+    std::vector<TreeNode *> left_subtrees = all_possible_fbt(i);
+    std::vector<TreeNode *> right_subtrees = all_possible_fbt(n - 1 - i);
+    for (auto left_subtree : left_subtrees) {
+      for (auto right_subtree : right_subtrees) {
+        TreeNode *root = new TreeNode(0, left_subtree, right_subtree);
+        full_binary_trees.emplace_back(root);
+      }
+    }
+  }
+
+  return full_binary_trees;
+}
+
 std::vector<int> Solution::sort_array_by_parity(std::vector<int> &A) {
   size_t i = 0, j = A.size() - 1;
   while (i < j) {

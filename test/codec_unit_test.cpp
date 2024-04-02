@@ -1,7 +1,7 @@
 #include "pch.h"
 
-#include "../LeetCode/codec.h"
-#include "../LeetCode/utils.h"
+#include "../src/codec.h"
+#include "../src/utils.h"
 
 using namespace std;
 

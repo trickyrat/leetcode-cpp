@@ -1,6 +1,6 @@
 #include "pch.h"
 
-#include "../LeetCode/exam_room.h"
+#include "../src/exam_room.h"
 
 using namespace std;
 
