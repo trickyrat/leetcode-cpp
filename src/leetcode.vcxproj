@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="exam_room.cpp" />
     <ClCompile Include="solution.cpp" />
+    <ClCompile Include="throne_inheritance.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +168,7 @@
     <ClInclude Include="num_array.h" />
     <ClInclude Include="randomized_set.h" />
     <ClInclude Include="solution.h" />
+    <ClCompile Include="throne_inheritance.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
