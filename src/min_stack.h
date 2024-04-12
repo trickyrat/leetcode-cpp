@@ -1,13 +1,10 @@
 #pragma once
 
 #include <stack>
-
-class MinStack
-{
+namespace leetcode {
+class MinStack {
 public:
-  MinStack() { 
-    min.push(INT_MAX);
-  }
+  MinStack() { min.push(INT_MAX); }
 
   void push(int val) {
     x.push(val);
@@ -19,16 +16,12 @@ public:
     min.pop();
   }
 
-  int top() { 
-    return x.top();
-  }
+  int top() { return x.top(); }
 
-  int getMin() { 
-    return min.top();
-  }
+  int getMin() { return min.top(); }
 
 private:
   std::stack<int> min;
   std::stack<int> x;
 };
-
+} // namespace leetcode

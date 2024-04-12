@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "data_structure.h"
-
+namespace leetcode {
 class Utils {
 public:
   static TreeNode *generate_tree_node(std::string &data,
@@ -26,3 +26,4 @@ public:
 
   static bool is_same_tree(TreeNode *lhs, TreeNode *rhs);
 };
+} // namespace leetcode

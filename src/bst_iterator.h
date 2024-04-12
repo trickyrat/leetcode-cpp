@@ -2,13 +2,13 @@
 #include <stack>
 
 #include "data_structure.h"
-
+namespace leetcode {
 class BSTIterator {
 private:
-  std::stack<TreeNode*> nodes;
+  std::stack<TreeNode *> nodes;
 
 public:
-  BSTIterator(TreeNode* root) {
+  BSTIterator(TreeNode *root) {
     while (root) {
       nodes.push(root);
       root = root->left;
@@ -20,9 +20,9 @@ public:
   /// </summary>
   /// <returns></returns>
   int next() {
-    TreeNode* tmp = nodes.top();
+    TreeNode *tmp = nodes.top();
     nodes.pop();
-    TreeNode* right = tmp->right;
+    TreeNode *right = tmp->right;
     while (right) {
       nodes.push(right);
       right = right->left;
@@ -36,3 +36,4 @@ public:
   /// <returns></returns>
   bool hasNext() { return !nodes.empty(); }
 };
+} // namespace leetcode

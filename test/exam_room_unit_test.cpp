@@ -4,8 +4,9 @@
 
 using namespace std;
 
-TEST(ExamRoomUnitTest, OperationTest) { 
-	ExamRoom er(10);
+namespace leetcode {
+TEST(ExamRoomUnitTest, OperationTest) {
+  ExamRoom er(10);
   EXPECT_EQ(0, er.seat());
   EXPECT_EQ(9, er.seat());
   EXPECT_EQ(4, er.seat());
@@ -13,3 +14,4 @@ TEST(ExamRoomUnitTest, OperationTest) {
   er.leave(4);
   EXPECT_EQ(5, er.seat());
 }
+} // namespace leetcode

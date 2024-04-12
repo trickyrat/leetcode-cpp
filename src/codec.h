@@ -6,7 +6,7 @@
 
 #include "data_structure.h"
 #include "utils.h"
-
+namespace leetcode {
 class Codec {
 private:
   TreeNode *deserialize_core(std::list<std::string> &data_array) {
@@ -56,3 +56,4 @@ public:
     return deserialize_core(data_array);
   }
 };
+} // namespace leetcode

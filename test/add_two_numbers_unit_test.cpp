@@ -4,7 +4,7 @@
 #include "../src/utils.h"
 
 using namespace std;
-
+namespace leetcode {
 class AddTwoNumbersFixture {
 public:
   vector<int> nums1;
@@ -34,6 +34,10 @@ TEST_P(AddTwoNumbersTest, Test) {
 
   ListNode *actual = solution.add_two_numbers(l1, l2);
 
-  EXPECT_EQ(param.expected,
-            Utils::list_node_to_string(actual));
+  EXPECT_EQ(param.expected, Utils::list_node_to_string(actual));
+
+  delete l1;
+  delete l2;
+  delete actual;
 }
+} // namespace leetcode

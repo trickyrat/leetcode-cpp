@@ -2,14 +2,14 @@
 
 #include <functional>
 #include <future>
-
+namespace leetcode {
 class Foo {
 private:
   std::function<void()> task = []() {};
   std::packaged_task<void()> pt1{task}, pt2{task};
 
 public:
-  Foo(const Foo& other){};
+  Foo(const Foo &other){};
   Foo(){};
 
   void first(std::function<void()> printFirst) {
@@ -26,3 +26,4 @@ public:
     printThird();
   }
 };
+} // namespace leetcode

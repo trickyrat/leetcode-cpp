@@ -4,7 +4,7 @@
 #include "../src/utils.h"
 
 using namespace std;
-
+namespace leetcode {
 class CodecFixture {
 public:
   string node;
@@ -27,4 +27,9 @@ TEST_P(CodecTest, Test) {
   TreeNode *actual = deserializer.deserialize(serializer.serialize(root));
   TreeNode *expected = Utils::generate_tree_node(param.expected);
   EXPECT_TRUE(Utils::is_same_tree(expected, actual));
+
+  delete root;
+  delete actual;
+  delete expected;
 }
+} // namespace leetcode

@@ -5,9 +5,8 @@
 #include <stack>
 #include <iostream>
 #include <sstream>
-
-TreeNode *Utils::generate_tree_node(std::string &data,
-                                    std::string delimeter) {
+namespace leetcode {
+TreeNode *Utils::generate_tree_node(std::string &data, std::string delimeter) {
   if (data.empty()) {
     return nullptr;
   }
@@ -101,9 +100,8 @@ std::string Utils::list_node_to_string(ListNode *head, std::string separator) {
   return oss.str();
 }
 
-
 std::vector<std::string> Utils::split(const std::string &input,
-                                          const std::string &delimiter) {
+                                      const std::string &delimiter) {
   std::vector<std::string> result;
 
   std::size_t current = 0;
@@ -155,7 +153,7 @@ std::vector<int> Utils::preordere_traversal(TreeNode *root) {
   return res;
 }
 
-bool Utils::is_same_tree(TreeNode *lhs, TreeNode *rhs) { 
+bool Utils::is_same_tree(TreeNode *lhs, TreeNode *rhs) {
   if (lhs == nullptr && rhs == nullptr) {
     return true;
   } else if (lhs == nullptr || rhs == nullptr) {
@@ -196,4 +194,4 @@ bool Utils::is_same_tree(TreeNode *lhs, TreeNode *rhs) {
 
   return q1.empty() && q2.empty();
 }
-
+} // namespace leetcode

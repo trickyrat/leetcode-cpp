@@ -1,5 +1,5 @@
 #include "exam_room.h"
-
+namespace leetcode {
 int ExamRoom::seat() {
   if (seats.empty()) {
     seats.insert(0);
@@ -40,3 +40,4 @@ void ExamRoom::leave(int p) {
   }
   seats.erase(p);
 }
+} // namespace leetcode

@@ -13,7 +13,7 @@
 #include <stack>
 #include <unordered_map>
 #include <unordered_set>
-
+namespace leetcode {
 std::vector<int> Solution::two_sum(std::vector<int> &nums, int target) {
   size_t size = nums.size();
   std::unordered_map<int, int> hash;
@@ -3204,3 +3204,4 @@ int Solution::rearrange_characters(std::string s, std::string target) {
   }
   return ans;
 }
+} // namespace leetcode

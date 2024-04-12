@@ -4,6 +4,8 @@
 
 using namespace std;
 
+namespace leetcode {
+
 std::future<void> asyncExecute(Foo &foo, std::function<void()> method) {
   return std::async(std::launch::async, method);
 }
@@ -60,3 +62,4 @@ TEST_P(OrderPrintTest, Test) {
 
   EXPECT_EQ(actual, fixture.expected);
 }
+} // namespace leetcode

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <queue>
-
+namespace leetcode {
 class MyStack {
 public:
   MyStack() {}
@@ -26,9 +26,9 @@ public:
     return r;
   }
 
-  bool empty() { 
-    return q.empty();
-  }
+  bool empty() { return q.empty(); }
+
 private:
   std::queue<int> q;
 };
+} // namespace leetcode
