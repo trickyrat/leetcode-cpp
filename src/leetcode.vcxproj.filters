@@ -24,6 +24,12 @@
     <ClCompile Include="exam_room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="throne_inheritance.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="throne_inheritance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="solution.h">
