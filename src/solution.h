@@ -4,7 +4,7 @@
 #include <string>
 
 #include "data_structure.h"
-
+namespace leetcode {
 class Solution {
 public:
   /// <summary>
@@ -1305,3 +1305,4 @@ public:
   /// <returns></returns>
   int rearrange_characters(std::string s, std::string target);
 };
+} // namespace leetcode

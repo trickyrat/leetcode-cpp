@@ -4,6 +4,8 @@
 
 using namespace std;
 
+namespace leetcode {
+
 TEST(AllOneUnitTest, OperationTest) {
   AllOne allOne;
   allOne.inc("hello");
@@ -22,3 +24,4 @@ TEST(AllOneUnitTest, OperationTest) {
   string expected4 = "leet";
   EXPECT_EQ(expected4, actualMinKey2);
 }
+} // namespace leetcode

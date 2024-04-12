@@ -2,6 +2,7 @@
 
 #include "../src/randomized_set.h"
 
+namespace leetcode {
 TEST(RandomizedSetUnitTest, OperationTest) {
   RandomizedSet randomizedSet;
   EXPECT_TRUE(randomizedSet.insert(1));
@@ -13,3 +14,4 @@ TEST(RandomizedSetUnitTest, OperationTest) {
   EXPECT_FALSE(randomizedSet.insert(2));
   EXPECT_EQ(2, randomizedSet.getRandom());
 }
+} // namespace leetcode

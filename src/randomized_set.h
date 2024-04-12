@@ -3,12 +3,10 @@
 #include <vector>
 #include <unordered_map>
 #include <random>
-
+namespace leetcode {
 class RandomizedSet {
 public:
-  RandomizedSet() { 
-   
-  }
+  RandomizedSet() {}
 
   bool insert(int val) {
     if (indices.count(val)) {
@@ -42,3 +40,4 @@ private:
   std::vector<int> nums;
   std::unordered_map<int, int> indices;
 };
+} // namespace leetcode

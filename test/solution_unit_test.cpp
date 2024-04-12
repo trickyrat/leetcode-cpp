@@ -5,6 +5,8 @@
 
 using namespace std;
 
+namespace leetcode {
+
 Solution solution;
 
 TEST(SolutionUnitTest, LengthOfLongestSubstring) {
@@ -131,6 +133,10 @@ TEST(SolutionUnitTest, WidthOfBinaryTreeTest) {
   EXPECT_EQ(4, solution.width_of_binary_tree(root1));
   EXPECT_EQ(7, solution.width_of_binary_tree(root2));
   EXPECT_EQ(2, solution.width_of_binary_tree(root3));
+
+  delete root1;
+  delete root2;
+  delete root3;
 }
 
 TEST(SolutionUnitTest, MaximumSwapTest) {
@@ -151,6 +157,9 @@ TEST(SolutionUnitTest, LongestUnivaluePathTest) {
   TreeNode *root2 = Utils::generate_tree_node(nums2);
   EXPECT_EQ(2, solution.longest_univalue_path(root1));
   EXPECT_EQ(2, solution.longest_univalue_path(root2));
+
+  delete root1;
+  delete root2;
 }
 
 TEST(SolutionUnitTest, PivotIndexTest) {
@@ -253,6 +262,9 @@ TEST(SolutionUnitTest, IsUnivalTreeTest) {
 
   EXPECT_TRUE(solution.is_unival_tree(root1));
   EXPECT_FALSE(solution.is_unival_tree(root2));
+
+  delete root1;
+  delete root2;
 }
 
 TEST(SolutionUnitTest, InsertIntoMaxTreeTest) {
@@ -545,3 +557,5 @@ TEST(SolutionUnitTest, RearrangeCharactersTest) {
   EXPECT_EQ(1, solution.rearrange_characters("abcba", "abc"));
   EXPECT_EQ(1, solution.rearrange_characters("abbaccaddaeea", "aaaaa"));
 }
+
+} // namespace leetcode

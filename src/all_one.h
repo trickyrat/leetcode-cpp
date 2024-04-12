@@ -5,7 +5,7 @@
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
-
+namespace leetcode {
 class AllOne {
   std::list<std::pair<std::unordered_set<std::string>, int>> lst;
   std::unordered_map<
@@ -68,3 +68,4 @@ public:
     return lst.empty() ? "" : *lst.begin()->first.begin();
   }
 };
+} // namespace leetcode

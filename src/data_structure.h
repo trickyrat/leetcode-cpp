@@ -1,7 +1,8 @@
 #pragma once
 
-
 #include <vector>
+
+namespace leetcode {
 
 class Node {
 public:
@@ -23,7 +24,6 @@ struct ListNode {
   ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-
 /// <summary>
 /// Definition for a binary tree node.
 /// </summary>
@@ -36,3 +36,4 @@ struct TreeNode {
   TreeNode(int x, TreeNode *left, TreeNode *right)
       : val(x), left(left), right(right) {}
 };
+} // namespace leetcode

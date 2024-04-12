@@ -4,7 +4,7 @@
 #include "../src/utils.h"
 
 using namespace std;
-
+namespace leetcode {
 class TwoSumFixture {
 public:
   vector<int> nums;
@@ -29,3 +29,4 @@ TEST_P(TwoSumTest, Test) {
   vector<int> actual = solution.two_sum(param.nums, param.target);
   EXPECT_EQ(param.expected, actual);
 }
+} // namespace leetcode
