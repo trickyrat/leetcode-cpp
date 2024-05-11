@@ -1283,6 +1283,15 @@ public:
   char repeated_character(std::string s);
 
   /// <summary>
+  /// 2391. Minimum Amount of Time to Collect Garbage
+  /// </summary>
+  /// <param name="garbages"></param>
+  /// <param name="travel"></param>
+  /// <returns></returns>
+  int garbage_collection(std::vector<std::string> &garbage,
+                         std::vector<int> &travel);
+
+  /// <summary>
   /// 2908. Minimum Sum of Mountain Triplets I
   /// </summary>
   /// <param name="nums"></param>

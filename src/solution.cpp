@@ -3156,6 +3156,26 @@ char Solution::repeated_character(std::string s) {
   return ' ';
 }
 
+int Solution::garbage_collection(std::vector<std::string> &garbage,
+                                 std::vector<int> &travel) {
+  std::unordered_map<char, int> distances;
+  int res = 0, current_distance = 0;
+  for (int i = 0; i < garbage.size(); i++) {
+    res += garbage[i].size();
+    if (i > 0) {
+      current_distance += travel[i - 1];
+    }
+
+    for (auto c : garbage[i]) {
+      distances[c] = current_distance;
+    }
+  }
+  for (auto &[k, v] : distances) {
+    res += v;
+  }
+  return res;
+}
+
 int Solution::minimum_sum(std::vector<int> nums) {
   int n = nums.size();
   int mini = 1000, res = 1000;
