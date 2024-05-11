@@ -40,6 +40,7 @@
     <ClCompile Include="add_two_numbers_unit_test.cpp" />
     <ClCompile Include="codec_unit_test.cpp" />
     <ClCompile Include="exam_room_unit_test.cpp" />
+    <ClCompile Include="garbage_collection_unit_test.cpp" />
     <ClCompile Include="print_order_unit_test.cpp" />
     <ClCompile Include="randomized_set_unit_test.cpp" />
     <ClCompile Include="solution_unit_test.cpp" />
