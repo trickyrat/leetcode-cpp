@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ATM.cpp" />
     <ClCompile Include="exam_room.cpp" />
     <ClCompile Include="solution.cpp" />
     <ClCompile Include="throne_inheritance.cpp" />
@@ -158,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="all_one.h" />
+    <ClInclude Include="ATM.h" />
     <ClInclude Include="bst_iterator.h" />
     <ClInclude Include="codec.h" />
     <ClInclude Include="data_structure.h" />
