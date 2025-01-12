@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="add_two_numbers_unit_test.cpp" />
+    <ClCompile Include="atm_unit_test.cpp" />
     <ClCompile Include="codec_unit_test.cpp" />
     <ClCompile Include="exam_room_unit_test.cpp" />
     <ClCompile Include="garbage_collection_unit_test.cpp" />
