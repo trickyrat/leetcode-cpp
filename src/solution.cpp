@@ -3209,6 +3209,18 @@ int Solution::minimum_added_coins(std::vector<int> coins, int target) {
   return res;
 }
 
+std::vector<int> Solution::get_sneaky_numbers(std::vector<int> nums) {
+  int n = nums.size() - 2;
+  int a = -n * (n-1) / 2;
+  int b = -n * (n - 1) * (n * 2 - 1) / 6;
+  for (auto &x : nums) {
+    a += x;
+    b += x * x;
+  }
+  int x = (a - std::sqrt(b * 2 - a * a)) / 2;
+  return {x, a - x};
+}
+
 int Solution::rearrange_characters(std::string s, std::string target) {
   std::unordered_map<char, int> sMap;
   std::unordered_map<char, int> targetMap;
