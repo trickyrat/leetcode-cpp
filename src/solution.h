@@ -1307,6 +1307,13 @@ public:
   int minimum_added_coins(std::vector<int> coins, int target);
 
   /// <summary>
+  /// 3289. The Two Sneaky Numbers of Digitville
+  /// </summary>
+  /// <param name="nums"></param>
+  /// <returns></returns>
+  std::vector<int> get_sneaky_numbers(std::vector<int> nums);
+
+  /// <summary>
   /// 6078. Rearrange Characters to Make Target String
   /// </summary>
   /// <param name="s"></param>
