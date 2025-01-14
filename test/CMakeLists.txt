@@ -3,8 +3,6 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-enable_testing()
-
 add_executable(
     leetcodecpp-test
     "main.cpp"
@@ -25,7 +23,7 @@ add_executable(
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET leetcodecpp-test PROPERTY CXX_STANDARD 20)
+  set_property(TARGET leetcodecpp-test PROPERTY CXX_STANDARD 23)
 endif()
 
 target_link_libraries(
