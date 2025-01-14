@@ -17,7 +17,7 @@ public:
 
 class TwoSumTest : public testing::TestWithParam<TwoSumFixture> {};
 
-INSTANTIATE_TEST_CASE_P(TwoSumTestCases, TwoSumTest,
+INSTANTIATE_TEST_SUITE_P(TwoSumTestCases, TwoSumTest,
                         testing::Values(TwoSumFixture({2, 7, 11, 15}, 9,
                                                       {0, 1}),
                                         TwoSumFixture({3, 2, 4}, 6, {1, 2}),

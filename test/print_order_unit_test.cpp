@@ -26,7 +26,7 @@ public:
 
 class OrderPrintTest : public testing::TestWithParam<PrintOrderFixture> {};
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
     PrintOrderTestCases, OrderPrintTest,
     testing::Values(PrintOrderFixture({1, 2, 3}, "firstsecondthird"),
                     PrintOrderFixture({1, 3, 2}, "firstsecondthird"),
