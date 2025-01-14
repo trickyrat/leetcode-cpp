@@ -18,7 +18,7 @@ public:
 class AddTwoNumbersTest : public testing::TestWithParam<AddTwoNumbersFixture> {
 };
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
     AddTwoNumbersTestCases, AddTwoNumbersTest,
     testing::Values(AddTwoNumbersFixture({2, 4, 3}, {5, 6, 4}, "7->0->8"),
                     AddTwoNumbersFixture({0}, {0}, "0"),

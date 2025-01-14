@@ -1,5 +1,7 @@
 #include "pch.h"
 
+#include <algorithm>
+
 #include "../src/solution.h"
 #include "../src/utils.h"
 

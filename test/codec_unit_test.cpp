@@ -15,7 +15,7 @@ public:
 
 class CodecTest : public testing::TestWithParam<CodecFixture> {};
 
-INSTANTIATE_TEST_CASE_P(CodecTestCases, CodecTest,
+INSTANTIATE_TEST_SUITE_P(CodecTestCases, CodecTest,
                         testing::Values(CodecFixture("1,2,3,null,null,4,5",
                                                      "1,2,3,null,null,4,5"),
                                         CodecFixture("", "")));

@@ -19,7 +19,7 @@ public:
 class GarbageCollectionTest
     : public testing::TestWithParam<GarbageCollectionFixture> {};
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
     GarbageCollectionTestCases, GarbageCollectionTest,
     testing::Values(
         GarbageCollectionFixture({"G", "P", "GP", "GG"}, {2, 4, 3}, 21),
