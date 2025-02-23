@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(
-    leetcodecpp-test
+    leetcodecpp
     "main.cpp"
     "pch.h"
     "pch.cpp"
@@ -23,13 +23,13 @@ add_executable(
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET leetcodecpp-test PROPERTY CXX_STANDARD 23)
+  set_property(TARGET leetcodecpp PROPERTY CXX_STANDARD 23)
 endif()
 
 target_link_libraries(
-    leetcodecpp-test 
+    leetcodecpp
     libleetcodecpp 
     GTest::gtest_main)
 
 include(GoogleTest)
-gtest_discover_tests(leetcodecpp-test)
+gtest_discover_tests(leetcodecpp)
