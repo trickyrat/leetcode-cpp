@@ -29,7 +29,7 @@
             "preLaunchTask": "CMake: clean rebuild"
         },
         {
-            "name": "(Windows) Run-x64",
+            "name": "(Windows) Run-Debug-x64",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/out/build/x64-debug/test/leetcodecpp.exe",
@@ -40,10 +40,32 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "(Windows) Run-x86",
+            "name": "(Windows) Run-Debug-x86",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/out/build/x86-debug/test/leetcodecpp.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "(Windows) Run-Release-x64",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/build/x64-release/test/leetcodecpp.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "(Windows) Run-Release-x86",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/build/x86-release/test/leetcodecpp.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
